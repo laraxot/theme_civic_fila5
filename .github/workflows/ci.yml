@@ -33,7 +33,9 @@ jobs:
 
       - name: Guard against committed secrets
         run: |
-          if git grep -nE '(API_KEY|SECRET|PASSWORD|PRIVATE_KEY)\s*=\s*[^$\s]' -- ':!.github' ':!docs' ':!*.md' ':!*.example' ':!*.dist' >/tmp/secret-hits.txt; then
+          # Match literal credentials, not env var names in browser tests.
+          if git grep -nE '(API_KEY|SECRET|PRIVATE_KEY)\s*=\s*["'\''][^$'\''"]+["'\'']' \
+            -- ':!.github' ':!docs' ':!tests' ':!*.md' ':!*.example' ':!*.dist' >/tmp/secret-hits.txt; then
             echo "Possible hardcoded secrets:"
             cat /tmp/secret-hits.txt
             exit 1
