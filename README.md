@@ -94,6 +94,8 @@ Non rinominare automaticamente stringhe storiche, documenti di audit o URL: dist
 - [Architettura](./docs/architecture/README.md)
 - [Design system](./docs/design-system/README.md)
 - [Wiki tecnica](./docs/wiki/README.md)
+- [Contribuire](./CONTRIBUTING.md)
+- [Segnalare vulnerabilità](./SECURITY.md)
 
 ## Riferimenti
 
