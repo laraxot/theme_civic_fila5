@@ -40,10 +40,10 @@ dipendenza di file o di runtime (pacchetto P4 dopo P1).
 | Pacchetto | Issue | Scrittore | File in esclusiva | Stato |
 | --- | --- | --- | --- | --- |
 | **P0** governance GitHub | #25, #37, impostazioni repo | altra sessione + lead | `.github/**`, `SECURITY.md`, `README.md`, `CONTRIBUTING.md` | in corso: la CI di `0184cb9` fallisce, la sta correggendo l'altra sessione |
-| **P1** migrazione Sixteen → Civic | #1 #2 #3 #4 #22 #23 | agente A | `composer.json`, `theme.json`, `package.json`, `vite*.js`, `tailwind*.js`, `postcss*`, `app/**`, `tests/**` (tranne `tests/Unit/I18n/`), `routes/**`, `config/*.php`, `src/**`, `pages/**`, `resources/**`, `bootstrap/**` | assegnato |
+| **P1** migrazione Sixteen → Civic | #1 #2 #3 #4 (**#22 e #23 ceduti alla wave Build/CI dell'altra sessione**, vedi `11-open-issues-parallel-completion.story.md`) | agente A | `composer.json`, `theme.json`, `package.json` (solo `name`), solo il testo `base`/alias del file Vite referenziato (nessun file di build rinominato o rimosso), `app/**`, `tests/**` (tranne `tests/Unit/I18n/`), `routes/**`, `config/*.php`, `src/**`, `pages/**`, `resources/**`, `bootstrap/**` | assegnato |
 | **P2** lingue Italia/Malta | #6 #7 #8 #9 #17 | agente B | `lang/**`, `tests/Unit/I18n/**` (solo file nuovi), `docs/adr/*i18n*`, `docs/contracts/*i18n*` | assegnato |
 | **P3** documentazione | #26 #27 #29 #30 #36 | agente C | `docs/**` **esclusi** `docs/adr/**`, `docs/contracts/**`, `docs/stories/**` | assegnato |
-| **P4** design, a11y, sicurezza UI, prestazioni, rilascio | #11 #20 #21 #24 #28 #31 #32 #33 #34 #35 | lead, dopo P1 | `resources/**`, `scripts/**` | **bloccato da P1**: senza Civic caricabile non c'è nulla da rendere, misurare o fotografare |
+| **P4** design, a11y, sicurezza UI, prestazioni, rilascio | #11 #20 #28 #31 #32 #33 #34 #35 (**#21 #24 → wave Build/CI**) | wave Design dell'altra sessione, dopo il via di A (stessa regola per il lead) | `resources/**`, `scripts/**` | **bloccato da P1**: senza Civic caricabile non c'è nulla da rendere, misurare o fotografare |
 
 Regole di divisione: per **rischio**, non per metà di file. P1 introduce il cambiamento; P2 e P3 coprono ciò che il cambiamento
 potrebbe rompere senza che nessuno se ne accorga (lingue, documenti). Nessun file è in due colonne.
