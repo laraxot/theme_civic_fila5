@@ -367,25 +367,37 @@
     <x-blocks.rating.default />
 
     {{-- Contacts Section --}}
+    @php
+        // #20: recapiti dell'ente da GetEnteDataAction; la sezione si mostra solo se c'e' almeno un recapito.
+        $homepageEnte = app(\Modules\Tenant\Actions\Ente\GetEnteDataAction::class)->execute();
+        $homepagePhone = $homepageEnte->toll_free !== '' ? $homepageEnte->toll_free : $homepageEnte->phone;
+        $homepageEmail = $homepageEnte->email !== '' ? $homepageEnte->email : $homepageEnte->pec;
+    @endphp
+    @if ($homepagePhone !== '' || $homepageEmail !== '')
     <section class="bg-slate-100 py-5 shadow-contacts">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-3xl">
                 <div class="rounded-lg bg-white p-6 shadow">
                     <h2 class="mb-0 text-2xl font-bold">{{ __('navigation.homepage.contacts') }}</h2>
                     <div class="mt-4 flex flex-col gap-3">
-                        <a href="tel:+390512345678" class="flex items-center gap-2 text-slate-700 hover:text-emerald-700">
+                        @if ($homepagePhone !== '')
+                        <a href="tel:{{ $homepagePhone }}" class="flex items-center gap-2 text-slate-700 hover:text-emerald-700">
                             @include('pub_theme::components.ui.icon', ['name' => 'it-phone', 'class' => 'h-5 w-5 text-emerald-600'])
-                            <span>05 12345678</span>
+                            <span>{{ $homepagePhone }}</span>
                         </a>
-                        <a href="mailto:urp@comune.it" class="flex items-center gap-2 text-slate-700 hover:text-emerald-700">
+                        @endif
+                        @if ($homepageEmail !== '')
+                        <a href="mailto:{{ $homepageEmail }}" class="flex items-center gap-2 text-slate-700 hover:text-emerald-700">
                             @include('pub_theme::components.ui.icon', ['name' => 'it-mail', 'class' => 'h-5 w-5 text-emerald-600'])
-                            <span>urp@comune.it</span>
+                            <span>{{ $homepageEmail }}</span>
                         </a>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    @endif
 
     {{-- Maybe You Were Looking For --}}
     <section class="py-5">
