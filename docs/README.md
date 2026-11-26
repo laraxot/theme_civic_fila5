@@ -344,10 +344,10 @@ L'elenco di ogni documento di `docs/`, compresi `adr/`, `contracts/`, `stories/`
 
 <!-- docs-index:begin (generato da docs/scripts/docs-index.py: non modificare a mano) -->
 
-Documenti catalogati: 1273 (questo file escluso), in 63 aree.
+Documenti catalogati: 1286 (questo file escluso), in 65 aree.
 
 <details>
-<summary><strong>radice di `docs/`</strong>: 343 documenti</summary>
+<summary><strong>radice di `docs/`</strong>: 342 documenti</summary>
 
 - [00 CSS JS VISUAL FIX PLAN](00-css-js-visual-fix-plan.md)
 - [00 HOMEPAGE REPLICATION INDEX](00-homepage-replication-index.md)
@@ -616,7 +616,6 @@ Documenti catalogati: 1273 (questo file escluso), in 63 aree.
 - [product launch plan](product-launch-plan.md)
 - [product roadmap](product-roadmap.md)
 - [product strategy](product-strategy.md)
-- [product strategy](product_strategy.md)
 - [Project Structure — Theme Sixteen](project-structure.md)
 - [Sostenibilità — front office Sixteen](project-sustainability-front-office.md)
 - [QMD Setup — Theme Sixteen](qmd-setup.md)
@@ -696,16 +695,19 @@ Documenti catalogati: 1273 (questo file escluso), in 63 aree.
 </details>
 
 <details>
-<summary><strong>`adr/`</strong>: 9 documenti</summary>
+<summary><strong>`adr/`</strong>: 12 documenti</summary>
 
 - [ADR — (decisione in una riga)](adr/0000-template.md)
 - [ADR — Civic compila gli asset con Vite, senza copie, e oggi non li pubblica](adr/0001-build-assets-via-vite-and-symlink.md)
 - [ADR — Civic possiede la presentazione e le shell Folio sottili, non la risoluzione delle pagine](adr/0002-front-office-theme-owns-presentation.md)
 - [Versionare package-lock.json nel repository del tema](adr/0003-version-package-lock-in-theme-repo.md)
+- [Inventario dei riferimenti Sixteen e confini tema/moduli](adr/0004-inventario-riferimenti-sixteen.md)
+- [Attivazione di Civic e convivenza con Sixteen](adr/0005-attivazione-civic-e-convivenza-con-sixteen.md)
+- [Identità Civic: namespace Themes/Civic, manifest theme.json e base Vite /themes/Civic/](adr/0006-identita-civic-namespace-manifest-e-url-degli-asset.md)
 - [ADR 0010 — Catalogo maltese mt: bozza con marcatore di revisione, non una traduzione dichiarata com…](adr/0010-catalogo-maltese-bozza-e-revisione.md)
 - [ADR 0011 — Profili Paese/ente e terminologia istituzionale in lang/(locale)/entity.php](adr/0011-profili-paese-ente-e-terminologia.md)
 - [ADR 0012 — Formati per Paese: date, numeri, indirizzi, telefoni e codici postali](adr/0012-formati-per-paese.md)
-- [Architecture Decision Records — Civic](adr/index.md)
+- [ADR 0013 — Parita' dei cataloghi misurata sull'unione delle chiavi; il fallback e' una rete di sicu…](adr/0013-fallback-di-localizzazione-e-parita-dei-cataloghi.md)
 - [ADR del tema Civic](adr/README.md)
 
 </details>
@@ -848,6 +850,16 @@ Documenti catalogati: 1273 (questo file escluso), in 63 aree.
 <summary><strong>`assets/`</strong>: 1 documenti</summary>
 
 - [BMAD: Vite Assets + Theme Build](assets/bmad-vite-assets.md)
+
+</details>
+
+<details>
+<summary><strong>`audits/`</strong>: 4 documenti</summary>
+
+- [Censimento blocchi CMS — dati di ente hardcoded (#20)](audits/cms-blocks-data-contract.md)
+- [Audit performance, SEO tecnico e budget asset](audits/performance-seo.md)
+- [Audit sicurezza e privacy del layer UI (Civic)](audits/security-privacy-ui.md)
+- [Audit WCAG — frontend Civic](audits/wcag-audit.md)
 
 </details>
 
@@ -1065,18 +1077,20 @@ Documenti catalogati: 1273 (questo file escluso), in 63 aree.
 </details>
 
 <details>
-<summary><strong>`contracts/`</strong>: 10 documenti</summary>
+<summary><strong>`contracts/`</strong>: 12 documenti</summary>
 
 - [(operazione) — contratto comportamentale](contracts/_template.md)
 - [Contratto — build asset Civic](contracts/build-surface.md)
 - [Contratto — CieAuthAction (Civic)](contracts/cie-auth-action.md)
 - [Contratto — Civic Folio page shell](contracts/folio-page-shell.md)
-- [Behavioral and surface contracts — Civic](contracts/index.md)
-- [Civic behavioral contract index](contracts/INDEX.md)
+- [Contratto — parita' dei cataloghi lang/ di Civic (it, en, de, es, mt)](contracts/i18n-catalog-parity.md)
+- [Contratto — formati per Paese di Civic: date, numeri, indirizzi, telefoni, codici postali](contracts/i18n-country-formats.md)
+- [Contratto — terminologia dell'ente per profilo Paese (entity.php)](contracts/i18n-entity-terminology.md)
 - [Contratti del tema Civic](contracts/README.md)
 - [Contratto — SanitizeReturnUrlAction (Civic)](contracts/sanitize-return-url-action.md)
 - [Contratto — ServeThemeAssetAction (Civic)](contracts/serve-theme-asset-action.md)
 - [Contratto — SpidAuthAction (Civic)](contracts/spid-auth-action.md)
+- [Contratto — identita' del tema Civic](contracts/theme-identity.md)
 
 </details>
 
@@ -1120,7 +1134,14 @@ Documenti catalogati: 1273 (questo file escluso), in 63 aree.
 </details>
 
 <details>
-<summary><strong>`design-comuni/`</strong>: 176 documenti</summary>
+<summary><strong>`design/`</strong>: 1 documenti</summary>
+
+- [Design token e branding multi-tenant (Civic)](design/design-tokens.md)
+
+</details>
+
+<details>
+<summary><strong>`design-comuni/`</strong>: 174 documenti</summary>
 
 - [00 index](design-comuni/00-index.md)
 - [100 percent completion report](design-comuni/100-percent-completion-report.md)
@@ -1245,7 +1266,6 @@ Documenti catalogati: 1273 (questo file escluso), in 63 aree.
 - [SESSION REPORT 2026 04 07](design-comuni/session-report-completo-sessione.md)
 - [SESSION REPORT](design-comuni/session-report.md)
 - [session summary](design-comuni/session-summary.md)
-- [SESSION SUMMARY 2026 04 01](design-comuni/SESSION_SUMMARY.md)
 - [SESSIONE FINALE](design-comuni/sessione-finale.md)
 - [SKILLS RULES](design-comuni/skills-rules.md)
 - [STATO ATTUALE FAQ](design-comuni/stato-attuale-faq.md)
@@ -1266,7 +1286,6 @@ Documenti catalogati: 1273 (questo file escluso), in 63 aree.
 - [VIEW PATH FIX REPORT](design-comuni/view-path-fix-report.md)
 - [visual comparison analysis](design-comuni/visual-comparison-analysis.md)
 - [visual comparison report](design-comuni/visual-comparison-report.md)
-- [VISUAL COMPARISON REPORT](design-comuni/VISUAL-COMPARISON-REPORT.md)
 - [visual fix report](design-comuni/visual-fix-report.md)
 - [VISUAL PARITY ACTION PLAN](design-comuni/visual-parity-action-plan.md)
 - [VISUAL PARITY BATCH REPORT](design-comuni/visual-parity-batch-report.md)
@@ -1429,11 +1448,17 @@ Documenti catalogati: 1273 (questo file escluso), in 63 aree.
 </details>
 
 <details>
-<summary><strong>`i18n/`</strong>: 3 documenti</summary>
+<summary><strong>`i18n/`</strong>: 9 documenti</summary>
 
 - [Comportamento multilingua del sito](i18n/00-comportamento-multilingua.md)
 - [Glossario e scelte di traduzione it, en, de, es](i18n/01-glossario.md)
-- [i18n del tema Sixteen: indice](i18n/index.md)
+- [Contratto di parita' dei cataloghi lang/](i18n/02-catalog-parity.md)
+- [Profili Paese/ente e terminologia configurabile — contratto](i18n/country-profiles.md)
+- [Formati per Paese: date, indirizzi, telefoni, codici postali](i18n/formats.md)
+- [i18n del tema Civic: indice](i18n/index.md)
+- [Esperienza Malta per Local Councils — analisi e checklist](i18n/malta-local-councils.md)
+- [Catalogo maltese mt: stato, marcatore di revisione, abilitazione](i18n/mt-catalog.md)
+- [Copertura traduzioni it/en/de/es e mt — audit e fallback](i18n/translation-coverage.md)
 
 </details>
 
