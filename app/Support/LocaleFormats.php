@@ -6,6 +6,11 @@ namespace Themes\Civic\Support;
 
 use DateTimeInterface;
 use IntlDateFormatter;
+use Safe\DateTimeImmutable;
+
+use function Safe\preg_match;
+use function Safe\preg_replace;
+use function Safe\preg_replace_callback;
 
 /**
  * Formattazione per Paese (issue #17): date, numeri, indirizzi, telefoni e CAP.
@@ -36,6 +41,7 @@ final class LocaleFormats
      * Coppia finale: `<lingua>_<PAESE>`; se Intl non e' disponibile o non formatta,
      * ricade sul pattern numerico `dd/MM/yyyy` applicato con `DateTimeImmutable`.
      */
+    /** @param array<string, mixed> $formats */
     public static function formatDate(
         DateTimeInterface|string|null $date,
         array $formats,
@@ -71,6 +77,7 @@ final class LocaleFormats
     }
 
     /** Data lunga localizzata (stile ICU `LONG`): «26 novembre 2026», «26 ta’ Novembru 2026». */
+    /** @param array<string, mixed> $formats */
     public static function formatDateLong(
         DateTimeInterface|string|null $date,
         array $formats,
@@ -96,6 +103,7 @@ final class LocaleFormats
     }
 
     /** Numero localizzato con i separatori ICU della coppia lingua-Paese. */
+    /** @param array<string, mixed> $formats */
     public static function formatNumber(float|int|string $number, array $formats, ?string $locale = null, int $decimals = 2): string
     {
         if (! extension_loaded('intl')) {
@@ -115,6 +123,7 @@ final class LocaleFormats
      * si omettono; le parentesi vuote di un token opzionale pure.
      *
      * @param  array<string, string|null>  $parts
+     * @param  array<string, mixed>  $formats
      */
     public static function formatAddress(array $parts, array $formats): string
     {
@@ -127,7 +136,8 @@ final class LocaleFormats
             $rendered = trim((string) preg_replace_callback(
                 '/\{([a-z_]+)\}/',
                 static function (array $m) use ($parts): string {
-                    $value = $parts[$m[1]] ?? null;
+                    $key = is_string($m[1] ?? null) ? $m[1] : '';
+                    $value = $parts[$key] ?? null;
 
                     return is_string($value) ? trim($value) : '';
                 },
@@ -149,6 +159,7 @@ final class LocaleFormats
      * opzionale: senza, il numero nazionale resta unico. Input non valido
      * → testo originale potato.
      */
+    /** @param array<string, mixed> $formats */
     public static function formatPhone(string $phone, array $formats, ?string $locale = null): string
     {
         $normalized = self::normalizePhone($phone, $formats);
@@ -162,7 +173,8 @@ final class LocaleFormats
             : ltrim($normalized, '+');
 
         $groups = $formats['phone_groups'] ?? null;
-        $display = is_array($groups) && $groups !== [] ? self::groupDigits($national, $groups) : $national;
+        $sizes = is_array($groups) ? array_values(array_filter($groups, 'is_int')) : [];
+        $display = $sizes !== [] ? self::groupDigits($national, $sizes) : $national;
         $international = $countryCode !== '' ? '+'.$countryCode : '';
 
         return trim($international.($display !== '' ? ' '.$display : ''));
@@ -172,6 +184,7 @@ final class LocaleFormats
      * Normalizzazione: solo cifre e `+` iniziale; il prefisso `phone_country_code`
      * del profilo viene rimosso (serve per validare il numero nazionale).
      */
+    /** @param array<string, mixed> $formats */
     public static function normalizePhone(string $phone, array $formats): string
     {
         $digits = (string) preg_replace('/[^\d+]/', '', $phone);
@@ -191,6 +204,7 @@ final class LocaleFormats
      * `/^0\d{5,10}$/` per i fissi IT) se dichiarata; altrimenti 4-15 cifre
      * (fascetta E.164). Nessuna regola cablata per Paese.
      */
+    /** @param array<string, mixed> $formats */
     public static function isValidPhone(string $phone, array $formats): bool
     {
         $normalized = self::normalizePhone($phone, $formats);
@@ -210,6 +224,7 @@ final class LocaleFormats
     }
 
     /** Codice postale: stringa ovunque. `postcode_pattern` assente = nessun vincolo. */
+    /** @param array<string, mixed> $formats */
     public static function isValidPostcode(string $postcode, array $formats): bool
     {
         $pattern = $formats['postcode_pattern'] ?? null;
@@ -226,6 +241,7 @@ final class LocaleFormats
      * fra lettere e cifre, es. `vlt1117` → `VLT 1117`). Senza flag: il testo
      * potato, mai una regola inventata.
      */
+    /** @param array<string, mixed> $formats */
     public static function normalizePostcode(string $postcode, array $formats): string
     {
         $postcode = trim((string) preg_replace('/\s+/', ' ', $postcode));
@@ -244,15 +260,13 @@ final class LocaleFormats
             return null;
         }
         if ($date instanceof DateTimeInterface) {
-            return \DateTimeImmutable::createFromInterface($date);
+            return DateTimeImmutable::createFromInterface($date);
         }
-        $timestamp = strtotime($date);
-        if ($timestamp === false) {
+        try {
+            return new DateTimeImmutable($date);
+        } catch (\Throwable) {
             return null;
         }
-        $dateTime = \DateTimeImmutable::createFromFormat('U', (string) $timestamp);
-
-        return $dateTime === false ? null : $dateTime->setTimezone(new \DateTimeZone(date_default_timezone_get()));
     }
 
     /**
@@ -260,6 +274,7 @@ final class LocaleFormats
      * arriva da `formats.country_code`. Senza entrambi restituisce null e il
      * chiamante ricade sul pattern numerico — mai `en` da solo con un Paese noto.
      */
+    /** @param array<string, mixed> $formats */
     private static function icuLocale(?string $locale, array $formats): ?string
     {
         $country = strtoupper(self::lettersOnly($formats['country_code'] ?? null));
@@ -292,7 +307,7 @@ final class LocaleFormats
     private static function normalizePostcodeUpperSpace(string $postcode): string
     {
         $postcode = strtoupper($postcode);
-        if (preg_match('/^([A-Z]+)\s*(\d+)$/', $postcode, $m) === 1) {
+        if (preg_match('/^([A-Z]+)\s*(\d+)$/', $postcode, $m) === 1 && isset($m[1], $m[2])) {
             return $m[1].' '.$m[2];
         }
 

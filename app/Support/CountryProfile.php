@@ -21,7 +21,7 @@ final readonly class CountryProfile
 {
     /**
      * @param  list<string>  $locales
-     * @param  array{singular?: string, plural?: string}  $entity
+     * @param  array<string, mixed>  $entity
      * @param  array<string, mixed>  $formats
      */
     private function __construct(
@@ -56,6 +56,7 @@ final readonly class CountryProfile
      */
     public static function resolve(?string $requested, array $config): self
     {
+        /** @var array<string, mixed> $countries */
         $countries = is_array($config['countries'] ?? null) ? $config['countries'] : [];
         $default = is_string($config['default_country'] ?? null) ? strtoupper($config['default_country']) : 'IT';
 
@@ -66,7 +67,11 @@ final readonly class CountryProfile
         }
 
         /** @var array<string, mixed> $profile */
+        /** @var array<string, mixed> $profile */
         $profile = $countries[$code] ?? [];
+        /** @var array<string, mixed> $entity */
+        $entity = is_array($profile['entity'] ?? null) ? $profile['entity'] : [];
+        /** @var array<string, mixed> $formats */
         $formats = (is_array($profile['formats'] ?? null) ? $profile['formats'] : []) + self::defaultFormats();
         // I formati sanno in quale Paese sono: `LocaleFormats` ci mette il prefisso telefonico
         // e le regole di validazione senza dover ripassare il codice paese ad ogni chiamata.
@@ -75,7 +80,7 @@ final readonly class CountryProfile
         return new self(
             code: $code,
             locales: self::stringList($profile['locales'] ?? null),
-            entity: is_array($profile['entity'] ?? null) ? $profile['entity'] : [],
+            entity: $entity,
             formats: $formats,
             isFallback: $isFallback || $code === '',
             entityProfile: self::stringOr($profile['entity_profile'] ?? null) ?? 'generic',
@@ -112,7 +117,11 @@ final readonly class CountryProfile
         return $this->locales;
     }
 
-    /** Formati del profilo, con default neutrali per le chiavi mancanti. */
+    /**
+     * Formati del profilo, con default neutrali per le chiavi mancanti.
+     *
+     * @return array<string, mixed>
+     */
     public function formats(): array
     {
         return $this->formats + self::defaultFormats();
