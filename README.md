@@ -91,7 +91,7 @@ Non rinominare automaticamente stringhe storiche, documenti di audit o URL: dist
 
 - [Guida tecnica e stato reale della migrazione](./docs/README.md)
 - [English overview](./docs/readme-en.md)
-- [Indice storico della documentazione importata](./docs/README.md)
+- [Indice storico della documentazione importata](./docs/archive/00-index-sixteen.md)
 - [Architettura](./docs/architecture/README.md)
 - [Design system](./docs/design-system/README.md)
 - [Wiki tecnica](./docs/wiki/README.md)

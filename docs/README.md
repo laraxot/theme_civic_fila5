@@ -150,6 +150,24 @@ I documenti nuovi devono avere front matter YAML con `title`, `type`, `tags` e
 Non si rinominano in massa i file storici: si aggiungono indici e mappe di
 migrazione per non rompere riferimenti già usati dagli agenti.
 
+## README del repository: classificazione
+
+I ~41 file `README*.md` del repository sono classificati per ownership e stato
+(dati macchina: `docs/scripts/readme-classification.json`; applicati con
+`docs/scripts/docs-apply-map.py`):
+
+| Classe | File | Stato |
+|---|---|---|
+| Canonici Civic | `README.md` (radice), `docs/README.md` (questo indice), `docs/readme-en.md`, `docs/architecture/README.md`, `docs/design-system/README.md`, `docs/wiki/README.md`, `docs/adr/README.md`, `docs/contracts/README.md`, `docs/archive/README.md`, `docs/raw/README.md`, `resources/mail-layouts/README.md` | attivi, da mantenere aggiornati |
+| Storici Sixteen | 29 README sotto `docs/` (analysis, blocks, body-structure-comparison, design-comuni, html-structure-comparison, mappings, phases, product, prompts, roadmap, sources, wiki/troubleshooting) | `status: historical` con avviso e link all'ingresso attuale |
+| Contributori | `CONTRIBUTING.md`, `SECURITY.md` | attivi |
+| Generati/di comodo | `readme-homepage-replication.md`, `docs/root-md-files/changelog.md` | da trattare come evidenza, non come indice |
+
+La guida per issue, discussioni, PR, verifiche e convenzioni di commit e' in
+[`CONTRIBUTING.md`](../CONTRIBUTING.md). La configurazione Malta/Italy e' in
+corso in [`docs/i18n/`](./i18n/index.md) (indice di comportamento multilingua e
+glossario) e nei contratti `docs/contracts/i18n-*.md`.
+
 ## Indice operativo ereditato da Sixteen
 
 _Fuso dall'indice operativo di Sixteen, ora in `docs/archive/00-index-sixteen.md`. I conteggi delle cartelle sono quelli del 2026-10-14: per quelli attuali vale il catalogo in fondo._
