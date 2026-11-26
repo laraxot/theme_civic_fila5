@@ -53,7 +53,7 @@ status: draft
 - Story BMAD (parity **segnalazione-02-dati** HTML/visual): [7-3 segnalazione-02-dati html visual parity](../../../../_bmad-output/implementation-artifacts/7-3-segnalazione-02-dati-html-visual-parity.md)
 - [css-js-parity.md](./css-js-parity.md) - CSS/JS visual parity plan, build process, checklist
 - [text-paragraph-font-fix.md](./text-paragraph-font-fix.md) - Font fix: Lora → Titillium Web for .text-paragraph
-- [segnalazione-css-diff.md](./segnalazione-css-diff.md) - Segnalazione CSS diff analysis
+- [segnalazione-css-diff.md](./ticket-css-diff-pagine-segnalazione.md) - Segnalazione CSS diff analysis
 
 ### Active segnalazione-dettaglio phase
 - [prompts/segnalazione-dettaglio/index.md](./prompts/segnalazione-dettaglio/index.md) - Prompt index, phase rules, output location
