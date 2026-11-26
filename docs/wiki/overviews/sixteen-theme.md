@@ -8,7 +8,7 @@ discussions: []
 type: overview
 theme: Sixteen
 sources:
-  - ../../design-comuni-italia-integration.md
+  - ../../design-comuni-integration.md
   - ../../../docs/design-comuni-compliance.md
   - ../../bootstrap-english-implementation.md
   - ../../auth/sixteen-agid-naming-rules.md
@@ -133,10 +133,10 @@ x-sixteen::agid.card-news     → scheda notizia
 
 ## Raw Sources Prioritari
 
-- `docs/design-comuni-italia-integration.md` — analisi completa Design Comuni Italia
+- `docs/design-comuni-integration.md` — analisi completa Design Comuni Italia
 - `docs/design-comuni-compliance.md` — stato implementazione, gap analysis
 - `docs/bootstrap-english-implementation.md` — integrazione Bootstrap Italia
 - `docs/auth/sixteen-agid-naming-rules.md` — naming convention AGID
-- `docs/accessibility-implementation-guide.md` — accessibilità WCAG
+- `docs/accessibility.md` — accessibilità WCAG
 - `docs/agid-layout-usage-rules.md` — regole layout AGID
 - `docs/complete-theme-analysis.md` — analisi completa componenti

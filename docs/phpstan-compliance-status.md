@@ -39,7 +39,7 @@ The Sixteen theme provides:
 
 The theme includes extensive documentation:
 - `README.md`: Theme overview and setup
-- `accessibility-implementation-guide.md`: Accessibility guide
+- `accessibility.md`: Accessibility guide
 - `AGID_*`: Multiple AGID-specific documentation files
 - `bootstrap-italia-*`: Bootstrap Italia integration guides
 - `components/`: Component-specific documentation
@@ -78,6 +78,6 @@ To maintain theme quality:
 
 ## Related Documentation
 - [AGID Components](agid/)
-- [Accessibility Guide](accessibility-implementation-guide.md)
+- [Accessibility Guide](accessibility.md)
 - [Bootstrap Italia Integration](bootstrap-english-implementation.md)
 - [Translation System](translations.md)
