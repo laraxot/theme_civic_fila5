@@ -1,69 +1,104 @@
 ---
-title: "README"
-type: note
-tags: [documentation]
+title: "Civic — tema pubblico Laraxot"
+type: readme
+tags: [documentation, civic, laraxot, fixcity]
 created: 2026-09-26
-updated: 2026-09-26
-qmd: "README"
+updated: 2026-11-26
+qmd: "Civic theme Laraxot frontoffice Italy Malta migration Sixteen"
 issues: []
 discussions: []
+status: active
 ---
 
-# 🇮🇹 Sixteen
+# Civic
 
-[![Design-Comuni](https://img.shields.io/badge/Parity-Design%20Comuni-008758.svg)](https://italia.github.io/design-comuni-pagine-statiche/)
-[![AGID](https://img.shields.io/badge/AGID-Compliant-blue.svg)](https://designers.italia.it/)
-[![Stack](https://img.shields.io/badge/FO-Tailwind%2BAlpine%2BLit-38B2AC.svg)](#)
-[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
-[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
-[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
-[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
-[![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
-[![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
-[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)](#)
+**Tema frontoffice riutilizzabile per servizi civici, enti locali e piattaforme di partecipazione.**
 
-> **La faccia civica di FixCity.** Design Comuni in Tailwind + Alpine + Lit — 190+ componenti, `/it` che convince.
+[![Repository](https://img.shields.io/badge/repository-theme__civic__fila5-2563eb)](https://github.com/laraxot/theme_civic_fila5)
+[![Filament](https://img.shields.io/badge/Filament-5-f59e0b)](https://filamentphp.com/)
+[![Documentation](https://img.shields.io/badge/docs-Italiano%20%7C%20English-64748b)](./docs/README.md)
 
----
+> **Civic è il nome del tema; FixCity è un prodotto che può utilizzarlo.** Il tema è pensato per essere riutilizzato da più enti e in più Paesi, a partire da Italia e Malta.
 
-## Perché esiste
+> [!IMPORTANT]
+> **Migrazione tecnica non ancora completata.** Il repository Civic nasce dal codice del precedente tema **Sixteen**. Al 26 novembre 2026, `composer.json`, `package.json`, `theme.json` e `vite.config.js` contengono ancora riferimenti a `Sixteen`. Il nome del repository **non** equivale a un tema `Themes\Civic` già installabile o attivo. Prima di attivarlo occorre completare e verificare la migrazione; vedi [stato tecnico](./docs/README.md).
 
-Tema frontoffice attivo: parity PA, mappa, wizard, homepage.
+## Obiettivi
 
-## Superpoteri
+- **Un unico tema, più enti:** riutilizzo tra installazioni e tenant, con configurazioni e contenuti specifici dell'ente.
+- **Italia e Malta:** supporto alla terminologia e ai percorsi di ciascun contesto amministrativo senza duplicare il frontend.
+- **Accessibilità:** componenti, navigazione da tastiera, contrasto e feedback verificabili. La conformità va dimostrata con audit, non dedotta dall'uso di un design system.
+- **Separazione delle responsabilità:** il tema gestisce presentazione e composizione; le regole di dominio rimangono nei moduli Laraxot proprietari.
+- **Evoluzione controllata:** preservare il funzionamento del tema esistente durante l'adozione di Civic.
 
-- Tailwind v4 + DaisyUI + Flowbite + Filament v5 FO
-- Vite build → `public_html/themes/Sixteen`
-- `map-lit` bundle con modulo Geo
-- Wiki ricostruzione e regole stack
+## Tecnologie presenti nel codice importato
 
-## Certificazioni
+| Ambito | Tecnologie o convenzioni |
+| --- | --- |
+| Backend | PHP 8.4, Laravel 13 nel progetto FixCity ospitante, Filament 5 |
+| Frontend | Blade, Folio/Volt nell'applicazione, Tailwind CSS 4, Alpine.js, Lit, DaisyUI, Flowbite |
+| Asset | Vite 8; compilazione nella directory `public/` del tema |
+| Geografia | Integrazione con il modulo Geo e componenti mappa |
+| Documentazione | Guide e contratti tecnici in `docs/` |
 
-| Certificazione | Stato |
-|----------------|-------|
-| PHPStan livello 10 | Target progetto |
-| `declare(strict_types=1)` | Su nuovo codice PHP |
-| Filament 5 + XotBase | Admin enterprise |
-| Test PHPUnit / Pest | Suite modulo |
-| Documentazione wiki | Cartella `docs/` |
+Le versioni dell'applicazione ospitante non sono garantite dal solo repository del tema. Per le dipendenze effettive consultare [`composer.json`](./composer.json) e [`package.json`](./package.json).
 
-## Vuoi entrare nel team?
+## Internazionalizzazione
 
-Frontend **PA d’eccellenza** — qui si vede tutto.
+| Paese | Lingue previste | Stato nel repository |
+| --- | --- | --- |
+| Italia | Italiano (`it`), eventualmente inglese (`en`) | Directory di traduzione esistenti |
+| Malta | Inglese (`en`), maltese (`mt`) | Inglese presente; **maltese da implementare** |
+| Altri mercati | Configurabili | Il codice importato include anche `de` ed `es`; copertura da verificare |
 
-Stack frontoffice: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — vedi [STORY-133](../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
+La terminologia (*Comune*, *Local Council*, servizi, uffici e ruoli) deve essere gestita tramite traduzioni e configurazione dell'ente, non inserita direttamente nei componenti condivisi. La localizzazione deve includere testi, validazione, formati e accessibilità; la presenza di una directory linguistica non prova la copertura completa.
 
----
+## Architettura e responsabilità
+
+- **Tema Civic (obiettivo):** layout pubblici, componenti UI, token, asset e integrazione delle viste dei moduli.
+- **Moduli Laraxot:** dati, autorizzazioni, processi, notifiche e Action di dominio.
+- **Applicazione ospitante:** configurazione del tema attivo, routing, CMS/tenant, servizi e deployment.
+
+Il codice ereditato da Sixteen impiega un frontend basato su Blade/Folio, blocchi CMS e componenti condivisi. Non introdurre nuove rotte o logiche di business nel tema senza valutare prima i contratti esistenti e i moduli owner.
+
+## Sviluppo e verifiche
+
+**Per il codice attuale, ancora identificato come Sixteen**, all'interno di una checkout Laraxot che includa i moduli richiesti:
+
+```bash
+# Dalla directory del tema
+npm install
+npm run build
+npm test
+npm run lint
+# Sviluppo con hot reload: npm run dev
+```
+
+Gli script sono definiti in `package.json`; nella copia verificata non è presente `package-lock.json`, quindi `npm ci` non è ancora utilizzabile. La build usa riferimenti relativi alla struttura dell'applicazione (`Modules/`, `public_html/`) e può non funzionare in una checkout isolata. L'esistenza degli script **non** implica che test, lint o build siano già passati per Civic.
+
+## Adozione di Civic: passaggi ancora necessari
+
+1. Aggiornare metadati e autoload Composer (`laraxot/theme_civic_fila5`, `Themes\Civic`, service provider).
+2. Migrare `theme.json`, nome del package npm, path e `base` Vite da `Sixteen` a `Civic`.
+3. Verificare i riferimenti PHP, Blade, Folio/Volt, CMS, configurazioni `pub_theme`, asset, traduzioni e submodule nell'applicazione ospitante.
+4. Introdurre il catalogo `mt` e verificare le differenze tra Italia e Malta a livello di contenuti, enti e servizi.
+5. Eseguire build, test, controlli di accessibilità e smoke test reali prima di dichiarare Civic pronto alla produzione.
+
+Non rinominare automaticamente stringhe storiche, documenti di audit o URL: distinguere sempre i riferimenti al vecchio tema da quelli ancora usati a runtime.
 
 ## Documentazione
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+- [Guida tecnica e stato reale della migrazione](./docs/README.md)
+- [English overview](./docs/readme-en.md)
+- [Indice storico della documentazione importata](./docs/00-INDEX.md)
+- [Architettura](./docs/architecture/README.md)
+- [Design system](./docs/design-system/README.md)
+- [Wiki tecnica](./docs/wiki/README.md)
 
----
+## Riferimenti
 
-**Tema** `sixteen` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+- [Designers Italia — Modello Comuni](https://designers.italia.it/modelli/comuni/) — riferimento per il contesto italiano, **non** una certificazione del tema.
+- [Repository del tema originale Sixteen](https://github.com/laraxot/theme_sixteen_fila5) — origine del codice da migrare.
+- [Repository Civic](https://github.com/laraxot/theme_civic_fila5) — sviluppo sul branch `dev`, senza creare branch paralleli salvo indicazioni esplicite.
+
+**Licenza:** MIT (come dichiarato in `composer.json`; verificare il file di licenza nella distribuzione).

@@ -1,163 +1,76 @@
 ---
-title: "README"
-type: note
-tags: [documentation]
+title: "Civic — indice architettura"
+type: readme
+tags: [documentation, civic, architecture, legacy-sixteen]
 created: 2026-09-26
-updated: 2026-09-26
-qmd: "README"
+updated: 2026-11-26
+qmd: "Civic architectural index inherited Sixteen Folio Volt CMS layouts modular ownership"
 issues: []
 discussions: []
-status: draft
+status: active
 ---
 
-# Architecture Documentation Index
+# Architettura Civic
 
-**Theme**: Sixteen  
-**Last Updated**: 2026-04-01  
-**Status**: ✅ Active
+Questa directory documenta i contratti architetturali importati dal tema
+**Sixteen**, punto di partenza del nuovo tema **Civic**. Il codice non è ancora
+stato migrato completamente: vedere lo [stato tecnico Civic](../README.md)
+prima di assumere che namespace e percorsi funzionino sotto `Themes\Civic`.
 
----
+## Documentazione disponibile
 
-## 📚 Core Architecture Documents
+### Pagine, CMS e rendering
 
-### Layout & Routing
-| Document | Description | Cross-References |
-|----------|-------------|------------------|
-| [x-page-data-bag-only.md](../wiki/concepts/x-page-data-bag-only.md) | **Religione:** `<x-page>` solo `side`/`slug`/`data` | → [ADR cms-x-page-opaque-data-bag](../../../../docs/wiki/decisions/cms-x-page-opaque-data-bag.md) |
-| [folio-page-pattern.md](../folio-page-pattern.md) | Folio shell + CMS blocks | → x-page-data-bag-only |
-| [PAGE_ROUTING_ARCHITECTURE.md](./PAGE_ROUTING_ARCHITECTURE.md) | Folio + Volt routing with [slug].blade.php | → [ARCHITECTURAL_DECISIONS.md](../design-comuni/ARCHITECTURAL_DECISIONS.md), → [LAYOUT_ARCHITECTURE_MAP.md](./LAYOUT_ARCHITECTURE_MAP.md) |
-| [LAYOUT_ARCHITECTURE_MAP.md](./LAYOUT_ARCHITECTURE_MAP.md) | Layout hierarchy and components | → [PAGE_ROUTING_ARCHITECTURE.md](./PAGE_ROUTING_ARCHITECTURE.md), → [component-namespace.md](./component-namespace.md) |
-| [component-namespace.md](./component-namespace.md) | pub_theme:: namespace convention | → [LAYOUT_ARCHITECTURE_MAP.md](./LAYOUT_ARCHITECTURE_MAP.md) |
+| Documento | Tema |
+| --- | --- |
+| [page-routing-architecture.md](./page-routing-architecture.md) | Risoluzione delle pagine e routing Folio |
+| [page-component-architecture.md](./page-component-architecture.md) | Composizione delle pagine in componenti |
+| [cms-driven-blocks.md](./cms-driven-blocks.md) | Dati e blocchi CMS |
+| [component-namespace.md](./component-namespace.md) | Registrazione e nomi dei componenti |
+| [layout-architecture.md](./layout-architecture.md) | Layout pubblici e gerarchia |
+| [layout-body-page-contract.md](./layout-body-page-contract.md) | Contratto tra layout, body e singola pagina |
+| [privacy-policy-folio-route.md](./privacy-policy-folio-route.md) | Pagina privacy e routing |
 
-### Design Comuni & token PA
-| Document | Description | Cross-References |
-|----------|-------------|------------------|
-| [fo-pa-tokens-uniformity.md](./fo-pa-tokens-uniformity.md) | **Religione:** no hex per `body[data-page]`; token + `.fo-filament-form-shell` | → [filament-pa-design-colors.md](../../../Modules/Xot/docs/wiki/concepts/filament-pa-design-colors.md), → [auth-login-ux-design-wcag.md](../wiki/design/auth-login-ux-design-wcag.md) |
-| [css-filename-english-naming.md](./css-filename-english-naming.md) | **Religione:** path CSS solo inglese (`civic-design-*`, `ticket-parity.css`) | → [css-filenames-english-no-italian.md](../../../../docs/wiki/decisions/css-filenames-english-no-italian.md) |
-| [ARCHITECTURAL_DECISIONS.md](../design-comuni/ARCHITECTURAL_DECISIONS.md) | Philosophy, Zen, 10 key decisions | → [PAGE_ROUTING_ARCHITECTURE.md](./PAGE_ROUTING_ARCHITECTURE.md), → [MASTER_IMPLEMENTATION_PLAN.md](../design-comuni/MASTER_IMPLEMENTATION_PLAN.md) |
-| [MASTER_IMPLEMENTATION_PLAN.md](../design-comuni/MASTER_IMPLEMENTATION_PLAN.md) | 38 pages implementation plan | → [ARCHITECTURAL_DECISIONS.md](../design-comuni/ARCHITECTURAL_DECISIONS.md), → [HTML_PARITY_VERIFICATION_REPORT.md](../design-comuni/HTML_PARITY_VERIFICATION_REPORT.md) |
-| [HTML_PARITY_VERIFICATION_REPORT.md](../design-comuni/HTML_PARITY_VERIFICATION_REPORT.md) | HTML parity verification tool & reports | → [MASTER_IMPLEMENTATION_PLAN.md](../design-comuni/MASTER_IMPLEMENTATION_PLAN.md) |
-| [PARITY_SESSION_SUMMARY.md](../design-comuni/PARITY_SESSION_SUMMARY.md) | Session summary with html_parity_check.py tool | → [HTML_PARITY_VERIFICATION_REPORT.md](../design-comuni/HTML_PARITY_VERIFICATION_REPORT.md) |
+### CSS, componenti e interazioni
 
----
+| Documento | Tema |
+| --- | --- |
+| [fo-pa-tokens-uniformity.md](./fo-pa-tokens-uniformity.md) | Token visivi per il frontoffice italiano |
+| [css-filename-english-naming.md](./css-filename-english-naming.md) | Denominazione tecnica delle risorse |
+| [css-scoping-rule.md](./css-scoping-rule.md) | Isolamento degli stili |
+| [tailwind-alpine-philosophy.md](./tailwind-alpine-philosophy.md) | Convenzioni Tailwind / Alpine |
+| [stepper-responsive-rule.md](./stepper-responsive-rule.md) | Comportamento responsive dello stepper |
+| [wizard-parity.md](./wizard-parity.md) | Confronti con i pattern italiani di riferimento |
+| [wizard-philosophy-analysis.md](./wizard-philosophy-analysis.md) | Scelte UX del wizard |
+| [wizard-step-visibility.md](./wizard-step-visibility.md) | Visibilità e stato dei passi |
 
-## 🎯 Key Principles
+## Regole di progettazione
 
-### 1. DRY (Don't Repeat Yourself)
-- ✅ ONE `[slug].blade.php` for ALL pages
-- ✅ 47 reusable blocks for 38 pages
-- ✅ JSON content, NOT hardcoded HTML
+1. **Tema ≠ modulo di dominio.** Civic compone le interfacce; Action, modelli,
+   autorizzazioni, validazione e notifiche restano nei moduli proprietari.
+2. **Una shell pubblica per le pagine dinamiche.** Prima di creare una nuova
+   route o Blade specifica, verificare Folio, layout e convenzioni CMS già
+   presenti nell'applicazione ospitante.
+3. **Asset con manifest verificato.** Il `vite.config.js` importato usa ancora
+   `/themes/Sixteen/`; il suo output va in `public/`. L'attuale `package.json`
+   **non contiene** uno script `npm run copy`: non seguire vecchie istruzioni
+   che lo prescrivono.
+4. **Internationalizzazione.** I nomi tecnici rimangono in inglese. Terminologia
+   istituzionale, servizi, uffici e UI devono essere configurabili per Italia
+   e Malta; `mt` è ancora da implementare.
+5. **Evidenze, non slogan.** La compatibilità con normative o requisiti di
+   accessibilità va testata nelle installazioni target. I report storici di
+   Sixteen non certificano automaticamente Civic.
 
-### 2. KISS (Keep It Simple, Stupid)
-- ✅ Dynamic slug routing
-- ✅ Simple mount($slug) → load JSON → render
-- ✅ Minimal blade files
+## Riferimenti interni
 
-### 3. Forward-Only Git
-- ✅ Study old versions for understanding
-- ✅ NEVER restore/revert old commits
-- ✅ Always move forward with improvements
+- [README principale](../../README.md)
+- [Documentazione tecnica Civic](../README.md)
+- [Design system del tema](../design-system/README.md)
+- [Convenzioni di test](../testing-convention.md)
+- [Pattern Folio](../folio-page-pattern.md)
+- [Contratti italiani di riferimento](../design-comuni/README.md)
 
-### 4. Frontend Dependency Resolution In Monorepo
-- ✅ `Sixteen` is the Vite root for the public frontend bundle
-- ✅ If the theme imports JS files from another module, bare imports inside those files must still resolve through the theme toolchain
-- ✅ For external packages like `lit` and `leaflet`, prefer explicit `resolve.alias` entries in `vite.config.js` when the importer is outside `laravel/Themes/Sixteen/`
-- ❌ Do not assume sibling modules can see `laravel/Themes/Sixteen/node_modules` automatically
-
-### 5. English-Only File Naming
-- ✅ **Tutti i file** (CSS, Blade, JS, PHP, JSON) in inglese
-- ✅ `ticket-parity.css` ✅, `segnalazione-parity.css` ❌
-- ✅ Model `Ticket` → file `ticket-*.css` → cartella `ticket/`
-- ❌ Italian terms: `segnalazione`, `argomenti`, `servizi`, `comuni`, `amministrazione`
-- Rule: [no-italian-component-names.md](../wiki/rules/no-italian-component-names.md)
-- Memory: `docs/wiki/memories/english-only-file-naming.md`
-
-### Lit Rule
-- Lit official docs recommend installing the `lit` npm package and importing it directly from JavaScript modules
-- In this repository that installation boundary is the theme bundle actually running Vite
-- When a Geo-owned Lit component is imported by the Sixteen bundle, the theme must expose `lit` to Rollup/Vite even though the source file lives under `Modules/Geo`
-
-### Build And Publish Rule
-- `npm run build` generates the new theme manifest and hashed assets under `laravel/Themes/Sixteen/public/`
-- `npm run copy` must force-overwrite `public_html/themes/Sixteen/manifest.json` and the compiled assets, otherwise Laravel may keep serving an old JS entry even after a successful build
-- If the browser is still loading an older hashed bundle, inspect both manifests:
-  - `laravel/Themes/Sixteen/public/manifest.json`
-  - `public_html/themes/Sixteen/manifest.json`
-
-
-
-### Runtime Manifest Verification
-
-Before blaming PHP, Composer, Debugbar, Livewire, or Alpine, verify the exact bundle loaded by the page:
-
-```bash
-curl -s http://127.0.0.1:8000/it/segnalazione-crea -o /tmp/seg-current.html
-rg -n "assets/app-[A-Za-z0-9_-]+\.js" /tmp/seg-current.html
-cd laravel && php artisan tinker --execute="dump(['public_path' => public_path(), 'vite_app' => json_decode(file_get_contents(public_path('themes/Sixteen/manifest.json')), true)['resources/js/app.js']['file'] ?? null]);"
-```
-
-In this repository `public_path()` resolves to `public_html`, not `laravel/public`. Treat `laravel/public/themes/Sixteen/manifest.json` as non-authoritative unless the runtime `public_path()` says otherwise.
-
-### Filament + Lit Rule
-- If a Geo Filament field selects a Lit renderer, the field still remains Filament-governed on the PHP side
-- The theme only bundles and publishes the Web Component assets
-- The field chooses the renderer; the theme does not choose field behavior
-
----
-
-## 📁 Allowed Directory Structure
-
-```
-laravel/Themes/Sixteen/resources/views/pages/
-├── [container0]/       ✅ CMS dynamic pages
-├── [slug].blade.php    ✅ Dynamic route
-├── auth/              ✅ Authentication
-├── tests/             ✅ Design Comuni
-└── index.blade.php    ✅ Homepage
-```
-
-### ❌ DELETED (Not Allowed)
-```
-❌ administration/  ❌ news/  ❌ services/  ❌ home.blade.php
-❌ ambiente/        ❌ pages/ ❌ sport/     ❌ homepage.blade.php
-❌ article/         ❌ profile/ ❌ tickets/  ❌ prova01.blade.php
-❌ articles/        ❌ salute/ ❌ turismo/   ❌ segnalazioni.blade.php
-❌ categories/      ❌ segnalazioni/ ❌ show.blade.php
-❌ cultura/         ❌ dashboard/    ❌ counter.blade.php
-❌ eventi/          ❌ famiglia/    ❌ bootstrap-italia-showcase.blade.php
-❌ genesis/         ❌ lavoro/
-❌ learn/           ❌ mobilita/
-```
-
----
-
-## 🔗 External References
-
-- **QWEN.md**: Project-wide rules and memories
-- **MODULE_DOCS_INDEX.md**: Master documentation index
-- **BMad Documents**: `_bmad-output/design-comuni-*.md`
-
----
-
-## 📊 Metrics
-
-| Metric | Count |
-|--------|-------|
-| Architecture Docs | 10+ |
-| Design Comuni Docs | 15+ |
-| Cross-References | 30+ |
-| Bidirectional Links | ✅ All docs |
-
----
-
-**Maintained By**: Architecture Team  
-**Last Review**: 2026-04-01  
-**Next Review**: After each major architecture change
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](../readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](..) |
-
----
-**Modulo** `Sixteen` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+I link a file esterni alla directory del tema sono volutamente esclusi da
+questo indice: la loro validità dipende dalla struttura dell'applicazione
+Laraxot ospitante.

@@ -1,129 +1,109 @@
 ---
-title: "Sixteen: ingresso alla documentazione"
+title: "Civic — stato tecnico e guida alla documentazione"
 type: readme
-tags: [documentation, sixteen]
+tags: [documentation, civic, migration, architecture]
 created: 2026-09-26
-updated: 2026-10-27
-qmd: "sixteen theme readme stato pub_theme vivo contenuti conteggi build npm limiti rotte dormienti layout design-comuni"
+updated: 2026-11-26
+qmd: "Civic theme Italy Malta Sixteen migration current state architecture build localization"
 issues: []
 discussions: []
 status: active
 ---
 
-# Sixteen
+# Civic — guida tecnica
 
-**Scopo:** Sixteen e' il vestito Design Comuni del FO Fixcity: compone Folio/Volt e monta widget dei moduli owner (User, Cms, Comment, …) senza possedere Resource Filament ne' Actions di dominio. Hub BMAD: [bmad/decision-log.md](decision-log.md), [bmad/filament-blueprint.md](./bmad/filament-blueprint.md).
+Questa è la **porta d'ingresso tecnica** di `laraxot/theme_civic_fila5`. Il [README principale](../README.md) presenta obiettivi e funzionalità; la [presentazione inglese](./readme-en.md) descrive l'ambito internazionale. L'[indice ereditato](./00-INDEX.md) raccoglie la documentazione storica di Sixteen: i suoi percorsi e le sue verifiche non devono essere considerati automaticamente aggiornati per Civic.
 
-## Operational guides
+## Stato del repository al 26 novembre 2026
 
-- [Verified recovery, accessibility corrections and evidence](./bmad/verification-recovery.md)
-- [Lista categorie: contratto di rendering](./bmad/lista-categorie-rendering-contract.md)
+| Area | Situazione osservata | Azione necessaria |
+| --- | --- | --- |
+| Repository | `laraxot/theme_civic_fila5`, branch `dev` | Mantenere il lavoro su `dev` |
+| Composer | Nome `laraxot/theme_sixteen_fila5`, autoload `Themes\Sixteen`, provider `Themes\Sixteen\Providers\ThemeServiceProvider` | Migrare metadati, namespace e provider, controllando i riferimenti PHP |
+| Manifest tema | `theme.json` dichiara `name: Sixteen`, alias e URL legacy | Definire e verificare gli identificatori Civic |
+| Frontend | `package.json` dichiara `name: sixteen` | Rinominare il package e aggiornare i contratti dipendenti |
+| Asset | `vite.config.js` usa `base: /themes/Sixteen/` e `outDir: ./public` | Coordinare nuovi URL, webroot e manifest con l'host |
+| Localizzazione | Directory `lang/it`, `lang/en`, `lang/de`, `lang/es` | Verificare copertura; aggiungere `lang/mt` per Malta |
+| Suite di test | Script npm presenti, cartella `tests/` presente | Eseguire la suite in ambiente completo e registrare gli esiti |
+| Design e accessibilità | Materiali Design Comuni e documenti di audit storici | Validare per Civic; non dichiarare automaticamente conformità |
 
-- [Documentation index](./index.md)
-- [Documentation naming and frontmatter rules](../../../../bashscripts/ai/wiki/rules/markdown-file-naming-and-frontmatter.md)
-- [Dependency refresh and verification](./bmad/dependency-refresh-and-verification.md)
-- [Typography remediation](./bmad/typography-comunidesign-remediation-bmad.md)
-- [FAQ route ownership](./bmad/faq-route-ownership.md)
-- [FAQ CSS remediation plan](./bmad/plans/css-data-page-elimination-plan.md)
-- [Login UX and reusable CSS contract](./auth/login-ux-fixes.md)
-- [Testing boundary](./testing-convention.md)
+Questo è un **audit statico del repository**, non una prova di installazione, test passati o attivazione del tema. La documentazione preesistente si riferisce spesso al runtime di Sixteen nel vecchio progetto e può indicare conteggi, route o configurazioni datati.
 
-### Regola prima di modificare una pagina pubblica
+## Architettura di riferimento
 
-La risoluzione canonica è `URL → Folio shell → slug CMS → JSON tenant → block
-view → action del modulo`. Non aggiungere una Blade in `pages/<slug>/` per
-correggere una pagina già coperta dallo shell dinamico: per FAQ ciò significa
-che `resources/views/pages/domande-frequenti/index.blade.php` deve restare
-assente. Il test di contratto lo verifica; il dettaglio è in
-[faq-route-ownership.md](./bmad/faq-route-ownership.md).
+### 1. Rendering pubblico
 
-Tema pubblico (front office) di Fixcity: resa Design Comuni su Laravel 13, PHP 8.4, Filament 5. Biglietto da visita: [IT](../README.md), [EN](./readme-en.md). L'indice operativo e' [00-INDEX.md](00-INDEX.md).
+- Blade, Folio/Volt e componenti riutilizzabili compongono le pagine.
+- Il layout ereditato è in [`resources/views/components/layouts/app.blade.php`](../resources/views/components/layouts/app.blade.php).
+- Le view del CMS consumano contenuti e contratti dei moduli; non devono duplicare la logica applicativa.
+- L'applicazione ospitante sceglie il tema pubblico e gestisce routing, tenant, CMS e deployment.
 
-`README.md` è l'ingresso canonico del tema. `00-INDEX.md` è l'indice operativo
-(documenti e cartelle): orienta verso i documenti, ma non duplica i contratti.
-`index.md` è un router storico; `INDEX.md` non esiste più (rimosso da git).
+### 2. Confine con i moduli Laraxot
 
-## Stato verificato (2026-10-14)
+- **Nel tema:** layout, viste, UI, stato presentazionale, formattazione, asset e componenti grafici.
+- **Nei moduli owner:** modelli, validazione di dominio, persistenza, autorizzazioni, notifiche e Queueable Actions.
+- Gli eventuali controller e le rotte presenti nel codice importato devono essere inventariati prima di modifiche: non assumere che siano registrati a runtime.
 
-| Domanda | Risposta | Prova |
-|---|---|---|
-| E' il tema in uso? | si, vivo | `'pub_theme' => 'Sixteen'` in tutti e 4 i `laravel/config/**/xra.php`; `public_html/themes/Sixteen` e' un link a `laravel/Themes/Sixteen/public/` |
-| Dove vive il codice? | repo git separato (submodule) | `gitmodules.ini`, remote `git@github.com:laraxot/theme_sixteen_fila5.git`; Composer `laraxot/theme_sixteen_fila5`, namespace `Themes\Sixteen\` (app/), provider `Providers\ThemeServiceProvider` che estende `XotBaseThemeServiceProvider` |
-| Altri temi | `TwentyOne` (importato da Predict, non usato), `Barthelemy` e `Meetup` (gusci senza codice); al 2026-10-28 `laravel/Themes/` contiene solo Meetup, Sixteen, TwentyOne, Two, Zero: `Barthelemy` non è presente | [Meetup/docs](../../Meetup/docs/00-index.md) |
+### 3. Italia / Malta
 
-## Cosa contiene (conteggi del 2026-10-14)
+Un unico tema Civic deve supportare terminologie e percorsi localizzati:
 
-- `resources/views/`: 957 file Blade. `layouts/` (11), `components/` (795, di cui `components/blocks/` con 166 voci e 508 Blade, piu' `header/`, `footer/`, `wizard/`, `layouts/`), `pages/` (Folio: `[container0]/`, `tests/[slug]`), `sections/` (footer), `partials/` (accessibility-bar, cookie-bar).
-- `resources/css/` (95 file) e `resources/js/` (21 file); punti d'ingresso Vite: `app.css`, `app-test.css`, `app.js` e i Lit di Geo (`map-lit.js`).
-- `app/` (79 file PHP): Actions (menu, SPID, CIE, blocchi, asset, URL), Enums (24), Models (13, di cui 9 in `Municipal/`), Http (5 controller, 2 middleware, 1 componente Livewire), Providers, Support, View.
-- `lang/` it (43 file), en (43), de (16), es (15).
-- `tests/`: 15 test Unit, 6 Feature, 10 spec Playwright in `tests/browser/`.
-- `scripts/`: smoke e verifiche di parity (`map-*-smoke.cjs`, `auth-register-smoke.cjs`, `visual-parity.mjs`).
+| Aspetto | Italia | Malta |
+| --- | --- | --- |
+| Ente locale | Comune | Local Council |
+| Lingue principali del prodotto | `it`, `en` | `en`, `mt` (**mancante oggi**) |
+| Riferimenti UI | Designers Italia / Modello Comuni, dove pertinente | Requisiti e terminologia maltesi da analizzare |
+| Configurazioni | Branding, servizi, uffici, privacy dell'ente | Branding, servizi, uffici, privacy dell'ente |
 
-## Come si costruisce (da `package.json`)
+Non imporre il modello del Comune italiano ai Local Councils maltesi. Evitare testi fissi nelle Blade: preferire chiavi di lingua e configurazioni dell'ente. L'eventuale conformità a standard nazionali o di accessibilità richiede verifica per ciascun contesto.
 
-- `npm run build`: `npm run prepare:static-assets` (`resources/scripts/prepare-static-assets.mjs`) e poi `vite build` (uscita in `public/`, collegata a `public_html/themes/Sixteen`). Il package non espone uno script `copy`: il webroot è già collegato alla cartella `public/` del tema.
-- `npm run dev`: server Vite. `npm test`: Jest. `npm run lint` e `npm run format`.
-- Smoke del browser: `test:map-picker-smoke`, `test:map-lit-smoke`, `test:map-lit-stress`, `test:auth-register-smoke`.
-- Riferimento esteso: le 14 guide Vite in [build/](build/) (nessun indice proprio; partire da [vite-configuration-guide.md](build/vite-configuration-guide.md)).
+## Build e qualità
 
-## Limiti noti (verificati)
+Gli script dichiarati in [`package.json`](../package.json) sono:
 
-- Il tema contiene controller e rotte (`app/Http/Controllers/`, `routes/web.php`, `routes/auth.php`) che a runtime non risultano registrati: `php artisan route:list` (461 rotte, senza route cache) non ha ne' `comune/*` ne' `auth/spid` ne' `auth/cie`. Sono codice dormiente, non la via con cui il tema serve le pagine.
-- Restano viste legacy non usate dal CSS principale: `resources/views/bootstrap-italia/` (16 Blade), `layouts/bootstrap-italia*.blade.php` (4), `pages_old/` (45); gli `@import` di Bootstrap Italia in `app.css` sono commentati.
-- Il layout pubblico canonico è `components/layouts/app.blade.php`: Sixteen è già Design Comuni. `design-comuni-authenticated.blade.php` e `design-comuni-bare.blade.php` restano solo template specializzati per le pagine di test che li dichiarano esplicitamente.
+```bash
+npm install
+npm run build
+npm test
+npm run lint
+# In sviluppo, separatamente: npm run dev
+```
 
-## Ownership e stack canonico
+`npm run build` richiama preparazione degli asset statici, Vite e rimozione di asset obsoleti. `npm test` invoca Jest; il lint usa ESLint. Alcuni smoke test browser sono previsti dagli script `test:map-picker-smoke`, `test:map-lit-smoke`, `test:map-lit-stress` e `test:auth-register-smoke`.
 
-Sixteen è già il tema Design Comuni: non si crea un secondo tema, layout o
-namespace `design-comuni`. Il rendering usa TailwindCSS (`@apply`), Alpine.js,
-Lit, DaisyUI e Flowbite; Bootstrap Italia non è una dipendenza runtime.
+**Prerequisito importante:** questo checkout non include `package-lock.json`; una prima `npm install` crea o aggiorna il lockfile. Poiché Vite riferisce percorsi relativi a `Modules/` e `public_html/`, verificare asset e build nell'applicazione Laraxot ospitante, non soltanto nella copia isolata. Non eseguire modifiche distruttive a database o dati reali per un controllo del tema.
 
-Sixteen non possiede `app/Jobs/`, `app/Services/` o `app/Servces/`: i flussi
-asincroni restano nelle Queueable Actions del modulo owner. Il tema si limita a
-comporre viste e a invocare il contratto dell'Action.
+## Piano di migrazione, senza nuovi branch
 
-I data object appartengono invece al modulo owner: quando il tema consuma un
-contratto dati, importa il namespace canonico `Modules\\<Module>\\Datas` e non
-crea copie in `Themes/Sixteen/app/Data(s)`. La cartella `Datas` distingue il
-catalogo di oggetti di trasferimento dal codice visuale del tema e impedisce
-che una view diventi proprietaria della logica di dominio.
+1. **Identità del package:** allineare Composer, PSR-4, provider, manifest, package npm e namespace `Themes\Civic`.
+2. **Asset e rendering:** aggiornare base Vite, manifest, collegamento `public_html/themes/Civic`, view namespace e riferimenti `pub_theme` nell'host, mantenendo disponibile Sixteen durante il passaggio.
+3. **Componenti e moduli:** verificare import PHP, Blade, Lit/Geo, JSON CMS e riferimenti assoluti al tema originale; non sostituire stringhe storiche senza analisi.
+4. **Localizzazione Malta:** aggiungere `mt`, verificare fallback verso `en`, termini istituzionali, messaggi di validazione e pagine principali.
+5. **Qualità:** build, Jest, smoke test, screenshot reali responsive, verifiche WCAG, regressioni su pagine pubbliche e flussi autenticati.
+6. **Adozione:** modificare la configurazione dell'host solo dopo verifica e pianificazione del rollback. Conservare i dati degli enti e delle segnalazioni.
 
-- contenuti: JSON CMS, con view block riusabili;
-- shell pubblica: `x-layouts.app` e, quando dichiarato dal contratto pagina,
-  `x-layouts.test`;
-- routing pubblico: Folio e `PageSlugMiddleware`;
-- accessibilità: WCAG 2.1 AA come requisito minimo, con verifica manuale e automatizzata;
-- build: Vite, con asset generati nella public del tema.
+## Mappa della documentazione
 
-I temi **non** contano modelli/migrazioni, ma gli agenti che toccano Fixcity/User devono rispettare:
+| Area | Punto di ingresso | Nota |
+| --- | --- | --- |
+| Architettura | [architecture/README.md](./architecture/README.md) | Raccolta ereditata: contiene riferimenti Sixteen da riconciliare |
+| Design system | [design-system/README.md](./design-system/README.md) | Contratto visivo storico; target da rendere indipendente dal Paese |
+| Wiki | [wiki/README.md](./wiki/README.md) | Indice locale delle conoscenze importate |
+| Test | [testing-convention.md](./testing-convention.md) | Convenzioni per il tema |
+| Folio / pagine | [folio-page-pattern.md](./folio-page-pattern.md) | Struttura pagina dell'implementazione precedente |
+| Linee guida italiane | [design-comuni/README.md](./design-comuni/README.md) | Riferimento specifico per l'Italia, non base universale |
+| ADR | [adr/README.md](./adr/README.md) | Decisioni da riesaminare nel contesto Civic |
+| Ricerca e rilievi | [analysis/README.md](./analysis/README.md) | Evidenze e analisi storiche |
+| Indice precedente | [00-INDEX.md](./00-INDEX.md) | Snapshot Sixteen: non sostituisce questa guida |
 
-- [Parità modulo N=N](../../../../bashscripts/ai/wiki/bmad/architecture-module-model-artifact-parity.md) — audit: `bashscripts/tools/audit-module-artifact-parity.sh Fixcity`
-- [Dati sacri](../../../../bashscripts/ai/wiki/rules/data-sacred-no-destructive-db.md) — solo `php artisan migrate`
-- Wiki tema: [docs/wiki/](./wiki/) · ingest: `bashscripts/docs/llm-wiki-qmd.sh update`
+## Regole per gli aggiornamenti
 
-Nessun nuovo contenuto va in `docs/archive/`; le storie non sono da duplicare
-fuori da BMAD e la memoria wiki storica resta in `docs/wiki/_archive/`. Regola
-Second Brain: [no-docs-archive](../../../../bashscripts/ai/wiki/concepts/no-docs-archive-rule.md).
-
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./readme-en.md) |
-| 📚 Wiki tecnica | [./wiki/](./wiki/) |
-| 💶 Sostenibilità FO | [project-sustainability-front-office.md](./project-sustainability-front-office.md) |
-| 📣 Inbound blog/eventi | [inbound-marketing-blog-eventi.md](./inbound-marketing-blog-eventi.md) |
-| 🧭 Dipendenze e font | [Sixteen dependency maintenance](./bmad/dependency-refresh-and-verification.md) |
-| 🧠 Moduli e temi (repo git separati) | [Multi-repo map](../../../../docs/wiki/rules/multi-repo-modules-themes-map.md) |
-
-## Verifica 2026-10-19
-
-Il pipeline font canonico usa `laravel-vite-plugin/fonts` (`google(...)`) in
-`vite.config.js` per Titillium Web, Lora e Roboto Mono. Vite emette il
-`fonts-manifest.json` e gli asset hashati sotto `public/assets/`; il build
-obbligatorio è passato con `npm run build`. La pagina di riferimento per la
-tipografia è il Design Comuni, mentre Bootstrap Italia resta solo riferimento
-normativo/stilistico e non dipendenza runtime.
+- Lavorare sul branch **`dev`** esistente del repository Civic; nessun branch nuovo.
+- Preservare evidenze e report di Sixteen come **storici**, esplicitando il contesto quando li si cita.
+- Aggiornare i README e i contratti prima di dichiarare implementate funzionalità non verificate.
+- Non creare un secondo tema per Malta: usare componenti condivisi e adattatori/configurazioni per Paese.
+- Associare a ogni dichiarazione di conformità una verifica ripetibile e datata; non utilizzare badge di certificazione non dimostrati.
 
 ---
-**Tema** `Sixteen` · **Laraxot** · **FixCity Platform** · PHPStan `level: max` (`laravel/phpstan.neon`) · Filament 5
+
+**Civic** è il nome di destinazione; **Sixteen** identifica ancora una parte del codice e della documentazione importati. Il piano sopra è un elenco di lavoro, non una dichiarazione di migrazione conclusa.
