@@ -1,0 +1,37 @@
+title: "[Idea] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas are for exploring Civic's future, not for reporting reproducible bugs.
+        Before implementation, convert an agreed proposal into an issue with acceptance criteria.
+  - type: textarea
+    id: need
+    attributes:
+      label: Civic problem or opportunity
+      description: "Which citizens, local authorities or maintainers benefit?"
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Proposed approach
+      description: "Explain the concept, alternatives and trade-offs."
+    validations:
+      required: true
+  - type: dropdown
+    id: country
+    attributes:
+      label: Applicability
+      options:
+        - Italy and Malta
+        - Italy
+        - Malta
+        - Other countries
+    validations:
+      required: true
+  - type: textarea
+    id: questions
+    attributes:
+      label: Decisions needed from the community
+      description: "What should be validated before creating an implementation issue?"

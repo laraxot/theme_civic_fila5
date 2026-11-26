@@ -1,0 +1,48 @@
+name: "Feature or improvement"
+description: "Propose a Civic theme enhancement with measurable acceptance criteria"
+title: "[Enhancement] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Civic is a reusable presentation theme for Italy and Malta.
+        Business rules belong to the appropriate Laraxot module.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: "Who is affected and what is currently difficult?"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: "Describe the UI or documentation change and any alternatives."
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Country scope
+      options:
+        - Shared by all countries
+        - Italy
+        - Malta
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: "List testable outcomes, accessibility needs and localization."
+      placeholder: "- [ ] The shared component ...\n- [ ] Keyboard and mobile behavior ..."
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: Owning module / dependencies
+      description: "Civic UI, Geo, Cms, User, Fixcity, etc."

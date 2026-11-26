@@ -1,14 +1,21 @@
 ---
-title: "Sixteen DesignComuni design system"
+title: "Civic design system — inherited Sixteen reference"
 type: design-system-index
 owner: Themes/Sixteen
 status: draft
-updated: 2026-10-11
-tags: [docs, sixteen, design-system]
-qmd: "ownership and usage sixteen"
+updated: 2026-11-26
+tags: [docs, sixteen, civic, design-system]
+qmd: "Civic design system migration inherited Sixteen visual contract"
 ---
 
 # Ownership and usage
+
+> [!IMPORTANT]
+> **Migration in progress:** this design-system index was written for Sixteen.
+> In the `theme_civic_fila5` repository it remains a reference for the imported
+> UI, **not** a verified Civic implementation. See [Civic technical status](../README.md).
+> Malta-specific language, terminology and design requirements are not yet
+> covered by the Italian Design Comuni parity documentation below.
 
 This directory is the visual source of truth for the Sixteen theme. It belongs
 inside the theme because tokens, component states, typography, spacing and page
