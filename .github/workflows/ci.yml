@@ -56,8 +56,11 @@ jobs:
           cache: npm
 
       - name: npm ci, lint, test
+        env:
+          ESLINT_USE_FLAT_CONFIG: "false"
         run: |
           test -f package-lock.json
+          test -f .eslintrc.js
           npm ci
           npm run lint
           npm test

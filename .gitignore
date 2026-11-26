@@ -102,6 +102,8 @@ ruvector.db
 # Reports/audit artifacts belong under the monorepo build/, not inside the theme tree.
 _docs/
 /scripts/
+!scripts/verify/
+!scripts/verify/**
 bashscripts/
 !resources/scripts/
 !resources/scripts/prepare-static-assets.mjs
