@@ -88,6 +88,7 @@ npm run lint
 | --- | --- | --- |
 | Architettura | [architecture/README.md](./architecture/README.md) | Raccolta ereditata: contiene riferimenti Sixteen da riconciliare |
 | Design system | [design-system/README.md](./design-system/README.md) | Contratto visivo storico; target da rendere indipendente dal Paese |
+| Superfici GitHub | [github-surfaces.md](./github-surfaces.md) | Issues, milestone, label, Actions, Security, Discussions |
 | Wiki | [wiki/README.md](./wiki/README.md) | Indice locale delle conoscenze importate |
 | Test | [testing-convention.md](./testing-convention.md) | Convenzioni per il tema |
 | Folio / pagine | [folio-page-pattern.md](./folio-page-pattern.md) | Struttura pagina dell'implementazione precedente |

@@ -1,0 +1,72 @@
+name: ci
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [dev]
+
+concurrency:
+  group: ci-civic-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  manifest:
+    name: Manifest sanity
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate package.json and composer.json
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          for name in ("package.json", "composer.json", "theme.json"):
+              path = Path(name)
+              assert path.is_file(), f"missing {name}"
+              json.loads(path.read_text(encoding="utf-8"))
+              print(f"ok {name}")
+          PY
+
+      - name: Guard against committed secrets
+        run: |
+          if git grep -nE '(API_KEY|SECRET|PASSWORD|PRIVATE_KEY)\s*=\s*[^$\s]' -- ':!.github' ':!docs' ':!*.md' ':!*.example' ':!*.dist' >/tmp/secret-hits.txt; then
+            echo "Possible hardcoded secrets:"
+            cat /tmp/secret-hits.txt
+            exit 1
+          fi
+          echo "ok no obvious secrets"
+
+  frontend:
+    name: Frontend (when lockfile present)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: manifest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect package-lock.json
+        id: lock
+        run: |
+          if [ -f package-lock.json ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::package-lock.json missing — skip npm ci (tracked by issue #21 / #5)"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.lock.outputs.present == 'true'
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: npm ci, lint, test
+        if: steps.lock.outputs.present == 'true'
+        run: |
+          npm ci
+          npm run lint
+          npm test

@@ -18,8 +18,19 @@ Se la funzione non è disponibile, contatta i maintainer dell'organizzazione Lar
 
 Civic è un tema di presentazione. Le vulnerabilità relative a dati, autorizzazioni, workflow, notifiche o API appartengono al modulo Laraxot o all'applicazione ospitante: indica nel report quale componente è coinvolto.
 
+## Protezioni automatiche
+
+Su questo repository sono attivi Dependabot alerts/security updates, secret scanning e push protection. La CI non deve stampare `.env`, token o payload di tenant.
+
 ## Gestione
 
 I maintainer confermeranno la ricezione quando possibile, valuteranno impatto e riproducibilità, coordineranno una correzione e pubblicheranno la comunicazione solo dopo la disponibilità di una mitigazione.
 
 Non è garantito un tempo fisso di risposta o di risoluzione.
+
+## Supported versions
+
+| Branch / release | Supported |
+| --- | --- |
+| `dev` | Yes |
+| Tagged releases (after C6) | Yes once published |
