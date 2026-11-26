@@ -62,13 +62,13 @@ Analizzate tutte le pagine di test confrontando:
 
 ## Analysis Files
 
-- [PAGES_GROUP_1.md](PAGES_GROUP_1.md) - homepage, domande-frequenti, risultati-ricerca, argomenti, argomento
-- [PAGES_GROUP_2.md](PAGES_GROUP_2.md) - lista-risorse, lista-categorie, lista-risorse-categorie, mappa-sito, contatti
-- [PAGES_GROUP_3.md](PAGES_GROUP_3.md) - amministrazione, aree-amministrative, area-amministrativa-dettaglio, organo, persona
-- [PAGES_GROUP_4.md](PAGES_GROUP_4.md) - documenti-dati, servizi, servizi-categoria, servizio-dettaglio, evento
-- [PAGES_GROUP_5.md](PAGES_GROUP_5.md) - eventi, evento-dettaglio, luoghi, luogo-dettaglio, novita
-- [PAGES_GROUP_6.md](PAGES_GROUP_6.md) - Richieste: prenotazione-appuntamento, appuntamento-01 to appuntamento-06, richiesta-assistenza
-- [PAGES_GROUP_7.md](PAGES_GROUP_7.md) - Servizi Pagamento: pagamento, pagamento-dettaglio
+- [pages-group-a.md](pages-group-a.md) - homepage, domande-frequenti, risultati-ricerca, argomenti, argomento
+- [pages-group-b.md](pages-group-b.md) - lista-risorse, lista-categorie, lista-risorse-categorie, mappa-sito, contatti
+- [pages-group-c.md](pages-group-c.md) - amministrazione, aree-amministrative, area-amministrativa-dettaglio, organo, persona
+- [pages-group-d.md](pages-group-d.md) - documenti-dati, servizi, servizi-categoria, servizio-dettaglio, evento
+- [pages-group-e.md](pages-group-e.md) - eventi, evento-dettaglio, luoghi, luogo-dettaglio, novita
+- [pages-group-f.md](pages-group-f.md) - Richieste: prenotazione-appuntamento, appuntamento-01 to appuntamento-06, richiesta-assistenza
+- [pages-group-g.md](pages-group-g.md) - Servizi Pagamento: pagamento, pagamento-dettaglio
 
 ## Key Structural Differences Found
 
