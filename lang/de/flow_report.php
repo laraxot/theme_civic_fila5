@@ -135,6 +135,16 @@ return [
         ],
     ],
     'privacy' => [
+        'description' => [
+            'message' => ':entity verarbeitet die von Ihnen freiwillig bereitgestellten personenbezogenen Daten gemäß Artikel 13 der Verordnung (EU) 2016/679 (DSGVO) und dem anwendbaren Kommunalrecht.',
+            'entity_fallback' => 'Die Organisation',
+        ],
+        'link_label' => [
+            'label' => 'Datenschutzerklärung',
+        ],
+        'accept_label' => [
+            'label' => 'Ich habe die Datenschutzerklärung gelesen und verstanden',
+        ],
         'for_details_on_how_personal_data' => [
             'message' => 'Einzelheiten zur Verarbeitung personenbezogener Daten finden Sie in der',
         ],

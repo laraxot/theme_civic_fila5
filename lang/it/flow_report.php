@@ -135,6 +135,16 @@ return [
         ],
     ],
     'privacy' => [
+        'description' => [
+            'message' => ':entity gestisce i dati personali forniti e liberamente comunicati sulla base dell’articolo 13 del Regolamento (UE) 2016/679 (GDPR) e della normativa applicabile agli enti locali.',
+            'entity_fallback' => 'L’ente',
+        ],
+        'link_label' => [
+            'label' => 'informativa sulla privacy',
+        ],
+        'accept_label' => [
+            'label' => 'Ho letto e compreso l’informativa sulla privacy',
+        ],
         'for_details_on_how_personal_data' => [
             'message' => 'Per i dettagli sul trattamento dei dati personali consulta l’',
         ],

@@ -135,6 +135,16 @@ return [
         ],
     ],
     'privacy' => [
+        'description' => [
+            'message' => ':entity trata los datos personales facilitados libremente conforme al artículo 13 del Reglamento (UE) 2016/679 (RGPD) y a la normativa aplicable a las entidades locales.',
+            'entity_fallback' => 'La entidad',
+        ],
+        'link_label' => [
+            'label' => 'política de privacidad',
+        ],
+        'accept_label' => [
+            'label' => 'He leído y comprendido la política de privacidad',
+        ],
         'for_details_on_how_personal_data' => [
             'message' => 'Para más información sobre el tratamiento de los datos personales, consulta la',
         ],

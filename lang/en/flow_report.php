@@ -135,6 +135,16 @@ return [
         ],
     ],
     'privacy' => [
+        'description' => [
+            'message' => ':entity processes the personal data you freely provide under Article 13 of Regulation (EU) 2016/679 (GDPR) and applicable local-government law.',
+            'entity_fallback' => 'The organisation',
+        ],
+        'link_label' => [
+            'label' => 'privacy notice',
+        ],
+        'accept_label' => [
+            'label' => 'I have read and understood the privacy notice',
+        ],
         'for_details_on_how_personal_data' => [
             'message' => 'For details on how personal data is processed, see the',
         ],

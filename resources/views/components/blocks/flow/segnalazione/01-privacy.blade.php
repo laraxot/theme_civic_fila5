@@ -1,10 +1,13 @@
 @props(['data' => []])
 
 @php
-    $description = $data['description'] ?? 'Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati sulla base dell\u2019articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).';
-    $privacyLinkLabel = $data['privacy_link_label'] ?? 'informativa sulla privacy';
-    $acceptLabel = $data['accept_label'] ?? 'Ho letto e compreso l\u2019informativa sulla privacy';
-    $nextLabel = $data['next_label'] ?? 'Avanti';
+    $entityName = (string) ($data['entity_name'] ?? config('ente.name') ?: config('app.name', ''));
+    $description = $data['description'] ?? __('pub_theme::flow_report.privacy.description.message', [
+        'entity' => $entityName !== '' ? $entityName : __('pub_theme::flow_report.privacy.description.entity_fallback'),
+    ]);
+    $privacyLinkLabel = $data['privacy_link_label'] ?? __('pub_theme::flow_report.privacy.link_label.label');
+    $acceptLabel = $data['accept_label'] ?? __('pub_theme::flow_report.privacy.accept_label.label');
+    $nextLabel = $data['next_label'] ?? __('pub_theme::blocks_common.shared.next.label');
     $nextUrl = $data['next_url'] ?? '/it/tests/segnalazione-02-dati';
     $step = $data['step'] ?? 1;
     $steps = $data['steps'] ?? ['Autorizzazioni e condizioni', 'Dati di segnalazione', 'Riepilogo'];
