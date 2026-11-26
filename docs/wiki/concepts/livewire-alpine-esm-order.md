@@ -120,7 +120,7 @@ Alternative non valide per questo tema:
 ## riferimenti incrociati
 
 - Header parity: [header-html-parity.md](../../design-comuni/analysis/header-html-parity.md)
-- Catena storica asset segnalazione / geo: [`segnalazione-runtime-asset-integrity.md`](../../../../../Modules/Fixcity/docs/wiki/concepts/segnalazione-runtime-asset-integrity.md)
+- Catena storica asset segnalazione / geo: [`ticket-runtime-asset-integrity.md`](../../../../../Modules/Fixcity/docs/wiki/concepts/segnalazione-runtime-asset-integrity.md)
 - Binding Filament + Alpine: [`filament-custom-field-binding-modifiers-theme-boundary.md`](./filament-custom-field-binding-modifiers-theme-boundary.md)
 
 ## asset stale: come controllarsi prima di correggere il file sbagliato

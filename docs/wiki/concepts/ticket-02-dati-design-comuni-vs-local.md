@@ -14,7 +14,7 @@ tags: [segnalazione, dati, design-comuni, comparison, visual-parity, sixteeen, t
 related:
   - ../../laravel/Modules/Fixcity/docs/wiki/concepts/segnalazione-design-comuni-comparison.md
   - concepts/segnalazione-visual-parity-correction-plan.md
-  - segnalazione-01-privacy-design-comuni-vs-local.md
+  - ticket-01-privacy-design-comuni-vs-local.md
 status: draft
 ---
 

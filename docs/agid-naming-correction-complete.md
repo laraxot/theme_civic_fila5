@@ -87,7 +87,7 @@ Tutti i file di documentazione che contenevano riferimenti errati devono essere 
 
 - `agid-layout-usage-rules.md`
 - `layout-usage-rules.md`
-- `sixteen-agid-naming-rules.md`
+- `auth/sixteen-agid-naming-rules.md`
 - `login-agid-*.md` (vari file)
 - E tutti gli altri che contengono riferimenti "agid" errati
 
@@ -119,7 +119,7 @@ grep -r "agid" Themes/Sixteen/resources/views/ | grep -v "agid.gov.it"
 
 ## Documentazione Correlata
 
-- [sixteen-agid-naming-fundamental-rule.md](./sixteen-agid-naming-fundamental-rule.md)
+- [sixteen-agid-naming-fundamental-rule.md](./auth/sixteen-agid-naming-fundamental-rule.md)
 - [layout-usage-rules.md](./layout-usage-rules.md)
 - [components.md](./components.md)
 

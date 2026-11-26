@@ -198,7 +198,7 @@ openviking add-memory "NO Bootstrap Italia (CSS or JS). We REPLICATE Bootstrap I
 
 | Document | Purpose |
 |----------|---------|
-| **NO_BOOTSTRAP_ITALIA.md** | This file - Architecture explanation |
+| **no-bootstrap-italia.md** | This file - Architecture explanation |
 | **TAILWIND_APPLY_ARCHITECTURE.md** | CSS replication strategy |
 | **ALPINE_INTERACTIONS.md** | JavaScript replication strategy |
 

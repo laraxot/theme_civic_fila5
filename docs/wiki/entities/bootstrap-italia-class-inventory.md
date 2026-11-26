@@ -17,9 +17,9 @@ created: 2026-05-04
 updated: 2026-05-04
 tags: [bootstrap-italia, tailwind, class-map, segnalazione, html-parity]
 related:
-  - "../comparisons/segnalazione-01-privacy-design-comuni-vs-local-wizard.md"
-  - "../concepts/segnalazione-html-samples-class-token-extraction.md"
-  - "../concepts/segnalazione-local-html-class-token-table.md"
+  - "../comparisons/ticket-01-privacy-design-comuni-vs-local-wizard.md"
+  - "../concepts/ticket-html-samples-class-token-extraction.md"
+  - "../concepts/ticket-local-html-class-token-table.md"
   - "../../../../../../_bmad-output/implementation-artifacts/7-105-bootstrap-italia-tailwind-class-map-sette-pagine-segnalazione.md"
 status: draft
 ---
@@ -41,9 +41,9 @@ status: draft
 | Pipeline | Valore |
 |----------|--------|
 | Inventario entity (URL / build, categorie) | **486** classi uniche |
-| Script `bashscripts/extract-segnalazione-class-tokens.php` su `.planning/research/local-*.html` (dopo filtro plausibile) | **529** token — tabella rigenerabile in [segnalazione-local-html-class-token-table](../concepts/segnalazione-local-html-class-token-table.md) |
+| Script `bashscripts/extract-segnalazione-class-tokens.php` su `.planning/research/local-*.html` (dopo filtro plausibile) | **529** token — tabella rigenerabile in [segnalazione-local-html-class-token-table](../concepts/ticket-local-html-class-token-table.md) |
 
-I due numeri non sono duplicati: l’entity raggruppa per significato implementativo; lo script elenca ogni token whitespace-separated in `class="..."`. Dettaglio metodo: [segnalazione-html-samples-class-token-extraction](../concepts/segnalazione-html-samples-class-token-extraction.md).
+I due numeri non sono duplicati: l’entity raggruppa per significato implementativo; lo script elenca ogni token whitespace-separated in `class="..."`. Dettaglio metodo: [segnalazione-html-samples-class-token-extraction](../concepts/ticket-html-samples-class-token-extraction.md).
 
 ## Principio chiave
 

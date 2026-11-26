@@ -13,9 +13,9 @@ updated: 2026-05-04
 tags: [segnalazione, riepilogo, design-comuni, comparison, visual-parity, tailwind, alpine, lit]
 related:
   - ../../laravel/Modules/Fixcity/docs/wiki/concepts/segnalazione-design-comuni-comparison.md
-  - segnalazione-visual-parity-correction-plan.md
-  - segnalazione-01-privacy-design-comuni-vs-local.md
-  - segnalazione-02-dati-design-comuni-vs-local.md
+  - ticket-visual-parity-correction-plan.md
+  - ticket-01-privacy-design-comuni-vs-local.md
+  - ticket-02-dati-design-comuni-vs-local.md
 status: draft
 ---
 

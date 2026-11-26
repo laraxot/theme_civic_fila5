@@ -8,7 +8,7 @@ updated: 2026-11-23
 
 # Manuale utente tema Sixteen
 
-Integra il [manuale actor-oriented](../manuale-uso-attori.md). Sixteen è il tema front office attivo e rende CMS, autenticazione e flussi FixCity.
+Integra il [manuale actor-oriented](manuale-utente.md). Sixteen è il tema front office attivo e rende CMS, autenticazione e flussi FixCity.
 
 ## Attori e uso
 

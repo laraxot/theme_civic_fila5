@@ -46,7 +46,7 @@ Questo documento definisce il piano dettagliato per l'implementazione di una pag
 ```
 
 ### Componenti Esistenti Verificati
-Basandomi sull'analisi della documentazione esistente (`auth_best_practices.md`), ho verificato:
+Basandomi sull'analisi della documentazione esistente (`auth-best-practices.md`), ho verificato:
 
 1. **Namespace Corretto**: `pub_theme` è il namespace registrato per i temi
 2. **Componenti Disponibili**: 

@@ -9,7 +9,7 @@ created: 2026-05-21
 updated: 2026-05-21
 tags: [segnalazione, wizard, parity, documentation-dry, sixteeen]
 related:
-  - segnalazione-02-dati-design-comuni-vs-local.md
+  - ticket-02-dati-design-comuni-vs-local.md
   - ../../../../Modules/docs/redundancy-report.md
 sources: []
 status: draft
@@ -31,22 +31,22 @@ Ordine naturale degli step rispetto a Design Comuni “segnalazione crea”:
 
 | Step Design Comuni | Pagina tema (comparison / gap) |
 |--------------------|-------------------------------|
-| 01 Privacy | [segnalazione-01-privacy-design-comuni-vs-local.md](segnalazione-01-privacy-design-comuni-vs-local.md) |
-| 02 Dati | [segnalazione-02-dati-design-comuni-vs-local.md](segnalazione-02-dati-design-comuni-vs-local.md) |
-| 03 Riepilogo | [segnalazione-03-riepilogo-design-comuni-vs-local.md](segnalazione-03-riepilogo-design-comuni-vs-local.md) |
+| 01 Privacy | [segnalazione-01-privacy-design-comuni-vs-local.md](ticket-01-privacy-design-comuni-vs-local.md) |
+| 02 Dati | [segnalazione-02-dati-design-comuni-vs-local.md](ticket-02-dati-design-comuni-vs-local.md) |
+| 03 Riepilogo | [segnalazione-03-riepilogo-design-comuni-vs-local.md](ticket-03-riepilogo-design-comuni-vs-local.md) |
 | (infra / cross-step) | vedi blocchi “Parity infra” sotto |
 
 ## Parity infra (si sovrappongono allo step-wise: usarle come contratti tecnici)
 
-- [segnalazione-visual-parity-correction-plan.md](segnalazione-visual-parity-correction-plan.md) — piano generale correzioni UI
-- [segnalazione-wizard-cta-parity.md](segnalazione-wizard-cta-parity.md) — pulsanti/avanzamenti
-- [segnalazione-map-and-section-spacing-parity.md](segnalazione-map-and-section-spacing-parity.md) — layout mappa/sezioni
-- [segnalazione-crea-header-and-map-visual-regression-contract.md](segnalazione-crea-header-and-map-visual-regression-contract.md)
-- [segnalazione-crea-navbar-green-contract.md](segnalazione-crea-navbar-green-contract.md)
-- [segnalazione-privacy-parity-audit.md](segnalazione-privacy-parity-audit.md) — audit focalizzato privacy
-- [segnalazione-runtime-asset-integrity.md](segnalazione-runtime-asset-integrity.md) — integrità JS/CSS caricati
-- [segnalazione-local-html-class-token-table.md](segnalazione-local-html-class-token-table.md), [segnalazione-html-samples-class-token-extraction.md](segnalazione-html-samples-class-token-extraction.md)
-- [segnalazione-riepilogo-reference-gap-plan.md](segnalazione-riepilogo-reference-gap-plan.md)
+- [segnalazione-visual-parity-correction-plan.md](ticket-visual-parity-correction-plan.md) — piano generale correzioni UI
+- [segnalazione-wizard-cta-parity.md](ticket-wizard-cta-parity.md) — pulsanti/avanzamenti
+- [segnalazione-map-and-section-spacing-parity.md](ticket-map-and-section-spacing-parity.md) — layout mappa/sezioni
+- [segnalazione-crea-header-and-map-visual-regression-contract.md](ticket-crea-header-and-map-visual-regression-contract.md)
+- [segnalazione-crea-navbar-green-contract.md](ticket-crea-navbar-green-contract.md)
+- [segnalazione-privacy-parity-audit.md](ticket-privacy-parity-audit.md) — audit focalizzato privacy
+- [segnalazione-runtime-asset-integrity.md](ticket-runtime-asset-integrity.md) — integrità JS/CSS caricati
+- [segnalazione-local-html-class-token-table.md](ticket-local-html-class-token-table.md), [segnalazione-html-samples-class-token-extraction.md](ticket-html-samples-class-token-extraction.md)
+- [segnalazione-riepilogo-reference-gap-plan.md](ticket-riepilogo-reference-gap-plan.md)
 
 ## Regola DRY per nuovi documenti tema
 

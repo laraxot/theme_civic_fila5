@@ -135,7 +135,7 @@ CREATE TABLE todo_deps (
 ✅ Ready for GSD workflow:
 - `.planning/` directory structure prepared
 - PROJECT.md and REQUIREMENTS.md templates identified
-- ROADMAP.md aligned with Phase A-E breakdown
+- roadmap.md aligned with Phase A-E breakdown
 - STATE.md for session memory
 
 ---

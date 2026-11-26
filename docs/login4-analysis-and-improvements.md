@@ -256,7 +256,7 @@ Deprecate login4 e usare login2 come standard:
 
 ## 🔗 **COLLEGAMENTI DOCUMENTAZIONE**
 
-- [Login2 Optimal Implementation](./login2-agid-optimal-implementation.md)
+- [Login2 Optimal Implementation](./auth/login2-agid-optimal-implementation.md)
 - [Critical Rules](./critical-rules.md)
 - [Sixteen Theme Naming Conventions](./sixteen-theme-naming-conventions.md)
 - [Layout Usage Rules](./layout-usage-rules.md)
@@ -478,8 +478,8 @@ Deprecate login4 e usare login2 come standard:
 
 ## 🔗 **COLLEGAMENTI DOCUMENTAZIONE**
 
-- [login3-agid-implementation-complete.md](./login3-agid-implementation-complete.md) - Implementazione di riferimento
-- [sixteen-agid-naming-fundamental-rule.md](./sixteen-agid-naming-fundamental-rule.md) - Regole naming
+- [login3-agid-implementation-complete.md](./auth/login3-agid-implementation-complete.md) - Implementazione di riferimento
+- [sixteen-agid-naming-fundamental-rule.md](./auth/sixteen-agid-naming-fundamental-rule.md) - Regole naming
 - [accessibility.md](./accessibility.md) - Standard accessibilità
 - [layout-usage-rules.md](./layout-usage-rules.md) - Regole layout
 

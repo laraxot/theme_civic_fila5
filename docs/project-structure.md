@@ -36,9 +36,9 @@ status: draft
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
-├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
-├── QMD-SETUP.md                  # Configurazione QMD
-├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
+├── on-demand-pattern.md          # 🌟 QUESTO FILE — Pattern on-demand
+├── qmd-setup.md                  # Configurazione QMD
+├── performance-optimization.md    # Metriche e best practice
 ├── ARCHITECTURE.md               # (opzionale) Architettura modulo
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`

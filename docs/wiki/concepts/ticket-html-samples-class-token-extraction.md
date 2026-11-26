@@ -17,7 +17,7 @@ created: 2026-05-04
 updated: 2026-05-04
 tags: [bootstrap-italia, class-inventory, segnalazione, story-7-105]
 related:
-  - "./segnalazione-local-html-class-token-table.md"
+  - "./ticket-local-html-class-token-table.md"
   - "../entities/bootstrap-italia-class-inventory.md"
   - "../../../../../../_bmad-output/implementation-artifacts/7-105-design-comuni-segnalazione-static-pages-bootstrap-to-tailwind-class-map.md"
   - "../../../../../../_bmad-output/implementation-artifacts/7-103-segnalazione-01-privacy-tailwind-lit-html-audit-correction-plan.md"
@@ -39,7 +39,7 @@ Inventario **per pagina** dei token presenti in `class="..."` sulle sette pagine
 | Chiavi uniche prima del filtro «plausibile classe CSS» | **636** |
 | Token unici dopo filtro | **529** |
 
-Rigenerazione: dalla root del workspace eseguire `php bashscripts/extract-segnalazione-class-tokens.php` (scrive la tabella markdown in [segnalazione-local-html-class-token-table](./segnalazione-local-html-class-token-table.md)).
+Rigenerazione: dalla root del workspace eseguire `php bashscripts/extract-segnalazione-class-tokens.php` (scrive la tabella markdown in [segnalazione-local-html-class-token-table](./ticket-local-html-class-token-table.md)).
 
 ## Metodologia
 
@@ -67,7 +67,7 @@ Rigenerazione: dalla root del workspace eseguire `php bashscripts/extract-segnal
 | Entity (inventario URL / build, categorie, mapping Tailwind) | **486** classi uniche nel modello inventario |
 | Script su HTML locali + filtri sopra | **529** token in tabella rigenerabile |
 
-La differenza è attesa: **486** è un inventario semantico aggregato sulle stesse pagine ufficiali; **529** conta ogni stringa separata da spazio dentro `class="..."` dopo strip script/style (inclusi utility Tailwind miste a token BI, varianti `lg:` ecc.). Per **priorità mapping Tailwind** resta l’entity; la **tabella per token e per pagina** è [segnalazione-local-html-class-token-table](./segnalazione-local-html-class-token-table.md).
+La differenza è attesa: **486** è un inventario semantico aggregato sulle stesse pagine ufficiali; **529** conta ogni stringa separata da spazio dentro `class="..."` dopo strip script/style (inclusi utility Tailwind miste a token BI, varianti `lg:` ecc.). Per **priorità mapping Tailwind** resta l’entity; la **tabella per token e per pagina** è [segnalazione-local-html-class-token-table](./ticket-local-html-class-token-table.md).
 
 ## Nota su `html_samples/`
 

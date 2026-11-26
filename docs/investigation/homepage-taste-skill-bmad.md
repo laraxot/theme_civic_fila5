@@ -31,7 +31,7 @@ Reading this as: public-sector municipal homepage (`design-comuni`) for citizens
 5. **No DESIGN.md in theme.** No `DESIGN.md` at `laravel/Themes/Sixteen/` — taste-skill Step 0 requires it (or reuse of wired system; here the system IS `civic-design-tokens.css`, so it should be declared as the design-system anchor).
 6. **Typography discipline mostly OK.** `Titillium Web` (official Design Comuni font) via Google Fonts import — correct for trust-first public sector. `font-display: swap` not declared in `@import` (minor).
 7. **Hero structure.** `homepage.blade.php` has skip-links, hero (news card + image), governance cards, services/admin/news/events sections, featured/other topics, thematic sites, useful links, rating block (`<x-blocks.rating.default />`), contacts. No eyebrow-abuse detected; no split-header duplication.
-8. **BMAD docs present but scattered.** `docs/homepage-parity.md`, `docs/visual-parity-plan.md`, `docs/homepage-visual-fix.md`, `docs/homepage-parity-v2.md` exist but no unified `docs/stories/` or `docs/investigation/` structure matching BMAD v6.
+8. **BMAD docs present but scattered.** `docs/homepage-parity-scope.md`, `docs/visual-parity-plan.md`, `docs/homepage-visual-fix.md`, `docs/homepage-parity-v2.md` exist but no unified `docs/stories/` or `docs/investigation/` structure matching BMAD v6.
 
 ## Taste-Skill Dials (Applied)
 ```
@@ -44,10 +44,10 @@ These override default `8/6/4`. The current homepage (Design Comuni reference) a
 ## Open Questions (Still Open — Not Assumptions)
 - Should the `homepage.blade.php` reference image (`https://picsum.photos/800/600`) stay, or be replaced with real Design Comuni asset URLs?
 - `rating` block (`<x-blocks.rating.default />`) — is this taste-skill-compliant? It needs `:focus-visible` / reduced-motion verification.
-- Should `docs/homepage-parity.md` be moved/reorganized into `docs/stories/homepage-parity.story.md` + investigation + decision-log?
+- Should `docs/homepage-parity-scope.md` be moved/reorganized into `docs/stories/homepage-parity.story.md` + investigation + decision-log?
 
 ## Evidence (File Paths — Verbatim, Greppable)
 - Template: `laravel/Themes/Sixteen/pages/[locale]/index.blade.php` (line 1 `{{-- Design Comuni - Homepage ... 1331 righe HTML --}}`)
 - Token file: `laravel/Themes/Sixteen/resources/css/components/civic-design-tokens.css` (307 lines, `:root` block lines 7-185)
 - CSS utility: `laravel/Themes/Sixteen/resources/css/app/11-tailwind-utility-compat.css` (line 1 `.row { @apply ... }`, `btn-primary` `#0066CC` line 50+, `#007A52` wizard override lines 194+)
-- DOC file names from `ls` above (verbatim): `homepage-parity.md`, `homepage-visual-fix.md`, `homepage-parity-v2.md`
+- DOC file names from `ls` above (verbatim): `homepage-parity-scope.md`, `homepage-visual-fix.md`, `homepage-parity-v2.md`

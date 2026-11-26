@@ -348,7 +348,7 @@ Hai problemi di accesso?
 - [Critical Rules](./critical-rules.md)
 - [Sixteen Theme Naming Conventions](./sixteen-theme-naming-conventions.md)
 - [AGID Layout Usage Rules](./agid-layout-usage-rules.md)
-- [Login Implementation Analysis](./login_implementation_analysis.md)
+- [Login Implementation Analysis](./login-implementation-analysis.md)
 
 ### File Correlati
 - `login.blade.php` - Versione base

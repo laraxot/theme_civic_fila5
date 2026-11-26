@@ -41,7 +41,7 @@ status: draft
 - **Font**: Titillium Web 16px/24px #191919 ✅
 - **Visual**: stepper, checkbox, button, contacts card all match
 - **Screenshots**: `screenshots/css-js-phase/segnalazione-01-privacy-*-FINAL.png`
-- **Report**: [segnalazione-01-privacy-css-js-parity.md](segnalazione-01-privacy-css-js-parity.md)
+- **Report**: [segnalazione-01-privacy-css-js-parity.md](ticket-01-privacy-css-js-parity.md)
 
 ### ✅ segnalazione-02-dati (97.0%)
 - **HTML**: 559 vs 573 lines — minor structural differences

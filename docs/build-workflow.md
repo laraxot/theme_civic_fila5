@@ -49,6 +49,26 @@ manual copy lands in the theme `public/` folder and is overwritten by the next b
 3. A page of the front office loads the new file: `curl -s http://127.0.0.1:8081/it | grep -o 'app-[A-Za-z0-9_-]*\.css'`.
 4. After a build that touched Blade views: `php artisan view:clear`, then reload.
 
+## Why a build step, and how to add a component
+
+Merged here from the older upper-case copy of this guide, `BUILD-WORKFLOW.md`, now retired (its `npm run copy` flow no longer exists; everything else it said that still holds is below).
+
+- **Compilation**: Vite processes the JavaScript and the CSS (Tailwind), resolves imports and dependencies, and writes hashed file names for cache busting.
+- **Development**: `npm run dev` gives watch mode, hot module replacement and source maps.
+- **Production**: code splitting, tree-shaking of unused code, CSS minification; compression (gzip) is done by the web server.
+- **Layout of the sources**: `src/components/` (TypeScript sources), `resources/css/` (Tailwind), `resources/js/app.js` (main entry), `public/` (build output),
+  `node_modules/` (dependencies).
+
+Adding a component:
+
+1. Create it in `src/components/` and import it in `resources/js/app.js`.
+2. Run `npm run build` (no copy step) and use the component in the Blade templates.
+3. If the build fails: read the Vite error, check the TypeScript syntax and that the imports exist, look for circular dependencies; after a dependency change
+   run `npm install`.
+
+Superseded advice, do not follow it: `npm run build && npm run copy`, "always run `npm run copy` after the build" and the `cp -r` examples of the old
+document. `public_html/themes/Sixteen` is a symlink, so copying by hand is useless and the next build overwrites it.
+
 ## Troubleshooting
 
 ### The build does not start (`Could not resolve "./components/..."`)

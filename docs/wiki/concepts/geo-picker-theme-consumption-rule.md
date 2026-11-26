@@ -41,4 +41,4 @@ Il tema deve garantire che i container non usino `overflow: hidden` aggressivi c
 
 - [Geo picker sibling governance](../../../../../Modules/Geo/docs/wiki/concepts/geo-picker-sibling-components-governance.md)
 - [Leaflet class selector governance](../../../../../Modules/Geo/docs/wiki/concepts/leaflet-class-selector-governance.md)
-- [Segnalazione runtime asset integrity](./segnalazione-runtime-asset-integrity.md)
+- [Segnalazione runtime asset integrity](./ticket-runtime-asset-integrity.md)

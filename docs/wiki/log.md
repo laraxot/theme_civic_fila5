@@ -480,7 +480,7 @@ module: "Sixteen"
 - **Tech Stack**: Tailwind CSS + Alpine.js + Lit, NO Bootstrap
 - **Reference**: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html
 - **Sprint Status**: Added to epic-8, status `ready-for-dev`
-- **Wiki Updated**: `concepts/segnalazione-01-privacy-design-comuni-vs-local.md` with story link
+- **Wiki Updated**: `concepts/ticket-01-privacy-design-comuni-vs-local.md` with story link
 
 ## [2026-05-04] bmad-create-story | 7-110 step1 — stepper, checkbox DC, tipografia
 
@@ -521,7 +521,7 @@ module: "Sixteen"
 - Aggiornato `Fixcity/docs/llm-wiki/concepts/header-green-branding-rule.md`: frontmatter YAML, tabella colori, stato file verificato
 
 ## [2026-05-04] concepts | segnalazione-local-html-class-token-table (7-105)
-- Generata tabella markdown rigenerabile: `concepts/segnalazione-local-html-class-token-table.md` (metriche 7886 / 636 / 529; script `bashscripts/extract-segnalazione-class-tokens.php`)
+- Generata tabella markdown rigenerabile: `concepts/ticket-local-html-class-token-table.md` (metriche 7886 / 636 / 529; script `bashscripts/extract-segnalazione-class-tokens.php`)
 - Concept `segnalazione-html-samples-class-token-extraction.md`: fonte `.planning/research`, rimossa tabella inline duplicata; link bidirezionale tabella ↔ entity ↔ story 7-105
 
 ## [2026-05-04] entity | bootstrap-italia-class-inventory (story 7-105)
@@ -535,7 +535,7 @@ module: "Sixteen"
 - Story: `_bmad-output/implementation-artifacts/7-105-design-comuni-segnalazione-static-pages-bootstrap-to-tailwind-class-map.md`.
 - Scope URL: `segnalazione-dettaglio`, `segnalazione-01`…`04`, `segnalazione-area-personale`, `ticket-list` (Design Comuni pagine statiche).
 - Deliverable: elenco deduplicato classi + mapping `@layer` / utilities in `resources/css/app.css`; wiki tabella condivisa con Fixcity; ingest root `docs/wiki/log.md`.
-- Allineamento: [segnalazione-visual-parity-correction-plan](concepts/segnalazione-visual-parity-correction-plan.md), story 7-103/7-104.
+- Allineamento: [segnalazione-visual-parity-correction-plan](concepts/ticket-visual-parity-correction-plan.md), story 7-103/7-104.
 
 ## [2026-05-04] bmad-create-story | 7-103 audit repo + HTML statico
 - Story aggiornata: `_bmad-output/implementation-artifacts/7-103-segnalazione-01-privacy-tailwind-lit-html-audit-correction-plan.md` (sezione repo README, `<head>` pubblicato, delta D0–D8, second brain, task checklist).
@@ -544,7 +544,7 @@ module: "Sixteen"
 
 ## [2026-05-04] documentation | Segnalazione Visual Parity Correction Plan
 - Cross-link from Fixcity module: `../../laravel/Modules/Fixcity/docs/wiki/concepts/segnalazione-design-comuni-comparison.md`
-- Created: `concepts/segnalazione-visual-parity-correction-plan.md` (detailed fix plan)
+- Created: `concepts/ticket-visual-parity-correction-plan.md` (detailed fix plan)
 - Sections: Bootstrap→Tailwind mapping, elenco stacked layout, map height 400px, stepper labels, CTAs
 - Rules reinforced: NO inline CSS in Blade, CSS in `app.css`, JS in `app.js`, build+copy required
 - Quick ref: `mb-3` (Bootstrap) = `mb-4` (Tailwind) since both use 1rem spacing
@@ -553,7 +553,7 @@ module: "Sixteen"
 
 ## [2026-05-04] documentation | Segnalazione Visual Parity Correction Plan
 - Cross-link from Fixcity module: `../../laravel/Modules/Fixcity/docs/wiki/concepts/segnalazione-design-comuni-comparison.md`
-- Created: `concepts/segnalazione-visual-parity-correction-plan.md` (detailed fix plan)
+- Created: `concepts/ticket-visual-parity-correction-plan.md` (detailed fix plan)
 - Sections: Bootstrap→Tailwind mapping, elenco stacked layout, map height 400px, stepper labels, CTAs
 - Rules reinforced: NO inline CSS in Blade, CSS in `app.css`, JS in `app.js`, build+copy required
 - Quick ref: `mb-3` (Bootstrap) = `mb-4` (Tailwind) since both use 1rem spacing
@@ -570,17 +570,17 @@ module: "Sixteen"
 - screenshot comparativo Playwright: ref `segnalazione-01-privacy.html` vs locale `segnalazione-crea`.
 - identificate 4 DIFF attive: stepper orizzontale, bottone colore/larghezza, checkbox label, bottoni spurii.
 - header colori confermati OK (slim `#00402b`, navbar `#007a52`).
-- aggiornata `concepts/segnalazione-visual-parity-correction-plan.md` con dati reali e piano fix CSS.
+- aggiornata `concepts/ticket-visual-parity-correction-plan.md` con dati reali e piano fix CSS.
 - indice aggiornato con nuova entry correction plan.
 
 ## [2026-05-04] wiki | segnalazione-01-privacy vs locale + path relativi
-- Creato `comparisons/segnalazione-01-privacy-design-comuni-vs-local-wizard.md` (delta vs [reference Design Comuni](https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html), piano correzione Tailwind+Alpine+Lit, HTML parity senza `<style>` in Blade).
+- Creato `comparisons/ticket-01-privacy-design-comuni-vs-local-wizard.md` (delta vs [reference Design Comuni](https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html), piano correzione Tailwind+Alpine+Lit, HTML parity senza `<style>` in Blade).
 - Allineati link `_bmad-output` e mirror Fixcity: da `comparisons/` servono **6** segmenti `../` fino alla root workspace (`../../../../../_bmad-output/...`).
 - Aggiornati `docs/wiki/index.md` (sezione 2026-05-04) con backlink story [7-103](../../../../../_bmad-output/implementation-artifacts/7-103-segnalazione-01-privacy-tailwind-lit-html-audit-correction-plan.md) _(target mancante, verificato 2026-10-14)_.
 
 ## [2026-05-04] documentation | Segnalazione Visual Parity Correction Plan
 - Cross-link from Fixcity module: `../../laravel/Modules/Fixcity/docs/wiki/concepts/segnalazione-design-comuni-comparison.md`
-- Created: `concepts/segnalazione-visual-parity-correction-plan.md` (detailed fix plan)
+- Created: `concepts/ticket-visual-parity-correction-plan.md` (detailed fix plan)
 - Sections: Bootstrap→Tailwind mapping, elenco stacked layout, map height 400px, stepper labels, CTAs
 - Rules reinforced: NO inline CSS in Blade, CSS in `app.css`, JS in `app.js`, build+copy required
 - Quick ref: `mb-3` (Bootstrap) = `mb-4` (Tailwind) since both use 1rem spacing
@@ -692,23 +692,23 @@ module: "Sixteen"
 - eseguito recheck visuale post-fix sulla stessa URL/step con evidenza screenshot.
 - riferimento screenshot: `../../../Modules/Fixcity/docs/assets/segnalazione-step-dati-after-fix-2026-04-28-full-recheck.png`.
 - esito: clipping search risolto, stato mappa stabilizzato, overlay testuale assente; sidebar non ambigua ma ancora visivamente compressa.
-- pagina aggiornata: `comparisons/segnalazione-crea-step-dati-screenshot-audit.md`.
+- pagina aggiornata: `comparisons/ticket-crea-step-dati-screenshot-audit.md`.
 
 ## [2026-04-28] fix | wizard step dati parity css (sidebar/search/spacing) + build
 - source: `../../../resources/css/app.css`
 - applicati fix CSS su wizard: indicatore accordion duplicato rimosso, link sidebar resi piu' leggibili, ridotto spacing verticale, padding input search corretto con `autocomplete-icon`.
 - build/copy eseguiti: `npm run build && npm run copy`.
-- pagina aggiornata: `comparisons/segnalazione-crea-step-dati-screenshot-audit.md`.
+- pagina aggiornata: `comparisons/ticket-crea-step-dati-screenshot-audit.md`.
 
 ## [2026-04-28] tooling | playwright mcp verification + screenshot audit refinement
 - verificata disponibilita' Playwright MCP in runtime locale con `npx -y @playwright/mcp@latest --help`.
 - raffinato audit visuale screenshot step `Dati della segnalazione` con evidenza file e piano fix owner-side tema.
-- pagina aggiornata: `comparisons/segnalazione-crea-step-dati-screenshot-audit.md`.
+- pagina aggiornata: `comparisons/ticket-crea-step-dati-screenshot-audit.md`.
 
 ## [2026-04-28] audit | screenshot runtime segnalazione-crea step dati
 - formalizzato audit visuale da screenshot utente sulla URL `http://127.0.0.1:8001/it/tests/segnalazione-crea?step=form.dati-della-segnalazione%3A%3Adata%3A%3Awizard-step`.
 - registrati i sintomi principali: sidebar vuota ma dominante, stato accordion ambiguo, spacing eccessivo, search input con clipping, mappa con testo grezzo sovrapposto.
-- nuova pagina: `comparisons/segnalazione-crea-step-dati-screenshot-audit.md`.
+- nuova pagina: `comparisons/ticket-crea-step-dati-screenshot-audit.md`.
 
 ## [2026-04-28] governance | boundary tema su reintroduzione pacchetti Laravel 13
 - chiarito che la reintroduzione dipendenze post-upgrade resta owner del modulo (`Modules/*/composer.json`), non del tema.
@@ -845,7 +845,7 @@ module: "Sixteen"
 ## [2026-04-23] discovery | CMS block architecture for segnalazione-crea
 - **sources**: `resources/views/pages/tests/[slug].blade.php`, `config/local/fixcity/database/content/pages/tests.segnalazione-crea.json`, `resources/views/components/blocks/tests/segnalazione-crea.blade.php`
 - **decision**: URL /it/tests/segnalazione-crea è CMS-driven (JSON → block view → widget), NON Folio hardcoded. Il tema Sixteen definisce block view come thin wrapper.
-- **wiki**: `concepts/theme-cms-block-architecture-segnalazione-crea.md`
+- **wiki**: `concepts/theme-cms-block-architecture-ticket-crea.md`
 
 ## [2026-04-22] contract | public wizard map stability without page css
 - **sources:** `Modules/Geo/resources/js/components/coordinate-picker-lit.js`, `docs/wiki/concepts/no-page-specific-css.md`
@@ -858,7 +858,7 @@ module: "Sixteen"
 - **decision:** refresh con invalidate differito, redraw tile solo su `tileerror`/fullscreen; `CoordinatePicker` dello step dati configurato con `->geolocateWhenEmpty()`.
 
 ## [2026-04-23] fix | segnalazione-crea navbar green + map fullscreen contracts
-- **sources:** `resources/css/app.css`, `resources/views/components/sections/header/v1.blade.php`, `docs/wiki/concepts/segnalazione-crea-navbar-green-contract.md`, `docs/wiki/concepts/coordinate-picker-fullscreen-wizard-contract.md`, `Modules/Geo/docs/wiki/concepts/coordinate-picker-fullscreen-wizard-contract.md`, `Modules/Fixcity/docs/wiki/concepts/segnalazione-crea-map-fullscreen-contract.md`
+- **sources:** `resources/css/app.css`, `resources/views/components/sections/header/v1.blade.php`, `docs/wiki/concepts/ticket-crea-navbar-green-contract.md`, `docs/wiki/concepts/coordinate-picker-fullscreen-wizard-contract.md`, `Modules/Geo/docs/wiki/concepts/coordinate-picker-fullscreen-wizard-contract.md`, `Modules/Fixcity/docs/wiki/concepts/segnalazione-crea-map-fullscreen-contract.md`
 - **root cause header:** documentazione precedente indicava navbar chiara/theme-light-desk e `app.css` aveva blocchi header duplicati; cambiando un blocco intermedio il blu/bianco poteva vincere ancora.
 - **root cause map:** fullscreen solo CSS + `body.overflow=hidden` non bloccava sempre `html`/stacking context wizard; Leaflet richiede refresh dopo transizione.
 - **decision:** navbar `segnalazione-crea` verde `#007a52`; coordinate-picker fullscreen usa contratto browser fullscreen + classe document-level e refresh differiti.
@@ -925,7 +925,7 @@ module: "Sixteen"
 - **sources:** `../../Modules/Fixcity/resources/views/filament/widgets/ticket-create-wizard.blade.php`, `resources/css/app.css`
 - **summary:** confronto visuale locale vs reference Design Comuni su mobile/tablet/desktop; colori header allineati (`slim` verde scuro, barra nav verde), rimossa CTA duplicata `Successivo`; `Accedi all'area personale` forzato al verde istituzionale.
 - **cta rule:** `Avanti` riposizionato sotto checkbox privacy su tutti i breakpoint.
-- **artifact:** `concepts/segnalazione-privacy-parity-audit.md`
+- **artifact:** `concepts/ticket-privacy-parity-audit.md`
 
 ## [2026-04-21] governance | no docs/archive per nuova documentazione tema
 
@@ -959,7 +959,7 @@ module: "Sixteen"
 - **deploy:** pubblicato `themes/Geo/js/geo.js` nel webroot attivo (`public_html/themes/Geo/js/geo.js`).
 - **runtime:** riallineati asset Livewire/Filament (`livewire:publish --assets`, `filament:assets`) e pulita cache (`optimize:clear`).
 - **resilienza:** `geoMapPickerField` registrato sia in init immediata sia in hook `alpine:init`.
-- **artifact:** `concepts/segnalazione-runtime-asset-integrity.md`
+- **artifact:** `concepts/ticket-runtime-asset-integrity.md`
 
 ## [2026-04-21] refactor | lit component ownership fuori da blade
 
@@ -1343,7 +1343,7 @@ module: "Sixteen"
 - Confermato CSS owner-side in `resources/css/app.css`, supporto `:fullscreen` + `.is-fullscreen`, niente selector page-scoped, build/copy obbligatorio dopo modifiche.
 
 ## [2026-05-04] comparison | segnalazione-01-privacy Design Comuni vs locale — HTML delta audit
-- Aggiornato `comparisons/segnalazione-01-privacy-design-comuni-vs-local-wizard.md` con HTML reference completo estratto direttamente da github.io
+- Aggiornato `comparisons/ticket-01-privacy-design-comuni-vs-local-wizard.md` con HTML reference completo estratto direttamente da github.io
 - Documentati 13 delta visivi/strutturali con mappa classi BI → Tailwind e piano di correzione P0..P4
 - Evidenziato problema critico: `create-ticket.blade.php` contiene ~80 righe `<style>` inline (violazione)
 - Sezione "Contatta il comune" confermata assente nel locale: raccomandato CMS block
@@ -1351,7 +1351,7 @@ module: "Sixteen"
 - Story BMAD: 7-103 (ready-for-dev)
 
 ## 2026-05-04 (story 7-106 header parity step2)
-- **Comparison doc created**: `docs/wiki/comparisons/segnalazione-02-dati-design-comuni-vs-local.md`
+- **Comparison doc created**: `docs/wiki/comparisons/ticket-02-dati-design-comuni-vs-local.md`
   - Full header HTML comparison (Design Comuni vs local wizard step2)
   - All Bootstrap classes mapped: `navbar-brand`, `it-header-slim-wrapper`, `nav-link.active`, etc.
   - Stepper analysis: step2 shows "2/3" with "Dati di segnalazione" active

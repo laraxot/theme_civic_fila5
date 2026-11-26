@@ -17,7 +17,7 @@ created: 2026-05-04
 updated: 2026-05-04
 tags: [bootstrap-italia, class-inventory, segnalazione, story-7-105]
 related:
-  - "./segnalazione-html-samples-class-token-extraction.md"
+  - "./ticket-html-samples-class-token-extraction.md"
   - "../entities/bootstrap-italia-class-inventory.md"
   - "../../../../../../_bmad-output/implementation-artifacts/7-105-design-comuni-segnalazione-static-pages-bootstrap-to-tailwind-class-map.md"
 status: draft

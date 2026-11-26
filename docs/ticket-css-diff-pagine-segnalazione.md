@@ -109,4 +109,4 @@ Dopo le correzioni, fare screenshot e verificare match >= 90%
 ## Riferimenti
 
 - Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-02-dati.html
-- Documentazione esistente: `docs/segnalazione-comparison-analysis.md`
+- Documentazione esistente: `docs/ticket-comparison-analysis.md`

@@ -120,17 +120,25 @@ I percorsi `area-personale/*` sono pagine CMS rese dal tema con blocchi condivis
 - le pagine CMS non devono essere sostituite da pagine Folio semanticamente duplicate;
 - il tema Sixteen dimostra il flusso front office, non una matrice completa dei permessi amministrativi.
 
+## Inventario documentale e funzionalità osservabili
+
+La documentazione utente è distribuita in questo manuale, in [`user-manual.md`](user-manual.md) e nel PDF [`manuale-utente.pdf`](manuale-utente.pdf). Questo manuale chiarisce invece attori e deleghe. La decisione architetturale è [`adr/0002-front-office-theme-owns-presentation.md`](../adr/0002-front-office-theme-owns-presentation.md) e il contratto di shell è [`contracts/folio-page-shell.md`](../contracts/folio-page-shell.md).
+
+Il materiale visuale comprende [`screenshots/`](../screenshots/), [`assets/front-office-home.png`](assets/front-office-home.png), i confronti Design Comuni e le immagini dei flussi `segnalazione-*` sotto `docs/prompts/` e `docs/visual-analysis/`.
+
+Dal codice delle view sono osservabili homepage e pagine CMS generiche, autenticazione (login, registrazione, logout, reset e verifica), elenco e dettaglio delle segnalazioni, wizard di creazione, area personale, servizi, eventi, news/blog, ricerca, accessibilità, contatti e mappe. La disponibilità effettiva dipende da slug CMS, tenant e moduli abilitati; la presenza della view non equivale a una verifica HTTP in ogni configurazione.
+
 ## Fonti
 
-- [`Themes/Sixteen/resources/views/pages/index.blade.php`](../resources/views/pages/index.blade.php)
-- [`Themes/Sixteen/resources/views/pages/[container0]/index.blade.php`](../resources/views/pages/%5Bcontainer0%5D/index.blade.php)
-- [`Themes/Sixteen/resources/views/pages/[container0]/[slug0]/index.blade.php`](../resources/views/pages/%5Bcontainer0%5D/%5Bslug0%5D/index.blade.php)
-- [`Themes/Sixteen/resources/views/pages/auth`](../resources/views/pages/auth)
-- [`Themes/Sixteen/resources/views/components/page.blade.php`](../resources/views/components/page.blade.php)
-- [`Themes/Sixteen/docs/page-directory-structure.md`](page-directory-structure.md)
-- [`Modules/Cms/app/Providers/FolioVoltServiceProvider.php`](../../../Modules/Cms/app/Providers/FolioVoltServiceProvider.php)
-- [`Modules/User/app/Models/Role.php`](../../../Modules/User/app/Models/Role.php)
-- [`Modules/Xot/app/Filament/Traits/SuperAdminOnlyTrait.php`](../../../Modules/Xot/app/Filament/Traits/SuperAdminOnlyTrait.php)
-- [`Modules/Fixcity`](../../../Modules/Fixcity)
+- [`Themes/Sixteen/resources/views/pages/index.blade.php`](../../resources/views/pages/index.blade.php)
+- [`Themes/Sixteen/resources/views/pages/[container0]/index.blade.php`](../../resources/views/pages/%5Bcontainer0%5D/index.blade.php)
+- [`Themes/Sixteen/resources/views/pages/[container0]/[slug0]/index.blade.php`](../../resources/views/pages/%5Bcontainer0%5D/%5Bslug0%5D/index.blade.php)
+- [`Themes/Sixteen/resources/views/pages/auth`](../../resources/views/pages/auth)
+- [`Themes/Sixteen/resources/views/components/page.blade.php`](../../resources/views/components/page.blade.php)
+- [`Themes/Sixteen/docs/page-directory-structure.md`](../page-directory-structure.md)
+- [`Modules/Cms/app/Providers/FolioVoltServiceProvider.php`](../../../../Modules/Cms/app/Providers/FolioVoltServiceProvider.php)
+- [`Modules/User/app/Models/Role.php`](../../../../Modules/User/app/Models/Role.php)
+- [`Modules/Xot/app/Filament/Traits/SuperAdminOnlyTrait.php`](../../../../Modules/Xot/app/Filament/Traits/SuperAdminOnlyTrait.php)
+- [`Modules/Fixcity`](../../../../Modules/Fixcity)
 
 

@@ -418,7 +418,7 @@ curl -I http://localhost:8000/sixteen/auth/login
 ## Documentazione Creata
 
 ### 1. Analisi Implementazione
-**File**: `docs/login_implementation_analysis.md`
+**File**: `docs/login-implementation-analysis.md`
 
 Contenuti:
 - Analisi del file di login esistente
@@ -426,7 +426,7 @@ Contenuti:
 - Raccomandazioni per la correzione
 
 ### 2. Correzione Implementazione
-**File**: `docs/login_correction_implementation.md`
+**File**: `docs/login-correction-implementation.md`
 
 Contenuti:
 - Dettaglio delle correzioni implementate

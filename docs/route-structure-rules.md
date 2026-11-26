@@ -197,7 +197,7 @@ Prima di utilizzare link a pagine istituzionali:
 ## 📖 Documentazione Correlata
 
 - [layout-usage-rules.md](layout-usage-rules.md) - Regole per l'uso dei layout
-- [auth_best_practices.md](auth_best_practices.md) - Best practice per autenticazione
+- [auth_best_practices.md](auth-best-practices.md) - Best practice per autenticazione
 - [critical-rules.md](critical-rules.md) - Regole critiche del progetto
 
 ---

@@ -170,7 +170,7 @@ $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'pub_theme');
 
 ## 📖 Documentazione Correlata
 
-- [auth_best_practices.md](auth_best_practices.md) - Best practice per autenticazione
+- [auth_best_practices.md](auth-best-practices.md) - Best practice per autenticazione
 - [critical-rules.md](critical-rules.md) - Regole critiche del progetto
 - [laraxot-panel-provider-rules.md](laraxot-panel-provider-rules.md) - Regole AdminPanelProvider
 

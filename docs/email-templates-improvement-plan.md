@@ -452,7 +452,7 @@ a:hover::after {
 ### Fase 2 (Priorità) - ✅ COMPLETATA
 - [x] **Migliorare christmas-luxury.html** - Aurora luxury, ripple effects, dark mode optimization
 - [ ] Migliorare christmas-sottana.html
-- [x] **Aggiornare documentazione** - Creato luxury-email-design-masterclass-2025.md
+- [x] **Aggiornare documentazione** - Creato luxury-email-design-masterclass.md
 
 ### Fase 3 (Completamento) - 🎯 IN CORSO
 - [x] **Aggiungere SVG animated decorations ai template premium** (2025-12-21)

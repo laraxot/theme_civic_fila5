@@ -341,7 +341,7 @@ window.announceToScreenReader = function(message) {
 - [Regole Critiche](../critical-rules.md)
 - [Regole Naming AGID](./sixteen-agid-naming-rules.md)
 - [Layout Usage Rules](../layout-usage-rules.md)
-- [Bootstrap Italia Examples](../bootstrap-italia-examples.md)
+- [Bootstrap Italia Examples](../bootstrap-english-examples.md)
 - [Accessibility Guidelines](../accessibility.md)
 - [Vite Configuration](../build/vite-configuration-rules.md)
 

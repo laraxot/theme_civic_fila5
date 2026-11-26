@@ -8,10 +8,10 @@ discussions: []
 type: overview
 theme: Sixteen
 sources:
-  - ../../../docs/design_comuni_italia_integration.md
+  - ../../design-comuni-italia-integration.md
   - ../../../docs/design-comuni-compliance.md
-  - ../../../docs/bootstrap-italia-implementation.md
-  - ../../../docs/sixteen-agid-naming-rules.md
+  - ../../bootstrap-english-implementation.md
+  - ../../auth/sixteen-agid-naming-rules.md
 confidence: high
 updated: 2026-04-15
 status: draft
@@ -133,10 +133,10 @@ x-sixteen::agid.card-news     → scheda notizia
 
 ## Raw Sources Prioritari
 
-- `docs/design_comuni_italia_integration.md` — analisi completa Design Comuni Italia
+- `docs/design-comuni-italia-integration.md` — analisi completa Design Comuni Italia
 - `docs/design-comuni-compliance.md` — stato implementazione, gap analysis
-- `docs/bootstrap-italia-implementation.md` — integrazione Bootstrap Italia
-- `docs/sixteen-agid-naming-rules.md` — naming convention AGID
-- `docs/accessibility_implementation_guide.md` — accessibilità WCAG
+- `docs/bootstrap-english-implementation.md` — integrazione Bootstrap Italia
+- `docs/auth/sixteen-agid-naming-rules.md` — naming convention AGID
+- `docs/accessibility-implementation-guide.md` — accessibilità WCAG
 - `docs/agid-layout-usage-rules.md` — regole layout AGID
 - `docs/complete-theme-analysis.md` — analisi completa componenti

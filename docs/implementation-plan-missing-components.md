@@ -253,7 +253,7 @@ Ogni componente deve includere:
 - [ ] Testare funzionalità e accessibilità
 - [ ] Verificare compatibilità browser
 - [ ] Aggiornare documentazione stato componenti
-- [ ] Aggiungere esempi a bootstrap-italia-examples.md
+- [ ] Aggiungere esempi a bootstrap-english-examples.md
 
 ## 📚 Risorse di Riferimento
 

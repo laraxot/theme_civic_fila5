@@ -26,7 +26,7 @@ Per il **diff HTML** sul tag `<body>`, le rotte `/tests/*` non devono affidarsi 
 - **Visual Parity**: ~95%
 - **Font**: Titillium Web 16px/24px #191919 ✅
 - **Contact Card**: 592px wide ✅
-- **Full Report**: [segnalazione-01-privacy-css-js-parity.md](segnalazione-01-privacy-css-js-parity.md)
+- **Full Report**: [segnalazione-01-privacy-css-js-parity.md](ticket-01-privacy-css-js-parity.md)
 - **Screenshots**: `screenshots/css-js-phase/segnalazione-01-privacy-*-FINAL.png`
 
 ### ⚠️ Font Parity Lesson (CRITICAL)
@@ -166,6 +166,6 @@ Senza screenshot automatici, verificare visivamente:
 - Build + copy dopo ogni modifica CSS
 
 ## See Also
-- [Segnalazione CSS Diff](segnalazione-css-diff.md)
+- [Segnalazione CSS Diff](ticket-css-diff-pagine-segnalazione.md)
 - [Design Comuni Master Plan](design-comuni/master-implementation-plan.md)
 - [Sixteen Theme Index](../../docs/themes/index.md)

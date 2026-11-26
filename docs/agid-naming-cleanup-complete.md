@@ -125,7 +125,7 @@ name('login');
 ## 📚 **DOCUMENTAZIONE AGGIORNATA**
 
 ### **File Aggiornati**
-1. `sixteen-agid-naming-rules.md` - Regole complete
+1. `auth/sixteen-agid-naming-rules.md` - Regole complete
 2. `agid-naming-cleanup-complete.md` - Questo documento
 3. **Memoria permanente** - Regola critica aggiornata
 
@@ -165,7 +165,7 @@ name('login');
 
 ## 🔗 **COLLEGAMENTI**
 
-- [Regole Naming AGID](./sixteen-agid-naming-rules.md)
+- [Regole Naming AGID](./auth/sixteen-agid-naming-rules.md)
 - [Sistema Blocchi](./blocks-system.md)
 - [Componenti Tema](./components.md)
 - [Documentazione Root](../../../docs/agid-compliance.md)

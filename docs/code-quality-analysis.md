@@ -72,10 +72,10 @@ Components are logically organized into categories:
 ### Main Documentation Files
 
 1. **README.md** - Theme overview and quick start
-2. **ROADMAP.md** - Development roadmap
-3. **ROADMAP_2025.md** - 2025 objectives
-4. **CODE_QUALITY_TOOLS.md** - Quality tools and standards
-5. **TRANSLATION_PLAN.md** - Translation system documentation
+2. **roadmap.md** - Development roadmap
+3. **roadmap-2025.md** - 2025 objectives
+4. **code-quality-tools.md** - Quality tools and standards
+5. **translation-plan.md** - Translation system documentation
 
 ### Component Documentation
 
@@ -206,8 +206,8 @@ The theme fully implements Bootstrap Italia design system:
 ## 🔗 Related Documentation
 
 - [README](./README.md)
-- [Roadmap 2025](./ROADMAP_2025.md)
-- [Code Quality Tools](./CODE_QUALITY_TOOLS.md)
+- [Roadmap 2025](./roadmap-2025.md)
+- [Code Quality Tools](./code-quality-tools.md)
 - [Component Usage Guide](./component-usage-guide.md)
 
 ---

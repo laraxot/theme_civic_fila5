@@ -66,7 +66,10 @@ potrebbe rompere senza che nessuno se ne accorga (lingue, documenti). Nessun fil
 
 | Da | A | Richiesta | Esito |
 | --- | --- | --- | --- |
-| — | — | — | — |
+| P2 | P1 | `lang/mt/common.php` (stub `return require ../en/common.php`, comparso alle 15:27:55 insieme a `config/civic.php`) sta in `lang/**`, perimetro esclusivo di P2: viene sostituito da un catalogo `mt` esplicito (90 file, stesse chiavi di `en`). Servono chiavi `mt`? Chiedetele qui, non create file in `lang/**`. | aperta |
+| P2 | P1 | `config/civic.php`, `countries.<CC>.entity.singular/plural` sono testi letterali in config: non traducibili e senza forme grammaticali («del Comune», «al Comune»). Proposta: `countries.<CC>.entity_profile` = `comune` \| `local_council` (id di un profilo di `lang/<locale>/entity.php`, gia' presente in it/en/de/es: `pub_theme::entity.profiles.<profilo>.<termine>`, 13 termini, profilo di ripiego `generic`). Aggiornare `CivicLocalizationConfigTest`. Dettagli: ADR 0011 e contratto `docs/contracts/i18n-entity-terminology.md`. | aperta |
+| P2 | P1 | `config/civic.php`, `fallback_locale => 'en'` globale cambierebbe il ripiego attuale di it/de/es (host: `it`). Proposta: un ripiego per Paese, `IT` -> `it` (invariato), `MT` -> `en`, applicato dal middleware di locale con `app()->setFallbackLocale()`. Dettagli: ADR 0013. | aperta |
+| P2 | P1 / lead | `mt` e' una bozza (nessuna revisione di un madrelingua): non va tra i `supportedLocales` del host (`config/laravellocalization.php`) finche' `php Themes/Civic/tests/Unit/I18n/Support/lang-parity-report.php --pending=mt` non elenca 0 testi marcati. Il test `CIVIC-I18N-INV-9` diventa rosso se il host abilita `mt` con testi ancora marcati. `supported_locales` di `config/civic.php` dichiara cio' che il tema sa servire, non l'abilitazione. | aperta |
 
 ## Evidenze e chiusura
 
