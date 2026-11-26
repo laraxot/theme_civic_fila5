@@ -1,7 +1,7 @@
 ---
 title: "Contratto — SpidAuthAction (Civic)"
 type: contract
-action: "Themes\\Sixteen\\Actions\\SpidAuthAction"
+action: "Themes\\Civic\\Actions\\SpidAuthAction"
 theme: Civic
 status: accepted
 created: 2026-11-26
@@ -13,8 +13,8 @@ related:
 
 # Contratto: SpidAuthAction (copia di Civic)
 
-Service Provider SAML per SPID. `Themes/Civic/app/Actions/SpidAuthAction.php` dichiara la stessa classe
-`Themes\Sixteen\Actions\SpidAuthAction` di Sixteen: stesso comportamento, **con una differenza** (il log dei dati
+Service Provider SAML per SPID. `Themes/Civic/app/Actions/SpidAuthAction.php` dichiara la classe
+`Themes\Civic\Actions\SpidAuthAction`, derivata dall'omonima di Sixteen (FQCN diverso dal 2026-11-26, ADR 0004): stesso comportamento, **con una differenza** (il log dei dati
 personali, vedi «Limiti noti»). Il [contratto di Sixteen](../../../Sixteen/docs/contracts/spid-auth-action.md) e' quello
 esteso. Le rotte esistono solo con l'identita' digitale abilitata. **Con SPID acceso valgono i «Limiti noti»: la firma e'
 controllata, il contenuto dell'asserzione no.**

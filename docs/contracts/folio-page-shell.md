@@ -3,7 +3,7 @@ title: "Contratto — Civic Folio page shell"
 type: presentation-contract
 theme: Civic
 status: accepted
-contract: Themes\\Sixteen\\resources\\views\\pages
+contract: Themes\\Civic\\resources\\views\\pages
 tags: [contract, folio, shell, theme]
 created: 2026-11-23
 updated: 2026-11-26

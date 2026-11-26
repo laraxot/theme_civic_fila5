@@ -20,14 +20,15 @@ build vale, quella sul symlink no (vedi «Stato attuale»).
 
 ## Contesto
 
-Civic e' uno snapshot divergente di Sixteen, non un tema con identita' propria. Misurato dalla radice `laravel/`:
+Civic nasce come snapshot di Sixteen e dal 2026-11-26 ha identita' propria (ADR 0004 e 0007). Misurato dalla radice `laravel/`
+(le righe segnate «prima» descrivono lo stato a cui questo ADR rispondeva):
 
-- `Themes/Civic/composer.json` ha nome `laraxot/theme_sixteen_fila5` e namespace `Themes\Sixteen\` (autoload `app/`);
-  `theme.json` ha `"name": "Sixteen"`. Ha un repository git proprio e una voce in `gitmodules.ini:67`.
+- `Themes/Civic/composer.json` ha nome `laraxot/theme_civic_fila5` e namespace `Themes\Civic\` (autoload `app/`);
+  `theme.json` ha `"name": "Civic"` (prima: `laraxot/theme_sixteen_fila5`, `Themes\Sixteen\`, `Sixteen`). Ha un repository git
+  proprio e una voce in `gitmodules.ini:67`.
 - Non e' il tema pubblico: `config/local/fixcity/xra.php:10` imposta `'pub_theme' => 'Sixteen'`.
-- `package.json` e `vite.config.js` sono identici a quelli di Sixteen (confronto con `diff`): `scripts.build` e'
-  `npm run prepare:static-assets && vite build && npm run prune:assets`; `vite.config.js:11` ha `base: '/themes/Sixteen/'` e
-  `outDir: './public'`.
+- `scripts.build` di `package.json` e' `npm run prepare:static-assets && vite build && npm run prune:assets`; `vite.config.js` ha
+  `base: '/themes/Civic/'` e `outDir: './public'` (prima: base `/themes/Sixteen/`, file identici a quelli di Sixteen).
 - `public_html/themes/` contiene un solo link, `Sixteen -> ../../laravel/Themes/Sixteen/public/`. Non esiste
   `public_html/themes/Civic`.
 
@@ -57,8 +58,8 @@ uno snapshot (decisione umana, vedi «Stato attuale»).
 
 - `public/` e il manifest sono l'output verificabile. `prune:assets` puo' rimuovere asset orfani; una build fallita lascia
   l'output non verificato.
-- Civic e Sixteen dichiarano lo stesso package e lo stesso namespace: una modifica alla pipeline va fatta in entrambi, o
-  divergono (oggi `package.json` e `vite.config.js` sono ancora uguali).
+- Civic e Sixteen hanno pipeline di build parallele ma package e namespace distinti: una modifica alla pipeline va fatta in
+  entrambi, o divergono.
 - Gli asset di Civic non raggiungono il browser: vedi «Stato attuale».
 
 ## Stato attuale
@@ -67,9 +68,10 @@ L'ADR originale presentava il symlink come parte del quadro («il webroot tratta
 alla `public/` del tema»). Per Civic non e' cosi':
 
 - `public_html/themes/Sixteen` punta a `laravel/Themes/Sixteen/public/` (`readlink`), cioe' a Sixteen. Non c'e' un link per Civic.
-- Una build di Civic produrrebbe asset con base `/themes/Sixteen/` (`vite.config.js:11`): quegli URL sono serviti da
-  `Themes/Sixteen/public`, non da `Themes/Civic/public`. Un eventuale `public_html/themes/Civic` (che
-  `php artisan xot:theme-link` crea per ogni tema con `public/`, `ThemeLinkCommand.php:54`) non servirebbe quegli URL.
+- Una build di Civic produce asset con base `/themes/Civic/` (`vite.config.js`), coerente con `public_html/themes/Civic`, che
+  `deploy.sh` (ciclo su `Themes/*/public`) e `php artisan xot:theme-link` (`ThemeLinkCommand.php:54`) creano da soli. Finche' il
+  link non c'e' e `pub_theme` resta un altro tema, quegli URL non sono serviti (ADR 0005). Il `public/` gia' compilato ha ancora la
+  vecchia base finche' la wave Build/CI non ricostruisce.
 - `Modules/Xot/tests/Unit/ThemePublicSymlinkTest.php` include Civic nei dataset (`Themes/*/public`) ma il test sul link
   **salta** per Civic, perche' il link manca (`markTestSkipped`, riga 55): oggi non prova niente su Civic.
 
@@ -83,7 +85,7 @@ Civic (vedi sopra). Controlli ripetibili dalla radice `laravel/`:
 
 ```bash
 jq '.scripts.build' Themes/Civic/package.json            # npm run prepare:static-assets && vite build && ...
-grep -n "base:" Themes/Civic/vite.config.js               # base: '/themes/Sixteen/'
+grep -n "base:" Themes/Civic/vite.config.js               # base: '/themes/Civic/'
 readlink ../public_html/themes/Sixteen                    # .../Themes/Sixteen/public/
 test -e ../public_html/themes/Civic || echo "assente"     # assente
 cd Themes/Civic && npm run build                          # da lanciare nel contesto del tema

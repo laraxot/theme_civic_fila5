@@ -1,7 +1,7 @@
 ---
 title: "Contratto — CieAuthAction (Civic)"
 type: contract
-action: "Themes\\Sixteen\\Actions\\CieAuthAction"
+action: "Themes\\Civic\\Actions\\CieAuthAction"
 theme: Civic
 status: accepted
 created: 2026-11-26
@@ -14,11 +14,12 @@ related:
 
 # Contratto: CieAuthAction (copia di Civic)
 
-Client OpenID Connect verso l'IdP CIE. `Themes/Civic/app/Actions/CieAuthAction.php` dichiara la stessa classe
-`Themes\Sixteen\Actions\CieAuthAction` di Sixteen: il comportamento e' lo stesso, **con una differenza** (il log dei dati
-personali, vedi «Limiti noti»). Il [contratto di Sixteen](../../../Sixteen/docs/contracts/cie-auth-action.md) e'
-quello esteso; questo documenta la copia di Civic. Le rotte (`routes/auth.php`, identico a Sixteen) esistono solo se
-l'identita' digitale e' abilitata (`ThemeServiceProvider` identico a quello di Sixteen).
+Client OpenID Connect verso l'IdP CIE. `Themes/Civic/app/Actions/CieAuthAction.php` dichiara la classe
+`Themes\Civic\Actions\CieAuthAction`, derivata dall'omonima di Sixteen (FQCN diverso dal 2026-11-26, ADR 0004): il comportamento e'
+lo stesso, **con una differenza** (il log dei dati personali, vedi «Limiti noti»). Il
+[contratto di Sixteen](../../../Sixteen/docs/contracts/cie-auth-action.md) e' quello esteso; questo documenta la copia di Civic.
+Le rotte (`routes/auth.php`, prefisso `civic/auth`) esistono solo se l'identita' digitale e' abilitata
+(`civic.auth.spid.enabled`, ADR 0007).
 
 ## Input
 

@@ -14,7 +14,7 @@ related:
 # Build asset Civic
 
 Contratto di **build**, non di un'Action (`type: build-contract`, nessun `action`). Descrive cosa produce `npm run build`
-eseguito da `laravel/Themes/Civic`, che e' identico (script e `vite.config.js`) a quello di Sixteen. La pubblicazione non e'
+eseguito da `laravel/Themes/Civic` (script derivati da quelli di Sixteen, base degli URL propria). La pubblicazione non e'
 promessa: vedi l'[ADR](../adr/0001-build-assets-via-vite-and-symlink.md), «Stato attuale».
 
 ## Input
@@ -26,8 +26,8 @@ promessa: vedi l'[ADR](../adr/0001-build-assets-via-vite-and-symlink.md), «Stat
 ## Output
 
 Asset compilati in `Themes/Civic/public/` (`outDir: './public'`), manifest Vite `public/manifest.json`, e i file di
-`resources/static` copiati cosi' come sono (`publicDir`). Base URL degli asset nel codice generato: `/themes/Sixteen/`
-(`vite.config.js:11`), non `/themes/Civic/`.
+`resources/static` copiati cosi' come sono (`publicDir`). Base URL degli asset nel codice generato: `/themes/Civic/`
+(`vite.config.js`). Il `public/` gia' compilato ha ancora la base precedente finche' non si ricostruisce (wave Build/CI).
 
 ## Invarianti
 
@@ -65,5 +65,5 @@ Verifica manuale, da `laravel/`: INV-1 `grep -n "outDir\|emptyOutDir" Themes/Civ
 - Non pubblica: non crea ne' copia file in `public_html` (non esiste `public_html/themes/Civic`).
 - Non possiede Action di dominio, policy o dati CMS.
 - Non autorizza una pagina Folio aggiuntiva come workaround di build.
-- Non decide se Civic sostituisce Sixteen: finche' non c'e' quella decisione, gli URL `/themes/Sixteen/...` sono serviti da
-  `Themes/Sixteen/public`.
+- Non decide se Civic sostituisce Sixteen: finche' non c'e' quella decisione, il tema servito dal tenant resta quello di `pub_theme`
+  (ADR 0005) e gli URL `/themes/Civic/...` non sono serviti finche' non esiste `public_html/themes/Civic`.

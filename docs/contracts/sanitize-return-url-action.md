@@ -1,7 +1,7 @@
 ---
 title: "Contratto — SanitizeReturnUrlAction (Civic)"
 type: contract
-action: "Themes\\Sixteen\\Actions\\Auth\\SanitizeReturnUrlAction"
+action: "Themes\\Civic\\Actions\\Auth\\SanitizeReturnUrlAction"
 theme: Civic
 status: accepted
 created: 2026-11-26
@@ -14,9 +14,9 @@ related:
 
 # Contratto: SanitizeReturnUrlAction (copia di Civic)
 
-`Themes/Civic/app/Actions/Auth/SanitizeReturnUrlAction.php` dichiara la stessa classe di Sixteen, con lo stesso codice e lo
-stesso docblock (`diff` con il file di Sixteen: nessuna differenza). E' l'unica difesa contro l'open redirect nei flussi SPID/CIE: i controller
-(identici a quelli di Sixteen) la usano per non rimandare il cittadino autenticato su un dominio altrui.
+`Themes/Civic/app/Actions/Auth/SanitizeReturnUrlAction.php` dichiara `Themes\Civic\Actions\Auth\SanitizeReturnUrlAction`, con lo stesso codice di quella di Sixteen
+(cambia solo il namespace, ADR 0004). E' l'unica difesa contro l'open redirect nei flussi SPID/CIE: i controller
+(derivati da quelli di Sixteen) la usano per non rimandare il cittadino autenticato su un dominio altrui.
 
 ## Input
 

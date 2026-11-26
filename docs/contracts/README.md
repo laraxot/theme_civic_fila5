@@ -8,9 +8,9 @@ updated: 2026-11-26
 
 # Contratti del tema Civic
 
-Cosa promette la superficie pubblica di questo pacchetto. Civic e' uno snapshot divergente di Sixteen (stesso package,
-stesso namespace `Themes\Sixteen\`, non e' `pub_theme`): le sue Action hanno lo stesso nome completo di quelle di Sixteen, e
-`diff -rq app/Actions` dice che differiscono in 3 file su 16 (`ServeThemeAssetAction` solo nel docblock;
+Cosa promette la superficie pubblica di questo pacchetto. Civic nasce come snapshot di Sixteen e dal 2026-11-26 ha package e namespace
+propri (`Themes\Civic\`, ADR 0004): le sue Action derivano da quelle di Sixteen con nome completo diverso e differiscono nel
+comportamento in 3 file su 16 (`ServeThemeAssetAction` serve `Themes/Civic/public` invece di `Themes/Sixteen/public`;
 `CieAuthAction` e `SpidAuthAction` anche nel log). I contratti qui descrivono la copia di Civic; i contratti di Sixteen
 ([indice](../../../Sixteen/docs/contracts/README.md)) restano la fonte estesa.
 
@@ -36,7 +36,7 @@ cartella: `INDEX.md` e `index.md` sono stati fusi qui il 2026-11-26.
 
 ### Contratti che non sono di Action
 
-- [Identità del tema](theme-identity.md) — namespace, manifest, URL e tag release sono Civic; eccezioni Sixteen solo quelle di ADR 0004.
+- [Identità del tema](theme-identity.md) — `type: identity-contract`: namespace, manifest, URL e tag release sono Civic; eccezioni Sixteen solo quelle di ADR 0004; il provider parte senza attivare il tema (`CIVIC-ID-INV-1`, `5`, `6`, `7` hanno un group Pest).
 - [Build asset Civic](build-surface.md) — `type: build-contract`: cosa produce `npm run build` e cosa no.
 - [Civic Folio page shell](folio-page-shell.md) — `type: presentation-contract`: forma delle quattro shell Folio. Le sette invarianti
   `CIVIC-FOLIO-INV-N` hanno sei group Pest.
@@ -49,10 +49,10 @@ Misurato il 2026-11-26 con `audit_docs.py` e con la lettura dei test.
 |:---|:---|
 | Action in `app/Actions` | 16 |
 | Contratti di Action | 4 (`CieAuthAction`, `SpidAuthAction`, `SanitizeReturnUrlAction`, `ServeThemeAssetAction`) |
-| Contratti di build e di presentazione | 2 |
-| Invarianti | 24 (BUILD 4, CIE 3, SPID 5, RETURN 3, ASSET 2, FOLIO 7) |
-| Con un group Pest | 11 su 24 |
-| Senza test (non dimostrate) | 13: `CIVIC-BUILD-INV-1..4`, `CIVIC-CIE-INV-2`, `CIVIC-CIE-INV-3`, `CIVIC-SPID-INV-2..5`, `CIVIC-ASSET-INV-1`, `CIVIC-ASSET-INV-2`, `CIVIC-FOLIO-INV-7` |
+| Contratti di build, presentazione e identita' | 3 (+ 3 di i18n di P2, contati a parte) |
+| Invarianti | 31 (BUILD 4, CIE 3, SPID 5, RETURN 3, ASSET 2, FOLIO 7, ID 7) |
+| Con un group Pest | 15 su 31 (le quattro nuove: `CIVIC-ID-INV-1`, `5`, `6`, `7`) |
+| Senza test (non dimostrate) | 16: `CIVIC-ID-INV-2..4`, `CIVIC-BUILD-INV-1..4`, `CIVIC-CIE-INV-2`, `CIVIC-CIE-INV-3`, `CIVIC-SPID-INV-2..5`, `CIVIC-ASSET-INV-1`, `CIVIC-ASSET-INV-2`, `CIVIC-FOLIO-INV-7` |
 | Prove parziali | `CIVIC-CIE-INV-1`, `CIVIC-RETURN-INV-2`, `CIVIC-FOLIO-INV-2`, `CIVIC-FOLIO-INV-4` |
 | Action a rischio senza contratto | 0 |
 
@@ -81,6 +81,6 @@ Nessun test e' stato eseguito in questa passata.
 contratti che non riguardano un'Action.
 
 Difetto nei test, non corretto: Civic e Sixteen dichiarano entrambi `function folioBladePaths` a livello di file
-(`tests/Unit/FolioPageMountContractTest.php:6` in ciascuno), e i due `DigitalIdentityAuthenticationSecurityTest.php` fanno
-`require_once` di due file che dichiarano la stessa classe `Themes\Sixteen\Actions\...`. Caricarli nello stesso processo Pest
-puo' dare «Cannot redeclare»; non verificato, e per questo i comandi dei contratti lanciano un tema alla volta.
+(`tests/Unit/FolioPageMountContractTest.php:6` in ciascuno), e i due `DigitalIdentityAuthenticationSecurityTest.php` facevano
+`require_once` di due file che dichiaravano la stessa classe `Themes\Sixteen\Actions\...`: dal 2026-11-26 le classi hanno FQCN
+diversi e quella collisione non c'e' piu'; resta quella di `function folioBladePaths`. I comandi dei contratti lanciano comunque un tema alla volta.

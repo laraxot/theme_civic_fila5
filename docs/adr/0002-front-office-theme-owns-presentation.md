@@ -21,7 +21,7 @@ davvero lineari (vedi «Stato attuale»); quelle di Sixteen oggi non lo sono piu
 
 ## Contesto
 
-Civic e' uno snapshot divergente di Sixteen (stesso package `laraxot/theme_sixteen_fila5`, stesso namespace `Themes\Sixteen\`;
+Civic nasce come snapshot divergente di Sixteen (dal 2026-11-26 package `laraxot/theme_civic_fila5` e namespace `Themes\Civic\`, ADR 0004;
 dettagli nell'[ADR sulla build](0001-build-assets-via-vite-and-symlink.md)) e non e' il tema pubblico (`pub_theme` e'
 `Sixteen`, `config/local/fixcity/xra.php:10`). Deve mantenere la coerenza con Design Comuni senza assorbire logica di dominio:
 dati, routing e autorizzazioni stanno in CMS, User e nei moduli di dominio (`AGENTS.md`: il tema documenta presentazione e
