@@ -31,7 +31,7 @@ related:
 2. **L'attributo non e' nato oggi.** `data-sixteen-mobile-nav*` e' nei sorgenti del tema dal 2026-05-28 (commit `8fea4370`), `data-sixteen-alpine-components` dal 2026-04-14 (`5d09338a`); l'ultima variazione committata e' del 2026-10-15 (`354a3cb8`). Il diff non committato di oggi contiene 63 righe che *tolgono* `data-sixteen-*` e 0 che lo aggiungono. Ma e' stata una passata di oggi a lavorarci sopra senza metterlo in discussione.
 3. **La regola c'era, ma non lo diceva.** [013](../../../../../docs/wiki/rules/013-design-comuni-html-match.md) (CRITICAL) impone che l'HTML dentro `<body>` sia uguale al riferimento, e `body-class-rule.md` lo applica alle classi del `<body>`. Nessuna delle due nominava gli attributi `data-*`. In piu' la 013 era richiamata dalla trigger map solo nell'indice finale (riga ~579): nessuna riga task «UI/UX mobile / header / Sixteen» la caricava.
 4. **Due guide dicevano il contrario.** `html-parity-workflow.md` (righe 160 e 208) e `block-implementation-guide.md` (riga 64) dicevano «MAI usare `data-bs-*`», mentre il riferimento ha `data-bs-toggle` 278 volte e `data-bs-target` 259 e il canonico `sections/header/v1` li usa (con il runtime del tema al posto di Bootstrap JS, che non e' caricato). Chi seguiva la guida non poteva copiare l'aggancio del riferimento e ne inventava uno proprio. Corrette il 2026-10-29.
-5. **Il riferimento e' chiaro.** 33 pagine, 12 nomi `data-*`, 1780 occorrenze, nessuno col nome di un tema o di un progetto; il menu mobile non ne ha di propri (inventario e comando di rigenerazione in [data-attribute-rule.md](../data-attribute-rule.md)).
+5. **Il riferimento e' chiaro.** 33 pagine, 12 nomi `data-*`, 1780 occorrenze, nessuno col nome di un tema o di un progetto; il menu mobile non ne ha di propri (inventario e comando di rigenerazione in [data-attribute-rule.md](../../archive/docs-legacy/data-attribute-rule.md)).
 
 ## Cosa e' cambiato
 
@@ -39,10 +39,10 @@ related:
 |---|---|---|
 | 10 file (`git diff -G'data-sixteen'`): le 6 Blade di header, `resources/js/theme/header-mobile-nav.js`, `resources/js/app.js`, `css/app/12-wizard-dc-form-shell.css`, `css/app/13-final-runtime-overrides.css` | `data-sixteen-X` -> `data-X` (stesso suffisso); `data-sixteen-alpine-components` -> `data-alpine-components`; flag runtime `dataset.mobileNavBound`; il trigger di modale `data-sixteen-mobile-nav-target="#searchModal"` -> `data-bs-target="#searchModal"`. I due test `HeaderV1SlimDropdownContractTest.php` e `header-menus-keyboard.spec.mjs` sono modificati nello stesso task, senza righe `data-sixteen` nel diff | `codex` (task `data-attribute-parity`) |
 | `components/blocks/segnalazioni/layout.blade.php:288` | tolti `loading="lazy" decoding="async"` aggiunti dalla passata mobile: sono markup che il riferimento non ha | questa sessione |
-| `docs/data-attribute-rule.md` (nuovo) | la regola, la scala di scelta, l'inventario del riferimento, la mappa Sbagliato -> Giusto | questa sessione |
-| `docs/wiki/concepts/mobile-navigation-contract.md` | stato verificato delle varianti e dei selettori; rimando alla rule | questa sessione |
+| `../../archive/docs-legacy/data-attribute-rule.md` (nuovo) | la regola, la scala di scelta, l'inventario del riferimento, la mappa Sbagliato -> Giusto | questa sessione |
+| `../../archive/docs-legacy/wiki/concepts/mobile-navigation-contract.md` | stato verificato delle varianti e dei selettori; rimando alla rule | questa sessione |
 | `docs/stories/mobile-ux-pass.story.md` | premessa corretta (tema effettivo = Two), difetto 5 annullato | questa sessione |
-| `docs/html-parity-workflow.md`, `docs/block-implementation-guide.md` | tolto «MAI usare `data-bs-*`»; nuova sezione «Attributi data-*» con rimando alla rule | questa sessione |
+| `../../archive/docs-legacy/html-parity-workflow.md`, `../../archive/docs-legacy/block-implementation-guide.md` | tolto «MAI usare `data-bs-*`»; nuova sezione «Attributi data-*» con rimando alla rule | questa sessione |
 | `tests/Unit/DataAttributeParityContractTest.php` (nuovo) | guardia: nessun `data-sixteen/two/fixcity/techplanner` ne' `dataset.sixteen*` in Blade, JS, CSS; ogni `data-mobile-nav*` emesso ha un consumatore in JS/CSS | questa sessione |
 
 ## Verifica
@@ -73,7 +73,7 @@ Un riferimento dinamico da dati nel database non e' escludibile da qui.
 3. **Le varianti legacy: tenerle o toglierle?** Quattro senza consumatori, una che non compila, una con un solo tag di rimando in un altro modulo. Rifinire codice morto e' lavoro sprecato; togliere file e' decisione dell'utente.
 4. **Censire gli 83 attributi `data-*` custom** emessi dalle Blade di Sixteen (contro 12 nomi in tutto il riferimento). Molti stanno su pagine senza riferimento (`data-slug`, `data-side`, `data-url`...) e non vanno toccati senza mandato; vanno solo elencati, accanto al riferimento, per decidere quali sono pattern e quali drift.
 5. **Issue nel repo del tema.** Non ne esiste una su questo tema in `laraxot/theme_sixteen_fila5` (le piu' vicine, #54 e #65, trattano altro); le #383 e #392 citate dal contratto mobile sono di `base_fixcity_fila5`. Aprirla e' un'azione verso l'esterno: da decidere.
-6. **`docs/wiki/index.md` non aggiornato.** Ha un `.lock` vuoto (0 byte) del 2026-09-24, senza proprietario. Non l'ho rimosso: la regola di coordinamento dice di non forzare. Quando il lock viene liberato, aggiungere le voci per la rule e per questa story.
+6. **`../../archive/docs-legacy/wiki/index.md` non aggiornato.** Ha un `.lock` vuoto (0 byte) del 2026-09-24, senza proprietario. Non l'ho rimosso: la regola di coordinamento dice di non forzare. Quando il lock viene liberato, aggiungere le voci per la rule e per questa story.
 7. **Trigger map (root).** Aggiungere una riga task «header / menu mobile / UX / Sixteen / `data-*`» che carichi la 013 e la rule: e' la causa per cui la regola non e' stata letta. Fuori da questo tema; la gestisce il coordinatore.
 
 ## GitHub (tracciamento)

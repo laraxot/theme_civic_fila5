@@ -49,8 +49,8 @@ potrebbe escludere.
 
 ## Related
 
-- [civic-homepage-conversion-playbook.md](./civic-homepage-conversion-playbook.md)
-- [gtm-agent-tooling.md](./gtm-agent-tooling.md)
+- [civic-homepage-conversion-playbook.md](../../archive/docs-legacy/marketing/civic-homepage-conversion-playbook.md)
+- [gtm-agent-tooling.md](../../archive/docs-legacy/marketing/gtm-agent-tooling.md)
 - [homepage-guest-visual-contract.md](../bmad/homepage-guest-visual-contract.md)
 
 ## Gutter / asse orizzontale (Design Comuni)

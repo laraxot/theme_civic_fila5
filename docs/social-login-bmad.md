@@ -27,7 +27,7 @@ qmd: "bmad + second brain: folio architecture analysis (index vs auth/login) six
 - [x] `@vite` corretto (`resources/css/app.css`, `resources/js/app.js`, `'themes/Sixteen'`)
 - [x] Design-comuni applicato (gradient blue-700→blue-900, rounded-3xl, shadow-xl, border-slate-200)
 - [x] Form credenziali + Google OAuth + register + forgot-password
-- [x] Docs aggiornati: `docs/social-login-docs.md` e `docs/bmad/model-migration-parity.md`
+- [x] Docs aggiornati: `../archive/docs-legacy/social-login-docs.md` e `docs/bmad/model-migration-parity.md`
 
 Initiative: `KP-174d15a58ff94901b2b0df0d86b8907a`
 

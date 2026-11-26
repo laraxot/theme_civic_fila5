@@ -11,7 +11,7 @@ discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
 related:
   - ../../../../docs/wiki/bmad/architecture-folio-page-shell.md
-  - docs/wiki/concepts/folio-route-params-mount.md
+  - ../archive/docs-legacy/wiki/concepts/folio-route-params-mount.md
 status: draft
 ---
 
@@ -194,6 +194,6 @@ new class extends Component {
 
 ## Collegamenti
 
-- [folio-route-params-mount.md](wiki/concepts/folio-route-params-mount.md)
+- [folio-route-params-mount.md](../archive/docs-legacy/wiki/concepts/folio-route-params-mount.md)
 - [cms-x-page-data-bag-only.md](../../../../docs/wiki/rules/cms-x-page-data-bag-only.md)
 - STORY-141 (solo anti-pattern `@volt` dinamico)

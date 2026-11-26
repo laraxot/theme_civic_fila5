@@ -48,7 +48,7 @@ automatica si scrive «Nessuna conferma automatica oggi; proposta: ...»: non si
 
 ## Decisioni precedenti (formato libero, non ancora ADR)
 
-- [front-office-audit](../bmad/decisions/front-office-audit.md)
+- [front-office-audit](../../archive/docs-legacy/bmad/decisions/front-office-audit.md)
 
 ## Stato di copertura
 

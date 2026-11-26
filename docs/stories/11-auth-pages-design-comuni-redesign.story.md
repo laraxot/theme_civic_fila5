@@ -10,7 +10,7 @@ links:
   github_issue: "#65"
   github_discussion: "#65"
   design_ref: "https://italia.github.io/design-comuni-pagine-statiche/sito/autenticazione.html"
-  investigation_ref: "docs/investigation/redesign-front-office-pages-investigation.md"
+  investigation_ref: "../../archive/docs-legacy/investigation/redesign-front-office-pages-investigation.md"
 ---
 
 # Authentication Pages DesignComuni — Epic Story

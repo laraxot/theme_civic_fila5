@@ -114,7 +114,7 @@ Label corretta (5 livelli: `namespace::context.collection.element.type`):
 <span>{{ __('pub_theme::header.user.dropdown.notifications.label') }}</span>
 ```
 
-Contratto completo: [fo-folio-named-routes-header.md](fo-folio-named-routes-header.md) · [fo-header-url-and-translation-contract.md](fo-header-url-and-translation-contract.md)
+Contratto completo: [fo-folio-named-routes-header.md](fo-folio-named-routes-header.md) · [fo-header-url-and-translation-contract.md](../../../archive/docs-legacy/wiki/concepts/fo-header-url-and-translation-contract.md)
 
 ## Verifica
 
@@ -124,6 +124,6 @@ Contratto completo: [fo-folio-named-routes-header.md](fo-folio-named-routes-head
 
 ## Backlink
 
-- [header-authenticated-state.md](header-authenticated-state.md)
+- [header-authenticated-state.md](../../../archive/docs-legacy/wiki/concepts/header-authenticated-state.md)
 - [why-profile-edit-blade-must-not-exist.md](../../bmad/knowledge/why-profile-edit-blade-must-not-exist.md)
 - [Root rule folio-frontoffice-navigation-links](../../../../../../docs/wiki/rules/folio-frontoffice-navigation-links.md)

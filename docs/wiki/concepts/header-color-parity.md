@@ -45,8 +45,8 @@ Dal kit statico (es. [segnalazione-02-dati](https://italia.github.io/design-comu
 
 ## Collegamenti
 
-- [header design comuni code analysis](./header-design-comuni-code-analysis.md): analisi file/regole per parità header globale (story 7-107)
+- [header design comuni code analysis](../../../archive/docs-legacy/wiki/concepts/header-design-comuni-code-analysis.md): analisi file/regole per parità header globale (story 7-107)
 - [header section owner rule](../../../../../../docs/wiki/concepts/header-section-owner-rule.md)
-- [header authenticated state](./header-authenticated-state.md)
-- [header slim dropdown behavior](./header-slim-dropdown-behavior.md)
-- [Wiki log tema](../log.md)
+- [header authenticated state](../../../archive/docs-legacy/wiki/concepts/header-authenticated-state.md)
+- [header slim dropdown behavior](../../../archive/docs-legacy/wiki/concepts/header-slim-dropdown-behavior.md)
+- [Wiki log tema](../../../archive/docs-legacy/wiki/log.md)

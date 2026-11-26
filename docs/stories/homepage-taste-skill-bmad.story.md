@@ -26,8 +26,8 @@ Public-sector municipal homepage (`design-comuni`) for citizens; `trust-first` a
 8. **Content / image audit** → Hero uses `https://picsum.photos/800/600` (placeholder, needs real Design Comuni asset); governance cards use `https://picsum.photos/150/200`; `rating` block uses component (`<x-blocks.rating.default />` — needs its own audit).
 
 ## BMAD + Second Brain Updates
-- Docs created: `docs/investigation/homepage-taste-skill-bmad.md`, this `docs/stories/homepage-taste-skill-bmad.story.md`
-- `docs/decision-log.md` updated (if present) with design-read line: `public-sector Design Comuni; dials 3/2/5; system civic-design-tokens.css`
+- Docs created: `../../archive/docs-legacy/investigation/homepage-taste-skill-bmad.md`, this `docs/stories/homepage-taste-skill-bmad.story.md`
+- `../../archive/docs-legacy/decision-log.md` updated (if present) with design-read line: `public-sector Design Comuni; dials 3/2/5; system civic-design-tokens.css`
 - `MEMORY.md` updated (long_term): new block with audit findings, dials, open questions, file refs.
 - Second brain (hindsight): page created/retrieved for `homepage-audit-taste-skill`; open objectives tracked: real image replacement, state rules (`:focus-visible`/`:disabled`), `prefers-reduced-motion`, DESIGN.md persistence.
 

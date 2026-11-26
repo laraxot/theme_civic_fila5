@@ -15,7 +15,7 @@ tags: [docs, sixteen, mobile, accessibility, bmad]
 > - **Difetto 5 (`loading="lazy" decoding="async"`): annullato.** E' markup che il riferimento non ha; tolto da `components/blocks/segnalazioni/layout.blade.php:288`.
 > - **Difetti 1-3** riguardano le viste `mobile/**`, un prototipo non instradato e non Design Comuni: non toccano la parity, ma restano da riesaminare (instradare o rimuovere).
 > - **Difetto 4 (`100dvh` nei CSS):** resta nel codice, ma va confermato contro il riferimento (stile calcolato e screenshot) prima di considerarlo accettato; nessuna build fatta.
-> - **Header e menu mobile:** gli attributi `data-sixteen-*` erano sbagliati, vedi [data-attribute-rule.md](../data-attribute-rule.md) e [data-attribute-parity.story.md](./data-attribute-parity.story.md). Lo stato `done` qui sopra e' diventato `review` per questo.
+> - **Header e menu mobile:** gli attributi `data-sixteen-*` erano sbagliati, vedi [data-attribute-rule.md](../../archive/docs-legacy/data-attribute-rule.md) e [data-attribute-parity.story.md](./data-attribute-parity.story.md). Lo stato `done` qui sopra e' diventato `review` per questo.
 
 **Fase BMAD**: Dev (diff minimo, ponytail). **Richiesta utente**: «studia e migliora la ui/ux da mobile fa tutto con bmad + ecc + second brain + filament blueprint + ponytail».
 
@@ -25,7 +25,7 @@ Sixteen ha gia' molto lavoro mobile (`bottom-nav` con `safe-area-inset-bottom` e
 
 **Tema effettivo.** Il tenant `local/techplanner` ha in `laravel/config/local/techplanner/xra.php` righe 10-12 tre chiavi `'pub_theme'` (`Two`, `Sixteen`, `Two`): in un array PHP vince l'ultima, quindi il tema servito e' **Two** ([passata Two](../../../Two/docs/stories/mobile-ux-pass.story.md)). Le correzioni di Sixteen valgono quando il tenant usa Sixteen. Il file `xra.php` non e' stato toccato: e' configurazione del tenant e va ripulito dall'utente.
 
-**Non toccato di proposito.** `components/sections/header/v1.blade.php`, `resources/css/mobile-header-fix.css`, `resources/js/theme/header-mobile-nav.js` e `docs/wiki/index.md` hanno modifiche in corso di un'altra sessione (story `dcp-121`, [contratto di navigazione mobile](../wiki/concepts/mobile-navigation-contract.md)).
+**Non toccato di proposito.** `components/sections/header/v1.blade.php`, `resources/css/mobile-header-fix.css`, `resources/js/theme/header-mobile-nav.js` e `../../archive/docs-legacy/wiki/index.md` hanno modifiche in corso di un'altra sessione (story `dcp-121`, [contratto di navigazione mobile](../../archive/docs-legacy/wiki/concepts/mobile-navigation-contract.md)).
 
 ## Difetti e correzioni (file:riga prima della modifica)
 

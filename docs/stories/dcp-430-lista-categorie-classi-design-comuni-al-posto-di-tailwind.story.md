@@ -32,7 +32,7 @@ DCP-408, difetti LC-02, LC-03, LC-04 (proprietario: Sixteen). Nel CSS compilato 
 
 ## Tasks
 
-- [ ] Leggere [06-categories-list-design-comuni-redesign](./06-categories-list-design-comuni-redesign.story.md) e annotare cosa si sovrappone; collegarla o marcarla superseded, senza cancellarla.
+- [ ] Leggere [06-categories-list-design-comuni-redesign](../../archive/docs-legacy/stories/06-categories-list-design-comuni-redesign.story.md) e annotare cosa si sovrappone; collegarla o marcarla superseded, senza cancellarla.
 - [ ] Elencare le classi DC equivalenti a quelle usate (griglia, card, pulsante primario) guardando una pagina DC gia' verificata.
 - [ ] Sostituire le classi nelle due view.
 - [ ] Build del tema e controllo che non ci siano file a 0 byte nelle immagini copiate.

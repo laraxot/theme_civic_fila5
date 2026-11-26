@@ -75,9 +75,9 @@ Historical docs that mention Sixteen may describe the previous implementation an
 - [Italian overview](../README.md)
 - [Technical status and architecture](./README.md)
 - [Inherited documentation index](./README.md)
-- [Architecture](./architecture/README.md)
-- [Design system](./design-system/README.md)
-- [Technical wiki](./wiki/README.md)
+- [Architecture](../archive/docs-legacy/architecture/README.md)
+- [Design system](../archive/docs-legacy/design-system/README.md)
+- [Technical wiki](../archive/docs-legacy/wiki/README.md)
 
 ## Repositories and references
 

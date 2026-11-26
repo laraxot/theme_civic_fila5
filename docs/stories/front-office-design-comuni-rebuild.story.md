@@ -5,7 +5,7 @@ status: in-progress
 tags: [design-comuni, front-office, bmad, redesign]
 links:
   github_issue: https://github.com/italia/design-comuni-pagine-statiche
-  investigation: docs/investigation/front-office-design-comuni.md
+  investigation: ../../archive/docs-legacy/investigation/front-office-design-comuni.md
   design_ref: https://italia.github.io/design-comuni-pagine-statiche/index.html
 ---
 
