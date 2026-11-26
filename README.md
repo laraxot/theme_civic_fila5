@@ -1,7 +1,7 @@
 ---
 title: "Civic — tema pubblico Laraxot"
 type: readme
-tags: [documentation, civic, laraxot, fixcity]
+tags: [documentation, civic, laraxot, reusable-theme]
 created: 2026-09-26
 updated: 2026-11-26
 qmd: "Civic theme Laraxot frontoffice Italy Malta migration Sixteen"
@@ -19,7 +19,7 @@ status: active
 [![Filament](https://img.shields.io/badge/Filament-5-f59e0b)](https://filamentphp.com/)
 [![Documentation](https://img.shields.io/badge/docs-Italiano%20%7C%20English-64748b)](./docs/README.md)
 
-> **Civic è il nome del tema; FixCity è un prodotto che può utilizzarlo.** Il tema è pensato per essere riutilizzato da più enti e in più Paesi, a partire da Italia e Malta.
+> **Civic è un tema riusabile e agnostico.** Il prodotto host fornisce identità, contenuti, lingue e integrazioni specifiche.
 
 > [!IMPORTANT]
 > **Migrazione tecnica non ancora completata.** Il repository Civic nasce dal codice del precedente tema **Sixteen**. Al 26 novembre 2026, `composer.json`, `package.json`, `theme.json` e `vite.config.js` contengono ancora riferimenti a `Sixteen`. Il nome del repository **non** equivale a un tema `Themes\Civic` già installabile o attivo. Prima di attivarlo occorre completare e verificare la migrazione; vedi [stato tecnico](./docs/README.md).
@@ -36,7 +36,7 @@ status: active
 
 | Ambito | Tecnologie o convenzioni |
 | --- | --- |
-| Backend | PHP 8.4, Laravel 13 nel progetto FixCity ospitante, Filament 5 |
+| Backend | PHP 8.4, Laravel 13 nell'applicazione ospitante, Filament 5 |
 | Frontend | Blade, Folio/Volt nell'applicazione, Tailwind CSS 4, Alpine.js, Lit, DaisyUI, Flowbite |
 | Asset | Vite 8; compilazione nella directory `public/` del tema |
 | Geografia | Integrazione con il modulo Geo e componenti mappa |
