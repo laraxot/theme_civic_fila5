@@ -11,7 +11,7 @@ related:
   - ../../rules/reusable-components.md
   - ../../bmad/filament-blueprint.md
   - ../../bmad/container0-index-shell-contract.md
-  - ../../stories/STORY-BLOG003-reusable-components.md
+  - ../../stories/story-blog003-reusable-components.md
 ---
 
 # Design Comuni — Componenti Riutilizzabili
@@ -58,6 +58,6 @@ rompe la religione `container0.*` (mai `tickets.*` / `localizeUrl`).
 ## Riferimenti
 
 - **Regola**: [reusable-components.md](../../rules/reusable-components.md)
-- **BMAD story**: [STORY-BLOG003-reusable-components.md](../../stories/STORY-BLOG003-reusable-components.md)
+- **BMAD story**: [story-blog003-reusable-components.md](../../stories/story-blog003-reusable-components.md)
 - **Blueprint**: [filament-blueprint.md](../../bmad/filament-blueprint.md)
 - **Shell**: [container0-index-shell-contract.md](../../bmad/container0-index-shell-contract.md)

@@ -103,7 +103,7 @@ laravel/Themes/Sixteen/
 │   ├── prompts/
 │   │   └── replikate.txt               ← PROTOCOL
 │   ├── design-comuni/
-│   │   ├── 00-INDEX.md                 ← HUB
+│   │   ├── README.md                 ← HUB
 │   │   ├── pages/
 │   │   │   └── homepage-structure-diff.md   ← ACTION ITEMS
 │   │   └── screenshots/

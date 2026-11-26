@@ -47,7 +47,7 @@ Metodo gia' provato su homepage, risultati-ricerca, appuntamento-02-data-orario,
 
 ## Proprieta' dei file (piu' agenti lavorano insieme, piu' altri agenti esterni)
 Si possono creare/modificare SOLO: i JSON `tests.<slug>.json` delle proprie pagine (tenant e modulo), `blocks/<propria-famiglia>/**`, le immagini nuove in `public/design-comuni/assets/images/`, la propria story, righe in coda ai due manifest.
-**Vietato**: `resources/css/**` (anche `components.css`, generato), `resources/js/**`, `postcss/**`, `vite.config*`, `postcss.config.js`, layouts, `sections/**` (header, footer, modale), `blocks/partials/**`, `pages/tests/**`, le pagine di altri agenti, `MEMORY.md`, indici, epic, `00-COORDINATION.md`.
+**Vietato**: `resources/css/**` (anche `components.css`, generato), `resources/js/**`, `postcss/**`, `vite.config*`, `postcss.config.js`, layouts, `sections/**` (header, footer, modale), `blocks/partials/**`, `pages/tests/**`, le pagine di altri agenti, `MEMORY.md`, indici, epic, `00-coordination.md`.
 Se serve una modifica condivisa (nuovo comportamento JS, partial, regola CSS che non si ottiene dal riferimento, stato non previsto): **non farla**; descriverla in modo preciso nel report (file, comportamento, misura che la giustifica).
 Prima di scrivere: `find <dir> -mmin -10`, `git diff` del file; modifiche ancorate; non cancellare file altrui; se per il tuo slug esiste un altro file con lo stesso `slug`, spostalo fuori dal repo con backup e dichiaralo.
 Dopo un 500 qualsiasi: `cd laravel && php artisan view:clear` (l'exception renderer lascia `|---LINE:n---|` nella cache).

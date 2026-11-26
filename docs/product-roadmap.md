@@ -413,7 +413,7 @@ status: draft
 ### Related Documents
 
 - [Product Requirements Document](prd.md)
-- [Product Strategy](product_strategy.md)
+- [Product Strategy](product-strategy.md)
 - [Sprint Planning](sprint-planning.md)
 - [AGID Implementation Summary](agid-implementation-summary.md)
 

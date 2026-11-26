@@ -266,7 +266,7 @@ chiude il gate.
 - Epic DCP-00 e storie per la ripresa (`bmad/stories/dcp-00-epic-design-comuni-parity-v2.story.md`, non presente in Civic)
 - Perche' la parity non e' stata completata e guardrail (`bmad/decisions/parity-root-cause-and-guardrails.md`, non presente in Civic)
 - [Dossier dei 14 difetti della homepage](bmad/homepage-visual-parity-defects/defects-d01-d14.md)
-- [Coordinamento tra agenti](prompts/homepage/00-COORDINATION.md)
+- [Coordinamento tra agenti](prompts/homepage/00-coordination.md)
 - Zen del wizard segnalazione (logica/perche'/filosofia/religione/politica) (`bmad/decisions/segnalazione-flow-parity-zen.md`, non presente in Civic)
 - DCP-32 wizard step 1 privacy (`bmad/stories/dcp-32-wizard-step1-privacy.story.md`, non presente in Civic) · DCP-33 step 2 dati + mappa (`bmad/stories/dcp-33-wizard-step2-dati.story.md`, non presente in Civic) · DCP-34 step 3 riepilogo + mappa (`bmad/stories/dcp-34-wizard-step3-riepilogo.story.md`, non presente in Civic) · DCP-35 conferma (`bmad/stories/dcp-35-conferma-parity.story.md`, non presente in Civic)
 - Strumenti: `bashscripts/docs/visual-comparison/INDEX.md`
@@ -344,7 +344,7 @@ L'elenco di ogni documento di `docs/`, compresi `adr/`, `contracts/`, `stories/`
 
 <!-- docs-index:begin (generato da docs/scripts/docs-index.py: non modificare a mano) -->
 
-Documenti catalogati: 1286 (questo file escluso), in 65 aree.
+Documenti catalogati: 1289 (questo file escluso), in 65 aree.
 
 <details>
 <summary><strong>radice di `docs/`</strong>: 342 documenti</summary>
@@ -695,7 +695,7 @@ Documenti catalogati: 1286 (questo file escluso), in 65 aree.
 </details>
 
 <details>
-<summary><strong>`adr/`</strong>: 12 documenti</summary>
+<summary><strong>`adr/`</strong>: 13 documenti</summary>
 
 - [ADR — (decisione in una riga)](adr/0000-template.md)
 - [ADR — Civic compila gli asset con Vite, senza copie, e oggi non li pubblica](adr/0001-build-assets-via-vite-and-symlink.md)
@@ -704,6 +704,7 @@ Documenti catalogati: 1286 (questo file escluso), in 65 aree.
 - [Inventario dei riferimenti Sixteen e confini tema/moduli](adr/0004-inventario-riferimenti-sixteen.md)
 - [Attivazione di Civic e convivenza con Sixteen](adr/0005-attivazione-civic-e-convivenza-con-sixteen.md)
 - [Identità Civic: namespace Themes/Civic, manifest theme.json e base Vite /themes/Civic/](adr/0006-identita-civic-namespace-manifest-e-url-degli-asset.md)
+- [Rinomina di variabili d'ambiente, rotte e config; correzione del provider](adr/0007-rinomina-env-rotte-e-provider-del-tema.md)
 - [ADR 0010 — Catalogo maltese mt: bozza con marcatore di revisione, non una traduzione dichiarata com…](adr/0010-catalogo-maltese-bozza-e-revisione.md)
 - [ADR 0011 — Profili Paese/ente e terminologia istituzionale in lang/(locale)/entity.php](adr/0011-profili-paese-ente-e-terminologia.md)
 - [ADR 0012 — Formati per Paese: date, numeri, indirizzi, telefoni e codici postali](adr/0012-formati-per-paese.md)
@@ -854,11 +855,13 @@ Documenti catalogati: 1286 (questo file escluso), in 65 aree.
 </details>
 
 <details>
-<summary><strong>`audits/`</strong>: 4 documenti</summary>
+<summary><strong>`audits/`</strong>: 6 documenti</summary>
 
 - [Censimento blocchi CMS — dati di ente hardcoded (#20)](audits/cms-blocks-data-contract.md)
+- [Integrazione funzioni cittadino FixCity nel frontend Civic](audits/fixcity-integration.md)
 - [Audit performance, SEO tecnico e budget asset](audits/performance-seo.md)
 - [Audit sicurezza e privacy del layer UI (Civic)](audits/security-privacy-ui.md)
+- [Piano regressione visuale (screenshot reali)](audits/visual-regression.md)
 - [Audit WCAG — frontend Civic](audits/wcag-audit.md)
 
 </details>
@@ -1079,9 +1082,9 @@ Documenti catalogati: 1286 (questo file escluso), in 65 aree.
 <details>
 <summary><strong>`contracts/`</strong>: 12 documenti</summary>
 
-- [(operazione) — contratto comportamentale](contracts/_template.md)
 - [Contratto — build asset Civic](contracts/build-surface.md)
 - [Contratto — CieAuthAction (Civic)](contracts/cie-auth-action.md)
+- [(operazione) — contratto comportamentale](contracts/contract-template.md)
 - [Contratto — Civic Folio page shell](contracts/folio-page-shell.md)
 - [Contratto — parita' dei cataloghi lang/ di Civic (it, en, de, es, mt)](contracts/i18n-catalog-parity.md)
 - [Contratto — formati per Paese di Civic: date, numeri, indirizzi, telefoni, codici postali](contracts/i18n-country-formats.md)
@@ -1090,7 +1093,7 @@ Documenti catalogati: 1286 (questo file escluso), in 65 aree.
 - [Contratto — SanitizeReturnUrlAction (Civic)](contracts/sanitize-return-url-action.md)
 - [Contratto — ServeThemeAssetAction (Civic)](contracts/serve-theme-asset-action.md)
 - [Contratto — SpidAuthAction (Civic)](contracts/spid-auth-action.md)
-- [Contratto — identita' del tema Civic](contracts/theme-identity.md)
+- [Contratto — identità del tema Civic](contracts/theme-identity.md)
 
 </details>
 
@@ -1280,7 +1283,7 @@ Documenti catalogati: 1286 (questo file escluso), in 65 aree.
 - [TAILWIND ONLY BUILD COMPLETE](design-comuni/tailwind-only-build-complete.md)
 - [test results](design-comuni/test-results.md)
 - [tests pages recovery](design-comuni/tests-pages-recovery.md)
-- [TICKET CREATION WIZARD](design-comuni/TICKET-CREATION-WIZARD.md)
+- [TICKET CREATION WIZARD](design-comuni/ticket-creation-wizard.md)
 - [VALIDAZIONE ARGOMENTI SERVIZI](design-comuni/validazione-argomenti-servizi.md)
 - [VALIDAZIONE POST FIX](design-comuni/validazione-post-fix.md)
 - [VIEW PATH FIX REPORT](design-comuni/view-path-fix-report.md)
@@ -1620,7 +1623,7 @@ Documenti catalogati: 1286 (questo file escluso), in 65 aree.
 
 **`prompts/homepage/`**
 
-- [Coordinamento tra agenti sulle pagine /it/tests](prompts/homepage/00-COORDINATION.md)
+- [Coordinamento tra agenti sulle pagine /it/tests](prompts/homepage/00-coordination.md)
 - [HTML SIMILARITY 90 PERCENT PLAN](prompts/homepage/html-similarity-90-percent-plan.md)
 - [HTML SIMILARITY 90 PERCENT SESSION](prompts/homepage/html-similarity-90-percent-session.md)
 - [increment 90](prompts/homepage/increment.md)
@@ -1827,7 +1830,7 @@ Documenti catalogati: 1286 (questo file escluso), in 65 aree.
 <details>
 <summary><strong>`root-md-files/`</strong>: 2 documenti</summary>
 
-- [CHANGELOG](root-md-files/CHANGELOG.md)
+- [CHANGELOG](root-md-files/changelog.md)
 - [README HOMEPAGE REPLICATION](root-md-files/readme-homepage-replication.md)
 
 </details>
@@ -1954,7 +1957,7 @@ Documenti catalogati: 1286 (questo file escluso), in 65 aree.
 - [(STORY) Head SEO centralizzato per il tema Sixteen](stories/seo-head-component-sixteen.story.md)
 - [(STORY) Services -) Actions e const -) enum, tema Sixteen](stories/services-to-actions-sixteen.story.md)
 - [Sixteen test suite: stale contracts and real bugs](stories/sixteen-suite-stale-contracts.story.md)
-- [STORY-BLOG003 — Componenti Riutilizzabili (Reusability)](stories/STORY-BLOG003-reusable-components.md)
+- [STORY-BLOG003 — Componenti Riutilizzabili (Reusability)](stories/story-blog003-reusable-components.md)
 - [Audit harness dei documenti Sixteen](stories/theme-docs-harness-contracts-audit.story.md)
 - [Sixteen Theme: Homepage JSON Structure Alignment](stories/theme-sixteen-nine11-homepage-json-alignment.story.md)
 - [theme-sixteen-twentyone-json-alignment.story](stories/theme-sixteen-twentyone-json-alignment.story.md)

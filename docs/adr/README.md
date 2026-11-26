@@ -8,8 +8,8 @@ updated: 2026-11-26
 
 # ADR del tema Civic
 
-Il **perche'** delle scelte di questo pacchetto. Civic e' uno snapshot divergente di Sixteen (stesso package
-`laraxot/theme_sixteen_fila5`, stesso namespace `Themes\Sixteen\`, non e' `pub_theme`): i due ADR nascono come copia di
+Il **perche'** delle scelte di questo pacchetto. Civic nasce come snapshot di Sixteen e dal 2026-11-26 ha identita' propria
+(package `laraxot/theme_civic_fila5`, namespace `Themes\Civic\`; ADR 0004, 0006 e 0007): i primi due ADR nascono come copia di
 quelli di Sixteen e qui sono stati riscritti su cio' che Civic fa davvero. Gli ADR di Sixteen
 ([indice](../../../Sixteen/docs/adr/README.md)) restano la fonte per `data-*`, parita' HTML e identita' digitale.
 
@@ -37,6 +37,14 @@ automatica si scrive «Nessuna conferma automatica oggi; proposta: ...»: non si
 - [Build asset con Vite, senza copie; pubblicazione non decisa](0001-build-assets-via-vite-and-symlink.md) — `npm run build` da `Themes/Civic`; nessun link `public_html/themes/Civic`; `vite.config.js:11` ha base `/themes/Sixteen/`.
 - [Presentazione e shell Folio sottili](0002-front-office-theme-owns-presentation.md) — le quattro shell di Civic sono lineari, a differenza di quelle di Sixteen.
 - [Versionare package-lock.json nel repo tema](0003-version-package-lock-in-theme-repo.md) — `npm ci` riproducibile (#21).
+- [Inventario dei riferimenti Sixteen e confini tema/moduli](0004-inventario-riferimenti-sixteen.md) — eccezioni tracciate da `NoSixteenRuntimeReferencesTest` (#4, #1).
+- [Attivazione di Civic e convivenza con Sixteen](0005-attivazione-civic-e-convivenza-con-sixteen.md) — selezione runtime via `xra.pub_theme`, rollback reversibile (#3, #1, #2).
+- [Identità Civic: namespace, manifest e URL degli asset](0006-identita-civic-namespace-manifest-e-url-degli-asset.md) — `Themes\Civic`, `theme.json` name Civic, base Vite `/themes/Civic/` (#1).
+- [Rinomina di variabili d'ambiente, rotte e config; correzione del provider](0007-rinomina-env-rotte-e-provider-del-tema.md) — `SIXTEEN_*` -> `CIVIC_*` senza ripiego, `civic/auth`, `register()` senza `parent::register()` (#1, #2, #3, #4).
+- [Catalogo maltese `mt`: bozza con marcatore di revisione](0010-catalogo-maltese-bozza-e-revisione.md) — `lang/mt` esiste ma non e' una traduzione dichiarata (#8).
+- [Profili Paese/ente e terminologia istituzionale](0011-profili-paese-ente-e-terminologia.md) — `lang/<locale>/entity.php`, 13 termini per profilo (#6).
+- [Formati per Paese](0012-formati-per-paese.md) — date/numeri/indirizzi via PHP Intl e config per Paese (#9, #17).
+- [Parita' dei cataloghi e fallback di localizzazione](0013-fallback-di-localizzazione-e-parita-dei-cataloghi.md) — parita' misurata sull'unione delle chiavi (#7).
 
 ## Decisioni precedenti (formato libero, non ancora ADR)
 
@@ -48,7 +56,7 @@ Misurato il 2026-11-26.
 
 | Voce | Esito |
 |:---|:---|
-| ADR | 2 |
+| ADR | 10 (0001-0006, 0010-0013; `index.md` operativo e' stato fuso in questo README il 2026-11-26) |
 | Con le sei sezioni nel formato sopra | 2 su 2 (all'inizio mancavano `Driver` e `created`) |
 | Con `## Stato attuale` | 2 su 2 |
 | Con una Conferma che cita un test esistente | 2 su 2, ma in `0001` il test sul symlink **salta** per Civic |
@@ -57,7 +65,7 @@ Misurato il 2026-11-26.
 Contraddizioni trovate:
 
 - `0001`: il testo copiato da Sixteen presentava il symlink come parte del quadro; per Civic non c'e' nessun link
-  (`public_html/themes/` ha solo `Sixteen`) e l'output di una build avrebbe URL `/themes/Sixteen/...`.
+  (`public_html/themes/` ha solo `Sixteen`); dal 2026-11-26 la base della build e' `/themes/Civic/` e `deploy.sh` crea il link da solo.
 - `0002`: `ResolveContainer0IndexAction` e' codice morto rispetto alle shell di Civic.
 - Civic non era in `docs/package-docs-inventory.md` all'inizio della passata (oggi c'e', riga 40).
 

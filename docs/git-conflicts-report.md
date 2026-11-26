@@ -127,7 +127,7 @@ Output: nessun conflitto `U` residuo.
 * ./Themes/Sixteen/docs/design-comuni/screenshots/reference/homepage-desktop.png
 * ./Themes/Sixteen/docs/design-comuni/screenshots/local-homepage-full.png
 * ./Themes/Sixteen/docs/merge-conflict-resolution-log.md
-* ./Themes/Sixteen/docs/00-INDEX.md
+* ./Themes/Sixteen/docs/README.md
 * ./Themes/Sixteen/docs/merge-conflicts-list.md
 * ./Themes/Sixteen/docs/screenshots/homepage/reference-full-2026-04-07.png
 * ./Themes/Sixteen/docs/screenshots/homepage/reference-viewport-2026-04-07.png

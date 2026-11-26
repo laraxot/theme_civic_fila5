@@ -33,7 +33,7 @@ Il tema documenta la **parity visiva**; il modulo documenta la **business logic*
 - modulo (business): [wizard governance philosophy](../../../../Modules/Fixcity/docs/wizard-governance-philosophy.md)
 - modulo (tecnico): [CreateTicketWizardWidget](../../../../Modules/Fixcity/docs/CreateTicketWizardWidget.md)
 - xot (base): [XotBaseWizardWidget](../../../../Modules/Xot/docs/wiki/concepts/filament-wizard-architecture-right-way.md)
-- tema (parity): [Ticket creation wizard](./TICKET-CREATION-WIZARD.md)
+- tema (parity): [Ticket creation wizard](./ticket-creation-wizard.md)
 
 ## collegamenti bidirezionali
 

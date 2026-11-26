@@ -51,5 +51,5 @@ qmd: "frontoffice-blog-events-tickets"
 - `docs/wiki/concepts/folio-container0-index-filament-way.md`
 - `docs/wiki/skills/fixcity-inbound-editorial.md`
 - `laravel/Themes/Sixteen/docs/bmad/blog-public-index.md` (contratto blog)
-- `laravel/Modules/Event/docs/00-INDEX.md` (modulo Event)
-- `laravel/Modules/Blog/docs/00-INDEX.md` (modulo Blog)
+- `laravel/Modules/Event/docs/README.md` (modulo Event)
+- `laravel/Modules/Blog/docs/README.md` (modulo Blog)

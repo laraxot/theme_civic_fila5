@@ -89,7 +89,7 @@ These blocks exist in local but NOT in reference:
 | File | Purpose |
 |------|---------|
 | `docs/design-comuni/homepage-html-structure-comparison.md` | HTML structure analysis |
-| `docs/design-comuni/VISUAL-COMPARISON-REPORT.md` | Visual comparison report |
+| `docs/design-comuni/visual-comparison-report.md` | Visual comparison report |
 | `docs/design-comuni/screenshots/*.png` | Before/after screenshots |
 | `docs/design-comuni/homepage-parity-summary.md` | This file |
 
@@ -98,7 +98,7 @@ These blocks exist in local but NOT in reference:
 All new documents are linked bidirectionally:
 - `docs/design-comuni/homepage-parity-summary.md` references:
   - `homepage-html-structure-comparison.md`
-  - `VISUAL-COMPARISON-REPORT.md`
+  - `visual-comparison-report.md`
   - Screenshots in `screenshots/`
 - Screenshots folder has README with index
 
@@ -131,7 +131,7 @@ All new documents are linked bidirectionally:
 ## Related Documents
 
 - [HOMEPAGE-HTML-STRUCTURE-COMPARISON.md](homepage-html-structure-comparison.md)
-- [VISUAL-COMPARISON-REPORT.md](VISUAL-COMPARISON-REPORT.md)
+- [visual-comparison-report.md](visual-comparison-report.md)
 - [../ARCHITECTURAL_DECISIONS.md](architectural-decisions.md)
 - [../../../docs/design-comuni/README.md](README.md)
 

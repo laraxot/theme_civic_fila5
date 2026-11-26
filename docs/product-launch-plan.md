@@ -555,7 +555,7 @@ This document outlines the comprehensive launch plan for Theme Sixteen v2.0, mar
 ### Related Documents
 - [Product Requirements Document](prd.md)
 - [Product Roadmap](product-roadmap.md)
-- [Product Strategy](product_strategy.md)
+- [Product Strategy](product-strategy.md)
 - [User Research](user-research.md)
 
 ### Templates

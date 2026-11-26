@@ -13,7 +13,7 @@ related:
   - ../../wizard-refactor-explanation.md
   - ../../ticket-wizard-filament-refactor.md
   - ../../architecture/wizard-parity.md
-  - ../../design-comuni/TICKET-CREATION-WIZARD.md
+  - ../../design-comuni/ticket-creation-wizard.md
   - ../../design-comuni/wizard-governance-bridge.md
   - ../../../../../Modules/Xot/docs/wiki/concepts/ridondanze-cross-cutting-codebase.md
   - ./fixcity-wizard-full-width-and-opaque-fields.md
@@ -41,7 +41,7 @@ Percorsi sotto **`docs/`** che raccontano lo stesso arco refactor e **andranno f
 
 Documenti vicini nell’intent (parity “crea ticket”):
 
-- [`design-comuni/TICKET-CREATION-WIZARD.md`](../../design-comuni/TICKET-CREATION-WIZARD.md) — sintesi progettuale Governance
+- [`design-comuni/ticket-creation-wizard.md`](../../design-comuni/ticket-creation-wizard.md) — sintesi progettuale Governance
 - [`design-comuni/wizard-governance-bridge.md`](../../design-comuni/wizard-governance-bridge.md) — ponte modulo/tema/reference esterna
 
 Non sono byte-identici: **mantenere** ma **aggiungere un paragrafo “vedi anche” crociato** in ciascuno (evita terza pagina con stesso contenuto).

@@ -55,7 +55,7 @@ status: draft
 ## Related Documentation
 
 - [CreateTicketWizardWidget.md](../../../Modules/Fixcity/docs/CreateTicketWizardWidget.md) — Widget docs
-- [TICKET-CREATION-WIZARD.md](design-comuni/TICKET-CREATION-WIZARD.md) — Theme docs
+- [ticket-creation-wizard.md](design-comuni/ticket-creation-wizard.md) — Theme docs
 - [Story 7-34](../../../_bmad-output/implementation-artifacts/7-34-create-ticket-wizard-filament-schema-wizard-refactor.md) — Wizard Filament v5 Schema (done)
 - [Story 7-35](../../../_bmad-output/implementation-artifacts/7-35-segnalazione-crea-filament-wizard-way-audit-and-refactor.md) — Audit wizard
 - [Story 7-30](../../../_bmad-output/implementation-artifacts/7-30-refactor-ticket-wizard-to-filament-pure.md) — Refactor story

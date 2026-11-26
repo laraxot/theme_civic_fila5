@@ -25,7 +25,7 @@ story: const-to-enum-sixteen-appointment.story.md
 - mod `Themes/Sixteen/app/Models/Appointment.php`, `src/Models/Appointment.php`
 - mod `Themes/Sixteen/app/Http/Livewire/Appointment/CreateAppointment.php`, `src/Http/Livewire/Appointment/CreateAppointment.php`
 - new `Themes/Sixteen/tests/Unit/AppointmentEnumsTest.php`
-- docs: `docs/appointment-enums.md`, `docs/index.md`, `docs/00-INDEX.md`, questa coppia story/dev
+- docs: `docs/appointment-enums.md`, `docs/index.md`, `docs/README.md`, questa coppia story/dev
 
 ## Implementation Steps
 

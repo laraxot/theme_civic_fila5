@@ -92,7 +92,7 @@ Il lavoro visivo resta limitato a:
 - [Modules/Cms/docs/00-index.md](../../../../Modules/Cms/docs/00-index.md) - Indice modulo Cms
 
 ### Modulo UI
-- [Modules/UI/docs/00-index.md](../../../../Modules/UI/docs/00-INDEX.md) - Indice modulo UI
+- [Modules/UI/docs/00-index.md](../../../../Modules/UI/docs/README.md) - Indice modulo UI
 - [Modules/UI/docs/design-comuni-faq-components.md](../../../Modules/UI/docs/design-comuni-faq-components.md) - Componenti UI FAQ
 
 ### Scripts
@@ -111,7 +111,7 @@ Il lavoro visivo resta limitato a:
 - [batch-body-parity-2026-04-03.md](./batch-body-parity.md) - Audit batch della struttura del `body`
 - [homepage-structure-diff-2026-04-02.md](./homepage-structure-diff.md) - Confronto strutturale homepage
 - [HOMEPAGE-HTML-STRUCTURE-COMPARISON.md](./homepage-html-structure-comparison.md) - HTML structure comparison (remote vs local)
-- [VISUAL-COMPARISON-REPORT.md](./VISUAL-COMPARISON-REPORT.md) - Visual comparison with screenshots
+- [visual-comparison-report.md](./visual-comparison-report.md) - Visual comparison with screenshots
 - [HOMEPAGE-PARITY-SUMMARY.md](./homepage-parity-summary.md) - Homepage parity final summary (2026-04-07)
 - [work-plan.md](./work-plan.md) - Piano BMAD + GSD operativo
 - [bmad-gsd-status-2026-04-03.md](./bmad-gsd-status.md) - Stato reale dell'ultimo loop

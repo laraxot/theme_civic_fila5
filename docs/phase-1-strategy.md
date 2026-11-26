@@ -671,7 +671,7 @@ As work progresses, update these docs (Researcher/Documentation responsibility):
 - [ ] `laravel/Themes/Sixteen/docs/PHASE-1-FINDINGS.md` ← Findings (to create)
 - [ ] `laravel/Themes/Sixteen/docs/PHASE-1-COMPLETION-REPORT.md` ← Results (to create)
 - [ ] `laravel/Themes/Sixteen/docs/body-structure-comparison/ticket-list/` ← Comparison output
-- [ ] `laravel/Themes/Sixteen/docs/00-INDEX.md` ← Update with Phase 1 progress
+- [ ] `laravel/Themes/Sixteen/docs/README.md` ← Update with Phase 1 progress
 
 ### Bashscripts Documentation
 - [ ] `bashscripts/docs/html/INDEX.md` ← Already created

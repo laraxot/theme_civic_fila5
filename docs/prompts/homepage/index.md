@@ -32,7 +32,7 @@ Aggiornamento di sera: restano header, footer e modale (dinamici, condivisi). De
 Anche la riga iniziale "99,6% di HTML similarity" non era mai stata prodotta da un comando (misura reale quel giorno: 26,9%).
 Piano e stato: [epic DCP-00](../../bmad/stories/dcp-00-epic-design-comuni-parity-v2.story.md).
 Cause e guardrail: [decisione 2026-10-13](../../bmad/decisions/parity-root-cause-and-guardrails.md).
-Coordinamento tra agenti: [00-COORDINATION.md](00-COORDINATION.md).
+Coordinamento tra agenti: [00-coordination.md](00-coordination.md).
 
 ## Purpose / Scope
 Make `http://192.168.1.40:8000/it/tests/homepage` match

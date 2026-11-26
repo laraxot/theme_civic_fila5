@@ -11,7 +11,7 @@ related:
   - ../wiki/concepts/design-comuni-reusable-components.md
   - ../bmad/filament-blueprint.md
   - ../bmad/container0-index-shell-contract.md
-  - ../stories/STORY-BLOG003-reusable-components.md
+  - ../stories/story-blog003-reusable-components.md
 ---
 
 # Regola: Componenti Riutilizzabili
@@ -58,7 +58,7 @@ va in Action / layer semantici (`Infrastructure`, `Presentation`, `Adapters`) o 
 
 ## Riferimento BMAD
 
-- Story: [STORY-BLOG003-reusable-components.md](../stories/STORY-BLOG003-reusable-components.md)
+- Story: [story-blog003-reusable-components.md](../stories/story-blog003-reusable-components.md)
 - Second brain: [design-comuni-reusable-components.md](../wiki/concepts/design-comuni-reusable-components.md)
 - Blueprint: [filament-blueprint.md](../bmad/filament-blueprint.md)
 - Shell: [container0-index-shell-contract.md](../bmad/container0-index-shell-contract.md)

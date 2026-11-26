@@ -117,7 +117,7 @@ Compare with: https://italia.github.io/design-comuni-pagine-statiche/sito/lista-
 
 ## Documentation
 
-- `docs/visual-parity/00-INDEX.md` - Main index
+- `docs/visual-parity/README.md` - Main index
 - `docs/visual-parity/LISTA-CATEGORIE-ANALYSIS.md` - Detailed analysis
 - `docs/visual-parity/FIX-ACTION-PLAN.md` - Action plan
 - `docs/visual-parity/PROGRESS.md` - Progress tracker

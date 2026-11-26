@@ -81,7 +81,7 @@ status: draft
 
 **Output**:
 - Analysis docs in `laravel/Themes/Sixteen/docs/implementation/`
-- Updated: `laravel/Themes/Sixteen/docs/00-INDEX.md`
+- Updated: `laravel/Themes/Sixteen/docs/README.md`
 - Per-component guides
 
 ---

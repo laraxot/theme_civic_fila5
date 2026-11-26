@@ -130,7 +130,7 @@ All screenshots saved to: `docs/prompts/<page>/css-js-phase/`
 
 | File | Purpose |
 |------|---------|
-| `TICKET-CREATION-WIZARD.md` | Wizard architecture documentation |
+| `ticket-creation-wizard.md` | Wizard architecture documentation |
 | `CreateTicketWizardWidget.md` | Widget documentation (module) |
 | `css-js-phase-final-status.md` | This report |
 

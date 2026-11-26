@@ -714,7 +714,7 @@ Beginner      ████████████  12%
 ### Related Documents
 - [Product Requirements Document](prd.md)
 - [Product Roadmap](product-roadmap.md)
-- [Product Strategy](product_strategy.md)
+- [Product Strategy](product-strategy.md)
 - [Sprint Planning](sprint-planning.md)
 
 ---

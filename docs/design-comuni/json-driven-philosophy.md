@@ -143,5 +143,5 @@ E si usa DOVE serve:
 
 - [Contacts Card Component](../../../../Themes/Sixteen/resources/views/components/blocks/design-comuni/contacts-card.blade.php)
 - [JSON pagina segnalazione-crea](../../../../../config/local/fixcity/database/content/pages/tests.segnalazione-crea.json)
-- [TICKET-CREATION-WIZARD.md](../../../../Themes/Sixteen/docs/design-comuni/TICKET-CREATION-WIZARD.md)
+- [ticket-creation-wizard.md](../../../../Themes/Sixteen/docs/design-comuni/ticket-creation-wizard.md)
 - [Story 7-30](../../../../_bmad-output/implementation-artifacts/7-30-refactor-ticket-wizard-to-filament-pure.md)

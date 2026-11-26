@@ -521,7 +521,7 @@ Content:
 ```
 
 **Step 6.2**: Update theme docs index
-File: `laravel/Themes/Sixteen/docs/00-INDEX.md`
+File: `laravel/Themes/Sixteen/docs/README.md`
 
 Add section:
 ```markdown

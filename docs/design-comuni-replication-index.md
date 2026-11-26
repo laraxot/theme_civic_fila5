@@ -123,7 +123,7 @@ status: draft
 
 ```
 laravel/Themes/Sixteen/docs/
-├── 00-INDEX.md                          (← main theme index)
+├── README.md                          (← main theme index)
 ├── design-comuni-replication-index.md   (← THIS FILE)
 ├── faq-replication-status.md            (FAQ-specific status)
 ├── multi-agent-coordination.md          (general coordination)
