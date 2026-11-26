@@ -4,15 +4,22 @@ declare(strict_types=1);
 
 namespace Themes\Sixteen\Actions;
 
+use Exception;
 use Firebase\JWT\JWK;
 use Firebase\JWT\JWT;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Spatie\QueueableAction\QueueableAction;
 
+/**
+ * Flusso OIDC CIE (stesso FQCN di Sixteen): URL di autorizzazione, scambio del code, verifica firma/nonce/aud/iss/exp dell'id_token.
+ *
+ * @see docs/contracts/cie-auth-action.md
+ *
+ * @contract docs/contracts/cie-auth-action.md
+ */
 class CieAuthAction
 {
     use QueueableAction;

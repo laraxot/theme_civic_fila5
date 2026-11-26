@@ -117,7 +117,7 @@ I percorsi `area-personale/*` sono pagine CMS rese dal tema con blocchi condivis
 
 ## Inventario documentale e funzionalità osservabili
 
-La documentazione utente è distribuita in [`manuals/manuale-utente.md`](manuals/manuale-utente.md), [`manuals/user-manual.md`](manuals/user-manual.md) e nel PDF [`manuals/manuale-utente.pdf`](manuals/manuale-utente.pdf). Questo manuale chiarisce invece attori e deleghe. La decisione architetturale è [`adr/front-office-theme-owns-presentation.md`](adr/front-office-theme-owns-presentation.md) e il contratto di shell è [`contracts/folio-page-shell.md`](contracts/folio-page-shell.md).
+La documentazione utente è distribuita in [`manuals/manuale-utente.md`](manuals/manuale-utente.md), [`manuals/user-manual.md`](manuals/user-manual.md) e nel PDF [`manuals/manuale-utente.pdf`](manuals/manuale-utente.pdf). Questo manuale chiarisce invece attori e deleghe. La decisione architetturale è [`adr/0002-front-office-theme-owns-presentation.md`](adr/0002-front-office-theme-owns-presentation.md) e il contratto di shell è [`contracts/folio-page-shell.md`](contracts/folio-page-shell.md).
 
 Il materiale visuale comprende [`screenshots/`](screenshots/), [`manuals/assets/front-office-home.png`](manuals/assets/front-office-home.png), i confronti Design Comuni e le immagini dei flussi `segnalazione-*` sotto `docs/prompts/` e `docs/visual-analysis/`.
 

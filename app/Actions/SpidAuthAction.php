@@ -17,6 +17,13 @@ use Spatie\QueueableAction\QueueableAction;
 use function Safe\base64_decode;
 use function Safe\gzdeflate;
 
+/**
+ * Costruisce le richieste SAML SPID e valida la risposta dell'IdP (stesso FQCN di Sixteen): firma, certificato fidato, RelayState.
+ *
+ * @see docs/contracts/spid-auth-action.md
+ *
+ * @contract docs/contracts/spid-auth-action.md
+ */
 class SpidAuthAction
 {
     use QueueableAction;

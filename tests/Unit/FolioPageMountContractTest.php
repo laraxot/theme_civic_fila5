@@ -39,7 +39,7 @@ test('container0 slug0 pages usano Volt Component mount non request route', func
         expect($html)->not->toContain('request()->route("container0"');
         expect($html)->not->toMatch('/@php\s+\$container0\s*=/');
     }
-});
+})->group('CIVIC-FOLIO-INV-3');
 
 test('Sixteen usa app come unica shell pubblica e non mantiene il layout design-comuni', function (): void {
     $themeRoot = dirname(__DIR__, 2);
@@ -50,7 +50,7 @@ test('Sixteen usa app come unica shell pubblica e non mantiene il layout design-
     expect(file_exists($layoutsRoot.'/design-comuni.blade.php'))->toBeFalse();
     expect($dynamicPage)->toContain('<x-layouts.app>');
     expect($dynamicPage)->not->toContain('layouts.design-comuni');
-});
+})->group('CIVIC-FOLIO-INV-6');
 
 test('folio pages con Component richiedono @volt statico uguale a name()', function (): void {
     $themeRoot = dirname(__DIR__, 2);
@@ -67,7 +67,7 @@ test('folio pages con Component richiedono @volt statico uguale a name()', funct
         expect($html)->toContain($voltDirective);
         expect($html)->toContain('@endvolt');
     }
-});
+})->group('CIVIC-FOLIO-INV-1');
 
 test('la pagina dinamica usa la stessa shell Volt lineare dell indice', function (): void {
     $path = dirname(__DIR__, 2).'/resources/views/pages/[container0]/[slug0]/index.blade.php';
@@ -86,7 +86,7 @@ test('la pagina dinamica usa la stessa shell Volt lineare dell indice', function
     expect($html)->not->toContain('Page::findUniqueBySlug');
     expect($html)->not->toContain('@php');
     expect($html)->toContain('@endvolt');
-});
+})->group('CIVIC-FOLIO-INV-3', 'CIVIC-FOLIO-INV-4');
 
 test('la pagina annidata usa la stessa shell Volt lineare', function (): void {
     $path = dirname(__DIR__, 2).'/resources/views/pages/[container0]/[slug0]/[container1]/index.blade.php';
@@ -117,7 +117,7 @@ test('la pagina annidata usa la stessa shell Volt lineare', function (): void {
     expect($deepHtml)->toContain('<x-page side="content"');
     expect($deepHtml)->not->toContain('render(');
     expect($deepHtml)->not->toContain('@php');
-});
+})->group('CIVIC-FOLIO-INV-2', 'CIVIC-FOLIO-INV-3', 'CIVIC-FOLIO-INV-4');
 
 test('container0 index usa mount lineare filament way senza logica dominio', function (): void {
     $path = dirname(__DIR__, 2).'/resources/views/pages/[container0]/index.blade.php';
@@ -153,7 +153,7 @@ test('container0 index usa mount lineare filament way senza logica dominio', fun
     expect($html)->not->toContain('PageDescription');
     expect($html)->not->toContain('foIndexAliases');
     expect($html)->not->toContain('Auth::check');
-});
+})->group('CIVIC-FOLIO-INV-3', 'CIVIC-FOLIO-INV-4');
 
 test('le pagine CMS container0 non hanno route Folio esplicite concorrenti', function (): void {
     $themeRoot = dirname(__DIR__, 2);
@@ -161,7 +161,7 @@ test('le pagine CMS container0 non hanno route Folio esplicite concorrenti', fun
 
     // FAQ è domande-frequenti.index nel CMS: una view omonima bypasserebbe il resolver JSON.
     expect(file_exists($faqPage))->toBeFalse();
-});
+})->group('CIVIC-FOLIO-INV-5');
 
 test('folio pages con Component vietano props extends section e php slug hack', function (): void {
     $themeRoot = dirname(__DIR__, 2);
@@ -179,7 +179,7 @@ test('folio pages con Component vietano props extends section e php slug hack', 
         expect($html)->not->toContain("@section('content')");
         expect($html)->not->toMatch('/@php\s+\$pageSlug\s*=/');
     }
-});
+})->group('CIVIC-FOLIO-INV-3');
 
 test('folio pages non usano @volt con variabile dinamica', function (): void {
     $themeRoot = dirname(__DIR__, 2);
@@ -191,4 +191,4 @@ test('folio pages non usano @volt con variabile dinamica', function (): void {
         expect($html)->not->toContain('@volt($');
         expect($html)->not->toContain("@volt('folio.");
     }
-});
+})->group('CIVIC-FOLIO-INV-1');

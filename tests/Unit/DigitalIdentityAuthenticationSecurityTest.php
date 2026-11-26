@@ -24,7 +24,7 @@ test('digital identity return urls stay on the current host', function (mixed $c
     ['//evil.example/path', '/it/area-personale'],
     ['https://evil.example/path', '/it/area-personale'],
     ["/it/area\t-personale", '/it/area-personale'],
-]);
+])->group('CIVIC-RETURN-INV-1', 'CIVIC-RETURN-INV-2', 'CIVIC-RETURN-INV-3');
 
 test('SPID rejects a response without an XML signature', function (): void {
     $action = (new ReflectionClass(SpidAuthAction::class))->newInstanceWithoutConstructor();
@@ -35,7 +35,7 @@ test('SPID rejects a response without an XML signature', function (): void {
 
     expect(fn (): mixed => $method->invoke($action, $document))
         ->toThrow(Exception::class, 'SPID authentication failed');
-});
+})->group('CIVIC-SPID-INV-1');
 
 test('CIE rejects an unsigned JWT before reading claims', function (): void {
     $action = (new ReflectionClass(CieAuthAction::class))->newInstanceWithoutConstructor();
@@ -44,4 +44,4 @@ test('CIE rejects an unsigned JWT before reading claims', function (): void {
 
     expect(fn (): mixed => $method->invoke($action, 'eyJhbGciOiJub25lIn0.eyJzdWIiOiIxIn0.'))
         ->toThrow(Exception::class, 'JWT signature verification');
-});
+})->group('CIVIC-CIE-INV-1');

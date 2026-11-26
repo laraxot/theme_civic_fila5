@@ -11,5 +11,5 @@ updated: 2026-11-26
 
 Indice operativo della cartella owner-local. Il formato e la governance condivisi sono in [Xot](../../../../Modules/Xot/docs/adr/README.md).
 
-- [build-assets-via-vite-and-symlink.md](build-assets-via-vite-and-symlink.md)
-- [front-office-theme-owns-presentation.md](front-office-theme-owns-presentation.md)
+- [0001-build-assets-via-vite-and-symlink.md](0001-build-assets-via-vite-and-symlink.md)
+- [0002-front-office-theme-owns-presentation.md](0002-front-office-theme-owns-presentation.md)
