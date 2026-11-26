@@ -1,4 +1,4 @@
-// Tema Sixteen - Funzioni JavaScript per Design Comuni
+// Tema Civic - Funzioni JavaScript per Design Comuni
 
 document.addEventListener('DOMContentLoaded', function() {
     // Inizializza tooltip
@@ -133,7 +133,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const map = L.map('map').setView([lat, lng], zoom);
             
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            const tileUrl = document.documentElement?.dataset?.geoTileUrl?.trim()
+                || 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+
+            L.tileLayer(tileUrl, {
                 attribution: '© OpenStreetMap contributors'
             }).addTo(map);
             

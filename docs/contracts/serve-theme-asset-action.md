@@ -1,7 +1,7 @@
 ---
 title: "Contratto — ServeThemeAssetAction (Civic)"
 type: contract
-action: "Themes\\Sixteen\\Actions\\Assets\\ServeThemeAssetAction"
+action: "Themes\\Civic\\Actions\\Assets\\ServeThemeAssetAction"
 theme: Civic
 status: accepted
 created: 2026-11-26
@@ -12,31 +12,30 @@ related:
   - ../../app/Actions/Assets/ServeDesignComuniAssetAction.php
 ---
 
-# Contratto: ServeThemeAssetAction (copia di Civic)
+# Contratto: ServeThemeAssetAction
 
-`Themes/Civic/app/Actions/Assets/ServeThemeAssetAction.php` dichiara la stessa classe di Sixteen e ha lo stesso codice
-(`diff`: solo il docblock). **Serve file di `Themes/Sixteen/public`, non di `Themes/Civic/public`**: il percorso e'
-scritto a mano (`ServeThemeAssetAction.php:27`). Le rotte che la usano sono in `laravel/routes/web.php:15,20`
-(`/themes/Sixteen/{path}` e `/{lang}/assets/{path}` via `ServeDesignComuniAssetAction`), che importano la classe
-`Themes\Sixteen\Actions\Assets\ServeThemeAssetAction`: quale dei due file venga caricato non e' stato verificato.
+`Themes/Civic/app/Actions/Assets/ServeThemeAssetAction.php` serve file di `Themes/Civic/public`: il percorso e'
+scritto a mano (`ServeThemeAssetAction.php:27`). Le rotte asset passano dall'host (`laravel/routes/web.php`)
+via `ServeDesignComuniAssetAction` e il namespace view `pub_theme`; il riferimento a `Themes/Sixteen` nelle
+rotte e' competenza dell'host, non del tema.
 
 ## Input
 
-- `execute(string $path)`: percorso relativo a `Themes/Sixteen/public`; `\` diventa `/`, gli `/` iniziali si tolgono.
+- `execute(string $path)`: percorso relativo a `Themes/Civic/public`; `\` diventa `/`, gli `/` iniziali si tolgono.
 - Da `/{lang}/assets/{path}` arriva gia' anteposto `design-comuni/assets/` (`ServeDesignComuniAssetAction`).
 
 ## Output
 
 - `BinaryFileResponse` del file con `Cache-Control: public, max-age=31536000, immutable`.
 - Caso speciale: `design-comuni/assets/images/logo-comune.svg` assente in `public/` si serve da
-  `Themes/Sixteen/Main_files/five/assets/images/logo-comune.svg`.
+  `Themes/Civic/Main_files/five/assets/images/logo-comune.svg`.
 
 ## Invarianti
 
 | ID | Regola | Group Pest |
 |:---|:---|:---|
 | CIVIC-ASSET-INV-1 | Un percorso vuoto o che contiene `..` (anche con `\`) e' 404 prima di qualunque accesso al filesystem (`ServeThemeAssetAction.php:23`). Se viene violata, `../.env` raggiunge `base_path()` fuori da `public/`. | — (non dimostrato) |
-| CIVIC-ASSET-INV-2 | Si servono solo file sotto `Themes/Sixteen/public` (piu' il ripiego del logo): mai `resources/`, `config/`, sorgenti. | — (non dimostrato) |
+| CIVIC-ASSET-INV-2 | Si servono solo file sotto `Themes/Civic/public` (piu' il ripiego del logo): mai `resources/`, `config/`, sorgenti. | — (non dimostrato) |
 
 Civic non ha un test per questa Action (Sixteen si': `AuthAndAssetActionContractsTest`, con il group della sua prima invariante sugli asset).
 Backlog test nel [README](README.md).
@@ -60,7 +59,7 @@ Backlog test nel [README](README.md).
 
 ## Limiti noti
 
-- Limite noto: il percorso `Themes/Sixteen/public` e' fisso (`ServeThemeAssetAction.php:27`); se Civic sostituisse Sixteen,
-  l'Action servirebbe ancora i file di Sixteen.
+- Il percorso `Themes/Civic/public` e' fisso (`ServeThemeAssetAction.php:27`): se il nome della directory tema
+  cambiasse, l'Action andrebbe aggiornata.
 - Limite noto: `str_contains($relativePath, '..')` (`ServeThemeAssetAction.php:23`) rifiuta anche nomi legittimi come
   `foo..bar.css`.

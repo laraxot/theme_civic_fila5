@@ -23,15 +23,20 @@ Un file per Action, nome in kebab-case della classe (`create-ticket-action.md`),
 «— (non dimostrato)». Il docblock dell'Action contiene `@see docs/contracts/<file>.md` e `@contract docs/contracts/<file>.md`.
 Chi cambia il comportamento aggiorna il contratto nello stesso commit.
 
+Il modello per un contratto nuovo e' [contract-template.md](contract-template.md); lo standard condiviso e' in
+[Modules/Xot/docs/contracts](../../../../Modules/Xot/docs/contracts/README.md). Questo README e' l'indice unico della
+cartella: `INDEX.md` e `index.md` sono stati fusi qui il 2026-11-26.
+
 ## Contratti
 
 - [CieAuthAction](cie-auth-action.md) — flusso OIDC CIE. Differenza da Sixteen: scrive gli attributi per intero nel log.
 - [SpidAuthAction](spid-auth-action.md) — richieste SAML e validazione della risposta SPID. Differenza da Sixteen: stesso difetto sul log.
 - [SanitizeReturnUrlAction](sanitize-return-url-action.md) — l'URL di ritorno resta sullo stesso host, o si usa il fallback.
-- [ServeThemeAssetAction](serve-theme-asset-action.md) — serve file di `Themes/Sixteen/public` (non di Civic).
+- [ServeThemeAssetAction](serve-theme-asset-action.md) — serve file di `Themes/Civic/public`.
 
 ### Contratti che non sono di Action
 
+- [Identità del tema](theme-identity.md) — namespace, manifest, URL e tag release sono Civic; eccezioni Sixteen solo quelle di ADR 0004.
 - [Build asset Civic](build-surface.md) — `type: build-contract`: cosa produce `npm run build` e cosa no.
 - [Civic Folio page shell](folio-page-shell.md) — `type: presentation-contract`: forma delle quattro shell Folio. Le sette invarianti
   `CIVIC-FOLIO-INV-N` hanno sei group Pest.

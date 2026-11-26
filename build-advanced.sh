@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Build avanzato tema Sixteen
+# Build avanzato tema Civic
 # Script per automatizzare il processo di build con ottimizzazioni
 
 set -e  # Exit on error
 
-echo "🚀 Build avanzato tema Sixteen"
+echo "🚀 Build avanzato tema Civic"
 echo "================================"
 
 # Colori per output
@@ -106,7 +106,7 @@ else
     log_warning "Test non disponibili o falliti"
 fi
 
-# Niente copia: public_html/themes/Sixteen e' un symlink a laravel/Themes/Sixteen/public (lo crea deploy.sh).
+# Niente copia: public_html/themes/Civic e' un symlink a laravel/Themes/Civic/public (lo crea deploy.sh).
 
 # Verifica finale
 log_info "Verifica finale build..."

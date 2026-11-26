@@ -1,6 +1,6 @@
 {
   "branches": ["main", "master", { "name": "dev", "prerelease": "dev" }],
-  "tagFormat": "theme-sixteen-v${version}",
+  "tagFormat": "theme-civic-v${version}",
   "plugins": [
     ["@semantic-release/commit-analyzer", { "preset": "conventionalcommits" }],
     ["@semantic-release/release-notes-generator", { "preset": "conventionalcommits" }],

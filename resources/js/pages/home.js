@@ -12,7 +12,10 @@ if (mapElement) {
         fadeAnimation: !prefersReducedMotion,
     }).setView([43.7696, 11.2558], 13);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const tileUrl = document.documentElement?.dataset?.geoTileUrl?.trim()
+        || 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+
+    L.tileLayer(tileUrl, {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
