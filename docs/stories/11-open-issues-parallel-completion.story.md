@@ -35,6 +35,7 @@ L'utente ha chiesto di completare tutte le issue aperte di `theme_civic_fila5` i
 ## Progresso
 
 _Aggiornato dagli agenti swarm._
+- Lead Build/CI (swarm morti per quota): #21 lock versionato + ADR 0003; #22 solo `postcss.config.js`; #23 solo `vite.config.js`+`tailwind.config.js`; #24 script in `scripts/verify/`; `npm ci && npm run lint && npm test` verdi in locale; CI richiede lock.
 - Lead: #20 privacy block — rimosso hardcoded «Comune di Firenze»; usa `config(ente.name)` + lang it/en/de/es.
 
 

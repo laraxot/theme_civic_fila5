@@ -36,6 +36,7 @@ automatica si scrive «Nessuna conferma automatica oggi; proposta: ...»: non si
 
 - [Build asset con Vite, senza copie; pubblicazione non decisa](0001-build-assets-via-vite-and-symlink.md) — `npm run build` da `Themes/Civic`; nessun link `public_html/themes/Civic`; `vite.config.js:11` ha base `/themes/Sixteen/`.
 - [Presentazione e shell Folio sottili](0002-front-office-theme-owns-presentation.md) — le quattro shell di Civic sono lineari, a differenza di quelle di Sixteen.
+- [Versionare package-lock.json nel repo tema](0003-version-package-lock-in-theme-repo.md) — `npm ci` riproducibile (#21).
 
 ## Decisioni precedenti (formato libero, non ancora ADR)
 
