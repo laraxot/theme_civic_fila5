@@ -11,7 +11,8 @@ declare(strict_types=1);
  *   php Themes/Civic/tests/Unit/I18n/Support/lang-parity-report.php --details        # elenca le chiavi mancanti
  *   php Themes/Civic/tests/Unit/I18n/Support/lang-parity-report.php --locales=it,en,de,es,mt
  *   php Themes/Civic/tests/Unit/I18n/Support/lang-parity-report.php --reference=en   # lingua dei segnaposto (default it)
- *   php Themes/Civic/tests/Unit/I18n/Support/lang-parity-report.php --pending=mt     # testi mt ancora da rivedere
+ *   php Themes/Civic/tests/Unit/I18n/Support/lang-parity-report.php --pending=mt     # testi mt marcati [[MT-REV]]
+ *   php Themes/Civic/tests/Unit/I18n/Support/lang-parity-report.php --drafted=mt     # testi mt scritti ma NON marcati: da rivedere anche loro
  *   php Themes/Civic/tests/Unit/I18n/Support/lang-parity-report.php --json
  *
  * Per default confronta tutte le lingue presenti in `lang/`. Il confronto e' contro l'UNIONE delle chiavi: ogni lingua deve
@@ -22,13 +23,19 @@ declare(strict_types=1);
  * @see docs/contracts/i18n-catalog-parity.md
  */
 
+require_once dirname(__DIR__, 6).'/vendor/autoload.php';
 require_once __DIR__.'/LangCatalog.php';
 
 use Themes\Civic\Tests\Unit\I18n\Support\LangCatalog;
 
+use function Safe\fwrite;
+use function Safe\json_encode;
+use function Safe\preg_match;
+
 $options = [];
 foreach (array_slice($argv, 1) as $argument) {
-    if (preg_match('/^--([a-z-]+)(?:=(.*))?$/', $argument, $match) !== 1) {
+    $match = [];
+    if (preg_match('/^--([a-z-]+)(?:=(.*))?$/', $argument, $match) !== 1 || ! isset($match[1])) {
         fwrite(STDERR, "Argomento non valido: {$argument}\n");
         exit(2);
     }
@@ -42,6 +49,19 @@ $unknown = array_values(array_diff($locales, $known));
 if ($unknown !== []) {
     fwrite(STDERR, 'Lingue senza cartella in lang/: '.implode(', ', $unknown)."\n");
     exit(2);
+}
+
+if (isset($options['drafted'])) {
+    $drafted = $catalog->drafted($options['drafted']);
+    if (isset($options['json'])) {
+        echo json_encode(['locale' => $options['drafted'], 'drafted' => $drafted], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), "\n";
+    } else {
+        echo count($drafted).' testi '.$options['drafted']." scritti e non marcati (diversi da en, mai rivisti)\n";
+        foreach ($drafted as $key) {
+            echo '  '.$key."\n";
+        }
+    }
+    exit(0);
 }
 
 if (isset($options['pending'])) {
@@ -63,7 +83,7 @@ if (! in_array($reference, $locales, true)) {
     exit(2);
 }
 $union = $catalog->union($locales);
-$report = ['locales' => $locales, 'union_keys' => count($union), 'per_locale' => []];
+$rows = [];
 $problems = 0;
 foreach ($locales as $locale) {
     $missing = $catalog->missing($locale, $locales);
@@ -71,25 +91,26 @@ foreach ($locales as $locale) {
     $empty = $catalog->emptyEntries($locale);
     $placeholders = $locale === $reference ? [] : $catalog->placeholderMismatches($locale, $reference);
     $problems += count($missing) + count($missingFiles) + count($empty) + count($placeholders);
-    $report['per_locale'][$locale] = [
+    $rows[$locale] = [
         'keys' => count($catalog->catalog($locale)),
         'files' => count($catalog->files($locale)),
         'missing_keys' => $missing,
         'missing_files' => $missingFiles,
         'empty_entries' => $empty,
-        'placeholder_mismatches_vs_'.$reference => $placeholders,
+        'placeholder_mismatches' => $placeholders,
         'pending_review' => count($catalog->pending($locale)),
     ];
 }
 
 if (isset($options['json'])) {
+    $report = ['locales' => $locales, 'placeholder_reference' => $reference, 'union_keys' => count($union), 'per_locale' => $rows];
     echo json_encode($report, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), "\n";
     exit($problems === 0 ? 0 : 1);
 }
 
 printf("Cataloghi confrontati: %s | segnaposto contro: %s | chiavi nell'unione: %d\n", implode(', ', $locales), $reference, count($union));
 printf("%-6s %6s %6s %9s %9s %7s %12s %8s\n", 'lang', 'file', 'chiavi', 'mancanti', 'file_man', 'vuote', 'segnaposto', 'da_rivedere');
-foreach ($report['per_locale'] as $locale => $row) {
+foreach ($rows as $locale => $row) {
     printf(
         "%-6s %6d %6d %9d %9d %7d %12d %8d\n",
         $locale,
@@ -98,18 +119,22 @@ foreach ($report['per_locale'] as $locale => $row) {
         count($row['missing_keys']),
         count($row['missing_files']),
         count($row['empty_entries']),
-        count($row['placeholder_mismatches_vs_'.$reference]),
+        count($row['placeholder_mismatches']),
         $row['pending_review'],
     );
 }
 if (isset($options['details'])) {
-    foreach ($report['per_locale'] as $locale => $row) {
-        foreach (['missing_keys' => 'MANCA', 'missing_files' => 'FILE MANCA', 'empty_entries' => 'VUOTA'] as $field => $label) {
-            foreach ($row[$field] as $key) {
-                echo "  [{$locale}] {$label} {$key}\n";
-            }
+    foreach ($rows as $locale => $row) {
+        foreach ($row['missing_keys'] as $key) {
+            echo "  [{$locale}] MANCA {$key}\n";
         }
-        foreach ($row['placeholder_mismatches_vs_'.$reference] as $key => $diff) {
+        foreach ($row['missing_files'] as $file) {
+            echo "  [{$locale}] FILE MANCA {$file}\n";
+        }
+        foreach ($row['empty_entries'] as $key) {
+            echo "  [{$locale}] VUOTA {$key}\n";
+        }
+        foreach ($row['placeholder_mismatches'] as $key => $diff) {
             echo "  [{$locale}] SEGNAPOSTO {$key}: ".implode(',', $diff['reference']).' vs '.implode(',', $diff['locale'])."\n";
         }
     }

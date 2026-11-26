@@ -7,6 +7,10 @@ namespace Themes\Civic\Tests\Unit\I18n\Support;
 use InvalidArgumentException;
 use LogicException;
 
+use function Safe\glob;
+use function Safe\preg_match;
+use function Safe\preg_match_all;
+
 /**
  * Lettura dei cataloghi `lang/<locale>/*.php` del tema, senza applicazione ne' database: serve al test di parita'
  * e allo script `lang-parity-report.php`, che devono dare lo stesso risultato.
@@ -41,8 +45,8 @@ final readonly class LangCatalog
     public function locales(): array
     {
         $locales = [];
-        foreach (glob($this->langPath.'/*', GLOB_ONLYDIR) ?: [] as $directory) {
-            if (glob($directory.'/*.php') !== []) {
+        foreach ($this->globPaths($this->langPath.'/*', GLOB_ONLYDIR) as $directory) {
+            if ($this->globPaths($directory.'/*.php') !== []) {
                 $locales[] = basename($directory);
             }
         }
@@ -51,12 +55,18 @@ final readonly class LangCatalog
         return $locales;
     }
 
+    /** @return list<string> percorsi trovati da glob (vuoto se nessuno) */
+    private function globPaths(string $pattern, int $flags = 0): array
+    {
+        return array_values(array_filter(glob($pattern, $flags), is_string(...)));
+    }
+
     /** @return list<string> nomi dei file senza estensione, ordinati */
     public function files(string $locale): array
     {
         $files = array_map(
             static fn (string $path): string => basename($path, '.php'),
-            glob($this->langPath.'/'.$this->safeLocale($locale).'/*.php') ?: [],
+            $this->globPaths($this->langPath.'/'.$this->safeLocale($locale).'/*.php'),
         );
         sort($files);
 
@@ -184,7 +194,9 @@ final readonly class LangCatalog
     }
 
     /**
-     * Chiavi il cui testo e' ancora marcato per la revisione (`[[MT-REV]] `).
+     * Chiavi il cui testo contiene ancora il marcatore di revisione (`[[MT-REV]] `). Il marcatore sta in testa al testo,
+     * oppure in testa a ogni forma di un plurale con intervallo (`{1} [[MT-REV]] ...|[2,*] [[MT-REV]] ...`), quindi si cerca
+     * ovunque nel testo.
      *
      * @return list<string>
      */
@@ -192,7 +204,26 @@ final readonly class LangCatalog
     {
         return array_keys(array_filter(
             $this->catalog($locale),
-            static fn (string $text): bool => str_starts_with($text, self::PENDING_MARKER),
+            static fn (string $text): bool => str_contains($text, self::PENDING_MARKER),
+        ));
+    }
+
+    /**
+     * Chiavi con un testo scritto (non vuoto, non marcato) diverso da quello di riferimento: per `mt` sono le bozze non
+     * marcate, cioe' i testi che nessun madrelingua ha ancora rivisto e che il marcatore NON segnala.
+     *
+     * @return list<string>
+     */
+    public function drafted(string $locale, string $reference = 'en'): array
+    {
+        $source = $this->catalog($reference);
+
+        return array_keys(array_filter(
+            $this->catalog($locale),
+            static fn (string $text, string $key): bool => $text !== ''
+                && ! str_contains($text, self::PENDING_MARKER)
+                && $text !== ($source[$key] ?? null),
+            ARRAY_FILTER_USE_BOTH,
         ));
     }
 
