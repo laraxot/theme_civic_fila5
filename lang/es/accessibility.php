@@ -7,6 +7,8 @@ declare(strict_types=1);
  * partes no accesibles y contactos NO están aquí: los aporta el Ayuntamiento en el JSON `accessibilita.index` (bloque accessibility-statement).
  */
 return [
+    'high_contrast_toggle' => 'Activar o desactivar el contraste alto',
+    'contrast' => 'Contraste',
     'home' => 'Inicio',
     'page' => ['title' => ['text' => 'Declaración de accesibilidad']],
     'title' => [

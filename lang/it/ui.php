@@ -193,4 +193,5 @@ return [
             'transport' => 'Trasporti',
         ],
     ],
+    'logo' => 'FixCity',
 ];

@@ -37,6 +37,18 @@ return [
         'error_message' => 'Bei der Anmeldung ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.',
         'validation_error' => 'Validierungsfehler',
         'invalid_credentials' => 'Die angegebenen Anmeldedaten sind falsch.',
+        'description' => 'Geben Sie Ihre Zugangsdaten ein, um auf :service zuzugreifen',
+        'no_account' => 'Sie haben noch kein Konto?',
+        'security_title' => 'Sichere Verbindung',
+        'security_message' => 'Ihre Daten sind durch SSL-Verschlüsselung geschützt',
+        'accessibility_info' => 'Dieser Dienst ist gemäß den WCAG-2.1-AA-Richtlinien barrierefrei.',
+        'accessibility_declaration' => 'Erklärung zur Barrierefreiheit',
+        'keyboard_navigation' => 'Mit der Tabulatortaste wechseln Sie zwischen den Feldern, mit der Eingabetaste senden Sie das Formular ab.',
+        'help' => 'Brauchen Sie Hilfe?',
+        'email_placeholder' => 'name@example.com',
+        'password_placeholder' => 'Geben Sie Ihr Passwort ein',
+        'forgot_password_action' => 'Zurücksetzen des Passworts anfordern',
+        'main_label' => 'Anmeldeformulare',
     ],
 
     // Registrierung
@@ -49,6 +61,8 @@ return [
         'submit' => 'Registrieren',
         'already_registered' => 'Haben Sie bereits ein Konto?',
         'link' => 'Registrieren',
+        'description' => 'Erstellen Sie Ihr Konto, um auf die Dienste zuzugreifen',
+        'login' => 'Anmelden',
     ],
 
     // Abmeldung

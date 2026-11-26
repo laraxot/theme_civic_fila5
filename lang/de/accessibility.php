@@ -7,6 +7,8 @@ declare(strict_types=1);
  * nicht barrierefreie Teile und Kontakte stehen NICHT hier: die Gemeinde liefert sie im JSON `accessibilita.index` (Block accessibility-statement).
  */
 return [
+    'high_contrast_toggle' => 'Hohen Kontrast ein- oder ausschalten',
+    'contrast' => 'Kontrast',
     'home' => 'Startseite',
     'page' => ['title' => ['text' => 'Barrierefreiheitserklärung']],
     'title' => [
