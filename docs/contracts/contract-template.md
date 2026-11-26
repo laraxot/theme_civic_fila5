@@ -1,8 +1,11 @@
 ---
-type: contract
+type: contract-template
 status: proposed
 action: <FQCN>
 ---
+
+<!-- Copiando questo file: `type: contract` e `action:` con il FQCN reale. Il tipo `contract-template` evita che
+`Modules/Xot/tests/Unit/Docs/ActionContractsAreCompleteTest.php` cerchi un'Action chiamata `<FQCN>`. -->
 
 # <operazione> — contratto comportamentale
 
