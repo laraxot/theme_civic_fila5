@@ -1,20 +1,20 @@
 {{--
   Callers: CMS events.index → pub_theme::components.blocks.events.index
   (Cms page.blade.php include via content_blocks view). Unique FO events listing.
-  Reads: ThemeComposer Article(event) + CMS $data / config sixteen.events.parity. No writes.
+  Reads: ThemeComposer Article(event) + CMS $data / config civic.events.parity. No writes.
   User: «devi sempre correggere… migliorare… senza conferma» + parity Design Comuni eventi.
 --}}
 @props(['data' => []])
 
 @php
     $composer = app(\Modules\Blog\View\Composers\ThemeComposer::class);
-    $cmsUrl = static fn (string $path): string => \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl($path);
+    $cmsUrl = static fn (string $path): string => \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl($path);
     // Chrome DC (feedback/contacts): CMS JSON > config tema > default a11y (mai h2 vuoti).
-    $parityFromConfig = config('sixteen.sixteen.events.parity')
-        ?? config('sixteen.events.parity')
+    $parityFromConfig = config('civic.events.parity')
+        ?? config('civic.events.parity')
         ?? [];
-    $blogChrome = config('sixteen.sixteen.blog.parity')
-        ?? config('sixteen.blog.parity')
+    $blogChrome = config('civic.blog.parity')
+        ?? config('civic.blog.parity')
         ?? [];
     $defaultFeedback = [
         'title' => __('pub_theme::news.index.feedback.title'),
@@ -54,23 +54,20 @@
         [
             'title' => __('pub_theme::navigation.homepage.events'),
             'hero' => [
-                'text' => 'Tutti gli eventi, le iniziative e i luoghi d’interesse per scoprire e vivere il territorio comunale.',
-                'image' => ['file' => 'roma-colosseo.png', 'title' => 'Colosseo, Roma', 'alt' => 'Colosseo di Roma'],
-                'caption' => 'Colosseo, Roma. Foto di Griffin Wooldridge.',
+                // #20: nessuna immagine o didascalia di un luogo specifico nel default;
+                // arrivano dal JSON CMS o da config('civic.events.parity').
+                'text' => __('pub_theme::navigation.homepage.events'),
+                'image' => ['file' => '', 'title' => '', 'alt' => ''],
+                'caption' => '',
             ],
             'card' => [
                 'read_more' => __('pub_theme::news.read_more'),
                 'read_more_aria' => __('pub_theme::news.read_more').': %s',
                 'read_more_hidden' => '',
             ],
-            'locations' => [
-                ['image' => ['file' => 'luoghi-castello-1.png', 'title' => 'Il castello normanno', 'alt' => 'Il castello normanno'], 'title' => 'Il castello normanno', 'text' => 'Scopri la storia e i luoghi di interesse del territorio.'],
-                ['image' => ['file' => 'luoghi-castello-2.png', 'title' => 'Il castello normanno', 'alt' => 'Il castello normanno'], 'title' => 'Il castello normanno', 'text' => 'Scopri il programma degli eventi dell’estate.'],
-                ['image' => ['file' => 'luoghi-castello-3.png', 'title' => 'Il castello normanno', 'alt' => 'Il castello normanno'], 'title' => 'Il castello normanno', 'text' => 'Un luogo da vivere e conoscere.'],
-                ['image' => ['file' => 'luoghi-gipsoteca.png', 'title' => 'La Gipsoteca canoviana', 'alt' => 'La Gipsoteca canoviana'], 'title' => 'La Gipsoteca canoviana', 'text' => 'Modelli in gesso e bozzetti dello scultore Antonio Canova.'],
-                ['image' => ['file' => 'luoghi-tomba.png', 'title' => 'Tomba Brion', 'alt' => 'Tomba Brion'], 'title' => 'Tomba Brion', 'text' => 'Un luogo affascinante e ricco di simbologia.'],
-                ['image' => ['file' => 'luoghi-castello-4.png', 'title' => 'Il castello normanno', 'alt' => 'Il castello normanno'], 'title' => 'Il castello normanno', 'text' => 'Un itinerario per scoprire il territorio.'],
-            ],
+            // #20: nessun luogo fittizio nel default. `array_replace_recursive` non
+            // svuota una lista: i segnaposto resterebbero se il JSON ne fornisse di meno.
+            'locations' => [],
             'feedback' => $defaultFeedback,
             'contacts' => is_array($blogChrome['contacts'] ?? null) ? $blogChrome['contacts'] : [],
         ],

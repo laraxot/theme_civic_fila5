@@ -21,7 +21,7 @@
                         <div class="border-light border-0">
                             <div class="d-lg-flex gap-2 mt-3">
                                 @foreach ($row['images'] as $image)
-                                    <div><img src="{{ filled($image['url'] ?? null) ? $image['url'] : $assets.'/images/'.($image['file'] ?? '') }}" alt="{{ $image['alt'] ?? '' }}" @class(['img-fluid w-100', 'mb-3 mb-lg-0' => ! $loop->last])></div>
+                                    <div><img src="{{ filled($image['url'] ?? null) ? $image['url'] : $assets.'/images/'.($image['file'] ?? '') }}" alt="{{ $image['alt'] ?? '' }}" loading="lazy" decoding="async" @class(['img-fluid w-100', 'mb-3 mb-lg-0' => ! $loop->last])></div>
                                 @endforeach
                             </div>
                         </div>

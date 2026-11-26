@@ -5,6 +5,12 @@
     'livewireComponent' => Modules\User\Http\Livewire\Auth\Login::class,
 ])
 
+@php
+    // Recapiti dell'ente (#20): sempre da GetEnteDataAction (config('ente')), mai
+    // numeri/email fissi nel componente. Blocco nascosto se il recapito manca.
+    $ente = app(\Modules\Tenant\Actions\Ente\GetEnteDataAction::class)->execute();
+@endphp
+
 <!-- Beautiful Login Card -->
 <div class="login-card-beautiful fade-in-scale">
     
@@ -27,7 +33,6 @@
     <div class="px-6 py-8">
         <!-- Livewire Login Component -->
         @livewire($livewireComponent)
-        @livewire($livewireComponent)
     </div>
     
     <!-- Footer Card con Assistenza -->
@@ -40,7 +45,9 @@
                 {{ __('pub_theme::blocks_content.shared.need_help.label') }}
             </h3>
             
+            @if ($ente->toll_free !== '' || $ente->phone !== '' || $ente->email !== '')
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                @if ($ente->toll_free !== '' || $ente->phone !== '')
                 <!-- Telefono -->
                 <div class="flex items-center justify-center p-3 bg-white rounded-lg border border-gray-200 hover:border-primary-300 transition-colors">
                     <svg class="w-4 h-4 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,12 +55,14 @@
                     </svg>
                     <div>
                         <p class="font-medium text-gray-900">{{ __('pub_theme::blocks_common.shared.phone.label') }}</p>
-                        <a href="tel:+390123456789" class="text-primary-600 hover:text-primary-800 font-semibold">
-                            01 2345 6789
+                        <a href="tel:{{ $ente->toll_free !== '' ? $ente->toll_free : $ente->phone }}" class="text-primary-600 hover:text-primary-800 font-semibold">
+                            {{ $ente->toll_free !== '' ? $ente->toll_free : $ente->phone }}
                         </a>
                     </div>
                 </div>
-                
+                @endif
+
+                @if ($ente->email !== '')
                 <!-- Email -->
                 <div class="flex items-center justify-center p-3 bg-white rounded-lg border border-gray-200 hover:border-primary-300 transition-colors">
                     <svg class="w-4 h-4 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,18 +70,20 @@
                     </svg>
                     <div>
                         <p class="font-medium text-gray-900">{{ __('pub_theme::blocks_common.shared.email.label') }}</p>
-                        <a href="mailto:supporto@fixcity.gov.it" class="text-primary-600 hover:text-primary-800">
-                            supporto@fixcity.gov.it
+                        <a href="mailto:{{ $ente->email }}" class="text-primary-600 hover:text-primary-800">
+                            {{ $ente->email }}
                         </a>
                     </div>
                 </div>
+                @endif
             </div>
+            @endif
             
             <p class="text-xs text-gray-500 mt-3 flex items-center justify-center">
                 <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                {{ __('pub_theme::blocks_content.shared.hours_mon_fri_9_00_17.label') }}
+                {{ $ente->hours !== '' ? $ente->hours : __('pub_theme::blocks_content.shared.hours_mon_fri_9_00_17.label') }}
             </p>
         </div>
     </div>

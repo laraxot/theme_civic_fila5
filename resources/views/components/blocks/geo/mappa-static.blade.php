@@ -6,16 +6,26 @@
     'recordLng' => null,
 ])
 
-{{-- Logica: usa coordinate record se presenti; altrimenti geolocalizza l'utente; fallback Roma --}}
+@php
+    // #20: il centro di fallback arriva dalla config del tema
+    // (theme.features.map.default_center), non da coordinate di una città specifica.
+    $defaultCenter = config('theme.features.map.default_center', [45.4642, 9.1900]);
+    $fallbackLat = is_array($defaultCenter) && isset($defaultCenter[0]) ? (float) $defaultCenter[0] : 45.4642;
+    $fallbackLng = is_array($defaultCenter) && isset($defaultCenter[1]) ? (float) $defaultCenter[1] : 9.1900;
+    $centerLat = (float) ($recordLat ?? $lat ?? $fallbackLat);
+    $centerLng = (float) ($recordLng ?? $lng ?? $fallbackLng);
+@endphp
+
+{{-- Logica: usa coordinate record se presenti; altrimenti geolocalizza l'utente; fallback = centro mappa configurato --}}
 <div
     x-data="{
-        latInit: {{ (float)($recordLat ?? $lat ?? 41.89) }},
-        lngInit: {{ (float)($recordLng ?? $lng ?? 12.49) }},
+        latInit: {{ $centerLat }},
+        lngInit: {{ $centerLng }},
         labelInit: '{{ addslashes($label) }}',
         centerOnUser() {
             if (!navigator.geolocation) {
-                this.latInit = {{ (float)($recordLat ?? $lat ?? 41.89) }};
-                this.lngInit = {{ (float)($recordLng ?? $lng ?? 12.49) }};
+                this.latInit = {{ $centerLat }};
+                this.lngInit = {{ $centerLng }};
                 return;
             }
             navigator.geolocation.getCurrentPosition(
@@ -24,9 +34,9 @@
                     this.lngInit = pos.coords.longitude;
                 },
                 (err) => {
-                    // fallback: usa record o Roma; non blocca
-                    this.latInit = {{ (float)($recordLat ?? $lat ?? 41.89) }};
-                    this.lngInit = {{ (float)($recordLng ?? $lng ?? 12.49) }};
+                    // fallback: usa record o centro configurato; non blocca
+                    this.latInit = {{ $centerLat }};
+                    this.lngInit = {{ $centerLng }};
                 },
                 { enableHighAccuracy: true, timeout: 5000, maximumAge: 30000 }
             );
@@ -43,7 +53,7 @@
             <rect width="400" height="300" fill="#e8f5e9"/>
             <path d="M0 150 Q100 100 200 150 T400 150 L400 300 L0 300 Z" fill="#c8e6c9" opacity="0.6"/>
             {{-- Il pin si sposta in base a latInit/lngInit tramite x-bind (SVG dinamico tramite Alpine) --}}
-            <g :transform="'translate(' + (({{ (float) ($recordLat ?? $lat ?? 41.89) }} - 41.89) * 5000 + 200) + ',' + (150 - ({{ (float) ($recordLng ?? $lng ?? 12.49) }} - 12.49) * 3000) + ')'">
+            <g :transform="'translate(' + (200 + (latInit - {{ $centerLat }}) * 5000) + ',' + (150 - (lngInit - {{ $centerLng }}) * 3000) + ')'">
                 <circle cx="0" cy="0" r="8" fill="#007a52" stroke="#fff" stroke-width="2"/>
                 <text x="0" y="15" text-anchor="middle" fill="#17324d" font-size="9">{{ $label }}</text>
             </g>
@@ -53,6 +63,6 @@
     <div class="mt-3 text-xs text-emerald-700 flex gap-4">
         <span>{{ __('pub_theme::blocks_content.mappa_static.lat_colon.label') }} <span x-text="latInit.toFixed(4)"></span></span>
         <span>{{ __('pub_theme::blocks_content.mappa_static.lng_colon.label') }} <span x-text="lngInit.toFixed(4)"></span></span>
-        <span class="text-emerald-500" x-show="latInit === {{ (float)($recordLat ?? $lat ?? 41.89) }}">{{ __('pub_theme::blocks_content.mappa_static.current_position_or_reference_point.label') }}</span>
+        <span class="text-emerald-500" x-show="latInit === {{ $centerLat }} && lngInit === {{ $centerLng }}">{{ __('pub_theme::blocks_content.mappa_static.current_position_or_reference_point.label') }}</span>
     </div>
 </div>

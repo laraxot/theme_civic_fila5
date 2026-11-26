@@ -1,10 +1,15 @@
+@php
+    // Recapiti e social dell'ente (#20): da GetEnteDataAction (config('ente')),
+    // mai valori fissi nel componente. Ogni voce si mostra solo se valorizzata.
+    $footerEnte = app(\Modules\Tenant\Actions\Ente\GetEnteDataAction::class)->execute();
+@endphp
 <footer class="it-footer" role="contentinfo">
     {{-- EU Logo Section --}}
     <div class="it-footer-small-helper py-4 py-lg-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <img class="ue-logo" src="{{ asset('themes/Sixteen/design-comuni/assets/images/logo-eu-inverted.svg') }}" alt="{{ __('pub_theme::components_footer.eu.logo_alt.label') }}" style="height: 60px;">
+                    <img class="ue-logo" src="{{ asset('themes/Civic/design-comuni/assets/images/logo-eu-inverted.svg') }}" alt="{{ __('pub_theme::components_footer.eu.logo_alt.label') }}" style="height: 60px;">
                 </div>
             </div>
         </div>
@@ -18,7 +23,7 @@
                     <div class="it-brand-wrapper py-4">
                         <a href="{{ url('/'.app()->getLocale()) }}" title="{{ __('pub_theme::components_header.brand.go_home.title') }}">
                             <svg width="82" height="82" class="icon" aria-hidden="true">
-                                <image xlink:href="{{ asset('themes/Sixteen/design-comuni/assets/images/logo-comune.svg') }}"/>
+                                <image xlink:href="{{ asset('themes/Civic/design-comuni/assets/images/logo-comune.svg') }}"/>
                             </svg>
                             <div class="it-brand-text">
                                 <div class="it-brand-title">{{ config('app.name', __('pub_theme::header.center.brand.title.label')) }}</div>
@@ -97,45 +102,61 @@
                 {{-- Column 4: Contacts --}}
                 <div class="col-12 col-lg-3">
                     <h4 class="h5 mb-3">{{ __('pub_theme::components_common.nav.contacts.label') }}</h4>
+                    @if ($footerEnte->name !== '' || $footerEnte->address !== '' || $footerEnte->tax_code !== '' || $footerEnte->vat !== '')
                     <address class="text-muted">
-                        <p><strong>Comune di Nome Comune</strong></p>
-                        <p>Via Roma 123, 00100 Nome Comune (RM)</p>
-                        <p>CF: 00000000000 - P.IVA: 00000000000</p>
+                        @if ($footerEnte->name !== '')
+                        <p><strong>{{ $footerEnte->name }}</strong></p>
+                        @endif
+                        @if ($footerEnte->address !== '')
+                        <p>{!! nl2br(e($footerEnte->address)) !!}</p>
+                        @endif
+                        @if ($footerEnte->tax_code !== '' || $footerEnte->vat !== '')
+                        <p>
+                            @if ($footerEnte->tax_code !== '')CF: {{ $footerEnte->tax_code }}@endif
+                            @if ($footerEnte->tax_code !== '' && $footerEnte->vat !== '') - @endif
+                            @if ($footerEnte->vat !== '')P.IVA: {{ $footerEnte->vat }}@endif
+                        </p>
+                        @endif
                     </address>
-                    
+                    @endif
+
+                    @if ($footerEnte->toll_free !== '' || $footerEnte->phone !== '' || $footerEnte->email !== '' || $footerEnte->pec !== '')
                     <h5 class="h6 mb-2 mt-3">{{ __('pub_theme::components_footer.contacts.urp_full.label') }}</h5>
                     <ul class="list-unstyled">
+                        @if ($footerEnte->toll_free !== '')
                         <li>
-                            <a href="tel:061234567" class="text-decoration-none">
+                            <a href="tel:{{ $footerEnte->toll_free }}" class="text-decoration-none">
                                 <x-filament::icon icon="heroicon-o-phone" class="icon icon-sm inline me-1" aria-hidden="true" />
-                                {{ __('pub_theme::components_footer.contacts.toll_free.label') }} 06 1234567
+                                {{ __('pub_theme::components_footer.contacts.toll_free.label') }} {{ $footerEnte->toll_free }}
                             </a>
                         </li>
+                        @endif
+                        @if ($footerEnte->phone !== '')
                         <li>
-                            <a href="#" class="text-decoration-none">
-                                <x-filament::icon icon="heroicon-o-chat-bubble-left-right" class="icon icon-sm inline me-1" aria-hidden="true" />
-                                SMS/WhatsApp: +39 333 0000000
+                            <a href="tel:{{ $footerEnte->phone }}" class="text-decoration-none">
+                                <x-filament::icon icon="heroicon-o-phone" class="icon icon-sm inline me-1" aria-hidden="true" />
+                                {{ __('pub_theme::components_footer.contacts.switchboard.label') }} {{ $footerEnte->phone }}
                             </a>
                         </li>
+                        @endif
+                        @if ($footerEnte->email !== '')
                         <li>
-                            <a href="mailto:urp@comune.it" class="text-decoration-none">
+                            <a href="mailto:{{ $footerEnte->email }}" class="text-decoration-none">
                                 <x-filament::icon icon="heroicon-o-envelope" class="icon icon-sm inline me-1" aria-hidden="true" />
-                                urp@comune.it
+                                {{ $footerEnte->email }}
                             </a>
                         </li>
+                        @endif
+                        @if ($footerEnte->pec !== '')
                         <li>
-                            <a href="mailto:comune@pec.it" class="text-decoration-none">
+                            <a href="mailto:{{ $footerEnte->pec }}" class="text-decoration-none">
                                 <x-filament::icon icon="heroicon-o-shield-check" class="icon icon-sm inline me-1" aria-hidden="true" />
-                                comune@pec.it
+                                {{ $footerEnte->pec }}
                             </a>
                         </li>
-                        <li>
-                            <a href="tel:0612345678" class="text-decoration-none">
-                                <x-filament::icon icon="heroicon-o-phone" class="icon icon-sm inline me-1" aria-hidden="true" />
-                                {{ __('pub_theme::components_footer.contacts.switchboard.label') }} 06 12345678
-                            </a>
-                        </li>
+                        @endif
                     </ul>
+                    @endif
                     
                     <div class="mt-3">
                         <a href="#" class="btn btn-outline-primary btn-sm me-2">{{ __('pub_theme::components_footer.help.faq.label') }}</a>
@@ -238,28 +259,19 @@
                     </ul>
                 </div>
                 
-                {{-- Social Media --}}
+                {{-- Social Media: solo i profili configurati per l'ente (#20) --}}
+                @if ($footerEnte->social !== [])
                 <div class="col-12 col-md-6 text-center text-md-end">
                     <span class="me-2">{{ __('pub_theme::header.center.social.follow.label') }}</span>
-                    <a href="#" class="text-decoration-none me-2" aria-label="Twitter">
-                        <x-filament::icon icon="ui-brands.twitter" class="icon icon-sm" aria-hidden="true" />
+                    @foreach ($footerEnte->social as $socialItem)
+                    <a href="{{ $socialItem['url'] }}" class="text-decoration-none me-2" rel="noopener noreferrer" aria-label="{{ $socialItem['label'] }}" target="_blank">
+                        {{ $socialItem['label'] }}
                     </a>
-                    <a href="#" class="text-decoration-none me-2" aria-label="Facebook">
-                        <x-filament::icon icon="ui-brands.facebook" class="icon icon-sm" aria-hidden="true" />
-                    </a>
-                    <a href="#" class="text-decoration-none me-2" aria-label="YouTube">
-                        <x-filament::icon icon="ui-brands.youtube" class="icon icon-sm" aria-hidden="true" />
-                    </a>
-                    <a href="#" class="text-decoration-none me-2" aria-label="Telegram">
-                        <x-filament::icon icon="ui-brands.telegram" class="icon icon-sm" aria-hidden="true" />
-                    </a>
-                    <a href="#" class="text-decoration-none me-2" aria-label="Whatsapp">
-                        <x-filament::icon icon="ui-brands.whatsapp" class="icon icon-sm" aria-hidden="true" />
-                    </a>
-                    <a href="#" class="text-decoration-none" aria-label="RSS">
-                        <x-filament::icon icon="ui-brands.rss" class="icon icon-sm" aria-hidden="true" />
-                    </a>
+                    @endforeach
                 </div>
+                @else
+                <div class="col-12 col-md-6"></div>
+                @endif
             </div>
             
             {{-- Bottom Links --}}

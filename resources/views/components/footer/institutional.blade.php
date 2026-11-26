@@ -2,10 +2,12 @@
 @props([
     'institutionName' => config('app.name', __('pub_theme::components_header.brand.municipality_of.label').' '),
     'institutionLogo' => null,
-    'institutionAddress' => 'Piazza del Municipio, 1',
-    'institutionPhone' => '+39 0123 456789',
-    'institutionEmail' => 'protocollo@comune.example.it',
-    'institutionPec' => 'comune.example@pec.it',
+    // Default a null (#20): nessun indirizzo/recapito inventato; chi usa il
+    // componente passa i dati dell'ente (vedi GetEnteDataAction) o li lascia vuoti.
+    'institutionAddress' => null,
+    'institutionPhone' => null,
+    'institutionEmail' => null,
+    'institutionPec' => null,
     'socialLinks' => [],
     'quickLinks' => [],
     'serviceLinks' => [],

@@ -1,5 +1,20 @@
 @props(['data' => []])
 
+@php
+    // #20: i recapiti di default vengono dall'ente (GetEnteDataAction), mai
+    // segnaposto di un ente fittizio; i campi vuoti restano nascosti.
+    $footerEnte = app(\Modules\Tenant\Actions\Ente\GetEnteDataAction::class)->execute();
+    $contactData = array_filter((array) ($data['contact'] ?? []), static fn (mixed $v): bool => $v !== null && $v !== '');
+    $contactGet = static function (string $key, string $enteValue = '') use ($contactData): string {
+        $value = $contactData[$key] ?? null;
+        if (is_string($value) && $value !== '') {
+            return $value;
+        }
+
+        return $enteValue;
+    };
+@endphp
+
 {{-- 
     Full Footer Template
     Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/argomenti.html
@@ -12,14 +27,14 @@
             {{-- Logo Section --}}
             <div class="row">
                 <div class="col-12 footer-items-wrapper logo-wrapper">
-                    <img class="ue-logo" src="{{ asset('themes/Sixteen/design-comuni/assets/images/logo-eu-inverted.svg') }}" alt="{{ __('pub_theme::footer_full.logo.eu.label') }}">
+                    <img class="ue-logo" src="{{ asset('themes/Civic/design-comuni/assets/images/logo-eu-inverted.svg') }}" alt="{{ __('pub_theme::footer_full.logo.eu.label') }}">
                     <div class="it-brand-wrapper">
                         <a href="{{ $data['home_url'] ?? '/it' }}">
                             <svg class="icon" aria-hidden="true">
-                                <use href="{{ asset('themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa') }}"></use>
+                                <use href="{{ asset('themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa') }}"></use>
                             </svg>
                             <div class="it-brand-text">
-                                <h2 class="no_toc">{{ $data['site_name'] ?? 'Nome del Comune' }}</h2>
+                                <h2 class="no_toc">{{ is_string($data['site_name'] ?? null) && $data['site_name'] !== '' ? $data['site_name'] : $footerEnte->name }}</h2>
                             </div>
                         </a>
                     </div>
@@ -93,25 +108,48 @@
                 {{-- Column 3: Contatti --}}
                 <div class="col-md-3 footer-items-wrapper">
                     <h4 class="footer-heading-title">{{ $data['contact_title'] ?? __('pub_theme::footer_full.contacts.heading.title') }}</h4>
+                    @php
+                        $footerName = $contactGet('name', $footerEnte->name);
+                        $footerAddress = $contactGet('address', $footerEnte->address);
+                        $footerCap = $contactGet('cap', '');
+                        $footerCity = $contactGet('city', '');
+                        $footerProvince = $contactGet('province', '');
+                        $footerPhone = $contactGet('phone', $footerEnte->toll_free !== '' ? $footerEnte->toll_free : $footerEnte->phone);
+                        $footerEmail = $contactGet('email', $footerEnte->email);
+                        $footerPec = $contactGet('pec', $footerEnte->pec);
+                        $footerHours = $contactGet('hours', $footerEnte->hours);
+                    @endphp
+                    @if ($footerName !== '' || $footerAddress !== '' || $footerPhone !== '' || $footerEmail !== '' || $footerPec !== '')
                     <address class="footer-list">
+                        @if ($footerName !== '' || $footerAddress !== '')
                         <div class="footer-list-item">
-                            <strong>{{ $data['contact']['name'] ?? 'Comune di Example' }}</strong>
+                            @if ($footerName !== '')
+                            <strong>{{ $footerName }}</strong>
+                            @endif
+                            @if ($footerAddress !== '' || $footerCap !== '' || $footerCity !== '')
                             <p>
-                                {{ $data['contact']['address'] ?? 'Via Roma 1' }}<br>
-                                {{ $data['contact']['cap'] ?? '12345' }} {{ $data['contact']['city'] ?? 'Example' }} ({{ $data['contact']['province'] ?? 'EX' }})
+                                @if ($footerAddress !== ''){{ $footerAddress }}<br>@endif
+                                {{ trim($footerCap.' '.$footerCity) }}{{ $footerProvince !== '' ? ' ('.$footerProvince.')' : '' }}
+                            </p>
+                            @endif
+                        </div>
+                        @endif
+                        @if ($footerPhone !== '' || $footerEmail !== '' || $footerPec !== '')
+                        <div class="footer-list-item">
+                            <p>
+                                @if ($footerPhone !== ''){{ __('pub_theme::footer_full.contacts.phone.label') }} <a href="tel:{{ $footerPhone }}">{{ $footerPhone }}</a><br>@endif
+                                @if ($footerEmail !== ''){{ __('pub_theme::footer_full.contacts.email.label') }} <a href="mailto:{{ $footerEmail }}">{{ $footerEmail }}</a><br>@endif
+                                @if ($footerPec !== ''){{ __('pub_theme::footer_full.contacts.pec.label') }} <a href="mailto:{{ $footerPec }}">{{ $footerPec }}</a>@endif
                             </p>
                         </div>
+                        @endif
+                        @if ($footerHours !== '')
                         <div class="footer-list-item">
-                            <p>
-                                {{ __('pub_theme::footer_full.contacts.phone.label') }} {{ $data['contact']['phone'] ?? '+39 0123 456789' }}<br>
-                                {{ __('pub_theme::footer_full.contacts.email.label') }} {{ $data['contact']['email'] ?? 'info@comune.example.it' }}<br>
-                                {{ __('pub_theme::footer_full.contacts.pec.label') }} {{ $data['contact']['pec'] ?? 'comune@pec.it' }}
-                            </p>
+                            <p>{{ __('pub_theme::footer_full.contacts.hours.label') }} {{ $footerHours }}</p>
                         </div>
-                        <div class="footer-list-item">
-                            <p>{{ __('pub_theme::footer_full.contacts.hours.label') }} {{ $data['contact']['hours'] ?? 'Lun-Ven 9:00-13:00' }}</p>
-                        </div>
+                        @endif
                     </address>
+                    @endif
                 </div>
             </div>
             
@@ -121,15 +159,18 @@
                 <div class="col-12 footer-items-wrapper social-wrapper">
                     <h4 class="footer-heading-title">{{ $data['social_title'] ?? __('pub_theme::footer_full.social.heading.title') }}</h4>
                     <ul class="list-inline text-left social-list">
-                        @foreach($data['social_links'] ?? [
-                            ['label' => 'Facebook', 'url' => '#', 'icon' => 'it-facebook'],
-                            ['label' => 'Twitter', 'url' => '#', 'icon' => 'it-twitter'],
-                            ['label' => 'YouTube', 'url' => '#', 'icon' => 'it-youtube'],
-                        ] as $social)
+                        {{-- #20: social = JSON CMS, altrimenti i profili dell'ente; mai link "#" finti --}}
+                        @php
+                            $footerSocials = $data['social_links'] ?? array_map(
+                                static fn (array $item): array => ['label' => $item['label'], 'url' => $item['url'], 'icon' => $item['icon']],
+                                $footerEnte->social
+                            );
+                        @endphp
+                        @foreach($footerSocials as $social)
                         <li class="list-inline-item">
-                            <a class="text-underline" href="{{ $social['url'] }}" aria-label="{{ $social['label'] }}">
+                            <a class="text-underline" href="{{ $social['url'] }}" aria-label="{{ $social['label'] }}" target="_blank" rel="noopener noreferrer">
                                 <svg class="icon icon-white" aria-hidden="true">
-                                    <use href="{{ asset('themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#' . $social['icon']) }}"></use>
+                                    <use href="{{ asset('themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#' . $social['icon']) }}"></use>
                                 </svg>
                             </a>
                         </li>

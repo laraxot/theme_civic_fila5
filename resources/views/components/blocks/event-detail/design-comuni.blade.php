@@ -9,7 +9,7 @@
 --}}
 @php
     $d = static fn (string $key, mixed $default = '') => data_get($data, $key, $default);
-    $assets = \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base();
+    $assets = \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base();
     $icon = static fn (string $name): string => $assets.'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
     $sprite = static fn (string $name): string => $assets.'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
 @endphp
@@ -132,7 +132,7 @@
                                             <li class="splide__slide">
                                                 <div class="it-single-slide-wrapper">
                                                     <figure>
-                                                        <img src="{{ $photo['src'] ?? '' }}" alt="{{ $photo['alt'] ?? '' }}" class="img-fluid">
+                                                        <img src="{{ $photo['src'] ?? '' }}" alt="{{ $photo['alt'] ?? '' }}" class="img-fluid" loading="lazy" decoding="async">
                                                         <figcaption class="figure-caption mt-2">{{ $photo['caption'] ?? '' }}</figcaption>
                                                     </figure>
                                                 </div>
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                         <div class="map-wrapper map-column mt-4">
-                            <img src="{{ $section['map']['src'] ?? '' }}" alt="{{ $section['map']['alt'] ?? '' }}" class="img-fluid" style="object-fit:cover;width:100%;">
+                            <img src="{{ $section['map']['src'] ?? '' }}" alt="{{ $section['map']['alt'] ?? '' }}" loading="lazy" decoding="async" class="img-fluid" style="object-fit:cover;width:100%;">
                         </div>
                         @break
                     @case('schedule')
@@ -230,7 +230,7 @@
                                     <div class="card card-img no-after">
                                         <div class="img-responsive-wrapper">
                                             <div class="img-responsive">
-                                                <figure class="img-wrapper"><img src="{{ $card['image']['src'] ?? '' }}" title="{{ $card['image']['title'] ?? '' }}" alt="{{ $card['image']['alt'] ?? '' }}"></figure>
+                                                <figure class="img-wrapper"><img src="{{ $card['image']['src'] ?? '' }}" title="{{ $card['image']['title'] ?? '' }}" alt="{{ $card['image']['alt'] ?? '' }}" loading="lazy" decoding="async"></figure>
                                                 <div class="card-calendar d-flex flex-column justify-content-center">
                                                     <span class="card-date">{{ $card['date'] ?? '' }}</span>
                                                     <span class="card-day">{{ $card['month'] ?? '' }}</span>

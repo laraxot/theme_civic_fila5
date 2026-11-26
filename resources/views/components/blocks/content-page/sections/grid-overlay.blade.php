@@ -7,7 +7,7 @@
                 <a href="{{ $item['url'] ?? '#' }}">
                     <div class="img-responsive-wrapper">
                         <div class="{{ $cx('img-responsive', ! empty($item['rounded']) ? 'rounded' : null) }}">
-                            <div class="img-wrapper"><img src="{{ $item['image']['src'] ?? '' }}" alt="{{ $item['image']['alt'] ?? '' }}" title="{{ $item['image']['title'] ?? '' }}"></div>
+                            <div class="img-wrapper"><img src="{{ $item['image']['src'] ?? '' }}" alt="{{ $item['image']['alt'] ?? '' }}" title="{{ $item['image']['title'] ?? '' }}" loading="lazy" decoding="async"></div>
                         </div>
                     </div>
                     <div class="it-griditem-text-wrapper"><h3>{{ $item['title'] ?? '' }}</h3></div>

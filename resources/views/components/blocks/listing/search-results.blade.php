@@ -80,7 +80,7 @@
                                         <div class="img-responsive-wrapper">
                                             <div class="img-responsive img-responsive-panoramic">
                                                 <figure class="img-wrapper">
-                                                    <img class="img-fluid" src="{{ $result['image'] }}" alt="{{ $result['image_alt'] ?? 'descrizione immagine' }}">
+                                                    <img class="img-fluid" src="{{ $result['image'] }}" alt="{{ $result['image_alt'] ?? 'descrizione immagine' }}" loading="lazy" decoding="async">
                                                 </figure>
                                             </div>
                                         </div>

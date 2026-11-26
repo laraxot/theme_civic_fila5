@@ -29,12 +29,14 @@
                                 <p class="text-paragraph-card u-grey-light m-0">{{ $card['role'] ?? '' }}</p>
                             </div>
                             <div class="card-image card-image-rounded pb-5">
-                                <img src="{{ $card['image'] ?? 'https://picsum.photos/150/200' }}" alt="{{ __('pub_theme::blocks_content.shared.sample_image.label') }}">
+                                @if (filled($card['image'] ?? null))
+                                <img src="{{ $card['image'] }}" alt="{{ __('pub_theme::blocks_content.shared.sample_image.label') }}" loading="lazy" decoding="async">
+                                @endif
                             </div>
                             <a class="read-more ps-3" href="{{ $card['url'] ?? '#' }}">
                                 <span class="text">{{ __('pub_theme::blocks_content.shared.go_to_the_page.label') }}</span>
                                 <svg class="icon">
-                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
+                                    <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
                                 </svg>
                             </a>
                         </div>
@@ -52,7 +54,7 @@
                         <a class="read-more" href="{{ $card['url'] ?? '#' }}">
                             <span class="text">{{ __('pub_theme::blocks_content.shared.go_to_the_page.label') }}</span>
                             <svg class="icon ms-0">
-                                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
+                                <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
                             </svg>
                         </a>
                     </div>

@@ -5,15 +5,17 @@
     $step = $data['step'] ?? 3;
     $warningTitle = $data['warning_title'] ?? 'Attenzione';
     $warningText = $data['warning_text'] ?? 'Le informazioni che hai fornito hanno valore di dichiarazione. Verifica che siano corrette.';
-    $indirizzo = $data['indirizzo'] ?? 'Via Solferino - 50100 Firenze (FI)';
-    $tipoDisservizio = $data['tipo_disservizio'] ?? 'Danneggiamento proprietà pubblica';
-    $titolo = $data['titolo'] ?? 'Panchina danneggiata';
-    $dettagli = $data['dettagli'] ?? 'La seduta della panchina risulta inutilizzabile e pericolosa dato che ci sono molte schegge e parti appuntite';
-    $immagini = $data['immagini'] ?? '6yhakandsahm413d8da.jpg';
-    $autoreNome = $data['autore_nome'] ?? 'Giulia Bianchi';
-    $codiceFiscale = $data['codice_fiscale'] ?? 'GLABNC72H25H501Y';
-    $telefono = $data['telefono'] ?? '+39 331 1234567';
-    $email = $data['email'] ?? 'giulia.bianchi@gmail.com';
+    // #20/#32: nessun dato personale o indirizzo di un ente specifico come default;
+    // i valori arrivano dal JSON CMS e le righe vuote non si mostrano.
+    $indirizzo = $data['indirizzo'] ?? '';
+    $tipoDisservizio = $data['tipo_disservizio'] ?? '';
+    $titolo = $data['titolo'] ?? '';
+    $dettagli = $data['dettagli'] ?? '';
+    $immagini = $data['immagini'] ?? '';
+    $autoreNome = $data['autore_nome'] ?? '';
+    $codiceFiscale = $data['codice_fiscale'] ?? '';
+    $telefono = $data['telefono'] ?? '';
+    $email = $data['email'] ?? '';
     $backLabel = $data['back_label'] ?? 'Indietro';
     $saveLabel = $data['save_label'] ?? 'Salva Richiesta';
     $saveMobileLabel = $data['save_mobile_label'] ?? 'Salva';
@@ -91,36 +93,46 @@
                                     <a href="{{ route('container0.view', ['container0' => 'tests', 'slug0' => 'segnalazione-02-dati'], false) }}" class="text-decoration-none"><span class="text-button-sm-semi text-sm font-semibold text-[#007a52]">{{ __('pub_theme::flow_report.riepilogo.edit.label') }}</span></a>
                                 </div>
                                 <div class="card-body p-0">
+@if ($indirizzo !== '')
                                     <div class="single-line-info border-b border-[#d9e2e8] py-3">
                                         <div class="text-paragraph-small text-sm text-[#5d7083]">{{ __('pub_theme::flow_report.riepilogo.address.label') }}</div>
                                         <div class="border-light">
                                             <p class="data-text text-[#17324d]">{{ $indirizzo }}</p>
                                         </div>
-                                    </div>
+                                    </div>                                    @endif
+
+@if ($tipoDisservizio !== '')
                                     <div class="single-line-info border-b border-[#d9e2e8] py-3">
                                         <div class="text-paragraph-small text-sm text-[#5d7083]">{{ __('pub_theme::flow_report.riepilogo.type_of_service_issue.label') }}</div>
                                         <div class="border-light">
                                             <p class="data-text text-[#17324d]">{{ $tipoDisservizio }}</p>
                                         </div>
-                                    </div>
+                                    </div>                                    @endif
+
+@if ($titolo !== '')
                                     <div class="single-line-info border-b border-[#d9e2e8] py-3">
                                         <div class="text-paragraph-small text-sm text-[#5d7083]">{{ __('pub_theme::flow_report.riepilogo.title.label') }}</div>
                                         <div class="border-light">
                                             <p class="data-text text-[#17324d]">{{ $titolo }}</p>
                                         </div>
-                                    </div>
+                                    </div>                                    @endif
+
+@if ($dettagli !== '')
                                     <div class="single-line-info border-b border-[#d9e2e8] py-3">
                                         <div class="text-paragraph-small text-sm text-[#5d7083]">{{ __('pub_theme::blocks_common.shared.details.label') }}</div>
                                         <div class="border-light">
                                             <p class="data-text text-[#17324d]">{{ $dettagli }}</p>
                                         </div>
-                                    </div>
+                                    </div>                                    @endif
+
+@if ($immagini !== '')
                                     <div class="single-line-info py-3">
                                         <div class="text-paragraph-small text-sm text-[#5d7083]">{{ __('pub_theme::flow_report.riepilogo.images.label') }}</div>
                                         <div class="border-light">
                                             <p class="data-text text-[#17324d]">{{ $immagini }}</p>
                                         </div>
-                                    </div>
+                                    </div>                                    @endif
+
                                 </div>
                             </div>
                         </div>
@@ -141,15 +153,19 @@
                         <div class="cmp-info-summary mb-4 bg-white p-3 p-lg-4">
                             <div class="card rounded-md border border-[#d9e2e8]">
                                 <div class="card-header mb-0 flex justify-content-between border-b border-[#d9e2e8] p-0">
+                                    @if ($autoreNome !== '')
                                     <h4 class="title-large-semi-bold mb-3 text-lg font-semibold text-[#17324d]">{{ $autoreNome }}</h4>
+                                    @endif
                                 </div>
                                 <div class="card-body p-0">
+@if ($codiceFiscale !== '')
                                     <div class="single-line-info py-3">
                                         <div class="text-paragraph-small text-sm text-[#5d7083]">{{ __('pub_theme::blocks_common.shared.tax_code.label') }}</div>
                                         <div class="border-light">
                                             <p class="data-text text-[#17324d]">{{ $codiceFiscale }}</p>
                                         </div>
-                                    </div>
+                                    </div>                                    @endif
+
                                 </div>
                             </div>
                         </div>
@@ -159,18 +175,22 @@
                                     <h4 class="title-large-semi-bold mb-3 text-lg font-semibold text-[#17324d]">{{ __('pub_theme::blocks_common.shared.contacts.label') }}</h4>
                                 </div>
                                 <div class="card-body p-0">
+@if ($telefono !== '')
                                     <div class="single-line-info border-b border-[#d9e2e8] py-3">
                                         <div class="text-paragraph-small text-sm text-[#5d7083]">{{ __('pub_theme::blocks_common.shared.phone.label') }}</div>
                                         <div class="border-light">
                                             <p class="data-text text-[#17324d]">{{ $telefono }}</p>
                                         </div>
-                                    </div>
+                                    </div>                                    @endif
+
+@if ($email !== '')
                                     <div class="single-line-info py-3">
                                         <div class="text-paragraph-small text-sm text-[#5d7083]">{{ __('pub_theme::blocks_common.shared.email.label') }}</div>
                                         <div class="border-light">
                                             <p class="data-text text-[#17324d]">{{ $email }}</p>
                                         </div>
-                                    </div>
+                                    </div>                                    @endif
+
                                 </div>
                             </div>
                         </div>
@@ -204,24 +224,4 @@
     </div>
 </div>
 
-<div class="bg-[#f5f7f9] py-12 shadow-contacts">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-6 offset-lg-3 p-contacts">
-                <div class="cmp-contacts">
-                    <div class="card w-100 rounded-lg border border-[#d9e2e8] bg-white shadow-sm">
-                        <div class="card-body p-6">
-                            <h2 class="title-medium-2-semi-bold text-xl font-semibold text-[#17324d]">{{ __('pub_theme::flow_report.shared.contact_the_municipality.label') }}</h2>
-                            <ul class="contact-list mt-4 space-y-3 p-0">
-                                <li><a class="list-item flex items-center gap-3 text-[#007a52] hover:text-[#005c3d]" href="{{ route('container0.view', ['container0' => 'tests', 'slug0' => 'domande-frequenti'], false) }}"><svg class="icon icon-primary icon-sm h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke-width="2"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="2" stroke-linecap="round"/></svg><span>{{ __('pub_theme::blocks_common.shared.read_the_frequently_asked_questions.label') }}</span></a></li>
-                                <li><a class="list-item flex items-center gap-3 text-[#007a52] hover:text-[#005c3d]" href="{{ route('container0.view', ['container0' => 'tests', 'slug0' => 'assistenza-01-dati'], false) }}" data-element="contacts"><svg class="icon icon-primary icon-sm h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{{ __('pub_theme::blocks_common.shared.request_assistance.label') }}</span></a></li>
-                                <li><a class="list-item flex items-center gap-3 text-[#007a52] hover:text-[#005c3d]" href="tel:050505"><svg class="icon icon-primary icon-sm h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 012-2h2l2 5-2 2a12 12 0 006 6l2-2 5 2v2a2 2 0 01-2 2A17 17 0 013 5z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{{ __('pub_theme::blocks_common.shared.call_the_toll_free_number_05.label') }}</span></a></li>
-                                <li><a class="list-item flex items-center gap-3 text-[#007a52] hover:text-[#005c3d]" href="{{ route('container0.view', ['container0' => 'tests', 'slug0' => 'appuntamento-01-ufficio'], false) }}" data-element="appointment-booking"><svg class="icon icon-primary icon-sm h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2" stroke-width="2"/><line x1="3" y1="9" x2="21" y2="9" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="2" x2="16" y2="6" stroke-width="2" stroke-linecap="round"/></svg><span>{{ __('pub_theme::blocks_common.shared.book_an_appointment.label') }}</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@include('pub_theme::components.blocks.flow.segnalazione.partials.contacts-card')

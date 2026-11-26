@@ -7,7 +7,7 @@
 --}}
 @php
     $d = static fn (string $key, mixed $default = '') => data_get($data, $key, $default);
-    $assets = \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base();
+    $assets = \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base();
 @endphp
 <div class="container" id="main-container">
     <div class="row">
@@ -36,7 +36,7 @@
                         @foreach ($method['buttons'] ?? [] as $button)
                             @if (($button['variant'] ?? '') === 'icon')
                                 <button type="button" class="btn btn-icon btn-re square">
-                                    <img src="{{ $assets }}/images/{{ $button['image']['file'] ?? '' }}" alt="{{ $button['image']['alt'] ?? '' }}" class="me-2">
+                                    <img src="{{ $assets }}/images/{{ $button['image']['file'] ?? '' }}" alt="{{ $button['image']['alt'] ?? '' }}" class="me-2" loading="lazy" decoding="async">
                                     <span class="">{{ $button['label'] ?? '' }}</span></button>
                             @else
                                 <button type="button" @class(['btn btn-outline-primary btn-re', 'pr-md-4' => $loop->first && $loop->count > 1, 'bg-white'])>
