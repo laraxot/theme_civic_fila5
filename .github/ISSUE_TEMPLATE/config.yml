@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "Questions and community discussion"
+    url: "https://github.com/laraxot/theme_civic_fila5/discussions"
+    about: "Use Discussions for help, ideas and questions before opening an actionable issue."
+  - name: "Civic roadmap"
+    url: "https://github.com/laraxot/theme_civic_fila5/issues/37"
+    about: "See milestones, current priorities and ready-to-use issue filters."
