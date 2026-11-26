@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../../README.md).
 
 # Segnalazioni Elenco - HTML Body Comparison Report
 
@@ -47,12 +49,12 @@ status: draft
 - Extra button in main content
 
 ## Previous Reports
-- [FASE1-FINAL-REPORT.md](./FASE1-FINAL-REPORT.md) - Previous analysis
-- [parity-report.md](./parity-report.md) - Earlier report
+- FASE1-FINAL-REPORT.md (`./FASE1-FINAL-REPORT.md`, non presente in Civic) - Previous analysis
+- parity-report.md (`./parity-report.md`, non presente in Civic) - Earlier report
 
 ## Tools
-- [bashscripts/html/compare-html-body.py](../../../bashscripts/html/compare-html-body.py) - Comparison engine
-- [bashscripts/docs/index.md](../../../bashscripts/docs/index.md) - Bashscripts docs index
+- bashscripts/html/compare-html-body.py (`../../../bashscripts/html/compare-html-body.py`, non presente in Civic) - Comparison engine
+- bashscripts/docs/index.md (`../../../bashscripts/docs/index.md`, non presente in Civic) - Bashscripts docs index
 
 ## Documentazione
 

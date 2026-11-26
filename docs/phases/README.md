@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../README.md).
 
 # 🚀 Phases Folder
 
@@ -78,7 +80,7 @@ Phase E (Day 3-4)     Polish & Testing         ⏳ → 🎯
 **Inputs**: Color + Component mappings  
 **Outputs**: Updated config files, test results  
 
-🔗 [Read Full Plan](./02-PHASE-B-CONFIG.md)
+🔗 Read Full Plan (`./02-PHASE-B-CONFIG.md`, non presente in Civic)
 
 ---
 
@@ -105,7 +107,7 @@ Phase E (Day 3-4)     Polish & Testing         ⏳ → 🎯
 **Inputs**: Phase B config + Mappings  
 **Outputs**: Refactored blade templates, CSS  
 
-🔗 [Read Full Plan](./03-PHASE-C-COMPONENTS.md)
+🔗 Read Full Plan (`./03-PHASE-C-COMPONENTS.md`, non presente in Civic)
 
 ---
 
@@ -131,7 +133,7 @@ Phase E (Day 3-4)     Polish & Testing         ⏳ → 🎯
 **Inputs**: Phase C components + Mappings  
 **Outputs**: Alpine.js implementations, test reports  
 
-🔗 [Read Full Plan](./04-PHASE-D-INTERACTIVITY.md)
+🔗 Read Full Plan (`./04-PHASE-D-INTERACTIVITY.md`, non presente in Civic)
 
 ---
 
@@ -162,7 +164,7 @@ Phase E (Day 3-4)     Polish & Testing         ⏳ → 🎯
 **Inputs**: Phase D interactive components  
 **Outputs**: Test report, production build  
 
-🔗 [Read Full Plan](./05-PHASE-E-POLISH.md)
+🔗 Read Full Plan (`./05-PHASE-E-POLISH.md`, non presente in Civic)
 
 ---
 
@@ -215,7 +217,7 @@ Analysis (A)
 |--------|---------|
 | [Analysis](../analysis/) | Input data for phases |
 | [Screenshots](../screenshots/) | Visual reference |
-| [Visual Comparison](../visual-comparison/) | Acceptance criteria |
+| Visual Comparison (`../visual-comparison/`, non presente in Civic) | Acceptance criteria |
 | [Mappings](../mappings/) | Configuration data |
 
 ---

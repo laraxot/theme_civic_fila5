@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../../README.md).
 
 # Segnalazione Pages Parity - Index
 
@@ -36,11 +38,11 @@ status: draft
 
 | Document | Description |
 |----------|-------------|
-| [HTML_STRUCTURE_ANALYSIS.md](./HTML_STRUCTURE_ANALYSIS.md) | Detailed HTML structure comparison |
-| [CSS_JS_PARITY_COMPLETE.md](./CSS_JS_PARITY_COMPLETE.md) | CSS/JS parity work summary |
-| [STATUS_REPORT_2026_04_07.md](./STATUS_REPORT_2026_04_07.md) | Current session status |
+| HTML_STRUCTURE_ANALYSIS.md (`./HTML_STRUCTURE_ANALYSIS.md`, non presente in Civic) | Detailed HTML structure comparison |
+| CSS_JS_PARITY_COMPLETE.md (`./CSS_JS_PARITY_COMPLETE.md`, non presente in Civic) | CSS/JS parity work summary |
+| STATUS_REPORT_2026_04_07.md (`./STATUS_REPORT_2026_04_07.md`, non presente in Civic) | Current session status |
 | [reference-html/](./reference-html/) | Reference HBS templates |
-| [screenshots/](./screenshots/) | Screenshot captures |
+| screenshots/ (`./screenshots/`, non presente in Civic) | Screenshot captures |
 
 ## Translation Files
 
@@ -75,9 +77,9 @@ status: draft
 ## Cross-References
 
 - → [../00-index.md](../00-index.md) - Theme docs index
-- → [../css-js-parity-2026-04-04.md](../css-js-parity-2026-04-04.md) - Previous CSS/JS parity
-- → [../../../../../docs/MODULE_DOCS_INDEX.md](../../../../../docs/MODULE_DOCS_INDEX.md) - Master project index
-- → [../../../../../bashscripts/docs/README.md](../../../../../bashscripts/docs/README.md) - Scripts index
+- → ../css-js-parity-2026-04-04.md (`../css-js-parity-2026-04-04.md`, non presente in Civic) - Previous CSS/JS parity
+- → ../../../../../docs/MODULE_DOCS_INDEX.md (`../../../../../docs/MODULE_DOCS_INDEX.md`, non presente in Civic) - Master project index
+- → ../../../../../bashscripts/docs/README.md (`../../../../../bashscripts/docs/README.md`, non presente in Civic) - Scripts index
 
 ---
 

@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../../README.md).
 
 # Batch Body Parity Artifacts
 
@@ -22,9 +24,9 @@ Use these files to inspect the HTML structure inside `<body>` without scripts be
 
 ## Related
 
-- Report: [../BATCH_BODY_PARITY_REPORT.md](../BATCH_BODY_PARITY_REPORT.md)
-- Script doc: [../../../../../../bashscripts/docs/design-comuni-batch-body-parity.md](../../../../../../bashscripts/docs/design-comuni-batch-body-parity.md)
-- Script: [../../../../../../bashscripts/design-comuni/batch-body-parity.php](../../../../../../bashscripts/design-comuni/batch-body-parity.php)
+- Report: ../BATCH_BODY_PARITY_REPORT.md (`../BATCH_BODY_PARITY_REPORT.md`, non presente in Civic)
+- Script doc: ../../../../../../bashscripts/docs/design-comuni-batch-body-parity.md (`../../../../../../bashscripts/docs/design-comuni-batch-body-parity.md`, non presente in Civic)
+- Script: ../../../../../../bashscripts/design-comuni/batch-body-parity.php (`../../../../../../bashscripts/design-comuni/batch-body-parity.php`, non presente in Civic)
 
 ## Documentazione
 

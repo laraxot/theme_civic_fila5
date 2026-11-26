@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../README.md).
 
 # HTML Structure Comparison Results
 
@@ -19,7 +21,7 @@ status: draft
 
 | Page | Parity Score | Date | Report |
 |------|-------------|------|--------|
-| [ticket-list](ticket-list/ticket-list-comparison-summary.md) | 4.52% | 2026-04-08 | [Summary](ticket-list/ticket-list-comparison-summary.md) |
+| ticket-list (`ticket-list/ticket-list-comparison-summary.md`, non presente in Civic) | 4.52% | 2026-04-08 | Summary (`ticket-list/ticket-list-comparison-summary.md`, non presente in Civic) |
 
 ## How to Run a New Comparison
 
@@ -45,10 +47,10 @@ docs/html-structure-comparison/          ← This directory (theme-specific outp
 
 ## Bidirectional Links
 
-- **Script**: [`bashscripts/html/html-structure-compare.sh`](../../../bashscripts/html/html-structure-compare.sh)
-- **Script docs**: [`bashscripts/docs/html/html-structure-compare.md`](../../../bashscripts/docs/html/html-structure-compare.md)
-- **Project bridge**: [`docs/html-structure-comparison.md`](../../../docs/html-structure-comparison.md)
-- **Theme index**: [`docs/00-index.md`](../00-index.md)
+- **Script**: `bashscripts/html/html-structure-compare.sh` (`../../../bashscripts/html/html-structure-compare.sh`, non presente in Civic)
+- **Script docs**: `bashscripts/docs/html/html-structure-compare.md` (`../../../bashscripts/docs/html/html-structure-compare.md`, non presente in Civic)
+- **Project bridge**: `docs/html-structure-comparison.md` (`../../../docs/html-structure-comparison.md`, non presente in Civic)
+- **Theme index**: `docs/00-index.md` (`../00-index.md`, non presente in Civic)
 - **Design Comuni**: [`docs/design-comuni/README.md`](../design-comuni/README.md)
 
 ## Goal

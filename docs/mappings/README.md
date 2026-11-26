@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../README.md).
 
 # 🗺️ Mappings Folder
 
@@ -35,7 +37,7 @@ status: draft
 
 **Format**: Table with columns: Class | Usage | Frequency | Components
 
-🔗 [Read](./01-BOOTSTRAP-CLASSES-INVENTORY.md) | [← Back](#-documents-in-this-folder)
+🔗 Read (`./01-BOOTSTRAP-CLASSES-INVENTORY.md`, non presente in Civic) | [← Back](#-documents-in-this-folder)
 
 ---
 
@@ -56,7 +58,7 @@ status: draft
 
 **Usage**: Cross-reference with Bootstrap Inventory to create Tailwind classes
 
-🔗 [Read](./02-TAILWIND-EQUIVALENTS.md) | [← Back](#-documents-in-this-folder)
+🔗 Read (`./02-TAILWIND-EQUIVALENTS.md`, non presente in Civic) | [← Back](#-documents-in-this-folder)
 
 ---
 
@@ -81,7 +83,7 @@ status: draft
 **Alpine.js Needs**: [any interactivity requirements]
 ```
 
-🔗 [Read](./03-CUSTOM-COMPONENTS-MAP.md) | [← Back](#-documents-in-this-folder)
+🔗 Read (`./03-CUSTOM-COMPONENTS-MAP.md`, non presente in Civic) | [← Back](#-documents-in-this-folder)
 
 ---
 
@@ -107,7 +109,7 @@ colors: {
 }
 ```
 
-🔗 [Read](./04-COLOR-TOKEN-MAPPING.md) | [← Back](#-documents-in-this-folder)
+🔗 Read (`./04-COLOR-TOKEN-MAPPING.md`, non presente in Civic) | [← Back](#-documents-in-this-folder)
 
 ---
 
@@ -115,10 +117,10 @@ colors: {
 
 ### Creating Tailwind Utilities
 
-1. Start with [01-BOOTSTRAP-CLASSES-INVENTORY.md](./01-BOOTSTRAP-CLASSES-INVENTORY.md)
-2. Find Tailwind equivalent in [02-TAILWIND-EQUIVALENTS.md](./02-TAILWIND-EQUIVALENTS.md)
-3. If custom component, check [03-CUSTOM-COMPONENTS-MAP.md](./03-CUSTOM-COMPONENTS-MAP.md)
-4. Verify colors from [04-COLOR-TOKEN-MAPPING.md](./04-COLOR-TOKEN-MAPPING.md)
+1. Start with 01-BOOTSTRAP-CLASSES-INVENTORY.md (`./01-BOOTSTRAP-CLASSES-INVENTORY.md`, non presente in Civic)
+2. Find Tailwind equivalent in 02-TAILWIND-EQUIVALENTS.md (`./02-TAILWIND-EQUIVALENTS.md`, non presente in Civic)
+3. If custom component, check 03-CUSTOM-COMPONENTS-MAP.md (`./03-CUSTOM-COMPONENTS-MAP.md`, non presente in Civic)
+4. Verify colors from 04-COLOR-TOKEN-MAPPING.md (`./04-COLOR-TOKEN-MAPPING.md`, non presente in Civic)
 
 ### Extending tailwind.config.js
 
@@ -177,8 +179,8 @@ Replace Bootstrap classes:
 |----------|---------|
 | [Analysis](../analysis/) | Structural breakdown |
 | [Screenshots](../screenshots/) | Visual reference |
-| [Visual Comparison](../visual-comparison/) | Annotated analysis |
-| [Phases - Config](../phases/02-PHASE-B-CONFIG.md) | Implementation using mappings |
+| Visual Comparison (`../visual-comparison/`, non presente in Civic) | Annotated analysis |
+| Phases - Config (`../phases/02-PHASE-B-CONFIG.md`, non presente in Civic) | Implementation using mappings |
 
 ---
 
@@ -193,7 +195,7 @@ Replace Bootstrap classes:
 
 **Navigation**: 
 - [← Back to Master Index](../00-homepage-replication-index.md)
-- [← Previous: Visual Comparison](../visual-comparison/README.md)
+- ← Previous: Visual Comparison (`../visual-comparison/README.md`, non presente in Civic)
 - [Next: Phases →](../phases/README.md)
 
 | Lingua | Link |

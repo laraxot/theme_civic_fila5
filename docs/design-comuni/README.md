@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../README.md).
 
 # Design Comuni Documentation Index
 
@@ -25,12 +27,12 @@ The goal is to replicate the Bootstrap Italia design using **Tailwind CSS + Alpi
 
 | Document | Description | Last Updated |
 |----------|-------------|--------------|
-| [FixCity Product Brief (BMAD)](../../../../docs/product-brief-fixcity-2026-05-27.md) | Visione prodotto, scope, stakeholder, rischi — fase 1 Analysis | — |
+| FixCity Product Brief (BMAD) (`../../../../docs/product-brief-fixcity-2026-05-27.md`, non presente in Civic) | Visione prodotto, scope, stakeholder, rischi — fase 1 Analysis | — |
 | [Homepage HTML Structure Comparison](homepage-html-comparison.md) | Detailed analysis of HTML structure and CSS differences between reference and local homepage | 2026-04-07 |
-| [Block Analysis](../../../../_bmad-output/design-comuni-block-analysis.md) | 47 reusable components identified across 38 pages (BMad) | 2026-03-15 |
-| [PRD](../../../../_bmad-output/design-comuni-prd.md) | Product Requirements Document (BMad) | 2026-03-15 |
-| [Architecture](../../../../_bmad-output/design-comuni-architecture.md) | Technical architecture document (BMad) | 2026-03-15 |
-| [UI Spec](../../../../_bmad-output/design-comuni-ui-spec.md) | UI specifications (BMad) | 2026-03-15 |
+| Block Analysis (`../../../../_bmad-output/design-comuni-block-analysis.md`, non presente in Civic) | 47 reusable components identified across 38 pages (BMad) | 2026-03-15 |
+| PRD (`../../../../_bmad-output/design-comuni-prd.md`, non presente in Civic) | Product Requirements Document (BMad) | 2026-03-15 |
+| Architecture (`../../../../_bmad-output/design-comuni-architecture.md`, non presente in Civic) | Technical architecture document (BMad) | 2026-03-15 |
+| UI Spec (`../../../../_bmad-output/design-comuni-ui-spec.md`, non presente in Civic) | UI specifications (BMad) | 2026-03-15 |
 
 ## Architecture
 
@@ -62,33 +64,33 @@ All homepage blocks are in `resources/views/components/blocks/`:
 All comparison screenshots are in the `screenshots/` subdirectory:
 
 ### Before Fixes
-- [Reference Homepage](screenshots/ref-homepage.png)
-- [Local Homepage (before)](screenshots/local-homepage.png)
+- Reference Homepage (`screenshots/ref-homepage.png`, non presente in Civic)
+- Local Homepage (before) (`screenshots/local-homepage.png`, non presente in Civic)
 
 ### After Fixes
-- [Local Homepage (after)](screenshots/local-homepage-after-fix.png)
+- Local Homepage (after) (`screenshots/local-homepage-after-fix.png`, non presente in Civic)
 - Section screenshots: hero, calendar, evidence, rating, contacts, footer
 
 ## Related Documentation
 
 ### Module Docs
 - [Cms Module - Page Component Architecture](../../../../Modules/Cms/docs/PAGE_COMPONENT_ARCHITECTURE.md)
-- [Theme - Page Routing Architecture](../architecture/PAGE_ROUTING_ARCHITECTURE.md)
+- Theme - Page Routing Architecture (`../architecture/PAGE_ROUTING_ARCHITECTURE.md`, non presente in Civic)
 - [Fixcity - Ticket Wizard Frontoffice](../../../../Modules/Fixcity/docs/ticket-wizard-frontoffice.md)
 - [Fixcity - CreateTicketWizardWidget](../../../../Modules/Fixcity/docs/CreateTicketWizardWidget.md)
-- [Story 7-47 - Privacy notice parity nello step 1](../../../../../_bmad-output/implementation-artifacts/7-47-segnalazione-crea-step1-privacy-notice-design-comuni-parity.md)
+- Story 7-47 - Privacy notice parity nello step 1 (`../../../../../_bmad-output/implementation-artifacts/7-47-segnalazione-crea-step1-privacy-notice-design-comuni-parity.md`, non presente in Civic)
 
 ### BMad Docs
-- [Design Comuni Block Analysis](../../../../_bmad-output/design-comuni-block-analysis.md)
-- [Design Comuni PRD](../../../../_bmad-output/design-comuni-prd.md)
+- Design Comuni Block Analysis (`../../../../_bmad-output/design-comuni-block-analysis.md`, non presente in Civic)
+- Design Comuni PRD (`../../../../_bmad-output/design-comuni-prd.md`, non presente in Civic)
 
 ### HTML Structure Comparison Tools
-- [bashscripts/html/README.md](../../../bashscripts/html/README.md) — Tool documentation for compare-html-body.py and html-structure-compare.sh
-- [bashscripts/body/](../../../bashscripts/body/) — Bash orchestrator scripts (html-structure-compare.sh, compare-ticket-list.sh)
+- bashscripts/html/README.md (`../../../bashscripts/html/README.md`, non presente in Civic) — Tool documentation for compare-html-body.py and html-structure-compare.sh
+- bashscripts/body/ (`../../../bashscripts/body/`, non presente in Civic) — Bash orchestrator scripts (html-structure-compare.sh, compare-ticket-list.sh)
 - [Body Structure Comparison Output](../body-structure-comparison/) — Generated reports and parity scores
-- [Segnalazioni Elenco Report](../body-structure-comparison/ticket-list/report.md) — Structured diff output with BLOCK/FLAG/WARN severity
+- Segnalazioni Elenco Report (`../body-structure-comparison/ticket-list/report.md`, non presente in Civic) — Structured diff output with BLOCK/FLAG/WARN severity
 - [Segnalazioni Elenco Parity Score](../html-compare/segnalazioni-elenco/parity-score.md) — Score card tracking parity over runs
-- [Segnalazioni Elenco Analysis](../prompts/segnalazione_disservizio/ticket-list-html-parity-analysis.md) — Phase 1 parity summary (90%+ structural)
+- Segnalazioni Elenco Analysis (`../prompts/segnalazione_disservizio/ticket-list-html-parity-analysis.md`, non presente in Civic) — Phase 1 parity summary (90%+ structural)
 
 ## Progress Status
 
@@ -147,7 +149,7 @@ Questa distinzione evita di usare Infolists come martello universale e impedisce
 Documenti canonici:
 - [Fixcity / Filament Wizard Rules](../../../../Modules/Fixcity/docs/rules/filament-wizard-rules.md)
 - [Fixcity / Ticket Wizard Frontoffice](../../../../Modules/Fixcity/docs/ticket-wizard-frontoffice.md)
-- [Story 7-48 - step 2 visual parity via sections and infolist](../../../../../_bmad-output/implementation-artifacts/7-48-segnalazione-crea-step2-visual-parity-via-sections-and-infolist.md)
+- Story 7-48 - step 2 visual parity via sections and infolist (`../../../../../_bmad-output/implementation-artifacts/7-48-segnalazione-crea-step2-visual-parity-via-sections-and-infolist.md`, non presente in Civic)
 | Lingua | Link |
 |--------|------|
 | 🇮🇹 Presentazione | Questo file (`README.md`) |

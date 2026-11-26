@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../../README.md).
 
 # Segnalazione Flow — CSS/JS Parity Status
 
@@ -125,22 +127,22 @@ npm run copy     # Copy to public_html/themes/Sixteen/ + assets
 ### Related Documentation
 
 - [Design Comuni Master Index](../00-index.md)
-- [Architectural Decisions](../ARCHITECTURAL_DECISIONS.md)
-- [HTML Structural Diff](../../../../.planning/research/html-structural-diff.md)
-- [Reference HTML Structure](../../../../.planning/research/reference-html-structure.md)
-- [Codebase Mapping](../../../../.planning/codebase/design-comuni-segnalazioni-mapping.md)
+- Architectural Decisions (`../ARCHITECTURAL_DECISIONS.md`, non presente in Civic)
+- HTML Structural Diff (`../../../../.planning/research/html-structural-diff.md`, non presente in Civic)
+- Reference HTML Structure (`../../../../.planning/research/reference-html-structure.md`, non presente in Civic)
+- Codebase Mapping (`../../../../.planning/codebase/design-comuni-segnalazioni-mapping.md`, non presente in Civic)
 
 ### Screenshots
 
 All pages captured at desktop (1440px) and tablet (768px) breakpoints:
-- [screenshots/segnalazione-01-privacy/](../screenshots/segnalazione-01-privacy/)
-- [screenshots/segnalazione-02-dati/](../screenshots/segnalazione-02-dati/)
-- [screenshots/segnalazione-03-riepilogo/](../screenshots/segnalazione-03-riepilogo/)
-- [screenshots/segnalazione-04-conferma/](../screenshots/segnalazione-04-conferma/)
-- [screenshots/segnalazione-area-personale/](../screenshots/segnalazione-area-personale/)
-- [screenshots/segnalazione-dettaglio/](../screenshots/segnalazione-dettaglio/)
-- [screenshots/segnalazione-disservizio/](../screenshots/segnalazione-disservizio/)
-- [screenshots/ticket-list/](../screenshots/ticket-list/)
+- screenshots/segnalazione-01-privacy/ (`../screenshots/segnalazione-01-privacy/`, non presente in Civic)
+- screenshots/segnalazione-02-dati/ (`../screenshots/segnalazione-02-dati/`, non presente in Civic)
+- screenshots/segnalazione-03-riepilogo/ (`../screenshots/segnalazione-03-riepilogo/`, non presente in Civic)
+- screenshots/segnalazione-04-conferma/ (`../screenshots/segnalazione-04-conferma/`, non presente in Civic)
+- screenshots/segnalazione-area-personale/ (`../screenshots/segnalazione-area-personale/`, non presente in Civic)
+- screenshots/segnalazione-dettaglio/ (`../screenshots/segnalazione-dettaglio/`, non presente in Civic)
+- screenshots/segnalazione-disservizio/ (`../screenshots/segnalazione-disservizio/`, non presente in Civic)
+- screenshots/ticket-list/ (`../screenshots/ticket-list/`, non presente in Civic)
 | Lingua | Link |
 |--------|------|
 | 🇮🇹 Presentazione | Questo file (`README.md`) |

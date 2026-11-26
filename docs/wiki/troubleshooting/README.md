@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../../README.md).
 
 # Sixteen — troubleshooting wiki
 
@@ -21,13 +23,13 @@ Runbook specifici del tema (build Vite, CSS parity, conflitti Leaflet).
 
 ## Ricostruzione
 
-- Hub root: [map-lit-reconstruction-hub.md](../../../../../docs/wiki/memories/map-lit-reconstruction-hub.md)
-- SSoT modulo Geo: [geo-map-lit-reconstruction-guide.md](../../../../Modules/Geo/docs/wiki/concepts/geo-map-lit-reconstruction-guide.md)
-- Registro correzioni: [geo-map-fixes-registry.md](../../../../Modules/Geo/docs/wiki/concepts/geo-map-fixes-registry.md)
+- Hub root: map-lit-reconstruction-hub.md (`../../../../../docs/wiki/memories/map-lit-reconstruction-hub.md`, non presente in Civic)
+- SSoT modulo Geo: geo-map-lit-reconstruction-guide.md (`../../../../Modules/Geo/docs/wiki/concepts/geo-map-lit-reconstruction-guide.md`, non presente in Civic)
+- Registro correzioni: geo-map-fixes-registry.md (`../../../../Modules/Geo/docs/wiki/concepts/geo-map-fixes-registry.md`, non presente in Civic)
 
 ## Altro
 
-- [git-merge-conflict-inventory-2026-04-28.md](./git-merge-conflict-inventory-2026-04-28.md)
+- git-merge-conflict-inventory-2026-04-28.md (`./git-merge-conflict-inventory-2026-04-28.md`, non presente in Civic)
 
 - [route-not-found-view-cache](route-not-found-view-cache.md) — `area-personale.notifiche` / cache Blade
 | Lingua | Link |

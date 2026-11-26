@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../../README.md).
 
 # Segnalazione Disservizio - Documentation Index
 
@@ -45,12 +47,12 @@ Implementation of the citizen report flow following Design Comuni Italia pattern
 ## Comparison Reports
 
 - **Body Structure Comparison**: `laravel/Themes/Sixteen/docs/body-structure-comparison/ticket-list/`
-  - [`report.md`](../body-structure-comparison/ticket-list/report.md)
-  - [`summary.json`](../body-structure-comparison/ticket-list/summary.json)
-  - [`diff_details.json`](../body-structure-comparison/ticket-list/diff_details.json)
-  - [`reference-body.html`](../body-structure-comparison/ticket-list/reference-body.html)
-  - [`local-body.html`](../body-structure-comparison/ticket-list/local-body.html)
-  - [`ticket-list-html-parity-analysis.md`](./ticket-list-html-parity-analysis.md)
+  - `report.md` (`../body-structure-comparison/ticket-list/report.md`, non presente in Civic)
+  - `summary.json` (`../body-structure-comparison/ticket-list/summary.json`, non presente in Civic)
+  - `diff_details.json` (`../body-structure-comparison/ticket-list/diff_details.json`, non presente in Civic)
+  - `reference-body.html` (`../body-structure-comparison/ticket-list/reference-body.html`, non presente in Civic)
+  - `local-body.html` (`../body-structure-comparison/ticket-list/local-body.html`, non presente in Civic)
+  - `ticket-list-html-parity-analysis.md` (`./ticket-list-html-parity-analysis.md`, non presente in Civic)
 
 ## CSS
 
@@ -58,9 +60,9 @@ Implementation of the citizen report flow following Design Comuni Italia pattern
 
 ## Related Documentation
 
-- [Theme Docs Index](../README.md)
-- [Body Structure Comparison Index](../body-structure-comparison/INDEX.md)
-- [Root Bridge Config](../../../../../docs/html-structure-comparison.md)
+- Theme Docs Index (`../README.md`, non presente in Civic)
+- Body Structure Comparison Index (`../body-structure-comparison/INDEX.md`, non presente in Civic)
+- Root Bridge Config (`../../../../../docs/html-structure-comparison.md`, non presente in Civic)
 | Lingua | Link |
 |--------|------|
 | 🇮🇹 Presentazione | Questo file (`README.md`) |

@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../README.md).
 
 # 📊 Analysis Folder
 
@@ -30,7 +32,7 @@ status: draft
 - DOM tree hierarchy differences
 - Missing/extra elements inventory
 
-🔗 [Read](./01-HTML-STRUCTURE-ANALYSIS.md) | [← Back](#-documents-in-this-folder)
+🔗 Read (`./01-HTML-STRUCTURE-ANALYSIS.md`, non presente in Civic) | [← Back](#-documents-in-this-folder)
 
 ---
 
@@ -43,7 +45,7 @@ status: draft
 - Icon and image classes
 - Utility classes: `.d-none`, `.d-lg-block`, `.mb-5`, etc.
 
-🔗 [Read](./02-CSS-FRAMEWORK-AUDIT.md) | [← Back](#-documents-in-this-folder)
+🔗 Read (`./02-CSS-FRAMEWORK-AUDIT.md`, non presente in Civic) | [← Back](#-documents-in-this-folder)
 
 ---
 
@@ -58,7 +60,7 @@ Analyzes each major section:
 - **Useful links** - Search + quick link grid
 - **Contact blocks** - Icon + text patterns
 
-🔗 [Read](./03-COMPONENT-BREAKDOWN.md) | [← Back](#-documents-in-this-folder)
+🔗 Read (`./03-COMPONENT-BREAKDOWN.md`, non presente in Civic) | [← Back](#-documents-in-this-folder)
 
 ---
 
@@ -71,16 +73,16 @@ Analyzes each major section:
 - Image/text stacking behavior
 - Hidden/shown elements by viewport
 
-🔗 [Read](./04-RESPONSIVE-PATTERNS.md) | [← Back](#-documents-in-this-folder)
+🔗 Read (`./04-RESPONSIVE-PATTERNS.md`, non presente in Civic) | [← Back](#-documents-in-this-folder)
 
 ---
 
 ## 🔍 How to Use Analysis Results
 
-1. **Starting a component refactor?** → Read [03-COMPONENT-BREAKDOWN.md](./03-COMPONENT-BREAKDOWN.md)
-2. **Creating Tailwind mappings?** → Review [02-CSS-FRAMEWORK-AUDIT.md](./02-CSS-FRAMEWORK-AUDIT.md)
-3. **Debugging structure issues?** → Check [01-HTML-STRUCTURE-ANALYSIS.md](./01-HTML-STRUCTURE-ANALYSIS.md)
-4. **Implementing responsive CSS?** → See [04-RESPONSIVE-PATTERNS.md](./04-RESPONSIVE-PATTERNS.md)
+1. **Starting a component refactor?** → Read 03-COMPONENT-BREAKDOWN.md (`./03-COMPONENT-BREAKDOWN.md`, non presente in Civic)
+2. **Creating Tailwind mappings?** → Review 02-CSS-FRAMEWORK-AUDIT.md (`./02-CSS-FRAMEWORK-AUDIT.md`, non presente in Civic)
+3. **Debugging structure issues?** → Check 01-HTML-STRUCTURE-ANALYSIS.md (`./01-HTML-STRUCTURE-ANALYSIS.md`, non presente in Civic)
+4. **Implementing responsive CSS?** → See 04-RESPONSIVE-PATTERNS.md (`./04-RESPONSIVE-PATTERNS.md`, non presente in Civic)
 
 ---
 
@@ -88,7 +90,7 @@ Analyzes each major section:
 
 1. **Capture screenshots** at 3 viewports
 2. **Feed analysis data** into [Mappings Folder](../mappings/)
-3. **Reference components** from [Visual Comparison](../visual-comparison/)
+3. **Reference components** from Visual Comparison (`../visual-comparison/`, non presente in Civic)
 4. **Execute phases** from [Phases Folder](../phases/)
 
 ---
@@ -98,7 +100,7 @@ Analyzes each major section:
 | Document | Purpose |
 |----------|---------|
 | [Screenshots](../screenshots/) | Raw visual data |
-| [Visual Comparison](../visual-comparison/) | Annotated screenshots |
+| Visual Comparison (`../visual-comparison/`, non presente in Civic) | Annotated screenshots |
 | [Mappings](../mappings/) | Bootstrap → Tailwind translation |
 | [Phases](../phases/) | Execution plans using analysis |
 
@@ -106,7 +108,7 @@ Analyzes each major section:
 
 **Navigation**: 
 - [← Back to Master Index](../00-homepage-replication-index.md)
-- [Next: Screenshots →](../screenshots/README.md)
+- Next: Screenshots → (`../screenshots/README.md`, non presente in Civic)
 
 
 ---

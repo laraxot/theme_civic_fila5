@@ -1,0 +1,39 @@
+{
+ "historical": [
+  "docs/analysis/README.md",
+  "docs/blocks/confirmation/README.md",
+  "docs/body-structure-comparison/README.md",
+  "docs/body-structure-comparison/segnalazione-dettaglio/README.md",
+  "docs/body-structure-comparison/segnalazioni-elenco/README.md",
+  "docs/design-comuni/README.md",
+  "docs/design-comuni/batch-body-parity/README.md",
+  "docs/design-comuni/segnalazione-dettaglio/README.md",
+  "docs/design-comuni/segnalazione-flow/README.md",
+  "docs/design-comuni/segnalazione-parity/README.md",
+  "docs/design-comuni/segnalazioni-elenco/README.md",
+  "docs/html-structure-comparison/README.md",
+  "docs/mappings/README.md",
+  "docs/phases/README.md",
+  "docs/product/launch-plan/README.md",
+  "docs/product/prd/README.md",
+  "docs/product/roadmap/README.md",
+  "docs/product/spring-planning/README.md",
+  "docs/product/strategy/README.md",
+  "docs/product/user-research/README.md",
+  "docs/prompts/segnalazione-01-privacy/README.md",
+  "docs/prompts/segnalazione-02-dati/README.md",
+  "docs/prompts/segnalazione-area-personale/README.md",
+  "docs/prompts/segnalazione-crea/README.md",
+  "docs/prompts/segnalazione-dettaglio/README.md",
+  "docs/prompts/segnalazione_disservizio/README.md",
+  "docs/roadmap/README.md",
+  "docs/sources/README.md",
+  "docs/wiki/troubleshooting/README.md"
+ ],
+ "civic": [
+  "docs/architecture/README.md",
+  "docs/design-system/README.md",
+  "docs/wiki/README.md"
+ ],
+ "links_to_text": 100
+}

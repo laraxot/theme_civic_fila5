@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../../README.md).
 
 # Segnalazione Dettaglio - HTML Structure Comparison Reports
 
@@ -275,7 +277,7 @@ Check:
 ## Integration with ANALYSIS.md
 
 ### Reference Documentation
-See [HTML Structure Analysis](../prompts/segnalazione-dettaglio/ANALYSIS.md) for:
+See HTML Structure Analysis (`../prompts/segnalazione-dettaglio/ANALYSIS.md`, non presente in Civic) for:
 - Complete element inventory (1,519 lines)
 - Component breakdown (accordion, navigation, footer)
 - CSS class patterns and usage
@@ -339,12 +341,12 @@ jq -r '.comparison.differences[] | [.element, .type, .severity] | @csv' \
 
 ### Theme Documentation
 - [Sixteen Theme Index](../../README.md) - Complete theme documentation
-- [Component Catalog](../../COMPONENT_CATALOG.md) - All available components
-- [Visual Comparison Archive](../../visual-comparison/) - Historical comparisons
+- Component Catalog (`../../COMPONENT_CATALOG.md`, non presente in Civic) - All available components
+- Visual Comparison Archive (`../../visual-comparison/`, non presente in Civic) - Historical comparisons
 
 ### Project Standards
-- [Code Quality Standards](../../../../docs/CODE_QUALITY_STANDARDS.md)
-- [Theme Architecture](../../../../docs/THEMES_DOCUMENTATION_INDEX.md)
+- Code Quality Standards (`../../../../docs/CODE_QUALITY_STANDARDS.md`, non presente in Civic)
+- Theme Architecture (`../../../../docs/THEMES_DOCUMENTATION_INDEX.md`, non presente in Civic)
 
 ### Design Reference
 - [Design Comuni Official](https://italia.github.io/design-comuni-pagine-statiche/)

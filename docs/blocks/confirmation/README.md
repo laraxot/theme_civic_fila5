@@ -7,8 +7,10 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-status: draft
+status: historical
 ---
+
+> **Storico (Sixteen).** Scritto per il tema Sixteen del vecchio progetto: descrive lo stato di allora, non quello di Civic. Ingresso attuale: [docs/README.md](../../README.md).
 
 # Confirmation Block - Appointment Confirmation
 
@@ -393,8 +395,8 @@ p-6                   /* Padding: 1.5rem */
 - [Bootstrap Italia Steppers](https://italia.github.io/bootstrap-italia/docs/componenti/steppers/)
 
 ### Internal
-- [Blocks Structure Convention](./BLOCKS_STRUCTURE_CONVENTION.md)
-- [Bootstrap Italia Tailwind Conversion](./BOOTSTRAP_ITALIA_TAILWIND_CONVERSION.md)
+- Blocks Structure Convention (`./BLOCKS_STRUCTURE_CONVENTION.md`, non presente in Civic)
+- Bootstrap Italia Tailwind Conversion (`./BOOTSTRAP_ITALIA_TAILWIND_CONVERSION.md`, non presente in Civic)
 
 ---
 
