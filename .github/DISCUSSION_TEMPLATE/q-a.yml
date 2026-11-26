@@ -1,0 +1,26 @@
+title: "[Q&A] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Questions about using or extending Civic belong here.
+        For reproducible defects, open a bug issue instead.
+        Never share credentials or personal data in public discussions.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: "What do you need to understand or achieve?"
+    validations:
+      required: true
+  - type: input
+    id: context
+    attributes:
+      label: Context
+      description: "Civic/Sixteen version, relevant Laraxot module, language or deployment type"
+      placeholder: "Civic dev, FixCity, Malta (en)"
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: "Include concise, sanitized details and links to relevant docs."
