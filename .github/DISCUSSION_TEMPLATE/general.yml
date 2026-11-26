@@ -1,0 +1,20 @@
+title: "[General] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome to Civic. Use this category for collaboration and general feedback.
+        Feature proposals belong in Ideas; help requests belong in Q&A;
+        actionable defects belong in Issues.
+  - type: textarea
+    id: topic
+    attributes:
+      label: Topic
+      description: "What would you like to discuss with the Civic community?"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Background and references
+      description: "Relevant decisions, documents, screenshots or prior discussions."
