@@ -1,5 +1,5 @@
 /**
- * Sixteen Theme - App JavaScript
+ * Civic Theme - App JavaScript
  *
  * Design Comuni replicated with Tailwind CSS + Alpine.js
  * NO Bootstrap Italia - Pure Tailwind + Alpine implementation

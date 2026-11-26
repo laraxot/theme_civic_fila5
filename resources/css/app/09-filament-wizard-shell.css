@@ -259,7 +259,7 @@
 
 /*
  * Design Comuni — parity Design Comuni (kit statico segnalazione-02-dati).
- * Unica fonte qui: niente duplicati in Blade <style> (vedi Themes/Sixteen/docs/wiki/concepts/header-color-parity.md).
+ * Unica fonte qui: niente duplicati in Blade <style> (vedi Themes/Civic/docs/wiki/concepts/header-color-parity.md).
  */
 .it-header-slim-wrapper {
   background: var(--dc-green-dark) !important;
@@ -683,7 +683,7 @@
 }
 
 /*
- * Design Comuni wizard parity — CSS owner: Sixteen theme.
+ * Design Comuni wizard parity — CSS owner: Civic theme.
  * Target the form-wizard pattern, not a page slug or ticket-specific wrapper.
  */
 .it-form-wizard .fi-sc-wizard-footer {

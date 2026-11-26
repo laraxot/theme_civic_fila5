@@ -42,8 +42,20 @@ jobs:
           fi
           echo "ok no obvious secrets"
 
+      - name: Guard against unresolved conflict markers
+        run: |
+          # Esclude docs/ (alcuni documenti storici ne citano la sintassi)
+          # e le fixture di test browser che ne verificano il rilevamento.
+          if git grep -nE '^(<{7}|>{7})( |$)|^={7}$' \
+            -- ':!docs/**' ':!scripts/verify/**' ':!tests/browser/**' ':!graphify-out/**' >/tmp/conflict-hits.txt; then
+            echo "Unresolved merge conflict markers found:"
+            cat /tmp/conflict-hits.txt
+            exit 1
+          fi
+          echo "ok no conflict markers"
+
   frontend:
-    name: Frontend npm ci
+    name: Frontend npm ci, build, lint, test
     runs-on: ubuntu-latest
     timeout-minutes: 20
     needs: manifest
@@ -55,12 +67,49 @@ jobs:
           node-version: "22"
           cache: npm
 
-      - name: npm ci, lint, test
+      - name: npm ci, build, lint, test
         env:
           ESLINT_USE_FLAT_CONFIG: "false"
         run: |
           test -f package-lock.json
           test -f .eslintrc.js
           npm ci
+          npm run build
           npm run lint
           npm test
+
+  php-tests:
+    name: PHP tests (Pest, host-app)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: manifest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          extensions: mbstring, xml, ctype, json, tokenizer, fileinfo, sqlite3
+          coverage: none
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Run Pest when available (documented skip otherwise)
+        run: |
+          # I test in tests/ (Unit/Feature/Arch) usano la sintassi Pest e girano
+          # dall'app host FixCity: il tema non dichiara pestphp/pest ne' un
+          # phpunit.xml proprio. Se in futuro il tema diventa standalone con
+          # Pest, questo step eseguira' `vendor/bin/pest` senza modifiche.
+          if [ -x vendor/bin/pest ]; then
+            vendor/bin/pest
+          else
+            echo "SKIP: vendor/bin/pest non disponibile nel tema standalone."
+            echo "I test PHP del tema girano dall'app host (laravel/ FixCity):"
+            echo "  cd laravel && vendor/bin/pest Themes/Civic/tests"
+          fi

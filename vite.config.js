@@ -8,7 +8,7 @@ import { resolve } from 'path';
 // direttiva @fonts li usava): build fallita senza rete e la build della CI instabile.
 
 export default defineConfig({
-    base: '/themes/Sixteen/',
+    base: '/themes/Civic/',
 
     // outDir e' public: non e' una cartella in cui depositare file a mano.
     // publicDir e' la sorgente che `vite build` copia cosi' com'e' dentro outDir.

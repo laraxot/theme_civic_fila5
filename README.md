@@ -14,6 +14,7 @@ status: active
 
 **Tema frontoffice riutilizzabile per servizi civici, enti locali e piattaforme di partecipazione.**
 
+[![CI](https://github.com/laraxot/theme_civic_fila5/actions/workflows/ci.yml/badge.svg?branch=dev)](https://github.com/laraxot/theme_civic_fila5/actions/workflows/ci.yml)
 [![Repository](https://img.shields.io/badge/repository-theme__civic__fila5-2563eb)](https://github.com/laraxot/theme_civic_fila5)
 [![Filament](https://img.shields.io/badge/Filament-5-f59e0b)](https://filamentphp.com/)
 [![Documentation](https://img.shields.io/badge/docs-Italiano%20%7C%20English-64748b)](./docs/README.md)

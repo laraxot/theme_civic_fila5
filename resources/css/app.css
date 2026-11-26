@@ -1,5 +1,5 @@
 /**
- * Sixteen Theme - Design Comuni Italia
+ * Civic Theme - Design Comuni Italia
  *
  * Bootstrap Italia styles converted to Tailwind CSS with @apply
  * Based on: https://italia.github.io/design-comuni-pagine-statiche/
@@ -209,8 +209,8 @@
 
 /* Design Comuni shell geometry: the reference desktop header is 222px high. */
 @media (min-width: 1024px) {
-    #site-header #sixteen-primary-nav { min-height: 53px; }
-    #site-header #sixteen-primary-nav > div > ul { padding-top: 0; padding-bottom: 0; }
+    #site-header #civic-primary-nav { min-height: 53px; }
+    #site-header #civic-primary-nav > div > ul { padding-top: 0; padding-bottom: 0; }
 }
 
 /* Design Comuni: blocco homepage (stili generati, scope .dc-page) */

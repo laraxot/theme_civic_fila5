@@ -21,7 +21,7 @@
   color: var(--bs-dark, #17334f) !important;
 }
 
-/* Barra principale Sixteen: bianco su verde (global-fixes è tardi in cascade — evita #17334f qui) */
+/* Barra principale Civic: bianco su verde (global-fixes è tardi in cascade — evita #17334f qui) */
 .it-header-navbar-wrapper .nav-link,
 .it-header-navbar-wrapper .navbar-nav .nav-link,
 .it-header-navbar-wrapper .navbar-secondary .nav-link {
@@ -192,7 +192,7 @@ a.t-primary {
 }
 
 /*
- * Header istituzionale + footer: NON sovrascrivere qui (conflitto tema Sixteen verde).
+ * Header istituzionale + footer: NON sovrascrivere qui (conflitto tema Civic verde).
  * Fonte verità: components/header-footer-colors.css + app.css parity.
  */
 

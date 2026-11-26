@@ -1,5 +1,5 @@
 /**
- * AGID JavaScript Framework - Tema Sixteen
+ * AGID JavaScript Framework - Tema Civic
  * Accessibility and User Experience enhancements for AGID compliance
  */
 

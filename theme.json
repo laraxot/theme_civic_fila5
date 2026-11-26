@@ -1,14 +1,15 @@
 {
-    "name": "Sixteen",
+    "name": "Civic",
     "type": "pub",
-    "description": "Tema moderno per Laravel che implementa le Linee Guida di Design per i Servizi Digitali della Pubblica Amministrazione utilizzando Tailwind CSS",
-    "keywords": ["tailwind", "accessibility", "wcag", "pa", "italy", "design-system"],
+    "description": "Tema frontoffice riutilizzabile per servizi civici ed enti locali — Italia e Malta — che implementa le Linee Guida di Design per i Servizi Digitali della Pubblica Amministrazione utilizzando Tailwind CSS",
+    "keywords": ["civic", "italy", "malta", "tailwind", "accessibility", "wcag", "pa", "design-system"],
     "active": true,
     "order": 0,
-    "aliases": ["sixteen", "italy", "pa-theme"],
+    "aliases": ["civic", "italy", "malta"],
     "files": [
         "tailwind.config.js",
         "vite.config.js",
+        "postcss.config.js",
         "package.json"
     ],
     "requires": [
@@ -20,10 +21,10 @@
     "version": "1.0.0",
     "author": "Laraxot Team",
     "license": "MIT",
-    "homepage": "https://github.com/laraxot/theme-sixteen",
+    "homepage": "https://github.com/laraxot/theme_civic_fila5",
     "support": {
-        "issues": "https://github.com/laraxot/theme-sixteen/issues",
-        "source": "https://github.com/laraxot/theme-sixteen"
+        "issues": "https://github.com/laraxot/theme_civic_fila5/issues",
+        "source": "https://github.com/laraxot/theme_civic_fila5"
     },
     "features": [
         "WCAG 2.1 AA Compliance",

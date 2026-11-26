@@ -14,7 +14,7 @@
  *   - Override di `bg-primary-*` / `hover:bg-primary-*` su CTA
  *   - Ridefinire `border` / `box-shadow` su `.fi-input-wrp` (è compito di fo-filament-form-shell)
  *
- * REGOLE: docs/Themes/Sixteen/docs/architecture/fo-pa-tokens-uniformity.md
+ * REGOLE: docs/Themes/Civic/docs/architecture/fo-pa-tokens-uniformity.md
  *          laravel/docs/wiki/memories/pa-design-colors-no-hex-overrides.md
  *
  * Scope: component hooks `.auth-login-card` e `.auth-register-card`.

@@ -2,7 +2,7 @@
  * Filament Wizard → Bootstrap Italia / Design Comuni Visual Parity
  *
  * Scope: .fi-sc-wizard (Filament's native wizard class)
- * Target: All Filament wizards in Sixteen theme.
+ * Target: All Filament wizards in Civic theme.
  *
  * This file replaces custom widget-specific styles with global component overrides.
  * Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/
@@ -364,7 +364,7 @@
 
 /* Defeat ghost / transparent backgrounds on form fields inside the wizard.
    Filament v5 sometimes renders inputs with var() backgrounds that fall back
-   to transparent on the Sixteen theme cascade — force an opaque white. */
+   to transparent on the Civic theme cascade — force an opaque white. */
 .fi-sc-wizard .fi-input,
 .fi-sc-wizard .fi-fo-text-input,
 .fi-sc-wizard .fi-fo-select-input,

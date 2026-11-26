@@ -1,8 +1,8 @@
 /**
- * Filament 4.x Integration - Tema Sixteen
+ * Filament 4.x Integration - Tema Civic
  * 
  * Questo file contiene le funzionalità JavaScript specifiche per l'integrazione
- * con Filament 4.x nel tema Sixteen, seguendo le best practice ufficiali.
+ * con Filament 4.x nel tema Civic, seguendo le best practice ufficiali.
  */
 
 // ===========================================
@@ -649,7 +649,7 @@ function throttle(func, limit) {
 // EXPORT PER UTILIZZO IN ALTRI MODULI
 // ===========================================
 
-window.FilamentSixteen = {
+window.FilamentCivic = {
     showNotification: showFilamentNotification,
     hideNotification: hideFilamentNotification,
     openModal: openFilamentModal,

@@ -30,9 +30,9 @@ export function toggleDarkMode() {
  */
 export function initDarkModeToggle() {
     const darkModeToggle = document.getElementById('darkModeToggle');
-    if (!darkModeToggle || darkModeToggle._sixteenDarkBound) {
+    if (!darkModeToggle || darkModeToggle._civicDarkBound) {
         return;
     }
-    darkModeToggle._sixteenDarkBound = true;
+    darkModeToggle._civicDarkBound = true;
     darkModeToggle.addEventListener('click', () => toggleDarkMode());
 }
