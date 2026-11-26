@@ -165,7 +165,7 @@ The homepage has achieved excellent visual parity with the reference. The remain
 ---
 ## 📚 Related Documentation
 
-- **[← INDEX](./index.md)** - Documentation overview
+- **[← INDEX](./README.md)** - Documentation overview
 - **[← LAYOUT-CENTERING-FIX](./layout-centering-fix.md)** - Previous: Container centering
 - **[→ PHASE3-ALPINE-PLAN](./phase3-alpine-plan.md)** - Next: Alpine.js implementation
 

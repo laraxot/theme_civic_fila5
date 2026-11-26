@@ -66,7 +66,7 @@ PHASE 1 WORKFLOW
 ### For All Agents
 - ✅ **phase-1-strategy.md** (22.9 KB) - Strategy & reference analysis
 - ✅ **gsd-phase-1-execution.md** (19.5 KB) - Execution plan with all subtasks
-- ✅ **00-INDEX.md** (12.9 KB) - Master documentation index
+- ✅ **README.md** (12.9 KB) - Master documentation index
 - ✅ **bashscripts/docs/html/INDEX.md** (8.5 KB) - Tools documentation
 
 ### For Subtask 1 (Executor #1)
@@ -174,7 +174,7 @@ ls -la laravel/Themes/Sixteen/docs/body-structure-comparison/ticket-list/
 
 ### When All Complete
 - Researcher creates PHASE-1-COMPLETION-REPORT.md
-- Update 00-INDEX.md with Phase 1 status
+- Update README.md with Phase 1 status
 - Mark Phase 1 COMPLETE ✅
 - Begin Phase 2 (CSS Alignment) planning
 

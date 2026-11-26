@@ -185,7 +185,7 @@ laravel/Themes/Sixteen/docs/
 
 ## 🔗 Related Documentation
 
-- [Theme Index](./00-INDEX.md) - Main theme documentation
+- [Theme Index](./README.md) - Main theme documentation
 - [Component Catalog](./COMPONENT_CATALOG.md) - Component examples
 - [Configuration Guide](./CONFIGURATION.md) - Theme config
 - [Development Guide](./DEVELOPMENT.md) - Dev setup

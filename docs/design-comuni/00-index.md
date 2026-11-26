@@ -128,7 +128,7 @@ Il batch del 2026-04-03 mostra tre cluster operativi:
 
 ## Cross links
 
-- [../00-index.md](../00-INDEX.md) - Indice generale docs del tema
+- [../00-index.md](../README.md) - Indice generale docs del tema
 - [../prompts/replikate.txt](../prompts/replikate.txt) - 🔴 REPLIKATE Prompt v2.0.0 (BMAD+GSD, 2026-04-07)
 - [../../../Modules/Cms/docs/design-comuni-batch-parity.md](../../../../Modules/Cms/docs/design-comuni-batch-parity.md) - Coordinamento lato Cms
 - [../../../bashscripts/docs/design-comuni-batch-body-parity.md](../../../bashscripts/docs/design-comuni-batch-body-parity.md) - Documentazione script batch

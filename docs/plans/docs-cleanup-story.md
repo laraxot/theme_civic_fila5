@@ -33,7 +33,7 @@ constraints:
 
 ## 3. Docs cleanup (ponytail — minimo)
 - Piano BMAD: `docs/bmad/auth-components-reorg-plan.md` (già creato)
-- Aggiornamento indice operativo `00-INDEX.md`: riferimento al piano + stato `auth-components-reorg-plan.md`
+- Aggiornamento indice operativo `README.md`: riferimento al piano + stato `auth-components-reorg-plan.md`
 - Second Brain link: `auth-login-architettura.md` (architettura Folio+Volt), `folio-pages-architecture.md` (DRY [container0])
 - Nessun file duplicato creato, nessun foglio CSS nuovo, nessun controller.
 

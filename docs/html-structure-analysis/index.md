@@ -60,7 +60,7 @@ status: draft
 
 ## 📁 Related Documents
 
-- **[← INDEX](../index.md)** - Main theme docs
+- **[← INDEX](../README.md)** - Main theme docs
 - **[PHASE6-ALPINE-STATUS.md](../phase6-alpine-status.md)** - Alpine.js status (blocked)
 - **[FINAL-VISUAL-PARITY-REPORT.md](../final-visual-parity-report.md)** - Previous visual analysis
 

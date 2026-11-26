@@ -19,7 +19,8 @@ Regole:
   `#ancora`, percorsi assoluti, segnaposto (`{{ }}`, `$`, `<>`, `*`). Un link e' rotto se il bersaglio, risolto dalla cartella del
   file, non esiste su disco (un link a una cartella e' buono se la cartella esiste). Le ancore (`#...`) non sono verificate.
 - nomi: `^[a-z0-9]+(-[a-z0-9]+)*(\\.story)?\\.md$`; eccezioni convenzionali README, CHANGELOG, AGENTS, CLAUDE, LICENSE,
-  CONTRIBUTING, SECURITY. `docs/raw/` (reperti immutabili) e i file con prefisso `_` (modelli) sono esclusi.
+  CONTRIBUTING, SECURITY. `docs/raw/` e `docs/archive/` (archivi dichiarati immutabili, vedi il loro README) e i file con
+  prefisso `_` (modelli) sono esclusi da nomi e avanzi; i loro link rotti si contano, ma separatamente.
 - indice: `docs/README.md`; un link a una cartella raggiunge il `README.md` della cartella.
 
 @see docs/github-surfaces.md
@@ -47,6 +48,8 @@ REFDEF = re.compile(r"^\s{0,3}\[[^\]]+\]:\s*(<[^>]+>|\S+)")
 SCHEME = re.compile(r"^[A-Za-z][A-Za-z0-9+.-]*:")
 SKIP_TARGET = re.compile(r"[{}$<>*|]|%7B")
 LEFTOVER = re.compile(r"(\.(tmp|old|bak|orig|md_old)$)|(\.old\.[a-z]+$)", re.I)
+# archivi dichiarati immutabili (hanno un README che lo dice): fuori dal controllo di nomi e avanzi
+IMMUTABLE = ("docs/raw/", "docs/archive/")
 
 
 def tracked_files() -> list[str]:
@@ -108,7 +111,7 @@ def broken_links() -> tuple[list[tuple[str, int, str]], int]:
 def bad_names() -> list[str]:
     bad = []
     for f in md_files():
-        if f.startswith("docs/raw/"):
+        if f.startswith(IMMUTABLE):
             continue
         base = os.path.basename(f)
         if base.startswith("_"):
@@ -121,7 +124,7 @@ def bad_names() -> list[str]:
 
 
 def leftovers() -> list[str]:
-    return [f for f in tracked_files() if LEFTOVER.search(os.path.basename(f))]
+    return [f for f in tracked_files() if LEFTOVER.search(os.path.basename(f)) and not f.startswith(IMMUTABLE)]
 
 
 def reachable() -> tuple[set[str], list[str]]:
@@ -151,7 +154,8 @@ def reachable() -> tuple[set[str], list[str]]:
 def cmd_links(a) -> int:
     broken, total = broken_links()
     files = len({b[0] for b in broken})
-    print(f"link relativi verificabili: {total}; rotti: {len(broken)} in {files} file")
+    in_archive = sum(1 for b in broken if b[0].startswith(IMMUTABLE))
+    print(f"link relativi verificabili: {total}; rotti: {len(broken)} in {files} file (di cui in archivi immutabili: {in_archive})")
     if a.list:
         for f, n, raw in broken:
             print(f"{f}:{n}: {raw}")

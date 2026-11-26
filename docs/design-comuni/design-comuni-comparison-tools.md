@@ -286,7 +286,7 @@ npm run copy     # Copies to public_html/themes/Sixteen
 
 ## Related Documentation
 
-- [Design Comuni Index](../00-INDEX.md) — Main design-comuni documentation index
+- [Design Comuni Index](../README.md) — Main design-comuni documentation index
 - [Block Census](../design-comuni-census-blocks.md) — All content blocks analyzed
 - [Implementation Plan](../design-comuni-implementation.md) — Original implementation strategy
 - [HTML Parity Plan](../design-comuni-html-parity-plan.md) — Original HTML parity approach

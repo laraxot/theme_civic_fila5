@@ -386,7 +386,7 @@ After blade templates match reference structure:
 
 - → [segnalazione-parity/](./) - This analysis
 - → [reference-html/](./reference-html/) - Reference HBS templates
-- → [../../../00-index.md](../../00-INDEX.md) - Theme docs index
+- → [../../../00-index.md](../../README.md) - Theme docs index
 - → [../../../../Modules/Cms/docs/design-comuni-homepage.md](../../../../../Modules/Cms/docs/design-comuni-homepage.md) - Cms module docs
 - → [../../../../../bashscripts/docs/design-comuni-selected-page-comparisons.md](../../../../../bashscripts/docs/design-comuni-selected-page-comparisons.md) - Scripts docs
 

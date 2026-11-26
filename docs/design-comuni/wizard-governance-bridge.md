@@ -38,5 +38,5 @@ Il tema documenta la **parity visiva**; il modulo documenta la **business logic*
 ## collegamenti bidirezionali
 
 - [Design comuni index](./00-index.md)
-- [Theme 00-index](../00-INDEX.md)
+- [Theme 00-index](../README.md)
 - [Fixcity docs index](../../../../Modules/Fixcity/docs/index.md)

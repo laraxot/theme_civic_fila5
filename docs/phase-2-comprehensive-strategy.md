@@ -290,7 +290,7 @@ npm run copy   → Copy to public_html/themes/Sixteen/
 - `docs/PHASE-2-JAVASCRIPT.md` — JS behavior patterns used
 - `docs/PHASE-2-RESPONSIVE-DESIGN.md` — Breakpoint strategy + mobile-first approach
 - `docs/PHASE-2-ACCESSIBILITY.md` — WCAG compliance checklist + patterns
-- `docs/00-INDEX.md` — Updated master index with Phase 2 links
+- `docs/README.md` — Updated master index with Phase 2 links
 
 ---
 
@@ -571,7 +571,7 @@ Compilation:
 
 **Documentation**:
 - `docs/PHASE-2-*.md` (all new docs)
-- `docs/00-INDEX.md` (updated master index)
+- `docs/README.md` (updated master index)
 
 ---
 

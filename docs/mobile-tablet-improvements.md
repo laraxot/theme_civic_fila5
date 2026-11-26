@@ -50,4 +50,4 @@ non coprire i titoli sotto l'header mobile.
 - NO Bootstrap Italia (only Tailwind + Alpine + Lit + DaisyUI + Flowbite)
 - Componenti riutilizzabili: nessun componente modificato con `request()` implicito; solo `@props` + `data` espliciti (`tailwind.blade.php` mantiene questo pattern)
 - `laravel/phpstan.neon`: NON modificato (regola dell'utente — solo l'utente può modificarlo)
-- `docs/` aggiornate: questa nota (`mobile-tablet-improvements.md`) e riferimento nel `docs/index.md`
+- `docs/` aggiornate: questa nota (`mobile-tablet-improvements.md`) e riferimento nel `docs/README.md`

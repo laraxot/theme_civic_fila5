@@ -118,7 +118,7 @@ console.log(Alpine.data); // Should list all components
 ---
 ## 📚 Related Documentation
 
-- **[← INDEX](./index.md)** - Documentation overview
+- **[← INDEX](./README.md)** - Documentation overview
 - **[← FINAL-VISUAL-PARITY-REPORT](./final-visual-parity-report.md)** - Visual parity verification
 - **[← PHASE6-ALPINE-IMPLEMENTATION](./phase6-alpine-implementation.md)** - Implementation plan
 

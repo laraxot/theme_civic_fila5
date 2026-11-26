@@ -15,7 +15,7 @@ status: draft
 Related:
 - [HTML parity body policy](../html-parity-body-policy.md)
 - [Page routing architecture](./page-routing-architecture.md)
-- [Theme docs index](../00-INDEX.md)
+- [Theme docs index](../README.md)
 - [Fixcity parity rule](../../../../Modules/Fixcity/docs/html-body-parity-rule.md)
 - [Agent parity rule](../../../../bashscripts/ai/.agents/docs/rules/html-parity.md)
 
@@ -99,7 +99,7 @@ Per parity con Design Comuni:
 See also:
 - [HTML parity body policy](../html-parity-body-policy.md)
 - [Page routing architecture](./page-routing-architecture.md)
-- [Theme docs index](../00-INDEX.md)
+- [Theme docs index](../README.md)
 
 
 ## Nota Design Comuni /tests (2026-10-13)

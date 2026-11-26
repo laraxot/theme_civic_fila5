@@ -105,7 +105,7 @@ npm run copy     # Deploy to public_html
 ---
 ## 📚 Related Documentation
 
-- **[← INDEX](./index.md)** - Documentation overview
+- **[← INDEX](./README.md)** - Documentation overview
 - **[← LAYOUT-ISSUES-ANALYSIS](./layout-issues-analysis.md)** - Initial layout problem analysis
 - **[→ FINAL-VISUAL-PARITY-REPORT](./final-visual-parity-report.md)** - Comprehensive validation report
 

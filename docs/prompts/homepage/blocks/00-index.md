@@ -73,7 +73,7 @@ status: draft
 ## 🔗 Link Bidirezionali
 
 ### Indici
-- ← [Design Comuni Index](../../../00-INDEX.md)
+- ← [Design Comuni Index](../../../README.md)
 - ← [Homepage Structural Analysis](../../../design-comuni/homepage-structural-analysis-final.md)
 - ← [Bashscripts HTML Compare](../../../../../bashscripts/html/compare-html.sh) — script agnostico di confronto
 

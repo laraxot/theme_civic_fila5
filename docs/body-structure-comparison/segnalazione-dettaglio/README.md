@@ -338,7 +338,7 @@ jq -r '.comparison.differences[] | [.element, .type, .severity] | @csv' \
 ## Related Documentation
 
 ### Theme Documentation
-- [Sixteen Theme Index](../../00-INDEX.md) - Complete theme documentation
+- [Sixteen Theme Index](../../README.md) - Complete theme documentation
 - [Component Catalog](../../COMPONENT_CATALOG.md) - All available components
 - [Visual Comparison Archive](../../visual-comparison/) - Historical comparisons
 

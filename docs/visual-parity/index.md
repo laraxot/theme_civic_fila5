@@ -8,7 +8,7 @@ qmd: "visual parity index"
 issues: []
 discussions: []
 related:
-  - ../index.md
+  - ../README.md
   - ../wiki/concepts/design-comuni-parity-method.md
 status: draft
 ---
@@ -36,7 +36,6 @@ docs/visual-parity/
 └── scripts/                  # Python analyzers (nested-path bug fixed 2026-10-13)
     ├── capture_screenshots.py
     ├── html_structure_analyzer.py
-    ├── html_structure_analyzer.nested.old.py
     ├── quick_analyzer.py
     └── visual_comparison.py
 ```
@@ -51,6 +50,6 @@ docs/visual-parity/
 
 ## Related
 
-- [Theme docs index](../index.md)
+- [Theme docs index](../README.md)
 - [Parity method wiki](../wiki/concepts/design-comuni-parity-method.md)
 - [Design Comuni prompt](../prompts/homepage/index.md)

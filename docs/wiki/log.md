@@ -186,7 +186,7 @@ module: "Sixteen"
 
 ## [2026-10-14] docs | studio del tema reale e correzione degli ingressi
 
-- Story: [studio e ingressi](../bmad/stories/docs-studio-stato-e-ingressi.story.md). `README.md` e `00-INDEX.md` riscritti con fatti verificati (stato vivo: `pub_theme = Sixteen` nei 4 `xra.php`; conteggi; build da `package.json`).
+- Story: [studio e ingressi](../bmad/stories/docs-studio-stato-e-ingressi.story.md). `README.md` e `README.md` riscritti con fatti verificati (stato vivo: `pub_theme = Sixteen` nei 4 `xra.php`; conteggi; build da `package.json`).
 - Verificato: controller e rotte del tema esistono ma non sono registrati (`route:list`, 461 rotte, senza `comune/*`, `auth/spid`, `auth/cie`); `INDEX.md` e' la mappa viva, `index.md` e' storico (marcato `stale`).
 - Contraddizione aperta con la voce del 2026-10-11 qui sotto: `components/layouts/design-comuni.blade.php`, `-authenticated` e `-bare` esistono (2026-10-13) e `pages/tests/index.blade.php` usa `<x-layouts.design-comuni-bare>`.
 - Link: 5 ripuntati, 10 annotati in `wiki/index.md` e `wiki/log.md`. Memoria: `bashscripts/ai/wiki/memories/docs-temi-studio.md`.
@@ -1426,7 +1426,7 @@ module: "Sixteen"
   `screenshots/legacy-2026-04/`); bug path annidato
   `visual-parity/scripts/docs/visual-parity/scripts/` eliminato;
   indici root duplicati (`INDEX.md`, `DOCUMENTATION_INDEX.md`,
-  `00-index.md`) ritirati con `.old`; `00-INDEX.md` e
+  `00-index.md`) ritirati con `.old`; `README.md` e
   `visual-parity/index.md` aggiornati.
 - **Nuova regola** `wiki/rules/cms-content-slug-matches-folio-page-name.md`:
   il JSON di contenuto si chiama come lo slug interrogato (= nome pagina
@@ -1448,7 +1448,7 @@ module: "Sixteen"
 
 Fase BMAD: documentazione/qualita'. Pacchetto P6 dello swarm in [DCP-152](../../../../Modules/Geo/docs/stories/dcp-152-marker-dettaglio-ticket-e-pulsanti-mappa-su-pagine-dc.story.md). Solo documentazione, nessun codice.
 
-- **Registro story**: nuovo [bmad/stories/00-REGISTRO-COMPLETO.md](../bmad/stories/00-registro-completo.md). Di 264 file story (`stories/` 37 + `bmad/stories/` 227, `.lock` esclusi) solo 57 erano citati dagli indici; gli altri 207 sono ora elencati con stato e titolo dichiarati nei file, piu' la tabella dei numeri DCP presenti in due famiglie (datata e senza data, 7..26). Collegato da [00-INDEX.md](../00-INDEX.md) e da [bmad/stories/00-INDEX.md](../bmad/stories/00-INDEX.md), con DCP-148 e DCP-152 (owner Geo). Nessuna story toccata, rinominata o rinumerata.
+- **Registro story**: nuovo [bmad/stories/00-REGISTRO-COMPLETO.md](../bmad/stories/00-registro-completo.md). Di 264 file story (`stories/` 37 + `bmad/stories/` 227, `.lock` esclusi) solo 57 erano citati dagli indici; gli altri 207 sono ora elencati con stato e titolo dichiarati nei file, piu' la tabella dei numeri DCP presenti in due famiglie (datata e senza data, 7..26). Collegato da [00-INDEX.md](../README.md) e da [bmad/stories/00-INDEX.md](../bmad/stories/00-INDEX.md), con DCP-148 e DCP-152 (owner Geo). Nessuna story toccata, rinominata o rinumerata.
 - **Link relativi** (tool `bashscripts/tools/docs/docs-organizer.py`, funzione `fix_links` con `--by-name`, `prompts/` e `raw/` esclusi, file toccati da meno di 5 minuti saltati): link rotti 1500 -> 1373. Corretti 127 link in 62 file, solo dove il bersaglio esiste ed e' l'unico file con quel nome (cartelle `../`, spostamenti in `build/`, `design-comuni/`, prefisso `laravel/Themes/Sixteen/docs/`). Lasciati volutamente 8 candidati ambigui (`./TESTING.md`, quattro `../rules/on-demand-pattern.md` nei `wiki/*/INDEX.md`, tre `argomenti.md`). Restano 1373 link senza bersaglio sul disco (784 in `design-comuni/`, 256 nei file in radice, 200 in `wiki/`): non indovinati.
 - **`wiki/coordinate-picker.md`**: aggiunta la tabella degli attributi di `coordinate-picker-lit` (`readonly`, `marker-icon-url`, `marker-color`, `marker-label`, ...) letta da `static properties`; precisato che `searchAddress` e `reverseGeocode` sono metodi PHP lato server (trait `HasCoordinatePicker`) mentre il Lit interroga Nominatim dal browser; segnato `(not verified)` il percorso di override `resources/views/vendor/geo/...` (Sixteen non ha quel file).
 - **`wiki/concepts/coordinate-picker-design-comuni-parity-rule.md`**: aggiornamento DCP-152 (pulsanti opachi garantiti da `.map-container .ctrl-btn.ctrl-btn` nel modulo Geo, sola lettura, test Playwright).

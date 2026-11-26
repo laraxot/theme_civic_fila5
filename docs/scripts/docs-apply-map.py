@@ -6,7 +6,10 @@ Dalla radice del tema (`laravel/Themes/Civic`):
   python3 -I docs/scripts/docs-apply-map.py MAPPA.json            dry-run: scrive il rapporto, non tocca nulla
   python3 -I docs/scripts/docs-apply-map.py MAPPA.json --apply    riscrive i riferimenti, poi `git rm` e `git mv`
 
-Mappa (JSON): {"retire": {"docs/vecchio.md": "docs/canonico.md" | null}, "rename": {"docs/Vecchio.md": "docs/nuovo.md"}}
+Mappa (JSON): {"retire": {"docs/vecchio.md": "docs/canonico.md" | null}, "rename": {"docs/Vecchio.md": "docs/nuovo.md"},
+               "archive": {"docs/vecchio.md": {"to": "docs/archive/vecchio.md", "canonical": "docs/canonico.md"}}}
+- `archive`: come `retire` per i riferimenti (puntano al canonico) ma il file non si cancella: `git mv` nell'archivio dichiarato,
+  senza riscriverne il contenuto (l'archivio e' immutabile).
 
 - `retire` con canonico: i riferimenti a `vecchio` puntano al canonico (si segue la catena fino al documento che resta).
   `retire` senza canonico (null): documento senza contenuto proprio; i riferimenti restano e il rapporto li elenca.
@@ -30,7 +33,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True, check=True).stdout.strip())
-FROZEN = ("docs/adr/", "docs/contracts/", "docs/stories/")
+FROZEN = ("docs/adr/", "docs/contracts/", "docs/stories/", "docs/archive/", "docs/raw/")
 FENCE = re.compile(r"^\s{0,3}(```|~~~)")
 TOKEN = re.compile(r"[\w./@~\[\]\-]*[\w\]\-]\.md(?![\w])")
 
@@ -117,8 +120,11 @@ def main() -> int:
     plan = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
     apply = "--apply" in sys.argv
     files = tracked_md()
-    retire, rename = plan.get("retire", {}), plan.get("rename", {})
-    errors = check_map(plan, files)
+    rename = plan.get("rename", {})
+    archive = plan.get("archive", {})
+    retire = {**plan.get("retire", {}), **{old: v["canonical"] for old, v in archive.items()}}
+    errors = check_map({"retire": retire, "rename": rename}, files)
+    errors += [f"bersaglio dell'archivio occupato: {v['to']}" for v in archive.values() if (ROOT / v["to"]).exists()]
     if errors:
         print("\n".join(errors))
         return 1
@@ -145,13 +151,19 @@ def main() -> int:
         "senza_canonico": [e for e in log if e["action"] == "senza-canonico"],
         "riferimenti_da_cartelle_non_mie": frozen_refs,
     }
+    if "--log" in sys.argv:
+        Path(sys.argv[sys.argv.index("--log") + 1]).write_text(json.dumps(log, indent=1, ensure_ascii=False), encoding="utf-8")
     if not apply:
         print(json.dumps(report, indent=1, ensure_ascii=False))
         return 0
     for f, new in changed.items():
         (ROOT / f).write_text(new, encoding="utf-8")
     for f in retire:
-        subprocess.run(["git", "rm", "-q", "--", f], cwd=ROOT, check=True)
+        if f in archive:
+            (ROOT / archive[f]["to"]).parent.mkdir(parents=True, exist_ok=True)
+            subprocess.run(["git", "mv", "--", f, archive[f]["to"]], cwd=ROOT, check=True)
+        else:
+            subprocess.run(["git", "rm", "-q", "--", f], cwd=ROOT, check=True)
     for old, new in rename.items():
         subprocess.run(["git", "mv", "--", old, new], cwd=ROOT, check=True)
     print(json.dumps(report, indent=1, ensure_ascii=False))

@@ -1,5 +1,5 @@
 {
- "_nota": "Mappa di migrazione dei documenti di docs/ (#26 #27 #29). retire: vecchio -> canonico (null = senza contenuto proprio); rename: vecchio -> nuovo nome (stessa cartella); hold: rinomine rimandate perche' citate da file di altri pacchetti. Riapplicabile con docs/scripts/docs-apply-map.py.",
+ "_nota": "Mappa di migrazione dei documenti di docs/ (#26 #27 #29). retire: vecchio -> canonico (null = senza contenuto proprio); rename: vecchio -> nuovo nome (stessa cartella); hold: rinomine rimandate perche' citate da file di altri pacchetti. Riapplicabile con docs/scripts/docs-apply-map.py. archive: documenti spostati in docs/archive/ (immutabile), riferimenti riscritti al canonico.",
  "retire": {
   "docs/ACCESSIBILITY_IMPLEMENTATION_GUIDE.md": "docs/accessibility-implementation-guide.md",
   "docs/AGID_CHECKLIST_100.md": "docs/agid-checklist.md",
@@ -151,5 +151,23 @@
  "hold": {
   "docs/prompts/homepage/00-COORDINATION.md": "citato da resources/views/components/layouts/app.blade.php (P1)",
   "docs/design-comuni/TICKET-CREATION-WIZARD.md": "citato da resources/views/components/blocks/*, tests/Unit/TicketCreateBlockTest.php, TestsBlocksContractTest.php (P1)"
+ },
+ "archive": {
+  "docs/00-INDEX.md": {
+   "to": "docs/archive/00-index-sixteen.md",
+   "canonical": "docs/README.md"
+  },
+  "docs/knowledge-map.md": {
+   "to": "docs/archive/knowledge-map.md",
+   "canonical": "docs/README.md"
+  },
+  "docs/index.md": {
+   "to": "docs/archive/index-bmad-qmd-router.md",
+   "canonical": "docs/README.md"
+  },
+  "docs/readme-old.md": {
+   "to": "docs/archive/readme-old.md",
+   "canonical": "docs/README.md"
+  }
  }
 }

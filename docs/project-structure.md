@@ -17,12 +17,12 @@ status: draft
 \`\`\`
 ./laravel/Themes/Sixteen/docs/
 ├── wiki/                          # Knowledge base locale (LLM Wiki)
-│   ├── index.md                  # Master catalog
+│   ├── README.md                  # Master catalog
 │   ├── log.md                    # Activity log
 │   ├── concepts/                 # Topic/theme pages
 │   ├── entities/                 # Organization/person pages
 │   ├── rules/                    # ⚠️ 151+ regole progettuali
-│   │   ├── 00-INDEX.md          # Indice regole
+│   │   ├── README.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
 │   ├── skills/                   # Skill progettuali

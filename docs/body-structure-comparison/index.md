@@ -74,7 +74,7 @@ Agnostic tooling lives in `bashscripts`:
 ## Project Bridge
 
 - **Root bridge**: [`docs/html-structure-comparison.md`](../../../../../docs/html-structure-comparison.md)
-- **Theme docs index**: [`../00-index.md`](../00-INDEX.md)
+- **Theme docs index**: [`../00-index.md`](../README.md)
 
 ## Governance
 

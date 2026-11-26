@@ -137,7 +137,7 @@ Implement Alpine.js for interactive components:
 ---
 ## 📚 Related Documentation
 
-- **[← INDEX](./index.md)** - Documentation overview
+- **[← INDEX](./README.md)** - Documentation overview
 - **[← FINAL-VISUAL-PARITY-REPORT](./final-visual-parity-report.md)** - Visual parity verification
 - **[→ PHASE3-ALPINE-PLAN](./phase3-alpine-plan.md)** - Previous Alpine planning
 

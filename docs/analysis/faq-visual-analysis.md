@@ -230,7 +230,7 @@ Based on Tailwind + Alpine implementation:
 
 ## 🔗 Bidirectional Links
 
-- **Parent**: [Theme Sixteen Documentation](../index.md)
+- **Parent**: [Theme Sixteen Documentation](../README.md)
 - **Previous**: [FAQ Structure Analysis](./faq-structure-analysis.md)
 - **Related**: [Homepage Visual Comparison](../homepage-visual-analysis.md)
 - **Related**: [CSS Implementation Guide](../CSS-GUIDE.md)

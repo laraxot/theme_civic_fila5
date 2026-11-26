@@ -12,7 +12,7 @@ status: draft
 
 # FAQ Replication Status (domande-frequenti)
 
-> [Index](#index) | [📋 Design Comuni Index](./00-INDEX.md) | [🔗 Back to Theme Docs](./00-INDEX.md)
+> [Index](#index) | [📋 Design Comuni Index](./README.md) | [🔗 Back to Theme Docs](./README.md)
 
 ## Status: 🔄 IN PROGRESS
 
@@ -323,7 +323,7 @@ ls -lah laravel/Themes/Sixteen/docs/
 
 ## Related Documentation
 
-- 📋 [Theme Index](./00-INDEX.md)
+- 📋 [Theme Index](./README.md)
 - 🎨 [Component Catalog](./COMPONENT_CATALOG.md)
 - ⚙️ [Configuration Guide](./CONFIGURATION.md)
 - 🔧 [Development Guide](./DEVELOPMENT.md)

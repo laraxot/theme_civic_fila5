@@ -29,4 +29,4 @@ Il tema **Sixteen** non “installa” BMAD: il metodo BMAD è **a livello di re
 
 ## backlink
 
-- [indice tema](00-INDEX.md)
+- [indice tema](README.md)

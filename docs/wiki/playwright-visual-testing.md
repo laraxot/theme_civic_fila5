@@ -73,3 +73,4 @@ Conservare gli screenshot di riferimento in:
 *Vedi anche:*
 - [Visual Control Mastery](../../../../../docs/wiki/concepts/visual-control-mastery.md)
 - [Header Authenticated State](./concepts/header-authenticated-state.md)
+- [Visual Testing per Frontend (concept, con fonti)](./concepts/playwright-visual-testing.md)

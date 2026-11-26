@@ -14,7 +14,7 @@ status: draft
 
 Related:
 - [CSS scoping rule](architecture/css-scoping-rule.md)
-- [Theme docs index](00-INDEX.md)
+- [Theme docs index](README.md)
 - [Fixcity parity rule](../../../Modules/Fixcity/docs/html-body-parity-rule.md)
 - [Agent parity rule](../../../bashscripts/ai/.agents/docs/rules/html-parity.md)
 

@@ -113,7 +113,7 @@ Copied to: `public_html/themes/Sixteen/`
 - → [reference-html/](./reference-html/) - Reference HBS templates
 
 ### Theme Documentation
-- → [00-index.md](../../00-INDEX.md) - Theme docs index
+- → [00-index.md](../../README.md) - Theme docs index
 - → [work-plan.md](../work-plan.md) - Work plan
 - → [visual-parity-report-2026-04-02.md](../visual-parity-report.md) - Previous parity report
 - → [css-js-parity-2026-04-04.md](../css-js-parity.md) - Previous CSS/JS parity

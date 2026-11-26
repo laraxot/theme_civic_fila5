@@ -171,7 +171,7 @@ The FAQ page structure between reference and local implementation is **98.3% ide
 
 ## 🔗 Bidirectional Links
 
-- **Parent**: [Theme Sixteen Documentation](../index.md)
+- **Parent**: [Theme Sixteen Documentation](../README.md)
 - **Related**: [Homepage Structure Analysis](../design-comuni/homepage-structure-analysis.md)
 - **Related**: [Visual Comparison Process](./VISUAL-COMPARISON-GUIDE.md)
 - **Related**: [CSS Fixes Documentation](../css/CSS-FIXES-TRACKER.md)

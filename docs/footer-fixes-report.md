@@ -125,7 +125,7 @@ npm run copy     # Deploy to public_html
 ---
 ## 📚 Related Documentation
 
-- **[← INDEX](./index.md)** - Documentation overview
+- **[← INDEX](./README.md)** - Documentation overview
 - **[→ LAYOUT-ISSUES-ANALYSIS](./layout-issues-analysis.md)** - Next: Layout alignment issues
 
 **Phase 3 Complete**: Footer optimization finished
