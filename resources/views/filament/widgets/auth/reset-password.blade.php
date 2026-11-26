@@ -1,5 +1,5 @@
 {{--
-  ResetPasswordWidget — vestito Sixteen come il login (DCP-290); logica in Modules\User\Filament\Widgets\Auth\ResetPasswordWidget.
+  ResetPasswordWidget — vestito Civic come il login (DCP-290); logica in Modules\User\Filament\Widgets\Auth\ResetPasswordWidget.
   Il nome del file e' quello che risolve GetViewByClassAction (`pub_theme::filament.widgets.auth.reset-password`).
 --}}
 <div class="space-y-6">

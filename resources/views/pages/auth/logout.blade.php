@@ -42,7 +42,7 @@ render(function (View $view): View|RedirectResponse {
                 {{ __('pub_theme::auth.logout.confirm_button') }}
             </button>
             {{-- Caller: form logout in questa pagina Folio auth/logout; SSoT: FrontofficeRoutes::personalAreaImpostazioni. User: «procedi» riusabile. --}}
-            <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaImpostazioni() }}" class="inline-flex min-h-11 items-center rounded-lg border border-slate-300 px-5 py-3 font-semibold text-slate-800 hover:bg-slate-50">
+            <a href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaImpostazioni() }}" class="inline-flex min-h-11 items-center rounded-lg border border-slate-300 px-5 py-3 font-semibold text-slate-800 hover:bg-slate-50">
                 {{ __('pub_theme::auth.logout.cancel_button') }}
             </a>
         </form>

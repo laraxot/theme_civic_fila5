@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums;
+namespace Themes\Civic\Enums;
 
 use Filament\Support\Contracts\HasLabel;
-use Themes\Sixteen\Enums\Concerns\HasLangLabel;
+use Themes\Civic\Enums\Concerns\HasLangLabel;
 
 /**
  * Livelli di priorita' di una notizia.
  *
  * Sostituisce la costante MunicipalNews::PRIORITY_LEVELS. Le label vivono in
- * lang/<locale>/municipal_news_priority_enum.php (namespace `sixteen::`).
+ * lang/<locale>/municipal_news_priority_enum.php (namespace `civic::`).
  */
 enum MunicipalNewsPriorityEnum: int implements HasLabel
 {

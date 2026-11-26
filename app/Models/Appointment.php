@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Models;
+namespace Themes\Civic\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -13,8 +13,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\User\Models\User;
-use Themes\Sixteen\Enums\AppointmentServiceTypeEnum;
-use Themes\Sixteen\Enums\AppointmentStatusEnum;
+use Themes\Civic\Enums\AppointmentServiceTypeEnum;
+use Themes\Civic\Enums\AppointmentStatusEnum;
 
 /**
  * Modello Appuntamento - Gestione prenotazioni servizi comunali

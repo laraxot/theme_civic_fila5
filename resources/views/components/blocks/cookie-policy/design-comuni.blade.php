@@ -16,7 +16,7 @@
         CookieCategory::Analytics => 'policy_analytics',
         CookieCategory::Marketing => 'policy_marketing',
     });
-    $privacyUrl = \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/privacy');
+    $privacyUrl = \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/privacy');
 @endphp
 <div class="container" id="main-container">
     <div class="row justify-content-center">

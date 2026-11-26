@@ -3,7 +3,7 @@
 <div id="categories-content" class="container-italia mx-auto px-4 py-10" aria-labelledby="categories-title">
     {{-- Briciole di pane del riferimento (le classi flex di prima non arrivavano al CSS compilato e impilavano le voci: DCP-288, FO-1-28). --}}
     @include('pub_theme::components.blocks.content-page.partials.breadcrumb', ['breadcrumb' => [
-        'items' => [['label' => __('pub_theme::service_report.breadcrumb.home'), 'url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/')]],
+        'items' => [['label' => __('pub_theme::service_report.breadcrumb.home'), 'url' => \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/')]],
         'current' => __('pub_theme::services.categories.title'),
         'class' => 'mb-8',
     ]])
@@ -21,10 +21,10 @@
     </div>
 
     <div class="mb-10 flex flex-wrap gap-4" aria-label="{{ __('pub_theme::services.categories.actions.aria') }}">
-        <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::ticketsCreate() }}" class="inline-flex min-h-11 items-center rounded-md bg-primary-700 px-5 py-3 font-semibold text-white focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2">
+        <a href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::ticketsCreate() }}" class="inline-flex min-h-11 items-center rounded-md bg-primary-700 px-5 py-3 font-semibold text-white focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2">
             {{ __('pub_theme::services.categories.actions.report') }}
         </a>
-        <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::ticketsIndex() }}" class="inline-flex min-h-11 items-center rounded-md border border-primary-700 px-5 py-3 font-semibold text-primary-700 underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2">
+        <a href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::ticketsIndex() }}" class="inline-flex min-h-11 items-center rounded-md border border-primary-700 px-5 py-3 font-semibold text-primary-700 underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2">
             {{ __('pub_theme::services.categories.actions.browse') }}
         </a>
     </div>
@@ -56,7 +56,7 @@
     <section id="reports" class="mt-10 rounded-xl border border-gray-200 bg-white p-6 shadow-sm" aria-labelledby="reports-title">
         <h2 id="reports-title" class="mb-2 text-xl font-semibold text-gray-900">{{ __('pub_theme::services.categories.items.reports.title') }}</h2>
         <p class="mb-5 text-gray-700">{{ __('pub_theme::services.categories.items.reports.description') }}</p>
-        <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::ticketsIndex() }}" class="font-semibold text-primary-700 underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-primary-700">
+        <a href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::ticketsIndex() }}" class="font-semibold text-primary-700 underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-primary-700">
             {{ __('pub_theme::services.tasks.browse_action') }} <span aria-hidden="true">→</span>
         </a>
     </section>

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Models\Municipal;
+namespace Themes\Civic\Models\Municipal;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -16,8 +16,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
-use Themes\Sixteen\Enums\MunicipalLocationCategoryEnum;
-use Themes\Sixteen\Enums\MunicipalLocationTypeEnum;
+use Themes\Civic\Enums\MunicipalLocationCategoryEnum;
+use Themes\Civic\Enums\MunicipalLocationTypeEnum;
 
 /**
  * Modello per le sedi comunali (Municipal Location)

@@ -1,5 +1,5 @@
 @php
-    $sprite = '/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg';
+    $sprite = '/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg';
     $contacts = is_array($blockData['contacts'] ?? null) ? $blockData['contacts'] : [];
 @endphp
 

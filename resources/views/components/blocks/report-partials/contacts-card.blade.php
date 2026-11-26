@@ -4,7 +4,7 @@
     senza URL (o con `#`) o senza il suo dato sparisce, e senza gruppi non si stampa nemmeno il riquadro. Le repliche /tests/ tengono le voci `#`.
 --}}
 @php
-    $contactGroups ??= app(\Themes\Sixteen\Actions\Contacts\ResolveContactGroupsAction::class)->execute(
+    $contactGroups ??= app(\Themes\Civic\Actions\Contacts\ResolveContactGroupsAction::class)->execute(
         (array) $d('contacts', []),
         app(\Modules\Tenant\Actions\Ente\GetEnteDataAction::class)->execute(),
         request()->segment(2) !== 'tests',

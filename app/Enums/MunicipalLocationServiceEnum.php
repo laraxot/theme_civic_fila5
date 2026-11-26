@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums;
+namespace Themes\Civic\Enums;
 
 use Filament\Support\Contracts\HasLabel;
-use Themes\Sixteen\Enums\Concerns\HasLangLabel;
+use Themes\Civic\Enums\Concerns\HasLangLabel;
 
 /**
  * Servizi disponibili presso un luogo comunale.
  *
  * Sostituisce la costante MunicipalLocation::AVAILABLE_SERVICES. Le label vivono in
- * lang/<locale>/municipal_location_service_enum.php (namespace `sixteen::`).
+ * lang/<locale>/municipal_location_service_enum.php (namespace `civic::`).
  */
 enum MunicipalLocationServiceEnum: string implements HasLabel
 {

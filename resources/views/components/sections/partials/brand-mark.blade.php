@@ -13,7 +13,7 @@
     'invert' => true,
 ])
 @php
-    $href = \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::url((string) $src);
+    $href = \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::url((string) $src);
     $filter = $invert ? 'filter: brightness(0) invert(1)' : null;
     $px = max(24, (int) $size);
 @endphp

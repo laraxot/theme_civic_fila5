@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Infrastructure\Url;
+namespace Themes\Civic\Infrastructure\Url;
 
 /**
  * Alias Design Comuni (path IT storici) → container FixCity canonici.

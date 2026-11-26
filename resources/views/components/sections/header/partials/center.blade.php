@@ -1,6 +1,6 @@
 {{--
     Header Design Comuni: fascia centrale con identità, social e ricerca.
-    @see Themes/Sixteen/docs/header-components.md
+    @see Themes/Civic/docs/header-components.md
 --}}
 <div class="it-header-center-wrapper">
     <div class="container">

@@ -98,12 +98,12 @@ it('has no fake toll-free number in the live contact templates and in the theme 
         'resources/views/components/blocks/ticket-list/design-comuni.blade.php',
         'resources/views/components/sections/header/v1.blade.php',
         'resources/views/components/sections/footer/v1.blade.php',
-        'config/sixteen.php',
+        'config/civic.php',
     ];
 
     $offenders = [];
     foreach ($files as $file) {
-        if (preg_match('/05 ?0505|tel:050505/', file_get_contents(base_path('Themes/Sixteen/'.$file))) === 1) {
+        if (preg_match('/05 ?0505|tel:050505/', file_get_contents(base_path('Themes/Civic/'.$file))) === 1) {
             $offenders[] = $file;
         }
     }

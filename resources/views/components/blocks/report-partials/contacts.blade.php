@@ -4,7 +4,7 @@
     DCP-289: senza gruppi (nessuna voce con il suo dato) la fascia non si stampa; i gruppi li risolve ResolveContactGroupsAction e li passa al riquadro.
 --}}
 @php
-    $contactGroups = app(\Themes\Sixteen\Actions\Contacts\ResolveContactGroupsAction::class)->execute(
+    $contactGroups = app(\Themes\Civic\Actions\Contacts\ResolveContactGroupsAction::class)->execute(
         (array) $d('contacts', []),
         app(\Modules\Tenant\Actions\Ente\GetEnteDataAction::class)->execute(),
         request()->segment(2) !== 'tests',

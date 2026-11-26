@@ -24,7 +24,7 @@ dataset('front office locales', ['it', 'en', 'de', 'es']);
 /**
  * @return array<string, string> chiave => primo punto di uso (file:riga)
  */
-function sixteenFixcityLiteralKeysCitedByViews(): array
+function civicFixcityLiteralKeysCitedByViews(): array
 {
     $skip = '#/(pages_old|_old|old|vendor|node_modules)/|\.old(\.|$)#';
     $keys = [];
@@ -48,13 +48,13 @@ function sixteenFixcityLiteralKeysCitedByViews(): array
 
 it('finds the literal fixcity keys cited by the theme views', function (): void {
     // Una scansione vuota darebbe un falso verde: oggi sono 90, la soglia e' bassa apposta (rinomine, non crescita).
-    expect(count(sixteenFixcityLiteralKeysCitedByViews()))->toBeGreaterThan(50);
+    expect(count(civicFixcityLiteralKeysCitedByViews()))->toBeGreaterThan(50);
 });
 
 it('translates every literal fixcity key cited by the theme views', function (string $locale): void {
     $translator = app('translator');
     $missing = [];
-    foreach (sixteenFixcityLiteralKeysCitedByViews() as $key => $where) {
+    foreach (civicFixcityLiteralKeysCitedByViews() as $key => $where) {
         if (! $translator->hasForLocale($key, $locale)) {
             $missing[] = $key.'  ('.$where.')';
         }

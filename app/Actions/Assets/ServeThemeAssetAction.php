@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Actions\Assets;
+namespace Themes\Civic\Actions\Assets;
 
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
- * Serve un file di `Themes/Sixteen/public` (non di Civic) con cache immutabile di un anno; rifiuta `..` e i path vuoti con 404.
+ * Serve un file di `Themes/Civic/public` con cache immutabile di un anno; rifiuta `..` e i path vuoti con 404.
  *
  * @see docs/contracts/serve-theme-asset-action.md
  *
@@ -24,12 +24,12 @@ final class ServeThemeAssetAction
             throw new NotFoundHttpException;
         }
 
-        $assetPath = base_path('Themes/Sixteen/public/'.$relativePath);
+        $assetPath = base_path('Themes/Civic/public/'.$relativePath);
 
         // The Design-Comuni logo is source-controlled with the theme but is
         // intentionally not duplicated into every generated Vite output.
         if (! is_file($assetPath) && $relativePath === 'design-comuni/assets/images/logo-comune.svg') {
-            $assetPath = base_path('Themes/Sixteen/Main_files/five/assets/images/logo-comune.svg');
+            $assetPath = base_path('Themes/Civic/Main_files/five/assets/images/logo-comune.svg');
         }
 
         if (! is_file($assetPath)) {

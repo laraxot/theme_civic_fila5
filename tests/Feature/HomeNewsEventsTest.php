@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Tests\Feature;
+namespace Themes\Civic\Tests\Feature;
+
+require_once dirname(__DIR__).'/Support/civic-autoload.php';
 
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
@@ -11,7 +13,7 @@ use Tests\TestCase;
 
 /**
  * Homepage «Novità» and «Eventi» sections (blocks home.news / home.events in pages/home.json, every locale).
- * Story: Themes/Sixteen/docs/stories/home-news-events-sections.story.md.
+ * Story: Themes/Civic/docs/stories/home-news-events-sections.story.md.
  * CMS pages are only READ here (Sushi over the tenant JSON); nothing is written to the content directory.
  */
 final class HomeNewsEventsTest extends TestCase
@@ -67,7 +69,7 @@ final class HomeNewsEventsTest extends TestCase
             'type' => $contentType,
             'published_at' => $publishedAt,
             'event_start_date' => $eventStart,
-            'main_image_url' => '/themes/Sixteen/design-comuni/assets/images/notizia-ludoteca.png',
+            'main_image_url' => '/themes/Civic/design-comuni/assets/images/notizia-ludoteca.png',
         ]);
         $article->save();
 

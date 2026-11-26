@@ -4,7 +4,7 @@
  * focus non tornava al pulsante (WCAG 2.4.3, 2.1.2) e i pulsanti della mappa (z-index 3002 fuori da ogni contesto di impilamento)
  * stavano SOPRA la modale (z-index 1055) e sopra il menu mobile.
  *
- * Run: cd laravel/Themes/Sixteen && FIXCITY_BASE_URL=http://127.0.0.1:8091 npx playwright test tests/browser/search-modal-keyboard.spec.mjs --reporter=list
+ * Run: cd laravel/Themes/Civic && FIXCITY_BASE_URL=http://127.0.0.1:8091 npx playwright test tests/browser/search-modal-keyboard.spec.mjs --reporter=list
  * Prima della build del tema (il JS e il CSS nuovi sono nei sorgenti ma non ancora in public/): FIXCITY_INJECT_SCRIPT=resources/js/theme/modal-focus.js
  * FIXCITY_INJECT_CSS=<file con le regole di resources/css/app/22-header-shell.css> li inietta nella pagina, come se fossero compilati.
  */

@@ -14,7 +14,7 @@ use function Safe\preg_replace;
 uses(TestCase::class);
 
 /*
- * Decisione D35 (Themes/Sixteen/docs/bmad/decision-log.md): nella fascia slim, dove il riferimento Design Comuni scrive "Nome della Regione",
+ * Decisione D35 (Themes/Civic/docs/bmad/decision-log.md): nella fascia slim, dove il riferimento Design Comuni scrive "Nome della Regione",
  * il tenant dimostrativo mostra "Demo" come TESTO (nessun URL, nessun link finto). Il contenuto vive in sections/header.json
  * (`region.name`, `account.label`); la Blade e' solo il vestito. Se l'ente fornisce `config('ente')` (DCP-289) vince l'ente.
  * Il pulsante «Accedi all'area personale» ha il markup del riferimento: btn-primary btn-icon btn-full, span.rounded-icon, svg.icon-primary #it-user.

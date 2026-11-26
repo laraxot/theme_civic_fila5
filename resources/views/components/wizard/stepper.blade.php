@@ -7,7 +7,7 @@
     $steps = $steps ?? [];
     $totalSteps = $totalSteps ?? count($steps);
 
-    $sprite = '/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg';
+    $sprite = '/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg';
 @endphp
 
 <div class="steppers">

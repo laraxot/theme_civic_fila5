@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Http\Livewire\Appointment;
+namespace Themes\Civic\Http\Livewire\Appointment;
 
 use Carbon\Carbon;
 use Exception;
@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Themes\Sixteen\Enums\AppointmentStatusEnum;
-use Themes\Sixteen\Models\Appointment;
-use Themes\Sixteen\Models\Citizen;
-use Themes\Sixteen\Models\Office;
-use Themes\Sixteen\Models\Service;
-use Themes\Sixteen\Rules\AppointmentAvailability;
+use Themes\Civic\Enums\AppointmentStatusEnum;
+use Themes\Civic\Models\Appointment;
+use Themes\Civic\Models\Citizen;
+use Themes\Civic\Models\Office;
+use Themes\Civic\Models\Service;
+use Themes\Civic\Rules\AppointmentAvailability;
 
 /**
  * Componente Livewire per creazione appuntamento multi-step
@@ -266,7 +266,7 @@ class CreateAppointment extends Component
             $this->confirmationCode = $appointment->confirmation_code;
 
             // NOTA: la notifica email di conferma non è ancora implementata.
-            // Appointment (Themes/Sixteen/app/Models/Appointment.php, fuori scope
+            // Appointment (Themes/Civic/app/Models/Appointment.php, fuori scope
             // per questo intervento) non ha ne' il metodo sendConfirmationNotification()
             // ne' il trait Notifiable: la chiamata precedente era una fatal-error
             // certa a runtime (method.notFound) ed è stata rimossa. Va reintrodotta

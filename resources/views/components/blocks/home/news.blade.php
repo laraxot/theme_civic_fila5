@@ -13,14 +13,14 @@
     if ($posts->isEmpty()) {
         $posts = collect($composer->paginatedBlogPosts($limit)->items());
     }
-    $blogIndexUrl = \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::blogIndex();
+    $blogIndexUrl = \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::blogIndex();
     $fallbackCategory = (string) ($data['category_fallback'] ?? __('pub_theme::navigation.news'));
 
     $cards = $posts->map(static function ($post) use ($blogIndexUrl, $fallbackCategory): ?array {
         if (! $post instanceof \Modules\Blog\Models\Article || $post->getTitle() === '') {
             return null;
         }
-        $url = \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::view('blog', (string) $post->getAttribute('slug'));
+        $url = \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::view('blog', (string) $post->getAttribute('slug'));
         $category = $post->category?->getAttribute('name') ?: $post->category?->getAttribute('title');
         $categorySlug = $post->category?->getAttribute('slug');
         $date = $post->published_at?->translatedFormat('j M Y');

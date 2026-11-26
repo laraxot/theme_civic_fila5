@@ -9,7 +9,7 @@
 @php
     $heading = trim((string) ($data['heading'] ?? '')) ?: __('fixcity::auth.register.title.text');
     $intro = trim((string) ($data['intro'] ?? '')) ?: __('fixcity::auth.register.intro.text');
-    $localize = static fn (string $path): string => \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl($path);
+    $localize = static fn (string $path): string => \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl($path);
 @endphp
 
 <x-auth.shell :heading="$heading" :intro="$intro" heading-id="auth-register-heading">

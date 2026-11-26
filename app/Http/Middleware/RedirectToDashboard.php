@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Http\Middleware;
+namespace Themes\Civic\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

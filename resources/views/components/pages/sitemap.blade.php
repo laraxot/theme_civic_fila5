@@ -1,22 +1,22 @@
 @php
     // Sezioni del menu principale, con gli stessi helper URL dell'header: l'elenco statico di lang/*/sitemap.php non le conteneva.
     $mainGroup = ['title' => __('pub_theme::navigation.main'), 'links' => [
-        ['label' => __('pub_theme::navigation.homepage.news'), 'url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::blogIndex()],
-        ['label' => __('pub_theme::ui.events_title'), 'url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::eventsIndex()],
-        ['label' => __('pub_theme::navigation.services'), 'url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::servicesIndex()],
-        ['label' => __('pub_theme::services.categories.title'), 'url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::index('lista-categorie')],
+        ['label' => __('pub_theme::navigation.homepage.news'), 'url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::blogIndex()],
+        ['label' => __('pub_theme::ui.events_title'), 'url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::eventsIndex()],
+        ['label' => __('pub_theme::navigation.services'), 'url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::servicesIndex()],
+        ['label' => __('pub_theme::services.categories.title'), 'url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::index('lista-categorie')],
     ]];
     $groups = [$mainGroup];
     foreach (__('pub_theme::sitemap.groups') as $group) {
         $groups[] = ['title' => $group['title'], 'links' => array_map(
-            static fn (array $link): array => ['label' => $link['label'], 'url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl((string) $link['path'])],
+            static fn (array $link): array => ['label' => $link['label'], 'url' => \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl((string) $link['path'])],
             $group['links'],
         )];
     }
 @endphp
 <div id="sitemap-content" class="container-italia mx-auto max-w-6xl px-4 py-10" aria-labelledby="sitemap-title">
     @include('pub_theme::components.blocks.content-page.partials.breadcrumb', ['breadcrumb' => [
-        'items' => [['label' => __('pub_theme::service_report.breadcrumb.home'), 'url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/')]],
+        'items' => [['label' => __('pub_theme::service_report.breadcrumb.home'), 'url' => \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/')]],
         'current' => __('pub_theme::sitemap.meta.breadcrumb'),
         'class' => 'mb-8',
     ]])

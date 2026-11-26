@@ -18,7 +18,7 @@ function forcedColorsDeclaration(string $selector, string $property): ?string
 {
     $css = file_get_contents(dirname(__DIR__, 2).'/resources/css/app/20-dc-components.css');
 
-    return sixteenCssDeclaration($css, $selector, $property, 'forced-colors: active');
+    return civicCssDeclaration($css, $selector, $property, 'forced-colors: active');
 }
 
 test('in colori forzati i pulsanti hanno un bordo, altrimenti lo sfondo forzato li lascia come testo semplice', function (): void {

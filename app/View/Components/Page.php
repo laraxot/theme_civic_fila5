@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\View\Components;
+namespace Themes\Civic\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;

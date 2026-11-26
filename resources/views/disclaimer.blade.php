@@ -1,4 +1,4 @@
-@extends('themes::Sixteen.layouts.guest')
+@extends('themes::Civic.layouts.guest')
 
 @php
     $institution = config('app.institution_name', 'Ente di appartenenza');

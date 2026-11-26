@@ -22,7 +22,7 @@ $iconName = match($type ?? 'info') {
      aria-live="polite">
     <div class="notification-content">
         <svg class="icon notification-icon" aria-hidden="true">
-            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#{{ $iconName }}"></use>
+            <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#{{ $iconName }}"></use>
         </svg>
         <div class="notification-body">
             @if(isset($title))

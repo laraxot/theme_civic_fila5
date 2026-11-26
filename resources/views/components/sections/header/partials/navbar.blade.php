@@ -1,6 +1,6 @@
 {{--
     Header Design Comuni: navigazione primaria/secondaria e menu mobile.
-    @see Themes/Sixteen/docs/header-components.md
+    @see Themes/Civic/docs/header-components.md
 --}}
 <div class="it-header-navbar-wrapper" id="header-nav-wrapper">
     <div class="container">

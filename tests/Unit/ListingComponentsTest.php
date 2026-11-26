@@ -160,5 +160,5 @@ test('lista-risorse config loads correctly', function () {
         ->toHaveKey('title')
         ->toHaveKey('sections');
     expect($data['sections'])->toBeArray()->not->toBeEmpty();
-    expect(File::exists(base_path('Themes/Sixteen/resources/views/components/blocks/list-page/design-comuni.blade.php')))->toBeTrue();
+    expect(File::exists(base_path('Themes/Civic/resources/views/components/blocks/list-page/design-comuni.blade.php')))->toBeTrue();
 });

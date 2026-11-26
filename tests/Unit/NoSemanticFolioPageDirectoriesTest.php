@@ -11,11 +11,11 @@ use function Safe\scandir;
  * quelle cartelle la precedenza su [container0] (FAQ) o creerebbe un alias
  * morto/competitivo col modulo User (profile/edit — creato ≥3 volte).
  *
- * @see laravel/Themes/Sixteen/docs/page-directory-structure.md
- * @see laravel/Themes/Sixteen/docs/bmad/knowledge/why-profile-edit-blade-must-not-exist.md
- * @see laravel/Themes/Sixteen/docs/bmad/knowledge/why-domande-frequenti-blade-php-must-not-exist.md
+ * @see laravel/Themes/Civic/docs/page-directory-structure.md
+ * @see laravel/Themes/Civic/docs/bmad/knowledge/why-profile-edit-blade-must-not-exist.md
+ * @see laravel/Themes/Civic/docs/bmad/knowledge/why-domande-frequenti-blade-php-must-not-exist.md
  */
-test('sixteen pages ammette solo auth, container0 e tests', function (): void {
+test('civic pages ammette solo auth, container0 e tests', function (): void {
     $pagesRoot = dirname(__DIR__, 2).'/resources/views/pages';
     $allowed = ['[container0]', 'auth', 'tests'];
 
@@ -56,7 +56,7 @@ test('sixteen pages ammette solo auth, container0 e tests', function (): void {
  * una seconda homepage scritta a mano accanto a home.json, e home.blade.php ridichiarava name('home') di index.blade.php.
  * Gli altri file in radice non servivano la loro URL (misurato 2026-10-23: privacy e cookie-policy le serve [container0]
  * dal JSON, counter/prova01/show/bootstrap-italia-showcase 404): sorgenti morte che fingono di possedere una pagina.
- * @see laravel/Themes/Sixteen/docs/bmad/knowledge/why-home-blade-must-not-exist.md
+ * @see laravel/Themes/Civic/docs/bmad/knowledge/why-home-blade-must-not-exist.md
  */
 test('in radice di pages ammette solo index.blade.php', function (): void {
     $pagesRoot = dirname(__DIR__, 2).'/resources/views/pages';

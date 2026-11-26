@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Infrastructure\Url;
+namespace Themes\Civic\Infrastructure\Url;
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -14,7 +14,7 @@ use function Safe\parse_url;
  * Il menu header utente usa `route('<folio-name>')` verificate con `php artisan folio:list`.
  * Non aggiungere wrapper che duplicano path inventati per voci menu.
  *
- * Canon: laravel/Themes/Sixteen/docs/wiki/concepts/fo-folio-named-routes-header.md
+ * Canon: laravel/Themes/Civic/docs/wiki/concepts/fo-folio-named-routes-header.md
  */
 final class FrontofficeUrl
 {

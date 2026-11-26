@@ -10,7 +10,7 @@ use function Safe\glob;
 use function Safe\preg_match_all;
 
 /*
- * DCP-183: i font del tema sono asset di Vite. Se un `url()` di `fonts.css` e' assoluto (`/themes/Sixteen/...`) Vite non lo elabora:
+ * DCP-183: i font del tema sono asset di Vite. Se un `url()` di `fonts.css` e' assoluto (`/themes/Civic/...`) Vite non lo elabora:
  * niente hash nel nome, niente cache lunga, niente voce nel manifest per le preload. Se il file e' mancante o a 0 byte (DCP-08)
  * il `@font-face` cade in silenzio sul carattere di ripiego. Solo filesystem, nessun database.
  */

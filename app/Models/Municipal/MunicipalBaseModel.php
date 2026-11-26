@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Models\Municipal;
+namespace Themes\Civic\Models\Municipal;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Base model per l'ontologia AGID del tema Sixteen.
+ * Base model per l'ontologia AGID del tema Civic.
  *
  * @method static Builder<static> newModelQuery()
  * @method static Builder<static> newQuery()

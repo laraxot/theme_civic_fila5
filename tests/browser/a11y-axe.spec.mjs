@@ -3,7 +3,7 @@
  * Fallisce se compare una violazione serious o critical (A11Y_STRICT=1: qualunque violazione). Il resto resta nel report di ogni test.
  * Non sostituisce l'audit manuale (tastiera, ordine del focus, lettore di schermo): vedi la story DCP-143.
  *
- * Run: cd laravel/Themes/Sixteen && FIXCITY_BASE_URL=http://127.0.0.1:8091 FIXCITY_STORAGE_STATE=/tmp/scratch-auth-fixture-$USER/auth.json \
+ * Run: cd laravel/Themes/Civic && FIXCITY_BASE_URL=http://127.0.0.1:8091 FIXCITY_STORAGE_STATE=/tmp/scratch-auth-fixture-$USER/auth.json \
  *        npx playwright test tests/browser/a11y-axe.spec.mjs --reporter=list
  * Senza FIXCITY_STORAGE_STATE le pagine con login sono saltate (e dichiarate "skipped", non superate). Nessuna credenziale in questo file:
  * la sessione viene da scratch-auth-fixture.sh (utente di prova isolato, mai quello master).

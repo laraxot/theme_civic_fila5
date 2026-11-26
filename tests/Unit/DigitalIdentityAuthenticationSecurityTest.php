@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
+require_once dirname(__DIR__).'/Support/civic-autoload.php';
+
 use Illuminate\Http\Request;
 use Tests\TestCase;
-use Themes\Sixteen\Actions\Auth\SanitizeReturnUrlAction;
-use Themes\Sixteen\Actions\CieAuthAction;
-use Themes\Sixteen\Actions\SpidAuthAction;
+use Themes\Civic\Actions\Auth\SanitizeReturnUrlAction;
+use Themes\Civic\Actions\CieAuthAction;
+use Themes\Civic\Actions\SpidAuthAction;
 
 require_once dirname(__DIR__, 2).'/app/Actions/Auth/SanitizeReturnUrlAction.php';
 require_once dirname(__DIR__, 2).'/app/Actions/SpidAuthAction.php';

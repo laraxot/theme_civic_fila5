@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums\Concerns;
+namespace Themes\Civic\Enums\Concerns;
 
 use BackedEnum;
 use Illuminate\Support\Str;
 
 /**
  * Label di un backed enum del tema, risolta da lang/<locale>/<nome_enum_snake_case>.php
- * (namespace `sixteen::`): `'values' => ['<valore>' => ['label' => '...']]`.
+ * (namespace `civic::`): `'values' => ['<valore>' => ['label' => '...']]`.
  *
  * `Modules\Xot\Traits\EnumTrait` non e' usabile nei temi: deriva la chiave lang da `Modules\<M>\...`.
  *
@@ -19,7 +19,7 @@ trait HasLangLabel
 {
     public function getLabel(): string
     {
-        $key = 'sixteen::'.Str::snake(class_basename(static::class)).'.values.'.$this->value.'.label';
+        $key = 'civic::'.Str::snake(class_basename(static::class)).'.values.'.$this->value.'.label';
         $label = trans($key);
 
         return is_string($label) ? $label : $key;

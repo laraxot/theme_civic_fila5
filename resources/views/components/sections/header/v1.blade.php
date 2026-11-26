@@ -73,14 +73,14 @@
         }
     }
     $d = static fn (string $key, mixed $default = '') => data_get($data, $key, $default);
-    $assets = \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base();
+    $assets = \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base();
     $icon = static fn (string $name): string => $assets.'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
     $storedNavHref = static function (?string $url): ?string {
         $raw = trim((string) ($url ?? ''));
         if ($raw === '' || $raw === '#') {
             return null;
         }
-        $resolved = \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl($raw);
+        $resolved = \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl($raw);
 
         return $resolved !== '' && $resolved !== '#' ? $resolved : null;
     };
@@ -110,7 +110,7 @@
     // URL esterno gia' validato (http/https) da GetEnteDataAction: non passa da FrontofficeUrl.
     $regionPortalHref = $ente->region_url !== '' ? $ente->region_url : null;
     // D35: `region.name` ("Demo") e' il contenuto del CMS; se l'ente ha il suo nome (config('ente')) vince l'ente.
-    $regionLink = \Themes\Sixteen\Presentation\Accessibility\RegionPortalLinkLabels::resolve(
+    $regionLink = \Themes\Civic\Presentation\Accessibility\RegionPortalLinkLabels::resolve(
         is_array($data['region'] ?? null) ? $data['region'] : [],
         $ente->region_name,
     );

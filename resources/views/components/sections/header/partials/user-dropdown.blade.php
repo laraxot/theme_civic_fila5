@@ -30,7 +30,7 @@
         {{-- aria-label = nome visibile: nome accessibile a ogni larghezza, senza label-content-name-mismatch (axe). --}}
         <span class="d-none d-lg-block">{{ $displayName }}</span>
         <svg class="icon icon-white d-none d-lg-block" aria-hidden="true">
-            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
+            <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
         </svg>
     </button>
 
@@ -50,17 +50,17 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item list-item" href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaPratiche() }}" role="menuitem">
+                            <a class="dropdown-item list-item" href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaPratiche() }}" role="menuitem">
                                 <span>{{ __('pub_theme::header.user.dropdown.my_practices.label') }}</span>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item list-item" href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaSeguite() }}" role="menuitem">
+                            <a class="dropdown-item list-item" href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaSeguite() }}" role="menuitem">
                                 <span>{{ __('pub_theme::header.user.dropdown.followed_reports.label') }}</span>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item list-item" href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaNotifiche() }}" role="menuitem">
+                            <a class="dropdown-item list-item" href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaNotifiche() }}" role="menuitem">
                                 <span>{{ __('pub_theme::header.user.dropdown.notifications.label') }}</span>
                                 @if (($unreadNotificationsCount ?? 0) > 0)
                                     <span class="badge badge-primary ml-2" data-element="unread-notifications">{{ $unreadNotificationsCount }}<span class="visually-hidden"> {{ __('pub_theme::header.user.unread_notifications') }}</span></span>
@@ -70,7 +70,7 @@
                         <li><span class="divider"></span></li>
                         <li>
                             {{-- Canon: FrontofficeRoutes (mai localizeUrl / tickets.*). --}}
-                            <a class="dropdown-item list-item" href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaImpostazioni() }}" role="menuitem">
+                            <a class="dropdown-item list-item" href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaImpostazioni() }}" role="menuitem">
                                 <span>{{ __('pub_theme::header.user.dropdown.settings.label') }}</span>
                             </a>
                         </li>
@@ -79,7 +79,7 @@
                                 @csrf
                                 <button type="submit" class="list-item left-icon" role="menuitem">
                                     <svg class="icon icon-primary icon-sm left" aria-hidden="true">
-                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-external-link"></use>
+                                        <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-external-link"></use>
                                     </svg>
                                     <span class="fw-bold">{{ __('pub_theme::header.user.dropdown.logout.label') }}</span>
                                 </button>

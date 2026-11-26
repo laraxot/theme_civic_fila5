@@ -33,8 +33,8 @@
     }
 
     // Canon Folio: FrontofficeRoutes (container0.*) — mai localizeUrl né tickets.*.
-    $reportUrl = \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::ticketsCreate();
-    $trackUrl = \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::ticketsTrack();
+    $reportUrl = \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::ticketsCreate();
+    $trackUrl = \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::ticketsTrack();
     $loginUrl = route('login');
     $defaultContacts = [
         ['group' => 'comune', 'label' => __('pub_theme::faq.contacts.report'), 'href' => $reportUrl, 'icon' => 'pin'],

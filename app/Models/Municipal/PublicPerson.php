@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Models\Municipal;
+namespace Themes\Civic\Models\Municipal;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -17,8 +17,8 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
-use Themes\Sixteen\Enums\PublicPersonCategoryEnum;
-use Themes\Sixteen\Enums\PublicPersonRoleEnum;
+use Themes\Civic\Enums\PublicPersonCategoryEnum;
+use Themes\Civic\Enums\PublicPersonRoleEnum;
 
 /**
  * Modello per le persone pubbliche (Public Person)

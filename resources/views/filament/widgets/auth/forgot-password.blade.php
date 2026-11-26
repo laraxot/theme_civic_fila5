@@ -1,5 +1,5 @@
 {{--
-  ForgotPasswordWidget — vestito Sixteen come il login (DCP-290); logica in Modules\User\Filament\Widgets\Auth\ForgotPasswordWidget.
+  ForgotPasswordWidget — vestito Civic come il login (DCP-290); logica in Modules\User\Filament\Widgets\Auth\ForgotPasswordWidget.
   Il nome del file e' quello che risolve GetViewByClassAction (`pub_theme::filament.widgets.auth.forgot-password`): con altro nome
   il widget ricade sulla vista del modulo, senza tema (era il caso di `forgot-password-widget`, mai raggiunto).
 --}}

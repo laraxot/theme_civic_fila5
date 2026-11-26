@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Models\Municipal;
+namespace Themes\Civic\Models\Municipal;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -16,10 +16,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
-use Themes\Sixteen\Enums\PublicDocumentPrivacyLevelEnum;
-use Themes\Sixteen\Enums\PublicDocumentPublicationStatusEnum;
-use Themes\Sixteen\Enums\PublicDocumentStatusEnum;
-use Themes\Sixteen\Enums\PublicDocumentTypeEnum;
+use Themes\Civic\Enums\PublicDocumentPrivacyLevelEnum;
+use Themes\Civic\Enums\PublicDocumentPublicationStatusEnum;
+use Themes\Civic\Enums\PublicDocumentStatusEnum;
+use Themes\Civic\Enums\PublicDocumentTypeEnum;
 
 use function Safe\filesize;
 use function Safe\hash_file;

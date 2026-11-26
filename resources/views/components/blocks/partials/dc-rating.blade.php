@@ -9,7 +9,7 @@
     $answers = static fn (string $tone): array => filled(data_get($data, "feedback.$tone.answers"))
         ? (array) data_get($data, "feedback.$tone.answers")
         : array_map(static fn (int $i): string => (string) __($ns."fields.{$tone}_options.options.$i.label"), range(1, 5));
-    $assets = \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base();
+    $assets = \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base();
     $icon = static fn (string $name): string => $assets.'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
     $thanks = $tx('feedback.thanks', 'messages.thank_you.text');
     $thanksStep = 3;

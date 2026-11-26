@@ -7,7 +7,7 @@
 @props(['heading', 'intro' => null, 'headingId' => 'auth-heading'])
 
 @php
-    $homeUrl = \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/');
+    $homeUrl = \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/');
 @endphp
 
 <x-auth.assets />

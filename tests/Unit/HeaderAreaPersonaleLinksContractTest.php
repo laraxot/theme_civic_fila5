@@ -106,7 +106,7 @@ test('FrontofficeUrl non espone wrapper personalArea', function (): void {
     expect($php)->toContain('fromStoredUrl');
 });
 
-test('nessun blade Sixteen usa FrontofficeUrl personalArea wrapper', function (): void {
+test('nessun blade Civic usa FrontofficeUrl personalArea wrapper', function (): void {
     $themeRoot = dirname(__DIR__, 2);
     $iterator = new RecursiveIteratorIterator(
         new RecursiveDirectoryIterator($themeRoot.'/resources/views', FilesystemIterator::SKIP_DOTS)

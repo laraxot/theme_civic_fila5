@@ -62,7 +62,7 @@ name('home');
                             <a class="read-more" href="{{ \Mcamara\LaravelLocalization\Facades\LaravelLocalization::localizeURL('/tickets') }}">
                                 <span class="text">{{ __('pub_theme::home.map.cta_list') }}</span>
                                 <svg class="icon" aria-hidden="true">
-                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
+                                    <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
                                 </svg>
                             </a>
                         </div>

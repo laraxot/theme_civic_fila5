@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Models\Municipal;
+namespace Themes\Civic\Models\Municipal;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Themes\Sixteen\Enums\OrganizationalUnitTypeEnum;
+use Themes\Civic\Enums\OrganizationalUnitTypeEnum;
 
 /**
  * Modello per le unità organizzative

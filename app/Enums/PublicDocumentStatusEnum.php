@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums;
+namespace Themes\Civic\Enums;
 
 use Filament\Support\Contracts\HasLabel;
-use Themes\Sixteen\Enums\Concerns\HasLangLabel;
+use Themes\Civic\Enums\Concerns\HasLangLabel;
 
 /**
  * Stati di un documento pubblico.
  *
  * Sostituisce la costante PublicDocument::DOCUMENT_STATUSES. Le label vivono in
- * lang/<locale>/public_document_status_enum.php (namespace `sixteen::`).
+ * lang/<locale>/public_document_status_enum.php (namespace `civic::`).
  */
 enum PublicDocumentStatusEnum: string implements HasLabel
 {

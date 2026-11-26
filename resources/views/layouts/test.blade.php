@@ -13,7 +13,7 @@
         <link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
 
         <!-- Tailwind CSS + Test overrides (includes Filament wizard parity) -->
-        @vite(['resources/css/app-test.css'], 'themes/Sixteen')
+        @vite(['resources/css/app-test.css'], 'themes/Civic')
 
         <!-- Filament Styles (required for Filament components in frontend) -->
         @filamentStyles
@@ -31,7 +31,7 @@
 
         @livewire('notifications')
         @filamentScripts
-        @vite(['resources/js/app.js'], 'themes/Sixteen')
+        @vite(['resources/js/app.js'], 'themes/Civic')
 
         {{-- Banner cookie: lo inietta CookieConsentMiddleware (vista Modules/Gdpr/resources/views/cookie-consent, DCP-153); nessun include qui. --}}
     </body>

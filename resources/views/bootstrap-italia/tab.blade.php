@@ -18,7 +18,7 @@ $tabId = $id ?? 'tab-' . uniqid();
                     aria-selected="{{ ($activeTab ?? array_key_first($tabs ?? [])) === $key ? 'true' : 'false' }}">
                 @if(isset($tab['icon']))
                 <svg class="icon tab-icon" aria-hidden="true">
-                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#{{ $tab['icon'] }}"></use>
+                    <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#{{ $tab['icon'] }}"></use>
                 </svg>
                 @endif
                 {{ $tab['label'] }}

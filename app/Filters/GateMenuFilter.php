@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Filters;
+namespace Themes\Civic\Filters;
 
 use Illuminate\Support\Facades\Gate;
-use Themes\Sixteen\Contracts\MenuFilterInterface;
+use Themes\Civic\Contracts\MenuFilterInterface;
 
 /**
  * Filtro menu per autorizzazioni Laravel Gate

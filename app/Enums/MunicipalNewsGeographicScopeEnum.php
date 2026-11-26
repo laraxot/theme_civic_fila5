@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums;
+namespace Themes\Civic\Enums;
 
 use Filament\Support\Contracts\HasLabel;
-use Themes\Sixteen\Enums\Concerns\HasLangLabel;
+use Themes\Civic\Enums\Concerns\HasLangLabel;
 
 /**
  * Ambiti geografici di una notizia.
  *
  * Sostituisce la costante MunicipalNews::GEOGRAPHIC_SCOPES. Le label vivono in
- * lang/<locale>/municipal_news_geographic_scope_enum.php (namespace `sixteen::`).
+ * lang/<locale>/municipal_news_geographic_scope_enum.php (namespace `civic::`).
  */
 enum MunicipalNewsGeographicScopeEnum: string implements HasLabel
 {

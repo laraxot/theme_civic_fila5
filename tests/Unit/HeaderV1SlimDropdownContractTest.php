@@ -8,7 +8,7 @@ declare(strict_types=1);
 test('header v1 slim usa data-bs-toggle per lingua e utente e non langOpen/userOpen Alpine', function (): void {
     $laravelRoot = dirname(__DIR__, 4);
     $themeRoot = dirname(__DIR__, 2);
-    $bladePath = $laravelRoot.'/Themes/Sixteen/resources/views/components/sections/header/v1.blade.php';
+    $bladePath = $laravelRoot.'/Themes/Civic/resources/views/components/sections/header/v1.blade.php';
     expect(file_exists($bladePath))->toBeTrue('Blade header v1 mancante: '.$bladePath);
 
     $v1 = (string) file_get_contents($bladePath);
@@ -47,7 +47,7 @@ test('header v1 slim usa data-bs-toggle per lingua e utente e non langOpen/userO
 });
 
 test('header v1 slim wrapper non forza background hex inline (token CSS)', function (): void {
-    $bladePath = dirname(__DIR__, 4).'/Themes/Sixteen/resources/views/components/sections/header/v1.blade.php';
+    $bladePath = dirname(__DIR__, 4).'/Themes/Civic/resources/views/components/sections/header/v1.blade.php';
     $html = (string) file_get_contents($bladePath);
 
     expect($html)->not->toContain('style="background-color: #0066CC"');
@@ -55,13 +55,13 @@ test('header v1 slim wrapper non forza background hex inline (token CSS)', funct
 });
 
 test('header v1 espone il contratto condiviso della navigazione mobile', function (): void {
-    $bladePath = dirname(__DIR__, 4).'/Themes/Sixteen/resources/views/components/sections/header/v1.blade.php';
+    $bladePath = dirname(__DIR__, 4).'/Themes/Civic/resources/views/components/sections/header/v1.blade.php';
     $html = file_get_contents($bladePath)
         .file_get_contents(dirname($bladePath).'/partials/slim.blade.php')
         .file_get_contents(dirname($bladePath).'/partials/center.blade.php')
         .file_get_contents(dirname($bladePath).'/partials/navbar.blade.php');
 
-    $forbiddenThemePrefix = 'data-'.'sixteen-';
+    $forbiddenThemePrefix = 'data-'.'civic-';
 
     expect($html)
         ->toContain('data-bs-target="#nav4"')
@@ -84,7 +84,7 @@ test('mobile navigation keeps keyboard focus inside the open panel', function ()
 });
 
 test('Design Comuni header keeps the center and navigation bands green', function (): void {
-    $cssPath = dirname(__DIR__, 4).'/Themes/Sixteen/resources/css/civic-design-global.css';
+    $cssPath = dirname(__DIR__, 4).'/Themes/Civic/resources/css/civic-design-global.css';
     $css = file_get_contents($cssPath);
 
     expect($css)

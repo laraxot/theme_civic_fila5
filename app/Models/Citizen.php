@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Models;
+namespace Themes\Civic\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Anagrafica cittadino per prenotazioni (tema Sixteen).
+ * Anagrafica cittadino per prenotazioni (tema Civic).
  *
  * @property int $id
  * @property string|null $fiscal_code

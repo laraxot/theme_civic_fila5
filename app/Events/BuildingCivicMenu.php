@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Events;
+namespace Themes\Civic\Events;
 
 use Illuminate\Foundation\Events\Dispatchable;
-use Themes\Sixteen\Actions\MenuBuilderAction;
+use Themes\Civic\Actions\MenuBuilderAction;
 
 /**
- * Event che viene lanciato durante la costruzione del menu del tema Sixteen
+ * Event che viene lanciato durante la costruzione del menu del tema Civic
  *
  * Questo event permette di modificare il menu prima che venga renderizzato,
  * seguendo il pattern dell'official Italia Design Theme
  */
-class BuildingSixteenMenu
+class BuildingCivicMenu
 {
     use Dispatchable;
 

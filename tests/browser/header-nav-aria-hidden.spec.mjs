@@ -4,7 +4,7 @@
  * nodo nascosto alle tecnologie assistive (axe `aria-hidden-focus`, WCAG 4.1.2). `aria-hidden` deve esistere solo sul drawer mobile
  * e seguire il viewport anche quando cambia a pagina aperta (rotazione, finestra ridimensionata).
  *
- * Run: cd laravel/Themes/Sixteen && FIXCITY_BASE_URL=http://127.0.0.1:8081 \
+ * Run: cd laravel/Themes/Civic && FIXCITY_BASE_URL=http://127.0.0.1:8081 \
  *        npx playwright test tests/browser/header-nav-aria-hidden.spec.mjs --reporter=list
  * Serve il bundle ricostruito (`npm run build`): `public/assets/app-*.js` e' quello che la pagina carica.
  */

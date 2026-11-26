@@ -2,9 +2,9 @@
 
 {{--
     Head centralizzato del modulo Cms (<x-cms::head>, laravel/head): SEO, canonical, hreflang,
-    JSON-LD, icone e theme-color vengono da la'. Sixteen aggiunge solo cio' che e' suo:
+    JSON-LD, icone e theme-color vengono da la'. Civic aggiunge solo cio' che e' suo:
     la registrazione Alpine `mobileMenu` e la guardia FOUC critica, via stack `head`/`styles`
-    (story Modules/Cms/docs/stories/head-sixteen-layout-migration.story.md).
+    (story Modules/Cms/docs/stories/head-civic-layout-migration.story.md).
 --}}
 @push('head')
     {{--
@@ -38,7 +38,7 @@
 @endpush
 @push('styles')
     {{-- Critical FOUC guard: Vite CSS ~1.4MB; senza questo #head-section resta trasparente 300–600ms --}}
-    <style id="sixteen-critical-fouc">
+    <style id="civic-critical-fouc">
         #head-section.bg-primary { background-color: #007a52 !important; }
         #head-section #welcome-heading,
         #head-section #fc-home-hero-heading,
@@ -93,7 +93,7 @@
         {{ $slot }}
         @livewireScripts
         @filamentScripts(withCore: true)
-        @vite(['resources/js/app.js'], 'themes/Sixteen')
+        @vite(['resources/js/app.js'], 'themes/Civic')
 
 
     </body>

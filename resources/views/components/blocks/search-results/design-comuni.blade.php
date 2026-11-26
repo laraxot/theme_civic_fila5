@@ -10,7 +10,7 @@
 @else
 @php
     $d = static fn (string $key, mixed $default = '') => data_get($data, $key, $default);
-    $assets = \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base();
+    $assets = \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base();
     $icon = static fn (string $name): string => $assets.'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
     $results = $d('results.items', []);
 @endphp

@@ -19,7 +19,7 @@ $currentValue = $value ?? 0;
                    @if($i <= $currentValue) checked @endif>
             <label class="form-check-label" for="{{ $ratingId }}-{{ $i }}">
                 <svg class="icon star-icon {{ $i <= $currentValue ? 'it-star-full' : 'it-star-empty' }}" aria-hidden="true">
-                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#{{ $i <= $currentValue ? 'it-star-full' : 'it-star-empty' }}"></use>
+                    <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#{{ $i <= $currentValue ? 'it-star-full' : 'it-star-empty' }}"></use>
                 </svg>
                 <span class="visually-hidden">{{ $i }} {{ $i === 1 ? 'stella' : 'stelle' }}</span>
             </label>

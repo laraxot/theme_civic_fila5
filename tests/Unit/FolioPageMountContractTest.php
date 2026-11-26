@@ -41,7 +41,7 @@ test('container0 slug0 pages usano Volt Component mount non request route', func
     }
 })->group('CIVIC-FOLIO-INV-3');
 
-test('Sixteen usa app come unica shell pubblica e non mantiene il layout design-comuni', function (): void {
+test('Civic usa app come unica shell pubblica e non mantiene il layout design-comuni', function (): void {
     $themeRoot = dirname(__DIR__, 2);
     $layoutsRoot = $themeRoot.'/resources/views/components/layouts';
     $dynamicPage = file_get_contents($themeRoot.'/resources/views/pages/[container0]/[slug0]/index.blade.php');

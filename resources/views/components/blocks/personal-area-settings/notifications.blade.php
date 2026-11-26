@@ -14,7 +14,7 @@
     <div class="row justify-content-center">
         <div class="col-12 col-lg-10">
             <p class="text-paragraph mb-3">{{ __('fixcity::personal_area_settings.notifications.settings_hint') }}</p>
-            <p class="mb-4"><a class="btn btn-outline-primary" href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaImpostazioni() }}">{{ __('fixcity::personal_area_settings.notifications.settings_link') }}</a></p>
+            <p class="mb-4"><a class="btn btn-outline-primary" href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaImpostazioni() }}">{{ __('fixcity::personal_area_settings.notifications.settings_link') }}</a></p>
             @livewire(\Modules\Fixcity\Livewire\PersonalAreaNotificationsWidget::class)
         </div>
     </div>

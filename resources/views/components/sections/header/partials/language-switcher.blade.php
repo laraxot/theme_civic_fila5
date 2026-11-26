@@ -37,7 +37,7 @@
             {{ $currentShort }}
         </span>
         <svg class="icon">
-            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
+            <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
         </svg>
     </button>
     <div class="dropdown-menu" id="languages" role="menu">

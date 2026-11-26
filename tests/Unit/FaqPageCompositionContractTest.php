@@ -8,7 +8,7 @@ declare(strict_types=1);
  * Niente blocco monolitico, niente `parity_page` (aggancia CSS di pagina), niente CSS o JS che nomini la pagina:
  * il riuso sta nel componente `cmp-*`, mai in un selettore di pagina.
  *
- * @see laravel/Themes/Sixteen/docs/bmad/faq-route-ownership.md
+ * @see laravel/Themes/Civic/docs/bmad/faq-route-ownership.md
  */
 $faqJson = dirname(__DIR__, 4).'/config/local/fixcity/database/content/pages/domande-frequenti/index.json';
 

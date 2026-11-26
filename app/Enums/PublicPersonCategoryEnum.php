@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums;
+namespace Themes\Civic\Enums;
 
 use Filament\Support\Contracts\HasLabel;
-use Themes\Sixteen\Enums\Concerns\HasLangLabel;
+use Themes\Civic\Enums\Concerns\HasLangLabel;
 
 /**
  * Categorie di persona pubblica.
  *
  * Sostituisce la costante PublicPerson::CATEGORIES. Le label vivono in
- * lang/<locale>/public_person_category_enum.php (namespace `sixteen::`).
+ * lang/<locale>/public_person_category_enum.php (namespace `civic::`).
  */
 enum PublicPersonCategoryEnum: string implements HasLabel
 {

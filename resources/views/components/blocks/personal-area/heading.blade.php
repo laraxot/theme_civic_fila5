@@ -9,7 +9,7 @@
 @php
     $locale = app()->getLocale();
     $localize = static fn (string $path): string => (string) \Mcamara\LaravelLocalization\Facades\LaravelLocalization::getLocalizedURL($locale, $path);
-    $icon = static fn (string $name): string => \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base().'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
+    $icon = static fn (string $name): string => \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base().'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
 @endphp
 <div class="row justify-content-center">
     <div class="col-12 col-lg-10">

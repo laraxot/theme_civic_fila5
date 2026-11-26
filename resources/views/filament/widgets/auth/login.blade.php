@@ -1,4 +1,4 @@
-{{-- LoginWidget — vestito Sixteen; logica in Modules\User\Filament\Widgets\Auth\LoginWidget --}}
+{{-- LoginWidget — vestito Civic; logica in Modules\User\Filament\Widgets\Auth\LoginWidget --}}
 <div class="space-y-6">
     {{-- Esito neutro o positivo (es. "Password cambiata") e riepilogo degli errori: password errata (data.email), campi vuoti, ritorno
          da Google rifiutato (email). Una sola regione role="status" sempre presente, un solo avviso role="alert" (DCP-290).

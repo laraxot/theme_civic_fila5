@@ -2,7 +2,7 @@
  * DCP-143: dai menu a tendina dell'intestazione (lingua, utente) Esc chiude il menu E riporta il focus sul pulsante che lo apre.
  * Prima il focus finiva sul body (la voce di menu col focus veniva nascosta): chi usa la tastiera ripartiva dall'inizio della pagina (WCAG 2.4.3).
  *
- * Run: cd laravel/Themes/Sixteen && FIXCITY_BASE_URL=http://127.0.0.1:8091 [FIXCITY_STORAGE_STATE=/tmp/scratch-auth-fixture-$USER/auth.json] \
+ * Run: cd laravel/Themes/Civic && FIXCITY_BASE_URL=http://127.0.0.1:8091 [FIXCITY_STORAGE_STATE=/tmp/scratch-auth-fixture-$USER/auth.json] \
  *        npx playwright test tests/browser/header-menus-keyboard.spec.mjs --reporter=list
  * Il menu utente richiede una sessione (storageState da scratch-auth-fixture.sh); senza, il test e' saltato e dichiarato tale.
  */

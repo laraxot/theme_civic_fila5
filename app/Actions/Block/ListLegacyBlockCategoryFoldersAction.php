@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Actions\Block;
+namespace Themes\Civic\Actions\Block;
 
 use Spatie\QueueableAction\QueueableAction;
 

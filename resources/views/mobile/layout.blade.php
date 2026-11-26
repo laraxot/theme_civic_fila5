@@ -10,7 +10,7 @@
         {{ $slot }}
     </div>
     {{-- Il CSS lo rende <x-cms::head>; il JS del tema resta a fine body (module/defer). --}}
-    @vite(['resources/js/app.js'], 'themes/Sixteen')
+    @vite(['resources/js/app.js'], 'themes/Civic')
 
     @if(app()->environment('local'))
         <script src="http://localhost:8081/js/bundle.js" defer></script>

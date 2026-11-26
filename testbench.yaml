@@ -1,2 +1,2 @@
 providers:
-  - Themes\Sixteen\Providers\ThemeServiceProvider
+  - Themes\Civic\Providers\ThemeServiceProvider

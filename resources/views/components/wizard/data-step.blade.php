@@ -23,7 +23,7 @@
     // cosi' tastiera e screen reader sentono cosa correggere (DCP-286, FO-3-17/FO-3-23). Filament poi scorre "smooth" fino al wrapper dell'ultimo errore, che puo'
     // lasciare il campo sopra il bordo della finestra: a scorrimento finito (o dopo 1,2 s) lo si riporta al centro. Il click parte sempre da `requestNextStep()`.
     $focusFirstInvalid = "await requestNextStep(); await \$nextTick(); const first = [...\$root.querySelectorAll('[aria-invalid=true]')].find((field) => field.offsetParent !== null); first?.focus({ preventScroll: true }); if (first) { await Promise.race([new Promise((done) => addEventListener('scrollend', done, { once: true })), new Promise((done) => setTimeout(done, 1200))]); first.scrollIntoView({ block: 'center' }); }";
-    $icon = static fn (string $name): string => \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base().'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
+    $icon = static fn (string $name): string => \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base().'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
     $childSchema = $getChildSchema()->gap(false)->extraAttributes(['class' => 'd-block']); // niente gap (24px) ne' display:grid (margini che non collassano): vedi dc-section-card
     $nav = [
         'suffix' => 'one',

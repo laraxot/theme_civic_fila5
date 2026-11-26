@@ -1,7 +1,7 @@
 /**
  * DCP-146 - centro iniziale della mappa del passo 2 (tickets/create), con e senza posizione del browser.
  * Contratto: punto salvato > posizione del browser > centro approssimativo dal fuso orario > vista di default del territorio (mai il mondo). Mai un requisito HTTPS.
- * Run: cd laravel/Themes/Sixteen && FIXCITY_BASE_URL=http://127.0.0.1:8091 FIXCITY_TEST_EMAIL=... FIXCITY_TEST_PASSWORD=... \
+ * Run: cd laravel/Themes/Civic && FIXCITY_BASE_URL=http://127.0.0.1:8091 FIXCITY_TEST_EMAIL=... FIXCITY_TEST_PASSWORD=... \
  *      ./node_modules/.bin/playwright test tests/browser/wizard-step2-map-center.spec.mjs
  * Il caso "HTTP non sicuro" simula un'origine non locale (fixcity.test -> 127.0.0.1): su localhost il browser considera il contesto sicuro.
  */

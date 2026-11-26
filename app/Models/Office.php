@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Models;
+namespace Themes\Civic\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 /**
- * Ufficio comunale per prenotazioni (tema Sixteen).
+ * Ufficio comunale per prenotazioni (tema Civic).
  *
  * @property int $id
  * @property int $service_id

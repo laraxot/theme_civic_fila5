@@ -15,7 +15,7 @@ uses(TestCase::class);
  * (hero, mappa, come funziona, azioni rapide: story homepage-design-comuni-rebuild) e l'elenco vive su
  * `/it/tickets` (`pages/tickets/index.json`, blocco `ticket-list/design-comuni`, DCP-104). La pagina di
  * parita' `tests.ticket-list.json` e' stata rimossa (e040344c0b) e sostituita da `tests.segnalazioni-elenco.json`.
- * Story: Themes/Sixteen/docs/stories/sixteen-suite-stale-contracts.story.md
+ * Story: Themes/Civic/docs/stories/sixteen-suite-stale-contracts.story.md
  */
 const TICKET_LIST_URL = '/it/tickets';
 

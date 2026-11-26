@@ -10,7 +10,7 @@ use function Safe\file_get_contents;
  * I blocchi sotto `components/blocks/tests` sono adapter di compatibilità per
  * payload CMS legacy: il markup riusabile appartiene al blocco canonico.
  *
- * @see laravel/Themes/Sixteen/docs/design-comuni/TICKET-CREATION-WIZARD.md
+ * @see laravel/Themes/Civic/docs/design-comuni/TICKET-CREATION-WIZARD.md
  */
 test('issue 77: i blocchi tests delegano a viste canoniche senza logica di pagina', function (): void {
     $blocksRoot = dirname(__DIR__, 2).'/resources/views/components/blocks/tests';

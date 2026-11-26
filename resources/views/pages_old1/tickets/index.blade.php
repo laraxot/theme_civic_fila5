@@ -1,4 +1,4 @@
-@extends('sixteen::layouts.app')
+@extends('civic::layouts.app')
 
 @section('title', __('pub_theme::legacy_prototypes.listing.page_title.title'))
 

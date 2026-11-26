@@ -1,6 +1,6 @@
 {{--
   Verifica email — contenuto della pagina `auth/verify` (DCP-***).
-  Callers: Themes/Sixteen pages/auth/verify.blade.php e Modules/User pages/auth/verify.blade.php
+  Callers: Themes/Civic pages/auth/verify.blade.php e Modules/User pages/auth/verify.blade.php
   (dentro il frammento Volt `auth.verify`, nel frammento `data-dc`).
   Guscio: <x-auth.shell> come login/registrazione/password (DCP-290). Logica: `resend()` del componente Volt.
 --}}

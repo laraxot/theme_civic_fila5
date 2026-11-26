@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Actions\Url;
+namespace Themes\Civic\Actions\Url;
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Spatie\QueueableAction\QueueableAction;

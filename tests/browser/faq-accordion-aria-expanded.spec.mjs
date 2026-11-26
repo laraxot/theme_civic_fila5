@@ -3,7 +3,7 @@
  * chiuso (12 su 12 misurati): lo stato letto dal lettore di schermo era invertito fino al secondo clic (WCAG 4.1.2). Qui il comportamento reale col JS
  * del tema: chiuso = `false`, un clic apre (`true` e pannello `.show`), un secondo clic richiude (`false`).
  *
- * Run: cd laravel/Themes/Sixteen && FIXCITY_BASE_URL=http://127.0.0.1:8081 \
+ * Run: cd laravel/Themes/Civic && FIXCITY_BASE_URL=http://127.0.0.1:8081 \
  *        npx playwright test tests/browser/faq-accordion-aria-expanded.spec.mjs --reporter=list
  * Guardia statica corrispondente: tests/Unit/CollapsedButtonsStartCollapsedTest.php (nessun `collapsed` con `aria-expanded="true"` nelle viste).
  */

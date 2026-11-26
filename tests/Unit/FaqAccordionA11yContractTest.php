@@ -55,7 +55,7 @@ test('il pulsante dell\'accordion in focus mostra l\'anello nero del resto del s
     $css = file_get_contents(dirname(__DIR__, 2).'/resources/css/app/20-dc-components.css');
 
     // `.cmp-accordion.faq .accordion-button { box-shadow: none !important }` (0,5,0) batte `:focus:not(.focus--mouse)` di Bootstrap Italia (0,4,1).
-    $shadow = sixteenCssDeclaration($css, '.cmp-accordion.faq .accordion-button:focus', 'box-shadow');
+    $shadow = civicCssDeclaration($css, '.cmp-accordion.faq .accordion-button:focus', 'box-shadow');
 
     expect($shadow)->not->toBeNull();
     expect($shadow)->toContain('0 0 0 3px #000')->toContain('!important');

@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
+require_once dirname(__DIR__, 2).'/Support/civic-autoload.php';
+
 use Modules\Blog\Models\Article;
 use PHPUnit\Framework\Assert;
 use Tests\TestCase;
-use Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes;
+use Themes\Civic\Infrastructure\Url\FrontofficeRoutes;
 
 use function Safe\file_get_contents;
 

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums;
+namespace Themes\Civic\Enums;
 
 use Filament\Support\Contracts\HasLabel;
-use Themes\Sixteen\Enums\Concerns\HasLangLabel;
+use Themes\Civic\Enums\Concerns\HasLangLabel;
 
 /**
  * Tipi di servizio comunale prenotabile.
  *
  * Sostituisce le costanti Appointment::SERVICE_*. Le label vivono in
- * lang/<locale>/appointment_service_type_enum.php (namespace `sixteen::`).
+ * lang/<locale>/appointment_service_type_enum.php (namespace `civic::`).
  */
 enum AppointmentServiceTypeEnum: string implements HasLabel
 {

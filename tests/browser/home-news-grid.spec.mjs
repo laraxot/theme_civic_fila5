@@ -5,7 +5,7 @@
  * quelle del blocco. Un `gap` messo sopra il gutter di Bootstrap (`g-4`) fa sommare due distanze fra le colonne: 3 x 440 + 2 x 24 = 1368 px
  * in una riga larga 1320, e la terza card va a capo da sola (misurato il 2026-11-11 con 3 notizie a 1440 px).
  *
- * Run: cd laravel/Themes/Sixteen && FIXCITY_BASE_URL=http://127.0.0.1:8081 npx playwright test tests/browser/home-news-grid.spec.mjs --reporter=list
+ * Run: cd laravel/Themes/Civic && FIXCITY_BASE_URL=http://127.0.0.1:8081 npx playwright test tests/browser/home-news-grid.spec.mjs --reporter=list
  * Legge soltanto la home pubblica: nessuna scrittura, nessuna credenziale.
  */
 import { existsSync } from 'node:fs';

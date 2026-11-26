@@ -14,7 +14,7 @@
     use Modules\Fixcity\Enums\TicketStatusEnum;
     use Modules\Fixcity\Models\Ticket;
     use Modules\Xot\Contracts\UserContract;
-    use Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes;
+    use Themes\Civic\Infrastructure\Url\FrontofficeRoutes;
 
     $code = request()->query('code');
     $codeString = is_string($code) ? trim($code) : '';

@@ -46,7 +46,7 @@
         return trim((string) $value) !== '' ? (string) $value : $fallback;
     };
     // path JSON senza lingua -> URL FO localizzato; esterni, tel: e mailto: passano invariati
-    $localize = static fn (mixed $url): string => \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl(trim((string) $url));
+    $localize = static fn (mixed $url): string => \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl(trim((string) $url));
     $hasUrl = static function (mixed $item): bool {
         if (! is_array($item)) {
             return false;
@@ -57,7 +57,7 @@
     };
     $activeLinks = static fn (mixed $links): array => array_values(array_filter(is_array($links) ? $links : [], $hasUrl));
     $isExternal = static fn (string $url): bool => str_starts_with($url, 'http://') || str_starts_with($url, 'https://');
-    $assets = \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base();
+    $assets = \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base();
     $icon = static fn (string $name): string => $assets.'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
     $lines = static fn (string $text): string => implode('<br>', array_map('e', preg_split('/\R/', $text) ?: []));
 
@@ -116,7 +116,7 @@
             <div class="row">
                 <div class="col-12 footer-items-wrapper logo-wrapper">
                     @if ($euSrc !== '')
-                        <img class="ue-logo" src="{{ \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::url($euSrc) }}" alt="{{ $value($eu_logo['alt'] ?? null) }}">
+                        <img class="ue-logo" src="{{ \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::url($euSrc) }}" alt="{{ $value($eu_logo['alt'] ?? null) }}">
                     @endif
                     <div class="it-brand-wrapper">
                         {{-- The visible brand heading already provides the accessible name. --}}

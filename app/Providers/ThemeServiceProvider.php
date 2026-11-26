@@ -2,43 +2,46 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Providers;
+namespace Themes\Civic\Providers;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Blade;
 use Modules\Xot\Actions\Blade\RegisterBladeComponentsAction;
 use Modules\Xot\Providers\XotBaseThemeServiceProvider;
 use Safe\Exceptions\FilesystemException;
-use Themes\Sixteen\Actions\CieAuthAction;
-use Themes\Sixteen\Actions\MenuBuilderAction;
-use Themes\Sixteen\Actions\SpidAuthAction;
-use Themes\Sixteen\Adapters\ThemeAdapter;
-use Themes\Sixteen\Console\Commands\SixteenInstallCommand;
-use Themes\Sixteen\Console\Commands\SixteenPublishCommand;
-use Themes\Sixteen\Contracts\MenuFilterInterface;
-use Themes\Sixteen\Filters\ActiveMenuFilter;
-use Themes\Sixteen\Filters\GateMenuFilter;
-use Themes\Sixteen\Filters\HrefMenuFilter;
-use Themes\Sixteen\View\Composers\SixteenComposer;
+use Themes\Civic\Actions\CieAuthAction;
+use Themes\Civic\Actions\MenuBuilderAction;
+use Themes\Civic\Actions\SpidAuthAction;
+use Themes\Civic\Adapters\ThemeAdapter;
+use Themes\Civic\Console\Commands\CivicInstallCommand;
+use Themes\Civic\Console\Commands\CivicPublishCommand;
+use Themes\Civic\Contracts\MenuFilterInterface;
+use Themes\Civic\Filters\ActiveMenuFilter;
+use Themes\Civic\Filters\GateMenuFilter;
+use Themes\Civic\Filters\HrefMenuFilter;
+use Themes\Civic\View\Composers\CivicComposer;
 
 use function Safe\glob;
 use function Safe\realpath;
 
 /**
- * Enhanced Service Provider per il tema Sixteen.
+ * Enhanced Service Provider per il tema Civic.
  *
  * Questo provider gestisce la registrazione e configurazione
- * del tema Sixteen nell'applicazione Laravel, integrando il
+ * del tema Civic nell'applicazione Laravel, integrando il
  * nuovo Menu Builder System e le funzionalità avanzate.
  *
- * IMPORTANTE: Il tema Sixteen usa il namespace 'pub_theme' per le viste,
- * non 'sixteen', per essere compatibile con il sistema di temi.
+ * IMPORTANTE: Il tema Civic usa il namespace 'pub_theme' per le viste,
+ * non 'civic', per essere compatibile con il sistema di temi.
+ *
+ * @see docs/adr/0005-attivazione-civic-e-convivenza-con-sixteen.md
+ * @see docs/contracts/theme-identity.md
  */
 class ThemeServiceProvider extends XotBaseThemeServiceProvider
 {
-    public string $name = 'Sixteen';
+    public string $name = 'Civic';
 
-    public string $nameLower = 'sixteen';
+    public string $nameLower = 'civic';
 
     protected string $module_dir = __DIR__.'/../../';
 
@@ -75,11 +78,16 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
 
     /**
      * Register any application services.
+     *
+     * Non chiama `parent::register()`: la base registra `{module_ns}\Providers\RouteServiceProvider` ed
+     * `EventServiceProvider`, che nel tema non esistono (con `module_ns` = questo namespace il nome diventava
+     * `Themes\Civic\Providers\Providers\RouteServiceProvider`) e fanno morire la registrazione con «Class not found».
+     * Le rotte del tema si caricano in `registerAuthRoutes()`.
+     *
+     * @see docs/adr/0005-attivazione-civic-e-convivenza-con-sixteen.md
      */
     public function register(): void
     {
-        parent::register();
-
         // Register core services
         $this->registerCoreServices();
 
@@ -99,15 +107,15 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'pub_theme');
         $this->loadTranslationsFrom(__DIR__.'/../../lang', 'pub_theme');
 
-        // Register 'sixteen' namespace for backward compatibility
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'sixteen');
-        $this->loadTranslationsFrom(__DIR__.'/../../lang', 'sixteen');
+        // Register 'civic' namespace for backward compatibility
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'civic');
+        $this->loadTranslationsFrom(__DIR__.'/../../lang', 'civic');
 
         // Caricamento delle configurazioni del tema
-        // Keep the main theme contract at config('sixteen.*'); the per-file
+        // Keep the main theme contract at config('civic.*'); the per-file
         // namespace loader below remains available for legacy config groups.
-        $this->mergeConfigFrom(__DIR__.'/../../config/sixteen.php', 'sixteen');
-        $this->loadConfigFrom(__DIR__.'/../../config', 'sixteen');
+        $this->mergeConfigFrom(__DIR__.'/../../config/civic.php', 'civic');
+        $this->loadConfigFrom(__DIR__.'/../../config', 'civic');
     }
 
     /**
@@ -119,7 +127,7 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
         $this->app->singleton(MenuBuilderAction::class, static fn (): MenuBuilderAction => new MenuBuilderAction);
 
         // Alias per backward compatibility
-        $this->app->alias(MenuBuilderAction::class, 'sixteen.menu');
+        $this->app->alias(MenuBuilderAction::class, 'civic.menu');
     }
 
     /**
@@ -128,12 +136,12 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
     protected function registerCoreServices(): void
     {
         // Theme Service con dependency injection del MenuBuilder
-        $this->app->singleton('sixteen.theme', function ($app) {
+        $this->app->singleton('civic.theme', function ($app) {
             return new ThemeAdapter;
         });
 
         // Alias per il ThemeService
-        $this->app->alias('sixteen.theme', ThemeAdapter::class);
+        $this->app->alias('civic.theme', ThemeAdapter::class);
     }
 
     /**
@@ -151,7 +159,7 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
             HrefMenuFilter::class,
             ActiveMenuFilter::class,
             GateMenuFilter::class,
-        ], 'sixteen.menu.filters');
+        ], 'civic.menu.filters');
 
         // Register the interface binding for extension
         $this->app->bind(MenuFilterInterface::class, HrefMenuFilter::class);
@@ -173,8 +181,8 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
         });
 
         // Aliases for easier access
-        $this->app->alias(SpidAuthAction::class, 'sixteen.spid');
-        $this->app->alias(CieAuthAction::class, 'sixteen.cie');
+        $this->app->alias(SpidAuthAction::class, 'civic.spid');
+        $this->app->alias(CieAuthAction::class, 'civic.cie');
     }
 
     /**
@@ -189,7 +197,7 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
             'pub_theme::layouts.guest-agid',
             'pub_theme::components.layout.header',
             'pub_theme::components.layout.footer',
-        ], SixteenComposer::class);
+        ], CivicComposer::class);
     }
 
     /**
@@ -199,8 +207,8 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                SixteenInstallCommand::class,
-                SixteenPublishCommand::class,
+                CivicInstallCommand::class,
+                CivicPublishCommand::class,
             ]);
         }
     }
@@ -212,33 +220,36 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
     {
         // Pubblicazione degli assets del tema
         $this->publishes([
-            __DIR__.'/../../resources/assets' => public_path('themes/sixteen/assets'),
-            __DIR__.'/../../public' => public_path('themes/sixteen'),
-        ], 'sixteen-assets');
+            __DIR__.'/../../resources/assets' => public_path('themes/civic/assets'),
+            __DIR__.'/../../public' => public_path('themes/civic'),
+        ], 'civic-assets');
 
         // Pubblicazione delle configurazioni del tema
         $this->publishes([
-            __DIR__.'/../../config' => config_path('themes/sixteen'),
-        ], 'sixteen-config');
+            __DIR__.'/../../config' => config_path('themes/civic'),
+        ], 'civic-config');
 
         // Pubblicazione delle viste (opzionale per personalizzazioni)
         $this->publishes([
-            __DIR__.'/../../resources/views' => resource_path('views/themes/sixteen'),
-        ], 'sixteen-views');
+            __DIR__.'/../../resources/views' => resource_path('views/themes/civic'),
+        ], 'civic-views');
     }
 
     /**
      * Register anonymous components for pub_theme namespace.
      */
     /**
-     * Register Blade components for both sixteen and pub_theme namespaces.
+     * Register Blade components for both civic and pub_theme namespaces.
      */
     protected function registerBladeComponents(): void
     {
-        $componentNamespace = $this->module_ns.'\View\Components';
+        // `module_ns` e' il namespace di questo provider (`Themes\Civic\Providers`), non quello del tema: con quello i
+        // componenti di classe cadevano in `Themes\Civic\Providers\View\Components` e in una cartella fuori dal tema.
+        $themeNamespace = 'Themes\\Civic';
+        $componentNamespace = $themeNamespace.'\View\Components';
 
-        // Register with sixteen namespace (parent)
-        Blade::componentNamespace($componentNamespace, 'sixteen');
+        // Register with civic namespace (parent)
+        Blade::componentNamespace($componentNamespace, 'civic');
 
         // Register with pub_theme namespace (for theme compatibility)
         Blade::componentNamespace($componentNamespace, 'pub_theme');
@@ -254,7 +265,7 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
 
         // Register class-based components
         app(RegisterBladeComponentsAction::class)
-            ->execute($this->module_dir.'/../View/Components', $this->module_ns);
+            ->execute(__DIR__.'/../View/Components', $themeNamespace);
     }
 
     /**
@@ -284,7 +295,7 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
             $themeService = app(ThemeAdapter::class);
 
             $view->with([
-                'theme_name' => 'Sixteen',
+                'theme_name' => 'Civic',
                 'theme_info' => $themeService->getInfo(),
                 'agid_compliant' => true,
                 'accessibility_level' => 'WCAG 2.1 AA',
@@ -323,6 +334,6 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
      */
     public static function digitalIdentityRoutesEnabled(): bool
     {
-        return config('sixteen.auth.spid.enabled') === true;
+        return config('civic.auth.spid.enabled') === true;
     }
 }

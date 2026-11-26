@@ -1,6 +1,6 @@
 @props(['title' => '', 'metaDescription' => '', 'bodyPage' => '', 'searchLinks' => [], 'headerActive' => ''])
 {{--
-    Shell canonica del front office Sixteen (il tema è già Design Comuni):
+    Shell canonica del front office Civic (il tema è già Design Comuni):
     header, footer e modale di ricerca sono sezioni CMS data-driven
     (dati da sections/*.json). `<body>` resta plain e non si inventano classi o wrapper (policy:
     docs/html-parity-body-policy.md): lo stile generato (resources/css/design-comuni/components.css) vale sotto

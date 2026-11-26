@@ -3,15 +3,15 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Configurazione Tema Sixteen
+    | Configurazione Tema Civic
     |--------------------------------------------------------------------------
     |
-    | Configurazione per il tema Sixteen che implementa il design system
+    | Configurazione per il tema Civic che implementa il design system
     | per i comuni italiani
     |
     */
 
-    'name' => 'Sixteen',
+    'name' => 'Civic',
     'version' => '1.0.0',
     'description' => 'Tema comunale con design system AGID',
     'author' => 'Fixcity Team',
@@ -19,14 +19,14 @@ return [
 
     'assets' => [
         'css' => [
-            // NOTE: Sixteen theme uses Vite + Tailwind, NOT Bootstrap Italia CDN
+            // NOTE: Civic theme uses Vite + Tailwind, NOT Bootstrap Italia CDN
             // All styles are compiled locally via resources/css/app.css
             // These entries are kept for reference only - DO NOT use CDN
             'civic-design' => 'css/civic-design-theme.css',
             'comune-custom' => 'css/comune-custom.css',
         ],
         'js' => [
-            // NOTE: Sixteen theme uses Vite + Alpine.js + Lit, NOT Bootstrap Italia CDN
+            // NOTE: Civic theme uses Vite + Alpine.js + Lit, NOT Bootstrap Italia CDN
             // All scripts are compiled locally via resources/js/app.js
             'design-comuni' => 'js/design-comuni.js',
             'comune-functions' => 'js/comune-functions.js',
@@ -34,28 +34,28 @@ return [
     ],
 
     'layouts' => [
-        'app' => 'sixteen::layouts.app',
-        'comune' => 'sixteen::layouts.app',
+        'app' => 'civic::layouts.app',
+        'comune' => 'civic::layouts.app',
     ],
 
     'components' => [
-        'header' => 'sixteen::components.header-comune',
-        'footer' => 'sixteen::components.footer-comune',
-        'navigation' => 'sixteen::components.navigation',
-        'service-card' => 'sixteen::components.service-card',
+        'header' => 'civic::components.header-comune',
+        'footer' => 'civic::components.footer-comune',
+        'navigation' => 'civic::components.navigation',
+        'service-card' => 'civic::components.service-card',
     ],
 
     'pages' => [
-        'homepage' => 'sixteen::pages.comune.homepage',
-        'servizi' => 'sixteen::pages.comune.servizi',
-        'novita' => 'sixteen::pages.comune.novita',
-        'contatti' => 'sixteen::pages.comune.contatti',
-        'documenti' => 'sixteen::pages.comune.documenti',
-        'eventi' => 'sixteen::pages.comune.eventi',
-        'anagrafe' => 'sixteen::pages.comune.anagrafe',
-        'tributi' => 'sixteen::pages.comune.tributi',
-        'urbanistica' => 'sixteen::pages.comune.urbanistica',
-        'prenotazioni' => 'sixteen::pages.comune.prenotazioni',
+        'homepage' => 'civic::pages.comune.homepage',
+        'servizi' => 'civic::pages.comune.servizi',
+        'novita' => 'civic::pages.comune.novita',
+        'contatti' => 'civic::pages.comune.contatti',
+        'documenti' => 'civic::pages.comune.documenti',
+        'eventi' => 'civic::pages.comune.eventi',
+        'anagrafe' => 'civic::pages.comune.anagrafe',
+        'tributi' => 'civic::pages.comune.tributi',
+        'urbanistica' => 'civic::pages.comune.urbanistica',
+        'prenotazioni' => 'civic::pages.comune.prenotazioni',
     ],
 
     'routes' => [

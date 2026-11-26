@@ -66,10 +66,10 @@ test('il messaggio di ringraziamento e\' annunciato da una regione di stato che 
 test('le stelle si dispongono da sinistra a destra e si riempiono fino a quella scelta senza ricorrere all\'ordine inverso del DOM', function (): void {
     $css = file_get_contents(dirname(__DIR__, 2).'/resources/css/app/20-dc-components.css');
 
-    expect(sixteenCssDeclaration($css, 'fieldset.rating.dc-rating-stars', 'flex-direction'))->toBe('row');
+    expect(civicCssDeclaration($css, 'fieldset.rating.dc-rating-stars', 'flex-direction'))->toBe('row');
     // Con il DOM 1..5 il riempimento "fino a" e' a ritroso: `:has()` sulle stelle successive, non il combinatore `~` delle stelle successive.
     $fills = array_filter(
-        sixteenCssRules($css),
+        civicCssRules($css),
         static fn (array $rule): bool => str_contains($rule['selector'], 'dc-rating-stars__item') && isset($rule['declarations']['fill']) && str_contains($rule['selector'], ':has(')
     );
     expect(count($fills))->toBeGreaterThan(0);
@@ -80,10 +80,10 @@ test('le stelle si dispongono da sinistra a destra e si riempiono fino a quella 
 test('la stella non scelta si distingue dallo sfondo bianco della scheda (1.4.11)', function (): void {
     $css = file_get_contents(dirname(__DIR__, 2).'/resources/css/app/20-dc-components.css');
 
-    $idle = sixteenCssDeclaration($css, 'dc-rating-stars__item svg', 'fill');
+    $idle = civicCssDeclaration($css, 'dc-rating-stars__item svg', 'fill');
 
     expect($idle)->toMatch('/^#[0-9a-f]{6}$/i');
-    expect(sixteenContrastRatio((string) $idle, '#ffffff'))->toBeGreaterThanOrEqual(3.0);
+    expect(civicContrastRatio((string) $idle, '#ffffff'))->toBeGreaterThanOrEqual(3.0);
 });
 
 test('la scheda di ringraziamento visibile resta quella del riferimento', function (): void {

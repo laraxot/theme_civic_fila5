@@ -11,7 +11,7 @@ $uploadId = $id ?? 'upload-' . uniqid();
     <div class="upload-drag-area" data-upload-drag>
         <div class="upload-drag-content">
             <svg class="icon upload-icon" aria-hidden="true">
-                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-upload"></use>
+                <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-upload"></use>
             </svg>
             <p class="upload-drag-text">
                 {{ __('pub_theme::bootstrap_italia.upload.drag_the_file_here_or.label') }}

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums;
+namespace Themes\Civic\Enums;
 
 use Filament\Support\Contracts\HasLabel;
-use Themes\Sixteen\Enums\Concerns\HasLangLabel;
+use Themes\Civic\Enums\Concerns\HasLangLabel;
 
 /**
  * Sezioni di Amministrazione Trasparente.
  *
  * Sostituisce la costante PublicDocument::TRANSPARENCY_SECTIONS. Le label vivono in
- * lang/<locale>/transparency_section_enum.php (namespace `sixteen::`).
+ * lang/<locale>/transparency_section_enum.php (namespace `civic::`).
  */
 enum TransparencySectionEnum: string implements HasLabel
 {

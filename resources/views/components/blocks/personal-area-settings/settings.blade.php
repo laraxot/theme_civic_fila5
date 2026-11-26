@@ -12,7 +12,7 @@
     $settings = $citizen instanceof \Modules\Xot\Contracts\UserContract
         ? app(\Modules\Fixcity\Actions\BuildPersonalAreaSettingsDataAction::class)->execute($citizen)
         : ['account_rows' => [], 'email_verified' => false];
-    $icon = static fn (string $name): string => \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base().'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
+    $icon = static fn (string $name): string => \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base().'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
     $nav = [
         'suffix' => 'settings',
         'title' => $t('nav_title'),
@@ -39,7 +39,7 @@
                 <section class="it-page-section mb-5" id="notification-preferences" aria-labelledby="ticket-notification-preferences-title">
                     @livewire(\Modules\Fixcity\Livewire\TicketNotificationPreferencesWidget::class)
                     <p class="text-paragraph-small mt-3 mb-2">{{ $settings['email_verified'] ? $t('email_verified') : $t('email_unverified') }}</p>
-                    <a class="btn btn-outline-primary" href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaNotifiche() }}">{{ $t('notifications_link') }}</a>
+                    <a class="btn btn-outline-primary" href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaNotifiche() }}">{{ $t('notifications_link') }}</a>
                 </section>
 
                 <section class="it-page-section mb-5" id="account-data" aria-labelledby="account-data-title">

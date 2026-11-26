@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Http\Controllers;
+namespace Themes\Civic\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -11,10 +11,10 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
-use Themes\Sixteen\Events\SpidAuthenticated;
-use Themes\Sixteen\Events\SpidLoggedOut;
-use Themes\Sixteen\Models\User;
-use Themes\Sixteen\Actions\SpidAuthAction;
+use Themes\Civic\Events\SpidAuthenticated;
+use Themes\Civic\Events\SpidLoggedOut;
+use Themes\Civic\Models\User;
+use Themes\Civic\Actions\SpidAuthAction;
 
 /**
  * Controller per l'autenticazione SPID.

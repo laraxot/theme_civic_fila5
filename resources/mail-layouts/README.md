@@ -9,11 +9,11 @@ issues: []
 discussions: []
 ---
 
-# Mail Layouts - Sixteen Theme
+# Mail Layouts - Civic Theme
 
 **Status**: ✅ Attivo  
 **Data**: 2025-12-19  
-**Theme**: Sixteen
+**Theme**: Civic
 
 ## 📋 Overview
 
@@ -401,7 +401,7 @@ Mail::to($user->email)->send($email);
 
 - [Documentazione Completa Template Stagionali](../../../Modules/Notify/docs/seasonal-email-templates.md)
 - [Mustache Variables Guide](../../../Modules/Notify/docs/mustache-variables.md)
-- [Tema Sixteen - Index](../../docs/00-index.md)
+- [Tema Civic - Index](../../docs/00-index.md)
 
 ---
 

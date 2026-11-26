@@ -8,7 +8,7 @@
 
 @php
     $composer = app(\Modules\Blog\View\Composers\ThemeComposer::class);
-    $cmsUrl = static fn (string $path): string => \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl($path);
+    $cmsUrl = static fn (string $path): string => \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl($path);
     $search = trim((string) request()->query('q', ''));
     $categorySlug = trim((string) request()->query('categoria', ''));
     $featured = $composer->featuredBlogPosts(3);
@@ -56,8 +56,8 @@
         : __('pub_theme::news.index.result_many', ['count' => $resultCount]);
 
     // CMS JSON (feedback/contacts) > parity nest > config tema (se caricata).
-    $parityFromConfig = config('sixteen.sixteen.blog.parity')
-        ?? config('sixteen.blog.parity')
+    $parityFromConfig = config('civic.blog.parity')
+        ?? config('civic.blog.parity')
         ?? [];
     $parityData = array_replace_recursive(
         is_array($parityFromConfig) ? $parityFromConfig : [],
@@ -81,30 +81,30 @@
 @endphp
 
 <style>
-    .sixteen-blog-index .row.g-4 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
-    .sixteen-blog-index .row.g-4 > [class*="col-"] { width: auto; max-width: none; padding: 0; }
+    .civic-blog-index .row.g-4 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+    .civic-blog-index .row.g-4 > [class*="col-"] { width: auto; max-width: none; padding: 0; }
     /* Griglia senza i margini negativi di .g-4 (il testo "nessuna novità" usciva di 0.75rem dal container); messaggio vuoto su tutta la riga. */
-    .sixteen-blog-index .img-responsive-panoramic img { width: 100% !important; height: 12rem !important; object-fit: cover !important; display: block !important; }
-    .sixteen-blog-index .cmp-input-search .input-group { position: relative; display: flex; align-items: stretch; }
-    .sixteen-blog-index .cmp-input-search .form-control { padding-left: 2.5rem !important; }
-    .sixteen-blog-index .cmp-input-search .autocomplete-icon { position: absolute; left: 0.65rem; top: 50%; width: 1.25rem; height: 1.25rem; transform: translateY(-50%); pointer-events: none; z-index: 1; overflow: hidden; }
-    .sixteen-blog-index .cmp-input-search .autocomplete-icon svg { width: 1.25rem; height: 1.25rem; display: block; }
-    .sixteen-blog-index .card-wrapper { background: #fff; height: 100%; }
-    .sixteen-blog-index .card-title,
-    .sixteen-blog-index .card-title a,
-    .sixteen-blog-index .category { color: #007a52; text-decoration: none; }
-    .sixteen-blog-index .card-title { font-size: 1.25rem; line-height: 1.3; margin: 0 0 0.5rem; }
-    .sixteen-blog-index .card-text { color: #5c6f82; }
-    .sixteen-blog-index .bg-grey-card { background: #eceff1; }
-    .sixteen-blog-index .pagination { display: flex; gap: 0.5rem; list-style: none; padding: 0; justify-content: center; }
-    .sixteen-blog-index .page-link { color: #007a52; }
+    .civic-blog-index .img-responsive-panoramic img { width: 100% !important; height: 12rem !important; object-fit: cover !important; display: block !important; }
+    .civic-blog-index .cmp-input-search .input-group { position: relative; display: flex; align-items: stretch; }
+    .civic-blog-index .cmp-input-search .form-control { padding-left: 2.5rem !important; }
+    .civic-blog-index .cmp-input-search .autocomplete-icon { position: absolute; left: 0.65rem; top: 50%; width: 1.25rem; height: 1.25rem; transform: translateY(-50%); pointer-events: none; z-index: 1; overflow: hidden; }
+    .civic-blog-index .cmp-input-search .autocomplete-icon svg { width: 1.25rem; height: 1.25rem; display: block; }
+    .civic-blog-index .card-wrapper { background: #fff; height: 100%; }
+    .civic-blog-index .card-title,
+    .civic-blog-index .card-title a,
+    .civic-blog-index .category { color: #007a52; text-decoration: none; }
+    .civic-blog-index .card-title { font-size: 1.25rem; line-height: 1.3; margin: 0 0 0.5rem; }
+    .civic-blog-index .card-text { color: #5c6f82; }
+    .civic-blog-index .bg-grey-card { background: #eceff1; }
+    .civic-blog-index .pagination { display: flex; gap: 0.5rem; list-style: none; padding: 0; justify-content: center; }
+    .civic-blog-index .page-link { color: #007a52; }
     @media (max-width: 768px) {
-        .sixteen-blog-index .row.g-4 { grid-template-columns: 1fr; }
+        .civic-blog-index .row.g-4 { grid-template-columns: 1fr; }
     }
 </style>
 
 {{-- Breadcrumb: id main-container resta su <main> (skiplink); niente id duplicato. --}}
-<div class="container sixteen-blog-index">
+<div class="container civic-blog-index">
     <div class="row justify-content-center">
         <div class="col-12 col-lg-10">
             <div class="cmp-breadcrumbs" role="navigation">

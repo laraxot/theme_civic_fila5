@@ -10,7 +10,7 @@
 @php
     $composer = app(\Modules\Blog\View\Composers\ThemeComposer::class);
     $limit = max(1, (int) ($data['limit'] ?? 6));
-    $eventsIndexUrl = \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::eventsIndex();
+    $eventsIndexUrl = \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::eventsIndex();
 
     /** @var array<string, array{label: string, days: array<string, array{day: string, weekday: string, full: string, events: list<array{title: string, url: string, image: string}>}>}> $months */
     $months = [];
@@ -27,7 +27,7 @@
         $months[$monthKey]['days'][$dayKey]['full'] ??= $start->translatedFormat('l j F Y');
         $months[$monthKey]['days'][$dayKey]['events'][] = [
             'title' => $event->getTitle(),
-            'url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::view('events', (string) $event->getAttribute('slug')),
+            'url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::view('events', (string) $event->getAttribute('slug')),
             'image' => (string) $event->getAttribute('main_image_url'),
         ];
     }

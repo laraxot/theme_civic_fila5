@@ -12,6 +12,6 @@
     </div>
 
     <p class="auth-login-links">
-        <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/auth/login') }}">{{ __('user::password_recovery.back_to_login') }}</a>
+        <a href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/auth/login') }}">{{ __('user::password_recovery.back_to_login') }}</a>
     </p>
 </x-auth.shell>

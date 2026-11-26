@@ -12,7 +12,7 @@ uses(TestCase::class);
 /*
  * Soft 404 on detail pages (front-office completeness audit, item 2).
  * `/{lang}/{container}/{slug}` without a record must answer 404, not 200 with the empty `{container}.view` template.
- * Story: Themes/Sixteen/docs/stories/front-office-detail-not-found-and-sitemap-page.story.md.
+ * Story: Themes/Civic/docs/stories/front-office-detail-not-found-and-sitemap-page.story.md.
  */
 it('answers 404 for a detail slug that has no record', function (string $path): void {
     /** @var TestCase $this */

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Models;
+namespace Themes\Civic\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Servizio comunale prenotabile (tema Sixteen).
+ * Servizio comunale prenotabile (tema Civic).
  *
  * @property int $id
  * @property string $name

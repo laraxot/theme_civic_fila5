@@ -20,7 +20,7 @@ use function Safe\preg_match_all;
  * Non copre gli include col nome composto a runtime (`...layout-'.$d('layout')`): quelli si provano con la scansione
  * HTTP, vedi la story.
  *
- * @see laravel/Themes/Sixteen/docs/stories/auth-components-regression-restore.story.md
+ * @see laravel/Themes/Civic/docs/stories/auth-components-regression-restore.story.md
  */
 test('ogni partial incluso con una variabile pub_theme esiste su disco', function (): void {
     $viewsRoot = dirname(__DIR__, 2).'/resources/views';

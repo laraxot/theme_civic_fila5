@@ -1,7 +1,7 @@
 {{--
   @see docs/wiki/concepts/fo-folio-named-routes-header.md
   Conferma password — contenuto della pagina `auth/password/confirm` (DCP-***).
-  Callers: Themes/Sixteen pages/auth/password/confirm.blade.php e Modules/User
+  Callers: Themes/Civic pages/auth/password/confirm.blade.php e Modules/User
   pages/auth/password/confirm.blade.php (dentro il frammento Volt `auth.password.confirm`,
   nel frammento `data-dc`).
   Guscio: <x-auth.shell> come login/registrazione/password (DCP-290). Campo: x-auth.field
@@ -24,6 +24,6 @@
     </form>
 
     <p class="auth-login-links">
-        <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/auth/password/reset') }}">{{ __('user::auth.login.forgot_password.text') }}</a>
+        <a href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/auth/password/reset') }}">{{ __('user::auth.login.forgot_password.text') }}</a>
     </p>
 </x-auth.shell>

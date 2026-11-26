@@ -16,7 +16,7 @@
 
     $googleUrl = Route::has('oauth.redirect')
         ? route('oauth.redirect', ['provider' => 'google', 'lang' => $locale])
-        : \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/auth/login/google');
+        : \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/auth/login/google');
 @endphp
 
 @if ($isGoogleConfigured && filled($googleUrl))

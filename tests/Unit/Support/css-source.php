@@ -11,11 +11,11 @@ use function Safe\preg_replace;
  *
  * Legge regole piatte e dentro un solo livello di @media/@supports; ignora commenti. Niente specificita' calcolata.
  */
-if (! function_exists('sixteenCssRules')) {
+if (! function_exists('civicCssRules')) {
     /**
      * @return list<array{media: string, selector: string, declarations: array<string, string>}>
      */
-    function sixteenCssRules(string $css, string $media = ''): array
+    function civicCssRules(string $css, string $media = ''): array
     {
         $css = preg_replace('#/\*.*?\*/#s', '', $css);
         $rules = [];
@@ -41,7 +41,7 @@ if (! function_exists('sixteenCssRules')) {
             $body = substr($css, $open + 1, $cursor - $open - 2);
 
             if (str_starts_with($prelude, '@media') || str_starts_with($prelude, '@supports')) {
-                array_push($rules, ...sixteenCssRules($body, trim($media.' '.$prelude)));
+                array_push($rules, ...civicCssRules($body, trim($media.' '.$prelude)));
             } elseif ($prelude !== '' && ! str_starts_with($prelude, '@')) {
                 $declarations = [];
                 foreach (explode(';', $body) as $declaration) {
@@ -59,14 +59,14 @@ if (! function_exists('sixteenCssRules')) {
     }
 }
 
-if (! function_exists('sixteenCssDeclaration')) {
+if (! function_exists('civicCssDeclaration')) {
     /**
      * Valore dichiarato dall'ULTIMA regola il cui selettore contiene $selector (testo letterale) e il cui @media contiene $media.
      */
-    function sixteenCssDeclaration(string $css, string $selector, string $property, string $media = ''): ?string
+    function civicCssDeclaration(string $css, string $selector, string $property, string $media = ''): ?string
     {
         $found = null;
-        foreach (sixteenCssRules($css) as $rule) {
+        foreach (civicCssRules($css) as $rule) {
             if (str_contains($rule['selector'], $selector) && str_contains($rule['media'], $media) && isset($rule['declarations'][$property])) {
                 $found = $rule['declarations'][$property];
             }
@@ -76,9 +76,9 @@ if (! function_exists('sixteenCssDeclaration')) {
     }
 }
 
-if (! function_exists('sixteenContrastRatio')) {
+if (! function_exists('civicContrastRatio')) {
     /** Rapporto di contrasto WCAG 2.x tra due colori #rrggbb. */
-    function sixteenContrastRatio(string $foreground, string $background): float
+    function civicContrastRatio(string $foreground, string $background): float
     {
         $luminance = static function (string $hex): float {
             $hex = ltrim($hex, '#');

@@ -1,4 +1,4 @@
-@extends('sixteen::layouts.app')
+@extends('civic::layouts.app')
 
 @section('title', __('pub_theme::comune_pages.homepage.page_title.title', ['name' => config('comune.nome', 'Nome Comune')]))
 

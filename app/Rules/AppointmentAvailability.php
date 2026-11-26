@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Rules;
+namespace Themes\Civic\Rules;
 
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
-use Themes\Sixteen\Models\Office;
+use Themes\Civic\Models\Office;
 
 class AppointmentAvailability implements ValidationRule
 {

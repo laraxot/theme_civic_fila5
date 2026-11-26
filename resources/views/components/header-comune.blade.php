@@ -72,7 +72,7 @@
                                 <a class="btn btn-primary btn-icon btn-full" href="{{ route('login') }}" data-element="personal-area-login">
                                     <span class="rounded-icon" aria-hidden="true">
                                         <svg class="icon icon-primary">
-                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-user"></use>
+                                            <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-user"></use>
                                         </svg>
                                     </span>
                                     <span class="d-none d-lg-block">{{ __('pub_theme::ui.personal_area') }}</span>
@@ -101,7 +101,7 @@
                             <div class="it-brand-wrapper">
                                 <a href="{{ url('/'.app()->getLocale()) }}" title="{{ __('pub_theme::components_header.brand.go_home.title') }}">
                                     <svg width="82" height="82" class="icon" aria-hidden="true">
-                                        <image xlink:href="{{ asset('themes/Sixteen/design-comuni/assets/images/logo-comune.svg') }}"/>
+                                        <image xlink:href="{{ asset('themes/Civic/design-comuni/assets/images/logo-comune.svg') }}"/>
                                     </svg>
                                     <div class="it-brand-text">
                                         <div class="it-brand-title">{{ config('app.name', __('pub_theme::header.center.brand.title.label')) }}</div>
@@ -113,19 +113,19 @@
                                 <div class="it-socials d-none d-lg-flex">
                                     <span>{{ __('pub_theme::header.center.social.follow.label') }}</span>
                                     <ul>
-                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use></svg><span class="visually-hidden">Twitter</span></a></li>
-                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use></svg><span class="visually-hidden">Facebook</span></a></li>
-                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use></svg><span class="visually-hidden">YouTube</span></a></li>
-                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use></svg><span class="visually-hidden">Telegram</span></a></li>
-                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use></svg><span class="visually-hidden">Whatsapp</span></a></li>
-                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use></svg><span class="visually-hidden">RSS</span></a></li>
+                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use></svg><span class="visually-hidden">Twitter</span></a></li>
+                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use></svg><span class="visually-hidden">Facebook</span></a></li>
+                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use></svg><span class="visually-hidden">YouTube</span></a></li>
+                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use></svg><span class="visually-hidden">Telegram</span></a></li>
+                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use></svg><span class="visually-hidden">Whatsapp</span></a></li>
+                                        <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use></svg><span class="visually-hidden">RSS</span></a></li>
                                     </ul>
                                 </div>
                                 <div class="it-search-wrapper">
                                     <span class="d-none d-md-block">{{ __('pub_theme::header.center.search.label') }}</span>
                                     <button class="search-link rounded-icon" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="{{ __('pub_theme::header.center.search.toggle_aria.label') }}">
                                         <svg class="icon">
-                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search"></use>
+                                            <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search"></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -141,19 +141,19 @@
                     <div class="col-12">
                         <div class="navbar navbar-expand-lg has-megamenu">
                             <button class="custom-navbar-toggler" type="button" aria-controls="nav4" aria-expanded="false" aria-label="{{ __('pub_theme::components_common.a11y.toggle_navigation_it.label') }}" data-bs-target="#nav4" data-bs-toggle="navbarcollapsible">
-                                <svg class="icon"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-burger"></use></svg>
+                                <svg class="icon"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-burger"></use></svg>
                             </button>
                             <div class="navbar-collapsable" id="nav4">
                                 <div class="overlay" style="display: none;"></div>
                                 <div class="close-div">
                                     <button class="btn close-menu" type="button">
                                         <span class="visually-hidden">{{ __('pub_theme::header.center.nav.close_aria.label') }}</span>
-                                        <svg class="icon"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use></svg>
+                                        <svg class="icon"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use></svg>
                                     </button>
                                 </div>
                                 <div class="menu-wrapper">
                                     <a href="{{ url('/'.app()->getLocale()) }}" class="logo-hamburger">
-                                        <svg class="icon" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"></use></svg>
+                                        <svg class="icon" aria-hidden="true"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"></use></svg>
                                         <div class="it-brand-text">
                                             <div class="it-brand-title">{{ config('app.name', __('pub_theme::header.center.nav.hamburger_brand.label')) }}</div>
                                         </div>
@@ -181,7 +181,7 @@
                                             <li class="nav-item"><a class="nav-link" href="{{ url('/it/polizia-locale') }}"><span>{{ __('pub_theme::components_header.nav.local_police.label') }}</span></a></li>
                                             <li class="nav-item">
                                                 <a class="nav-link" href="{{ url('/it/argomenti') }}" data-element="all-topics">
-                                                    <span>{{ __('pub_theme::header.center.nav.argomenti.label') }} <svg class="icon icon-sm"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right"></use></svg></span>
+                                                    <span>{{ __('pub_theme::header.center.nav.argomenti.label') }} <svg class="icon icon-sm"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right"></use></svg></span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -189,12 +189,12 @@
                                     <div class="it-socials">
                                         <span>{{ __('pub_theme::header.center.social.follow.label') }}</span>
                                         <ul>
-                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use></svg><span class="visually-hidden">Twitter</span></a></li>
-                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use></svg><span class="visually-hidden">Facebook</span></a></li>
-                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use></svg><span class="visually-hidden">YouTube</span></a></li>
-                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use></svg><span class="visually-hidden">Telegram</span></a></li>
-                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use></svg><span class="visually-hidden">Whatsapp</span></a></li>
-                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use></svg><span class="visually-hidden">RSS</span></a></li>
+                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use></svg><span class="visually-hidden">Twitter</span></a></li>
+                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use></svg><span class="visually-hidden">Facebook</span></a></li>
+                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use></svg><span class="visually-hidden">YouTube</span></a></li>
+                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use></svg><span class="visually-hidden">Telegram</span></a></li>
+                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use></svg><span class="visually-hidden">Whatsapp</span></a></li>
+                                            <li><a href="#" target="_blank"><svg class="icon icon-sm icon-white align-top"><use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use></svg><span class="visually-hidden">RSS</span></a></li>
                                         </ul>
                                     </div>
                                 </div>

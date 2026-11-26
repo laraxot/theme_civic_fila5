@@ -3,12 +3,12 @@
 
 @php
     $routes = [
-        'practices' => ['url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaPratiche(), 'icon' => 'it-files'],
-        'followed' => ['url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaSeguite(), 'icon' => 'it-star-outline'],
-        'notifications' => ['url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaNotifiche(), 'icon' => 'it-mail'],
-        'settings' => ['url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaImpostazioni(), 'icon' => 'it-settings'],
+        'practices' => ['url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaPratiche(), 'icon' => 'it-files'],
+        'followed' => ['url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaSeguite(), 'icon' => 'it-star-outline'],
+        'notifications' => ['url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaNotifiche(), 'icon' => 'it-mail'],
+        'settings' => ['url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaImpostazioni(), 'icon' => 'it-settings'],
     ];
-    $icon = static fn (string $name): string => \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base().'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
+    $icon = static fn (string $name): string => \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base().'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
 @endphp
 
 <nav class="cmp-nav-tab mb-4 mb-lg-5 mt-lg-4" aria-label="{{ __('fixcity::personal_area.nav.aria_label') }}">

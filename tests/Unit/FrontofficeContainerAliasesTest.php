@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-use Themes\Sixteen\Infrastructure\Url\FrontofficeContainerAliases;
+require_once dirname(__DIR__).'/Support/civic-autoload.php';
+
+use Themes\Civic\Infrastructure\Url\FrontofficeContainerAliases;
 
 require_once dirname(__DIR__, 2).'/app/Infrastructure/Url/FrontofficeContainerAliases.php';
 

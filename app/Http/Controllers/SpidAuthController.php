@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Http\Controllers;
+namespace Themes\Civic\Http\Controllers;
 
 use Modules\User\Actions\Auth\GetPostLoginUrlAction;
 use Modules\User\Actions\Auth\UpsertUserFromDigitalIdentityAction;
@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Modules\Xot\Contracts\UserContract;
-use Themes\Sixteen\Actions\SpidAuthAction;
-use Themes\Sixteen\Actions\Auth\SanitizeReturnUrlAction;
-use Themes\Sixteen\Events\SpidAuthenticated;
-use Themes\Sixteen\Events\SpidLoggedOut;
+use Themes\Civic\Actions\SpidAuthAction;
+use Themes\Civic\Actions\Auth\SanitizeReturnUrlAction;
+use Themes\Civic\Events\SpidAuthenticated;
+use Themes\Civic\Events\SpidLoggedOut;
 
 /**
  * Controller per l'autenticazione SPID

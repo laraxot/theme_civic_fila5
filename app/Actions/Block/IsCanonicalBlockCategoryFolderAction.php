@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Actions\Block;
+namespace Themes\Civic\Actions\Block;
 
 use Spatie\QueueableAction\QueueableAction;
-use Themes\Sixteen\Datas\BlockCategoryRegistryData;
+use Themes\Civic\Datas\BlockCategoryRegistryData;
 
 final class IsCanonicalBlockCategoryFolderAction
 {

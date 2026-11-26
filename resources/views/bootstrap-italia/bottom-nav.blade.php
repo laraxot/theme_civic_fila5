@@ -15,7 +15,7 @@
                {{ ($item['active'] ?? false) ? 'aria-current="page"' : '' }}>
                 @if(isset($item['icon']))
                 <svg class="icon bottom-nav-icon" aria-hidden="true">
-                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#{{ $item['icon'] }}"></use>
+                    <use href="/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#{{ $item['icon'] }}"></use>
                 </svg>
                 @endif
                 <span class="bottom-nav-label">{{ $item['label'] }}</span>

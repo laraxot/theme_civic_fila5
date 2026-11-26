@@ -1,10 +1,10 @@
 @props(['data' => []])
 @php
     $d = static fn (string $key, mixed $default = '') => data_get($data, $key, $default);
-    $assets = \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base();
+    $assets = \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base();
     $icon = static fn (string $name): string => $assets.'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
     // DCP-289: gruppi risolti da ResolveContactGroupsAction (voce `"ente": ...` dalla sorgente dell'ente; voce senza URL o senza dato nascosta; senza gruppi niente fascia)
-    $contactGroups = app(\Themes\Sixteen\Actions\Contacts\ResolveContactGroupsAction::class)->execute(
+    $contactGroups = app(\Themes\Civic\Actions\Contacts\ResolveContactGroupsAction::class)->execute(
         (array) $d('contacts', []),
         app(\Modules\Tenant\Actions\Ente\GetEnteDataAction::class)->execute(),
         request()->segment(2) !== 'tests',

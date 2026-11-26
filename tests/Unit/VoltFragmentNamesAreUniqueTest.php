@@ -11,7 +11,7 @@ use function Safe\preg_match_all;
  * viste (`view:cache`, `optimize`) mette per ultima `pages_old/`, quindi la pagina viva perdeva il frammento nuovo (`data-dc`):
  * area personale, wizard e dettaglio blog senza lo scope Design Comuni.
  *
- * @see laravel/Themes/Sixteen/docs/bmad/audit/fo-giro-loggato.md (FO-01, FO-02, FO-08..FO-12)
+ * @see laravel/Themes/Civic/docs/bmad/audit/fo-giro-loggato.md (FO-01, FO-02, FO-08..FO-12)
  */
 test('i nomi @volt delle pagine vive non compaiono in nessun altro file del tema', function (): void {
     $views = dirname(__DIR__, 2).'/resources/views';

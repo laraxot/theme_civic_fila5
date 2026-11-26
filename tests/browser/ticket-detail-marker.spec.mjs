@@ -1,7 +1,7 @@
 /**
  * DCP-152 - il marker della mappa nel dettaglio pubblico /{lang}/tickets/{id} e' quello del tipo di segnalazione:
  * cerchio col colore dello stato, glifo del tipo, nessuna iniziale "?" e nessun pin nero senza sfondo.
- * Run: cd laravel/Themes/Sixteen && FIXCITY_BASE_URL=http://127.0.0.1:8091 ./node_modules/.bin/playwright test tests/browser/ticket-detail-marker.spec.mjs
+ * Run: cd laravel/Themes/Civic && FIXCITY_BASE_URL=http://127.0.0.1:8091 ./node_modules/.bin/playwright test tests/browser/ticket-detail-marker.spec.mjs
  * Serve almeno una segnalazione pubblica (fixture: scratch-auth-fixture.sh public-tickets).
  */
 import { test, expect } from '@playwright/test';

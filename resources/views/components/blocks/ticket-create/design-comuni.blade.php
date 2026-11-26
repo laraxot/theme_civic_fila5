@@ -1,5 +1,5 @@
 {{--
-    @see Themes/Sixteen/docs/design-comuni/TICKET-CREATION-WIZARD.md
+    @see Themes/Civic/docs/design-comuni/TICKET-CREATION-WIZARD.md
     The CMS owns the copy and the wizard owns the interaction; this block only
     provides the reusable semantic section boundary between the two.
 --}}

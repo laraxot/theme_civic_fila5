@@ -7,7 +7,7 @@
  * markup reso da Blade con un cookie analitico dichiarato (COOKIE_CONSENT_FIXTURE, generato da tests/browser/fixtures/render-cookie-consent-mode.php)
  * e inserito al posto del banner di una pagina VERA; senza il file la parte e' saltata.
  *
- * Run: cd laravel/Themes/Sixteen && FIXCITY_BASE_URL=http://127.0.0.1:8091 npx playwright test tests/browser/cookie-banner.spec.mjs --reporter=list
+ * Run: cd laravel/Themes/Civic && FIXCITY_BASE_URL=http://127.0.0.1:8091 npx playwright test tests/browser/cookie-banner.spec.mjs --reporter=list
  */
 import { existsSync, readFileSync } from 'node:fs';
 import { test, expect } from '@playwright/test';

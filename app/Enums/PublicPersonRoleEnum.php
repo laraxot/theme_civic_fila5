@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums;
+namespace Themes\Civic\Enums;
 
 use Filament\Support\Contracts\HasLabel;
-use Themes\Sixteen\Enums\Concerns\HasLangLabel;
+use Themes\Civic\Enums\Concerns\HasLangLabel;
 
 /**
  * Ruoli principali secondo AGID.
  *
  * Sostituisce la costante PublicPerson::ROLES. Le label vivono in
- * lang/<locale>/public_person_role_enum.php (namespace `sixteen::`).
+ * lang/<locale>/public_person_role_enum.php (namespace `civic::`).
  */
 enum PublicPersonRoleEnum: string implements HasLabel
 {

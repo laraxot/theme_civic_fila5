@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Adapters;
+namespace Themes\Civic\Adapters;
 
-use Themes\Sixteen\Actions\MenuBuilderAction;
+use Themes\Civic\Actions\MenuBuilderAction;
 
 class ThemeAdapter
 {
-    protected string $themeName = 'Sixteen';
+    protected string $themeName = 'Civic';
 
     protected string $version = '1.0.0';
     public function getName(): string
@@ -27,7 +27,7 @@ class ThemeAdapter
         return [
             'name' => $this->themeName,
             'version' => $this->version,
-            'description' => 'Tema Sixteen per <nome progetto> - AGID Bootstrap Italia compliant',
+            'description' => 'Tema Civic per <nome progetto> - AGID Bootstrap Italia compliant',
             'author' => '<nome progetto> Team',
             'agid_compliant' => true,
             'bootstrap_italia' => true,
@@ -88,15 +88,15 @@ class ThemeAdapter
 
     public function isActive(): bool
     {
-        return config('app.theme') === 'sixteen';
+        return config('app.theme') === 'civic';
     }
 
     public function getConfig(?string $key = null, mixed $default = null): mixed
     {
         if ($key === null) {
-            return config('sixteen');
+            return config('civic');
         }
 
-        return config('sixteen.'.$key, $default);
+        return config('civic.'.$key, $default);
     }
 }

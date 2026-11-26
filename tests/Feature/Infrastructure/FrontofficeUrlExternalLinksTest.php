@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+require_once dirname(__DIR__, 2).'/Support/civic-autoload.php';
+
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Tests\TestCase;
-use Themes\Sixteen\Infrastructure\Url\FrontofficeUrl;
+use Themes\Civic\Infrastructure\Url\FrontofficeUrl;
 
 uses(TestCase::class);
 

@@ -15,7 +15,7 @@ $themeRoot = dirname(__DIR__, 2);
 $manifestPath = $themeRoot.'/public/manifest.json';
 
 it('wraps unlayered button submit transparent reset in @layer base in compiled app css', function () use ($themeRoot, $manifestPath): void {
-    Assert::assertFileExists($manifestPath, 'manifest.json mancante: eseguire npm run build nel tema Sixteen.');
+    Assert::assertFileExists($manifestPath, 'manifest.json mancante: eseguire npm run build nel tema Civic.');
     /** @var array<string, array{file?: string, css?: list<string>}> $manifest */
     $manifest = json_decode(file_get_contents($manifestPath), true, 512, JSON_THROW_ON_ERROR);
     $entry = $manifest['resources/css/app.css']['file'] ?? null;

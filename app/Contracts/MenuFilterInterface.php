@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Contracts;
+namespace Themes\Civic\Contracts;
 
 /**
  * Interface per filtri del menu

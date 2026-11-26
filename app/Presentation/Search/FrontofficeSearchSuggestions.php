@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Presentation\Search;
+namespace Themes\Civic\Presentation\Search;
 
-use Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes;
+use Themes\Civic\Infrastructure\Url\FrontofficeRoutes;
 
 /**
  * Suggerimenti default del search-modal FO (Design Comuni).

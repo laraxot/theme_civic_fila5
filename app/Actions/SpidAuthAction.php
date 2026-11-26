@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Actions;
+namespace Themes\Civic\Actions;
 
 use DOMDocument;
 use DOMElement;
@@ -18,7 +18,7 @@ use function Safe\base64_decode;
 use function Safe\gzdeflate;
 
 /**
- * Costruisce le richieste SAML SPID e valida la risposta dell'IdP (stesso FQCN di Sixteen): firma, certificato fidato, RelayState.
+ * Costruisce le richieste SAML SPID e valida la risposta dell'IdP (derivato dall'Action omonima di Sixteen): firma, certificato fidato, RelayState.
  *
  * @see docs/contracts/spid-auth-action.md
  *

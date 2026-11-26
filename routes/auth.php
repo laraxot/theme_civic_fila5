@@ -3,15 +3,15 @@
 declare(strict_types=1);
 
 /*
- * Authentication Route definitions for the Sixteen theme.
+ * Authentication Route definitions for the Civic theme.
  * All Route::view() calls use view-string branded types compatible with PHPStan.
  */
 
 use Illuminate\Support\Facades\Route;
-use Themes\Sixteen\Actions\CieAuthAction;
-use Themes\Sixteen\Actions\SpidAuthAction;
-use Themes\Sixteen\Http\Controllers\CieAuthController;
-use Themes\Sixteen\Http\Controllers\SpidAuthController;
+use Themes\Civic\Actions\CieAuthAction;
+use Themes\Civic\Actions\SpidAuthAction;
+use Themes\Civic\Http\Controllers\CieAuthController;
+use Themes\Civic\Http\Controllers\SpidAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,8 +86,8 @@ Route::prefix('auth/cie')
     });
 
 // Route di utilità per l'integrazione con il tema
-Route::prefix('sixteen/auth')
-    ->name('sixteen.auth.')
+Route::prefix('civic/auth')
+    ->name('civic.auth.')
     ->middleware(['web'])
     ->group(function (): void {
         /** @var view-string $selectProviderView */
@@ -137,8 +137,8 @@ Route::prefix('sixteen/auth')
 
 // Route per testing SPID/CIE (solo in sviluppo)
 if (app()->environment(['local', 'development', 'testing'])) {
-    Route::prefix('sixteen/test-auth')
-        ->name('sixteen.test-auth.')
+    Route::prefix('civic/test-auth')
+        ->name('civic.test-auth.')
         ->middleware(['web'])
         ->group(function (): void {
             // Test page per SPID

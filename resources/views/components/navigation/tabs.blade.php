@@ -17,7 +17,7 @@
     $iconPositionClass = $iconPosition === 'right' ? 'icon-right' : 'icon-left';
 @endphp
 
-<div class="sixteen-tabs-container">
+<div class="civic-tabs-container">
     <div class="tabs-wrapper {{ $orientation }} {{ $responsiveClass }}" data-tabs-id="{{ $tabsId }}">
         <ul class="nav nav-tabs {{ $navClass }} {{ $fullWidthClass }} {{ $iconPositionClass }}" role="tablist">
             {{ $header }}

@@ -8,7 +8,7 @@
 --}}
 @php
     $d = static fn (string $key, mixed $default = '') => data_get($data, $key, $default);
-    $assets = \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base();
+    $assets = \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base();
     $heroFile = (string) $d('hero.image.file');
     $heroUrl = (string) $d('hero.image.url');
     $heroSrc = $heroUrl !== '' ? $heroUrl : ($heroFile !== '' ? $assets.'/images/'.$heroFile : '');

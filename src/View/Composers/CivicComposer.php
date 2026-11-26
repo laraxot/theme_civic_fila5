@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\View\Composers;
+namespace Themes\Civic\View\Composers;
 
 use Illuminate\View\View;
-use Themes\Sixteen\Events\BuildingSixteenMenu;
-use Themes\Sixteen\Services\MenuBuilder;
+use Themes\Civic\Events\BuildingCivicMenu;
+use Themes\Civic\Services\MenuBuilder;
 
 /**
- * View Composer per il tema Sixteen
+ * View Composer per il tema Civic
  *
-use Themes\Sixteen\Actions\MenuBuilderAction;
-use Themes\Sixteen\Events\BuildingSixteenMenu;
+use Themes\Civic\Actions\MenuBuilderAction;
+use Themes\Civic\Events\BuildingCivicMenu;
 
 /**
- * View Composer per il tema Sixteen
+ * View Composer per il tema Civic
  * 
  * Questo composer inietta le configurazioni del tema e i menu
  * costruiti dinamicamente nelle viste del layout
  */
-class SixteenComposer
+class CivicComposer
 {
     public function __construct(
         protected MenuBuilderAction $menuBuilder
@@ -32,7 +32,7 @@ class SixteenComposer
     public function compose(View $view): void
     {
         // Configurazioni base del tema
-        $config = config('sixteen', []);
+        $config = config('civic', []);
 
         // Costruzione dinamica dei menu tramite eventi
         $this->buildMenus();
@@ -43,14 +43,14 @@ class SixteenComposer
         
         // Inietta i dati nella vista
         $view->with([
-            'sixteenConfig' => $config,
+            'civicConfig' => $config,
             'slimHeaderMenu' => $this->menuBuilder->getSlimHeader(),
             'headerMenu' => $this->menuBuilder->getHeader(),
             'footerMenu' => $this->menuBuilder->getFooter(),
             'footerBarMenu' => $this->menuBuilder->getFooterBar(),
             'themeInfo' => [
-                'name' => 'Sixteen',
-                'version' => config('sixteen.version', '1.0.0'),
+                'name' => 'Civic',
+                'version' => config('civic.version', '1.0.0'),
                 'agid_compliant' => true,
                 'bootstrap_italia' => true,
                 'tailwind_css' => true,
@@ -74,7 +74,7 @@ class SixteenComposer
         $locations = ['slim_header', 'header', 'footer', 'footer_bar'];
         
         foreach ($locations as $location) {
-            event(new BuildingSixteenMenu($this->menuBuilder, $location));
+            event(new BuildingCivicMenu($this->menuBuilder, $location));
         }
     }
 
@@ -83,7 +83,7 @@ class SixteenComposer
      */
     protected function initializeMenusFromConfig(): void
     {
-        $menuConfig = config('sixteen.menu', []);
+        $menuConfig = config('civic.menu', []);
 
         if (isset($menuConfig['slim_header'])) {
             $this->menuBuilder->addSlimHeader($menuConfig['slim_header']);

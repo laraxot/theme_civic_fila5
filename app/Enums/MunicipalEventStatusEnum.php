@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums;
+namespace Themes\Civic\Enums;
 
 use Filament\Support\Contracts\HasLabel;
-use Themes\Sixteen\Enums\Concerns\HasLangLabel;
+use Themes\Civic\Enums\Concerns\HasLangLabel;
 
 /**
  * Stati di un evento.
  *
  * Sostituisce la costante MunicipalEvent::EVENT_STATUSES. Le label vivono in
- * lang/<locale>/municipal_event_status_enum.php (namespace `sixteen::`).
+ * lang/<locale>/municipal_event_status_enum.php (namespace `civic::`).
  */
 enum MunicipalEventStatusEnum: string implements HasLabel
 {

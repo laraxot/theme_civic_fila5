@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Models\Municipal;
+namespace Themes\Civic\Models\Municipal;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -16,10 +16,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
-use Themes\Sixteen\Enums\MunicipalNewsPriorityEnum;
-use Themes\Sixteen\Enums\MunicipalNewsStatusEnum;
-use Themes\Sixteen\Enums\MunicipalNewsTypeEnum;
-use Themes\Sixteen\Enums\MunicipalNewsUrgencyEnum;
+use Themes\Civic\Enums\MunicipalNewsPriorityEnum;
+use Themes\Civic\Enums\MunicipalNewsStatusEnum;
+use Themes\Civic\Enums\MunicipalNewsTypeEnum;
+use Themes\Civic\Enums\MunicipalNewsUrgencyEnum;
 
 use function Safe\parse_url;
 

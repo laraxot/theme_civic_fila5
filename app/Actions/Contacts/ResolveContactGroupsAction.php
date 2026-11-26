@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Actions\Contacts;
+namespace Themes\Civic\Actions\Contacts;
 
 use Modules\Tenant\Datas\EnteData;
 use Spatie\QueueableAction\QueueableAction;

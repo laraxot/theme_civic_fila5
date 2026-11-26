@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Datas;
+namespace Themes\Civic\Datas;
 
 /**
  * SSoT: nomi ammessi per le sottocartelle di resources/views/components/blocks/.

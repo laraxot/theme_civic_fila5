@@ -3,7 +3,7 @@
  * Carica 2 PNG e 1 PDF; al Riepilogo si aspetta 2 miniature vere (decodificate, naturalWidth > 0, alt tradotto), nessuna per il PDF (resta solo
  * nel nome), e che tornare indietro, togliere una foto e riavanzare mostri l'insieme attuale (non quello del primo ingresso).
  *
- * Run: cd laravel/Themes/Sixteen && FIXCITY_BASE_URL=http://127.0.0.1:8091 FIXCITY_STORAGE_STATE=/tmp/scratch-auth-fixture-$USER/auth.json \
+ * Run: cd laravel/Themes/Civic && FIXCITY_BASE_URL=http://127.0.0.1:8091 FIXCITY_STORAGE_STATE=/tmp/scratch-auth-fixture-$USER/auth.json \
  *        npx playwright test tests/browser/wizard-summary-photo-previews.spec.mjs --reporter=list
  * Senza FIXCITY_STORAGE_STATE il test e' saltato (e dichiarato "skipped"). Nessuna credenziale qui: la sessione viene da scratch-auth-fixture.sh.
  */

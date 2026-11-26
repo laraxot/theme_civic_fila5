@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
+require_once dirname(__DIR__, 2).'/Support/civic-autoload.php';
+
 use Tests\TestCase;
-use Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes;
+use Themes\Civic\Infrastructure\Url\FrontofficeRoutes;
 
 uses(TestCase::class);
 

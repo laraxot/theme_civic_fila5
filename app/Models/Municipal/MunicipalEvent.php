@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Models\Municipal;
+namespace Themes\Civic\Models\Municipal;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -16,9 +16,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
-use Themes\Sixteen\Enums\MunicipalEventLocationTypeEnum;
-use Themes\Sixteen\Enums\MunicipalEventStatusEnum;
-use Themes\Sixteen\Enums\MunicipalEventTypeEnum;
+use Themes\Civic\Enums\MunicipalEventLocationTypeEnum;
+use Themes\Civic\Enums\MunicipalEventStatusEnum;
+use Themes\Civic\Enums\MunicipalEventTypeEnum;
 
 /**
  * Modello per gli eventi municipali (Municipal Event)

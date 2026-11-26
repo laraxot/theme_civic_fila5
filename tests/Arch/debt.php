@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * Debito di architettura di Themes\Sixteen: classi che oggi violano una regola di Modules/Xot/tests/Arch/ArchitectureTest.php.
+ * Debito di architettura di Themes\Civic: classi che oggi violano una regola di Modules/Xot/tests/Arch/ArchitectureTest.php.
  * Misurato il 2026-11-18. Solo in discesa: chi corregge una classe la toglie, chi aggiunge una voce lo spiega nella PR.
  * Ogni voce deve stare nel namespace di questo pacchetto (lo verifica ArchitectureTest).
 
@@ -13,6 +13,6 @@ declare(strict_types=1);
 return [
     // md5/sha1/uniqid/rand/extract nel codice di produzione: quasi sempre usi non crittografici (chiavi di cache, id), da rivedere uno per uno; factory e seeder sono esclusi a parte
     'security' => [
-        'Themes\Sixteen\Models\Appointment',
+        'Themes\Civic\Models\Appointment',
     ],
 ];

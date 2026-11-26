@@ -3,7 +3,7 @@
  * Aprendo il wizard direttamente a un passo avanzato (`?step=...`, consentito in locale/debug) il consenso privacy del passo 1 non e' stato dato:
  * "Invia" falliva in silenzio perche' l'errore stava nel passo 1, nascosto. Filament porta al campo in errore solo se questo ha
  * `data-validation-error`, e la vista personalizzata del consenso non lo aveva.
- * Run: cd laravel/Themes/Sixteen && FIXCITY_BASE_URL=http://127.0.0.1:8091 FIXCITY_TEST_EMAIL=... FIXCITY_TEST_PASSWORD=... \
+ * Run: cd laravel/Themes/Civic && FIXCITY_BASE_URL=http://127.0.0.1:8091 FIXCITY_TEST_EMAIL=... FIXCITY_TEST_PASSWORD=... \
  *      ./node_modules/.bin/playwright test tests/browser/wizard-validation-step-jump.spec.mjs
  */
 import { test, expect, chromium } from '@playwright/test';

@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+require_once dirname(__DIR__).'/Support/civic-autoload.php';
+
 use Modules\Tenant\Datas\EnteData;
 use Tests\TestCase;
-use Themes\Sixteen\Actions\Contacts\ResolveContactGroupsAction;
+use Themes\Civic\Actions\Contacts\ResolveContactGroupsAction;
 
 uses(TestCase::class);
 

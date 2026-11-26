@@ -18,7 +18,7 @@
     $loginIntro = is_string($intro) && trim($intro) !== ''
         ? trim($intro)
         : __('fixcity::auth.login.intro.text');
-    $localize = static fn (string $path): string => \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl($path);
+    $localize = static fn (string $path): string => \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl($path);
 @endphp
 
 <x-auth.shell :heading="$loginHeading" :intro="$loginIntro" heading-id="auth-login-heading">

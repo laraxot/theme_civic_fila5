@@ -1,5 +1,5 @@
 {{--
-  Callers: Themes/Sixteen auth-register.blade.php → @livewire(Gdpr RegisterWidget).
+  Callers: Themes/Civic auth-register.blade.php → @livewire(Gdpr RegisterWidget).
   Vestito FO: campi <x-auth.field>/<x-auth.check> e riepilogo <x-auth.error-summary>, gli stessi componenti e la stessa resa
   del login (stile in components/auth/assets.blade.php, DCP-290). Logica create-user/consensi nel widget modulo.
 --}}
@@ -27,14 +27,14 @@
             <legend>{{ __('gdpr::register.consents.title') }}</legend>
             <x-auth.check name="privacy_accepted" required>
                 {{ __('gdpr::register.consents.privacy_policy_label') }}
-                <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/privacy') }}" target="_blank" rel="noopener">
+                <a href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/privacy') }}" target="_blank" rel="noopener">
                     {{ __('gdpr::register.consents.privacy_policy_link') }}
                     <span class="sr-only"> ({{ __('gdpr::register.consents.opens_new_tab') }})</span>
                 </a>
             </x-auth.check>
             <x-auth.check name="terms_accepted" required>
                 {{ __('gdpr::register.consents.terms_label') }}
-                <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/terms') }}" target="_blank" rel="noopener">
+                <a href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/terms') }}" target="_blank" rel="noopener">
                     {{ __('gdpr::register.consents.terms_link') }}
                     <span class="sr-only"> ({{ __('gdpr::register.consents.opens_new_tab') }})</span>
                 </a>

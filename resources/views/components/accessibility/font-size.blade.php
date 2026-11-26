@@ -5,7 +5,7 @@
  * Componente per il controllo della dimensione del font.
  * Conforme alle linee guida WCAG 2.1 AA e AGID.
  * 
- * @package Themes\Sixteen
+ * @package Themes\Civic
  * @author Marco Xot <marco.sottana@gmail.com>
  * @version 1.0.0
  */

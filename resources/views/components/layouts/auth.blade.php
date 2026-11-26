@@ -333,6 +333,6 @@
         });
     </script>
     {{-- Il CSS lo rende <x-cms::head>; il JS del tema resta caricato a fine body (module/defer). --}}
-    @vite(['resources/js/app.js'], 'themes/Sixteen')
+    @vite(['resources/js/app.js'], 'themes/Civic')
 </body>
 </html>

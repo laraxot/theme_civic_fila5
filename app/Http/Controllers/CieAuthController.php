@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Http\Controllers;
+namespace Themes\Civic\Http\Controllers;
 
 use Modules\User\Actions\Auth\GetPostLoginUrlAction;
 use Modules\User\Actions\Auth\UpsertUserFromDigitalIdentityAction;
@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Modules\Xot\Contracts\UserContract;
-use Themes\Sixteen\Actions\CieAuthAction;
-use Themes\Sixteen\Actions\Auth\SanitizeReturnUrlAction;
-use Themes\Sixteen\Events\CieAuthenticated;
-use Themes\Sixteen\Events\CieLoggedOut;
+use Themes\Civic\Actions\CieAuthAction;
+use Themes\Civic\Actions\Auth\SanitizeReturnUrlAction;
+use Themes\Civic\Events\CieAuthenticated;
+use Themes\Civic\Events\CieLoggedOut;
 
 /**
  * Controller per l'autenticazione CIE

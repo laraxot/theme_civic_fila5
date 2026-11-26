@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Infrastructure\Url;
+namespace Themes\Civic\Infrastructure\Url;
 
 /**
  * Builder URL FO su rotte Folio `container0.*` — un solo posto riusabile.

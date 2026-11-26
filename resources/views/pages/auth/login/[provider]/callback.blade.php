@@ -27,7 +27,7 @@ new class extends Component {
 };
 ?>
 
-{{-- Redirect-only Folio+Volt callback: OAuth policy belongs to Modules/User; Sixteen owns the route shell. --}}
+{{-- Redirect-only Folio+Volt callback: OAuth policy belongs to Modules/User; Civic owns the route shell. --}}
 @volt('auth.login.oauth-callback')
     <div aria-hidden="true"></div>
 @endvolt

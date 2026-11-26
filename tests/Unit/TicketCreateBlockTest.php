@@ -9,7 +9,7 @@ use function Safe\file_get_contents;
 uses(TestCase::class);
 
 /**
- * @see Themes/Sixteen/docs/design-comuni/TICKET-CREATION-WIZARD.md
+ * @see Themes/Civic/docs/design-comuni/TICKET-CREATION-WIZARD.md
  */
 test('ticket create block exposes a reusable semantic CMS boundary', function (): void {
     $path = dirname(__DIR__, 2).'/resources/views/components/blocks/ticket-create/design-comuni.blade.php';
@@ -21,11 +21,11 @@ test('ticket create block exposes a reusable semantic CMS boundary', function ()
         ->toContain('aria-label="{{ $sectionLabel }}"')
         ->toContain('data-block="ticket-create"')
         ->toContain("['blockData' => \$data]")
-        ->toContain('@see Themes/Sixteen/docs/design-comuni/TICKET-CREATION-WIZARD.md');
+        ->toContain('@see Themes/Civic/docs/design-comuni/TICKET-CREATION-WIZARD.md');
 });
 
 /**
- * @see Themes/Sixteen/docs/design-comuni/TICKET-CREATION-WIZARD.md
+ * @see Themes/Civic/docs/design-comuni/TICKET-CREATION-WIZARD.md
  */
 test('ticket create CMS entries keep the shared block view contract', function (): void {
     $paths = [
@@ -51,7 +51,7 @@ test('ticket create CMS entries keep the shared block view contract', function (
 });
 
 /**
- * @see Themes/Sixteen/docs/design-comuni/TICKET-CREATION-WIZARD.md
+ * @see Themes/Civic/docs/design-comuni/TICKET-CREATION-WIZARD.md
  */
 test('legacy ticket create view delegates to the semantic block', function (): void {
     $path = dirname(__DIR__, 2).'/resources/views/components/blocks/tests/ticket-crea.blade.php';

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Actions\Auth;
+namespace Themes\Civic\Actions\Auth;
 
 use Illuminate\Http\Request;
 use Safe\Exceptions\UrlException;

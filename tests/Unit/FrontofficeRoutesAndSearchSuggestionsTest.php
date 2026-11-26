@@ -19,7 +19,7 @@ test('FrontofficeRoutes e SearchSuggestions esistono e usano solo container0', f
     expect($routes)->toContain("route('container0.index'");
     expect($routes)->toContain("route('container0.view'");
     expect($routes)->not->toContain("route('tickets.");
-    expect($routes)->toContain('namespace Themes\\Sixteen\\Infrastructure\\Url');
+    expect($routes)->toContain('namespace Themes\\Civic\\Infrastructure\\Url');
     expect($routes)->toContain('personalAreaPratiche');
     expect($routes)->toContain('faqIndex');
     expect($routes)->toContain('ticketsShow');

@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Tests\Feature\Pages;
+namespace Themes\Civic\Tests\Feature\Pages;
+
+require_once dirname(__DIR__, 2).'/Support/civic-autoload.php';
 
 use Dom\HTMLDocument;
 use Illuminate\Support\Carbon;

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Actions;
+namespace Themes\Civic\Actions;
 
 use Illuminate\Support\Collection;
 use Spatie\QueueableAction\QueueableAction;
-use Themes\Sixteen\Contracts\MenuFilterInterface;
+use Themes\Civic\Contracts\MenuFilterInterface;
 
 class MenuBuilderAction
 {
@@ -106,7 +106,7 @@ class MenuBuilderAction
 
     public function loadFromConfig(): self
     {
-        $config = config('sixteen.menu', []);
+        $config = config('civic.menu', []);
 
         if (! empty($config['slim_header'])) {
             $this->addSlimHeader($config['slim_header']);

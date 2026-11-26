@@ -1,6 +1,6 @@
 {{--
     Header Design Comuni: fascia slim.
-    @see Themes/Sixteen/docs/header-components.md
+    @see Themes/Civic/docs/header-components.md
     Riceve solo dati già risolti dal renderer v1: il CMS resta la fonte delle etichette.
 --}}
 <div class="it-header-slim-wrapper">

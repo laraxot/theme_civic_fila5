@@ -61,13 +61,13 @@
     $filtersSectionId = $mainContent['id'] ?? 'filter-and-cards';
     // Senza lingua: con il prefisso (/it/api/...) la rotta risponde HTML, non JSON (ApiUrlsAreNotLocalizedTest).
     $listApiUrl = '/api/tickets/list';
-    $sprite = '/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg';
+    $sprite = '/themes/Civic/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg';
 
     $contactLinks = [
-        'faq' => ['url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::faqIndex(), 'icon' => 'it-files'],
-        'assistance' => ['url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::ticketsCreate(), 'icon' => 'it-mail'],
+        'faq' => ['url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::faqIndex(), 'icon' => 'it-files'],
+        'assistance' => ['url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::ticketsCreate(), 'icon' => 'it-mail'],
         'phone' => ['url' => 'tel:'.str_replace(' ', '', $phoneNumber), 'icon' => 'it-phone'],
-        'appointment' => ['url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::servicesIndex(), 'icon' => 'it-calendar'],
+        'appointment' => ['url' => \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::servicesIndex(), 'icon' => 'it-calendar'],
     ];
 @endphp
 
@@ -213,7 +213,7 @@
                                             <p class="subtitle-small mb-3 mt-3">{{ $cta['text'] }}</p>
                                         </div>
                                         <div class="button-wrapper">
-                                            <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::ticketsCreate() }}" class="btn btn-primary mobile-full py-3 mt-2 mb-4 mb-lg-0">
+                                            <a href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::ticketsCreate() }}" class="btn btn-primary mobile-full py-3 mt-2 mb-4 mb-lg-0">
                                                 <span>{{ $cta['button_text'] }}</span>
                                             </a>
                                         </div>

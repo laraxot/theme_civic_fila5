@@ -10,14 +10,14 @@
 @php
     use Modules\Fixcity\Actions\ListPublicTicketsAction;
     use Modules\Fixcity\Datas\PublicTicketListFilters;
-    use Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes;
+    use Themes\Civic\Infrastructure\Url\FrontofficeRoutes;
 
     // path senza host, come il resto del front office (FrontofficeUrl)
     $base = FrontofficeRoutes::ticketsIndex(false);
     $filters = PublicTicketListFilters::fromRequest(request());
     $list = app(ListPublicTicketsAction::class)->execute($filters);
     $t = static fn (string $key, array $replace = []): string => __('fixcity::ticket_list.'.$key, $replace);
-    $assets = \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base();
+    $assets = \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base();
     $icon = static fn (string $name): string => $assets.'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
     $parts = 'pub_theme::components.blocks.report-partials';
     $listActive = $filters->view === 'list';

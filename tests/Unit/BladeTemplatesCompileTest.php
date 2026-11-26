@@ -16,7 +16,7 @@ uses(TestCase::class);
  *
  * @return array<string, array{0: string}>
  */
-function sixteenTemplatesToCompile(): array
+function civicTemplatesToCompile(): array
 {
     $root = dirname(__DIR__, 2).'/resources/views';
     // ponytail: `components/layouts/navigation.blade.php` non compila (@if senza chiusura nel PHP compilato) ma non e' raggiunto da
@@ -50,7 +50,7 @@ function compiledPhpParseError(string $blade): ?string
 
 it('compiles every page and layout template to valid php', function (string $file): void {
     expect(compiledPhpParseError(File::get($file)))->toBeNull();
-})->with(sixteenTemplatesToCompile());
+})->with(civicTemplatesToCompile());
 
 it('detects a directive placed inside a component tag (the 2026-10-13 outage)', function (): void {
     $broken = '<x-dynamic-component :component="$c" :title="$t"@if ($dc) :header-active="$h"@endif>x</x-dynamic-component>';

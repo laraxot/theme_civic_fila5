@@ -3,7 +3,7 @@
 
 @extends('layouts.marketing')
 
-@section('title', $service->name . ' - ' . config('sixteen.app.name'))
+@section('title', $service->name . ' - ' . config('civic.app.name'))
 
 @section('content')
     {{-- Service Hero --}}

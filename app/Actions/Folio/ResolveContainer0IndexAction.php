@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Actions\Folio;
+namespace Themes\Civic\Actions\Folio;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Modules\Cms\Models\Page;
 use Spatie\QueueableAction\QueueableAction;
-use Themes\Sixteen\Infrastructure\Url\FrontofficeContainerAliases;
-use Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes;
+use Themes\Civic\Infrastructure\Url\FrontofficeContainerAliases;
+use Themes\Civic\Infrastructure\Url\FrontofficeRoutes;
 
 /**
  * Risolve la shell Folio `container0.index` prima del mount Volt.

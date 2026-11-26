@@ -2,7 +2,7 @@
     'title' => __('pub_theme::segnalazione.elenco.title'),
     'subtitle' => __('pub_theme::segnalazione.elenco.subtitle', ['count' => 73]),
     'breadcrumb' => [
-        ['label' => __('pub_theme::navigation.home'), 'url' => \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/')],
+        ['label' => __('pub_theme::navigation.home'), 'url' => \Themes\Civic\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/')],
         ['label' => __('pub_theme::segnalazione.elenco.title'), 'active' => true],
     ],
     'tabs' => ['items' => [

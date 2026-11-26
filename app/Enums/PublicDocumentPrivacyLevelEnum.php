@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums;
+namespace Themes\Civic\Enums;
 
 use Filament\Support\Contracts\HasLabel;
-use Themes\Sixteen\Enums\Concerns\HasLangLabel;
+use Themes\Civic\Enums\Concerns\HasLangLabel;
 
 /**
  * Livelli di privacy secondo GDPR.
  *
  * Sostituisce la costante PublicDocument::PRIVACY_LEVELS. Le label vivono in
- * lang/<locale>/public_document_privacy_level_enum.php (namespace `sixteen::`).
+ * lang/<locale>/public_document_privacy_level_enum.php (namespace `civic::`).
  */
 enum PublicDocumentPrivacyLevelEnum: string implements HasLabel
 {

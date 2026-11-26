@@ -16,6 +16,6 @@
             </div>
         </div>
         {{-- Il CSS lo rende <x-cms::head>; il JS del tema resta a fine body. --}}
-        @vite(['resources/js/app.js'], 'themes/Sixteen')
+        @vite(['resources/js/app.js'], 'themes/Civic')
     </body>
 </html>

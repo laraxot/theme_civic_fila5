@@ -19,7 +19,7 @@ test('il campo del codice di tracciamento occupa tutta la larghezza del contenit
     // Bootstrap Italia: `.input-group > .form-control { width: 1% }`. In colonna lo stretch non agisce (width non e' auto), quindi
     // il campo resta largo quanto il suo padding (16 px a 320 e 375). La regola deve avere specificita' maggiore di quella di Bootstrap.
     $mobile = array_values(array_filter(
-        sixteenCssRules($trackCss()),
+        civicCssRules($trackCss()),
         static fn (array $rule): bool => str_contains($rule['media'], 'max-width: 575.98px') && str_contains($rule['selector'], '.dc-ticket-track__input'),
     ));
 
@@ -30,7 +30,7 @@ test('il campo del codice di tracciamento occupa tutta la larghezza del contenit
 });
 
 test('il badge di stato della traccia ha contrasto AA sul verde del tema', function () use ($trackCss, $themeRoot): void {
-    $color = sixteenCssDeclaration($trackCss(), '.dc-ticket-track__status', 'color');
+    $color = civicCssDeclaration($trackCss(), '.dc-ticket-track__status', 'color');
     preg_match('/--bs-primary:\s*(#[0-9a-f]{6})/i', file_get_contents($themeRoot.'/resources/css/style-apply.css'), $primary);
     $primaryColor = $primary[1] ?? '';
 
@@ -40,5 +40,5 @@ test('il badge di stato della traccia ha contrasto AA sul verde del tema', funct
 
     expect($color)->not->toBeNull();
     expect($primaryColor)->not->toBe('');
-    expect(sixteenContrastRatio((string) $color, $primaryColor))->toBeGreaterThanOrEqual(4.5);
+    expect(civicContrastRatio((string) $color, $primaryColor))->toBeGreaterThanOrEqual(4.5);
 });

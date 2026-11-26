@@ -1,6 +1,6 @@
 /**
  * STORY-147 — header logged dropdown parity (headless Playwright)
- * Run: cd laravel && npx playwright test Themes/Sixteen/tests/browser/header-logged-dropdown.spec.mjs --headed=false
+ * Run: cd laravel && npx playwright test Themes/Civic/tests/browser/header-logged-dropdown.spec.mjs --headed=false
  */
 import { test, expect, chromium } from '@playwright/test';
 

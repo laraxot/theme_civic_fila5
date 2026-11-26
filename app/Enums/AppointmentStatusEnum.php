@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Enums;
+namespace Themes\Civic\Enums;
 
 use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
-use Themes\Sixteen\Enums\Concerns\HasLangLabel;
+use Themes\Civic\Enums\Concerns\HasLangLabel;
 
 /**
  * Stati appuntamento conformi AGID (sixteen_appointments.status).
  *
  * Sostituisce le costanti Appointment::STATUS_*. Label, colore e icona vivono in
- * lang/<locale>/appointment_status_enum.php (namespace `sixteen::`).
+ * lang/<locale>/appointment_status_enum.php (namespace `civic::`).
  */
 enum AppointmentStatusEnum: string implements HasColor, HasIcon, HasLabel
 {
@@ -58,6 +58,6 @@ enum AppointmentStatusEnum: string implements HasColor, HasIcon, HasLabel
 
     private function translate(string $field): string
     {
-        return trans('sixteen::appointment_status_enum.values.'.$this->value.'.'.$field);
+        return trans('civic::appointment_status_enum.values.'.$this->value.'.'.$field);
     }
 }

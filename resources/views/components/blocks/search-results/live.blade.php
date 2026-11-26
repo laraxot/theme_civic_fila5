@@ -7,12 +7,12 @@
 @php
     use Illuminate\Support\Str;
     use Modules\Fixcity\Actions\Search\SearchFrontOfficeAction;
-    use Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes;
+    use Themes\Civic\Infrastructure\Url\FrontofficeRoutes;
 
     $rawQuery = request()->query('q');
     $result = app(SearchFrontOfficeAction::class)->execute(is_string($rawQuery) ? $rawQuery : '', app()->getLocale());
     $t = static fn (string $key, array $replace = []): string => __('fixcity::site_search.'.$key, $replace);
-    $icon = static fn (string $name): string => \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base().'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
+    $icon = static fn (string $name): string => \Themes\Civic\Infrastructure\Assets\DesignComuniAssets::base().'/bootstrap-italia/dist/svg/sprites.svg#'.$name;
     $partialData = ['breadcrumb' => ['items' => [['label' => $t('breadcrumb.home'), 'url' => route('home')]], 'current' => $t('breadcrumb.current')]];
     $d = static fn (string $key, mixed $default = '') => data_get($partialData, $key, $default);
 @endphp

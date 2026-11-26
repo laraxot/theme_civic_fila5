@@ -3,7 +3,7 @@
 
 @extends('layouts.marketing')
 
-@section('title', config('sixteen.app.name') . ' - ' . config('sixteen.app.tagline'))
+@section('title', config('civic.app.name') . ' - ' . config('civic.app.tagline'))
 
 @section('content')
     {{-- Hero Section --}}
@@ -12,10 +12,10 @@
             <div class="flex flex-col lg:flex-row items-center justify-between">
                 <div class="lg:w-1/2 mb-8 lg:mb-0">
                     <h1 class="text-4xl lg:text-5xl font-bold mb-4">
-                        {{ config('sixteen.app.name') }}
+                        {{ config('civic.app.name') }}
                     </h1>
                     <p class="text-xl mb-6">
-                        {{ config('sixteen.app.description') }}
+                        {{ config('civic.app.description') }}
                     </p>
                     
                     {{-- Quick Actions --}}

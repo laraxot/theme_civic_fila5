@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
+require_once dirname(__DIR__).'/Support/civic-autoload.php';
+
 use PHPUnit\Framework\Assert;
 use Tests\TestCase;
-use Themes\Sixteen\Actions\Block\IsCanonicalBlockCategoryFolderAction;
-use Themes\Sixteen\Actions\Block\IsLegacyBlockCategoryFolderAction;
-use Themes\Sixteen\Datas\BlockCategoryRegistryData;
+use Themes\Civic\Actions\Block\IsCanonicalBlockCategoryFolderAction;
+use Themes\Civic\Actions\Block\IsLegacyBlockCategoryFolderAction;
+use Themes\Civic\Datas\BlockCategoryRegistryData;
 
 use function Safe\glob;
 

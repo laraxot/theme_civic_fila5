@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Filters;
+namespace Themes\Civic\Filters;
 
 use Illuminate\Support\Facades\Request;
-use Themes\Sixteen\Contracts\MenuFilterInterface;
+use Themes\Civic\Contracts\MenuFilterInterface;
 use function Safe\parse_url;
 use function Safe\preg_match;
 

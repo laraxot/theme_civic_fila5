@@ -8,7 +8,7 @@
     Segui: form POST con CSRF (FollowTicketAction) per il cittadino loggato; per l'ospite un link al login. Testi: lang fixcity::ticket_detail.
 --}}
 @php
-    use Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes;
+    use Themes\Civic\Infrastructure\Url\FrontofficeRoutes;
 
     $locale = app()->getLocale();
     // Canon FO: FrontofficeRoutes (path relativo absolute=false) — niente localizeUrl su container0.
@@ -43,6 +43,12 @@
     $nextSteps = $ticketForNextSteps instanceof \Modules\Fixcity\Models\Ticket
         ? app(\Modules\Fixcity\Actions\BuildTicketNextStepsAction::class)->execute($ticketForNextSteps)
         : null;
+    // #34: conferma/contestazione risoluzione — endpoint del modulo (tickets.resolution →
+    // ConfirmTicketResolutionAction, solo proprietario, ticket in stato `resolved`).
+    $resolutionUrl = route('tickets.resolution', ['lang' => $locale, 'ticket' => $detail['id']], false);
+    $canVerifyResolution = $detail['is_owner'] && $detail['status'] === 'resolved';
+    $resolutionFeedback = session('resolution_feedback');
+    $resolutionFeedback = in_array($resolutionFeedback, ['confirmed', 'disputed'], true) ? $resolutionFeedback : null;
     // dati per il partial condiviso del breadcrumb: voci localizzate, mai '#'
     $partialData = ['breadcrumb' => ['items' => [
         ['label' => $t('breadcrumb.home'), 'url' => $home],
@@ -59,7 +65,7 @@
                     {{ $t('follow.'.$followMessage) }}
                     @if ($followMessage === 'followed')
                         {{-- Caller: alert follow in questo blocco; SSoT URL: FrontofficeRoutes::personalAreaSeguite. User: «procedi» riusabile. --}}
-                        <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaSeguite(false) }}">{{ $t('follow.list_link') }}</a>
+                        <a href="{{ \Themes\Civic\Infrastructure\Url\FrontofficeRoutes::personalAreaSeguite(false) }}">{{ $t('follow.list_link') }}</a>
                     @endif
                 </div>
             @endif
@@ -165,6 +171,36 @@
                             </p>
                         @endguest
                     </section>
+            @endif
+            @if ($resolutionFeedback !== null)
+                <div class="alert alert-success mt-40" role="status">{{ $t('resolution.'.$resolutionFeedback) }}</div>
+            @endif
+            @if ($canVerifyResolution)
+                <section aria-labelledby="td-resolution-title" class="mt-40">
+                    <h2 class="title-xxlarge mb-3" id="td-resolution-title">{{ $t('resolution.title') }}</h2>
+                    <div class="cmp-card p-4">
+                        <form method="post" action="{{ $resolutionUrl }}" class="td-resolution">
+                            @csrf
+                            <fieldset>
+                                <legend class="visually-hidden">{{ $t('resolution.title') }}</legend>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="decision" id="td-resolution-confirm" value="confirm" required>
+                                    <label class="form-check-label" for="td-resolution-confirm">{{ $t('resolution.confirm') }}</label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="decision" id="td-resolution-dispute" value="dispute" required>
+                                    <label class="form-check-label" for="td-resolution-dispute">{{ $t('resolution.dispute') }}</label>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="td-resolution-reason">{{ $t('resolution.reason_label') }}</label>
+                                    <textarea class="form-control" id="td-resolution-reason" name="reason" rows="3" maxlength="2000"></textarea>
+                                    <p class="text-paragraph-small mt-1 mb-0">{{ $t('resolution.dispute_notice') }}</p>
+                                </div>
+                                <button type="submit" class="btn btn-primary py-3">{{ $t('resolution.title') }}</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </section>
             @endif
             <section aria-labelledby="td-actions-title" class="mt-40 mb-4">
                 <h2 class="title-xxlarge mb-3" id="td-actions-title">{{ $t('actions.title') }}</h2>

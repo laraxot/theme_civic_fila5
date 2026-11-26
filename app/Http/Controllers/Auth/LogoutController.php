@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Http\Controllers\Auth;
+namespace Themes\Civic\Http\Controllers\Auth;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-use Themes\Sixteen\Http\Controllers\BaseController;
+use Themes\Civic\Http\Controllers\BaseController;
 
 class LogoutController extends BaseController
 {

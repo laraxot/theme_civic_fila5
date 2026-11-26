@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Themes\Sixteen\Filters;
+namespace Themes\Civic\Filters;
 
 use Exception;
 use Illuminate\Support\Facades\Route;
-use Themes\Sixteen\Contracts\MenuFilterInterface;
+use Themes\Civic\Contracts\MenuFilterInterface;
 use function Safe\parse_url;
 
 /**

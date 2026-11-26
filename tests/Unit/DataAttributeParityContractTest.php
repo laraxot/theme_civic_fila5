@@ -10,7 +10,7 @@ use function Safe\preg_match_all;
 
 /*
  * docs/data-attribute-rule.md: il riferimento Design Comuni usa 12 nomi `data-*` e nessuno porta il nome di un tema o di un
- * progetto. Un `data-sixteen-*` e' HTML che il riferimento non ha (drift dalla regola 013). Test sul SORGENTE (Blade, JS, CSS):
+ * progetto. Un `data-civic-*` e' HTML che il riferimento non ha (drift dalla regola 013). Test sul SORGENTE (Blade, JS, CSS):
  * dice che il nome non e' scritto, non che il menu si apra; la prova e' il browser dopo `npm run build`.
  */
 function dataAttributeParitySources(): array
@@ -43,7 +43,7 @@ test('nessun sorgente del tema usa un data-* col nome del tema, di un tema frate
         foreach ($files as $path => $content) {
             $scanned++;
             // `two` solo come `data-two`: `dataset.twoFactor` e simili sono nomi legittimi.
-            if (preg_match('/\bdata-(?:sixteen|two|fixcity|techplanner)\b|dataset(?:\.|\[\s*[\'"])(?:sixteen|fixcity|techplanner)/i', $content, $match) === 1) {
+            if (preg_match('/\bdata-(?:sixteen|civic|two|fixcity|techplanner)\b|dataset(?:\.|\[\s*[\'"])(?:sixteen|civic|fixcity|techplanner)/i', $content, $match) === 1) {
                 $offenders[] = $path.' -> '.$match[0];
             }
         }
