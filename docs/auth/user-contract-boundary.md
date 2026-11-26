@@ -31,7 +31,7 @@ contratti e chiavi pubbliche, non classi interne del modulo.
 I listener e l'action di audit login del modulo User applicano la stessa
 filosofia: identità via `UserContract`, log via `HasAuthentications`.
 Il tema non deve introdurre `instanceof BaseUser` in blade/Livewire/auth.
-Decisione correlata: [D18](../decision-log/D18-user-contract-over-base-user.md).
+Decisione correlata: [D18](../decision-log/d18-user-contract-over-base-user.md).
 
 ## Collegamenti
 

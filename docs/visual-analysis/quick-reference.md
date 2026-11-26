@@ -74,7 +74,7 @@ npm run copy
 ## 📁 Key Files
 
 ### Documentation (Read Order)
-1. **INDEX.md** - Start here (comprehensive overview)
+1. **index.md** - Start here (comprehensive overview)
 2. **gsd-implementation-plan.md** - Detailed 22-task roadmap
 3. **visual-differences-analysis.md** - What to fix (reference)
 4. **html-structural-analysis.md** - HTML baseline (reference)
@@ -102,7 +102,7 @@ npm run dev
 
 ## ✅ Pre-Implementation Checklist
 
-- [ ] Read INDEX.md
+- [ ] Read index.md
 - [ ] Read gsd-implementation-plan.md
 - [ ] Verify build works: `npm run build` (target: ~1.36s)
 - [ ] Clear browser cache
@@ -199,7 +199,7 @@ npm run dev
 **Full Documentation**: `laravel/Themes/Sixteen/docs/visual-analysis/`
 
 **Key Files**:
-- INDEX.md - Cross-referenced index
+- index.md - Cross-referenced index
 - gsd-implementation-plan.md - 7-wave detailed roadmap
 - visual-differences-analysis.md - Visual diff reference
 - Screenshots - reference-*.png and local-*.png in `/tmp/`

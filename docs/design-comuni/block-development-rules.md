@@ -194,7 +194,7 @@ new class extends Component {
 
 - → [Master Docs Index](../../../../../docs/MODULE_DOCS_INDEX.md)
 - → [HTML Structure Comparison](../../../../../docs/html-structure-comparison.md)
-- → [Body Structure Comparison Index](../body-structure-comparison/INDEX.md)
+- → [Body Structure Comparison Index](../body-structure-comparison/index.md)
 - → [Comparison Scripts](../../../../bashscripts/docs/html/README.md)
 
 ---

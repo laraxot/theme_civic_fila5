@@ -321,7 +321,7 @@ Vantaggi:
 ### Documenti Aggiornati
 
 1. ✅ **design-comuni/00-index.md** - Aggiunta sezione Layout Hierarchy
-2. ✅ **design-comuni/QUICK_START.md** - Aggiunti esempi corretti
+2. ✅ **design-comuni/quick-start.md** - Aggiunti esempi corretti
 3. ✅ **design-comuni/product-brief.md** - Aggiornata sezione Routing Strategy
 
 ---
@@ -338,7 +338,7 @@ Vantaggi:
 
 - [x] `architecture/layout-architecture.md` - Spiegazione architettura
 - [x] `design-comuni/00-index.md` - Aggiornato con layout hierarchy
-- [x] `design-comuni/QUICK_START.md` - Aggiunti esempi corretti
+- [x] `design-comuni/quick-start.md` - Aggiunti esempi corretti
 - [x] `design-comuni/product-brief.md` - Aggiornata sezione routing
 
 ### Verifica
@@ -402,7 +402,7 @@ Ogni file fa UNA cosa sola, nel modo più semplice possibile.
 - [Layout Architecture](./architecture/layout-architecture.md) - Spiegazione completa
 - [Product Brief](./design-comuni/product-brief.md) - Panoramica progetto
 - [Replikate.txt](./prompts/replikate.txt) - Guida operativa
-- [QUICK_START](./design-comuni/QUICK_START.md) - Guida rapida
+- [QUICK_START](./design-comuni/quick-start.md) - Guida rapida
 
 ---
 

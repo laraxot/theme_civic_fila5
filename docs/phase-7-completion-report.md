@@ -146,7 +146,7 @@ npm run copy
    - DevTools inspection guide
    - Screenshot documentation
 
-4. **html-structure-analysis/INDEX.md**
+4. **html-structure-analysis/index.md**
    - Quick navigation
    - Summary of findings
 
@@ -233,7 +233,7 @@ npm run copy
 1. `resources/css/design-comuni-visual-fix.css` (4.2 KB)
 2. `docs/html-structure-analysis/css-fix-strategy.md` (300 lines)
 3. `docs/html-structure-analysis/css-fix-implementation-report.md` (350 lines)
-4. `docs/html-structure-analysis/INDEX.md` (120 lines)
+4. `docs/html-structure-analysis/index.md` (120 lines)
 5. `docs/visual-verification-guide.md` (300 lines)
 6. `docs/phase-7-completion-report.md` (this file)
 

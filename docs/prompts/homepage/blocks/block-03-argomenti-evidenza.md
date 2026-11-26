@@ -198,7 +198,7 @@ status: draft
 ## 🔗 Link Bidirezionali
 
 - ← [Indice Blocchi](./00-index.md)
-- ← [INDEX.md](./INDEX.md)
+- ← [INDEX.md](./index.md)
 - → [06-evidence-section.md](./06-evidence-section.md) — dettaglio struttura
 
 ---

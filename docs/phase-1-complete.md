@@ -23,7 +23,7 @@ status: draft
 1. **start-here.md** ⭐ - Read this first - Orientation guide
 2. **phase-1-checkpoint.md** - What's done, what's ready
 3. **implementation-master-plan.md** - Detailed Phase 2-4 execution plan (20KB)
-4. **QUICK_REFERENCE.md** - Bookmark this - Daily reference card
+4. **quick-reference.md** - Bookmark this - Daily reference card
 
 ### Strategic Documents
 5. **design-comuni-replication-index.md** - Master navigation hub

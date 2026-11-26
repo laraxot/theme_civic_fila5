@@ -333,7 +333,7 @@ PASS/FAIL Decision
 - [SOCIAL-ICONS-VISIBILITY-ISSUE.md](./social-icons-visibility-issue.md) - Fix #2 details
 - [SEARCH-MODAL-VISIBILITY-ISSUE.md](./search-modal-visibility-issue.md) - Fix #3 details
 - [UI-FIXES-MASTER-PLAN.md](./ui-fixes-master-plan.md) - Original master plan
-- [INDEX.md](./INDEX.md) - Navigation index
+- [INDEX.md](./index.md) - Navigation index
 
 ---
 

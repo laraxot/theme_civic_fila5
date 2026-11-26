@@ -29,7 +29,7 @@ sotto. `index.md` è l'indice BMAD/QMD più vecchio (router storico) e
 `master-documentation.md` è un resoconto del 2026-04-01, entrambi senza suffisso
 `.old`; restano anche `00-INDEX.md.tmp` (residuo del 2026-09-24),
 `00-homepage-replication-index.md`, `design-comuni-replication-index.md`,
-`replikate-master-index.md` e `SCRIPTS_INDEX.md`. Non usarli per decidere una
+`replikate-master-index.md` e `scripts-index.md`. Non usarli per decidere una
 nuova struttura.
 
 ## Riorganizzazione docs 2026-10-13
@@ -141,15 +141,15 @@ chiude il gate.
 
 ## Wizard /it/tickets/create: DCP-35 (Fixcity) e D15
 - [DCP-35 (modulo Fixcity): passi 1 e 2 del wizard e coordinamento tra agenti](../../../Modules/Fixcity/docs/stories/dcp-35-tickets-create-privacy-dati-coordinamento.story.md): attenzione, la numerazione DCP-32..35 esiste anche nelle story del tema (voci sopra), con significato diverso (qui DCP-35 = conferma)
-- [D15: il Volt della pagina generica ha una radice propria](decision-log/D15-volt-fragment-explicit-root.md): causa di `MethodNotFoundException` su «Avanti»; esiste un secondo D15, [conferma post-save](decision-log/D15-conferma-post-save.md)
+- [D15: il Volt della pagina generica ha una radice propria](decision-log/d15-volt-fragment-explicit-root.md): causa di `MethodNotFoundException` su «Avanti»; esiste un secondo D15, [conferma post-save](decision-log/d15-conferma-post-save.md)
 
 ## Story tickets/create lato tema (2026-10-13)
 - [DCP-40 radice del Volt nella pagina generica](bmad/stories/dcp-40-volt-radice-widget-livewire.story.md)
 - [DCP-50 guardia di compilazione dei template Blade](bmad/stories/dcp-50-guardia-compilazione-template-blade.story.md)
-- [D15 radice del Volt (decisione)](decision-log/D15-volt-fragment-explicit-root.md)
+- [D15 radice del Volt (decisione)](decision-log/d15-volt-fragment-explicit-root.md)
 
 ## Multilingua it, en, de, es (DCP-120)
-- [i18n/INDEX.md](i18n/INDEX.md): comportamento multilingua (lingua, fallback, selettore, link, formati) e glossario di traduzione
+- [i18n/INDEX.md](i18n/index.md): comportamento multilingua (lingua, fallback, selettore, link, formati) e glossario di traduzione
 - [DCP-120 copertura de/es](bmad/stories/dcp-120-multilingua-comportamenti-e-copertura.story.md) · [DCP-123 lingua dichiarata e link localizzati](bmad/stories/dcp-123-lingua-dichiarata-e-link-localizzati.story.md)
 - [Multilingua e dispositivi: comportamenti osservati](wiki/concepts/multilingua-e-dispositivi-comportamenti.md): misure su lingua, selettore, wizard, formati, menu e bersagli tattili a 375, 768, 1024, 1440 (studio in [DCP-55](bmad/stories/dcp-55-multilingua-e-dispositivi.story.md))
 

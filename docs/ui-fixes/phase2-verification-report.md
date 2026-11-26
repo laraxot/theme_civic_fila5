@@ -277,7 +277,7 @@ public/assets/app-B4ubt5st.js  54.96 kB │ gzip: 19.17 kB
 ### Commit & Documentation
 - [ ] Create atomic commit with all 3 fixes
 - [ ] Update documentation with final status
-- [ ] Update INDEX.md and progress tracking
+- [ ] Update index.md and progress tracking
 - [ ] Create final summary report
 
 ### Optional Testing

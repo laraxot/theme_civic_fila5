@@ -395,7 +395,7 @@ config/local/fixcity/database/content/pages/
 | Pages Index | Indice pagine | ~220 | [pages/00-index.md](./pages/00-index.md) |
 | Blocks Index | Indice blocchi | ~450 | [blocks/00-index.md](./blocks/00-index.md) |
 | Homepage Docs | Esempio completo | ~500 | [pages/homepage.md](./pages/homepage.md) |
-| QUICK_START | Guida rapida | ~250 | [QUICK_START.md](./QUICK_START.md) |
+| QUICK_START | Guida rapida | ~250 | [QUICK_START.md](./quick-start.md) |
 
 ---
 
@@ -494,7 +494,7 @@ config/local/fixcity/database/content/pages/
 - [Product Brief](./product-brief.md)
 - [Pages Census](./pages-census.md)
 - [Replikate.txt](./prompts/replikate.txt)
-- [QUICK_START](./QUICK_START.md)
+- [QUICK_START](./quick-start.md)
 
 ### Risorse Esterne
 

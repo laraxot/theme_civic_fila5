@@ -35,7 +35,7 @@ What we accomplished and what's ready for Phase 2
 ### 3️⃣ implementation-master-plan.md (15 min read)
 ⭐ **DETAILED EXECUTION ROADMAP** - Phase 2, 3, 4 breakdown with tasks and timelines
 
-### 4️⃣ QUICK_REFERENCE.md (Bookmark this)
+### 4️⃣ quick-reference.md (Bookmark this)
 Daily reference card with commands, file locations, and quick links
 
 ### 5️⃣ reference-design-analysis.md (For CSS work)
@@ -79,7 +79,7 @@ Instead of implementing each of 40+ pages individually:
 ### Documentation Hubs
 - `phase-1-checkpoint.md` - Checkpoint summary
 - `implementation-master-plan.md` - Detailed Phase 2-4 plan ⭐
-- `QUICK_REFERENCE.md` - Daily reference card
+- `quick-reference.md` - Daily reference card
 - `.github/DESIGN_COMUNI_CONVERSION.md` - GitHub coordination hub
 
 ### Analysis & Reference

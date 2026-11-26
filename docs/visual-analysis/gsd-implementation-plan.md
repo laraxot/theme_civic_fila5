@@ -335,7 +335,7 @@ status: draft
 
 **Task 7.2**: Update INDEX Documentation
 - **Description**: Update visual-analysis INDEX with all new documents
-- **File**: `docs/visual-analysis/INDEX.md`
+- **File**: `docs/visual-analysis/index.md`
 - **Content**:
   - Link to visual-differences-analysis.md
   - Link to implementation-report.md

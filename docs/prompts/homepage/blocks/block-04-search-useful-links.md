@@ -197,7 +197,7 @@ status: draft
 ## 🔗 Link Bidirezionali
 
 - ← [Indice Blocchi](./00-index.md)
-- ← [INDEX.md](./INDEX.md)
+- ← [INDEX.md](./index.md)
 - → [07-useful-links.md](./07-useful-links.md) — dettaglio struttura
 
 ---

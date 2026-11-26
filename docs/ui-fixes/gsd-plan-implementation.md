@@ -374,7 +374,7 @@ End Time: T+86 min
 ### Commit & Documentation
 - [ ] Create atomic commit (all 3 fixes)
 - [ ] Update documentation with results
-- [ ] Update INDEX.md with completion status
+- [ ] Update index.md with completion status
 - [ ] Tag commit with fix identification
 
 ---
@@ -558,7 +558,7 @@ Task 1.2 (Social Icons)
 - [x] All verifications pass
 - [x] Atomic commit created
 - [x] Documentation updated
-- [x] INDEX.md progress updated
+- [x] index.md progress updated
 
 ---
 

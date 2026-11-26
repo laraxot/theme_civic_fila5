@@ -33,7 +33,7 @@ bashscripts/html/html-structure-compare.sh segnalazione-dettaglio \
 
 ## Current Index
 
-See [`INDEX.md`](./INDEX.md) for parity scores and page-level artifacts.
+See [`index.md`](./index.md) for parity scores and page-level artifacts.
 
 ## Governance
 

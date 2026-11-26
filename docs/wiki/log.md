@@ -1427,7 +1427,7 @@ module: "Sixteen"
   `visual-parity/scripts/docs/visual-parity/scripts/` eliminato;
   indici root duplicati (`INDEX.md`, `DOCUMENTATION_INDEX.md`,
   `00-index.md`) ritirati con `.old`; `00-INDEX.md` e
-  `visual-parity/INDEX.md` aggiornati.
+  `visual-parity/index.md` aggiornati.
 - **Nuova regola** `wiki/rules/cms-content-slug-matches-folio-page-name.md`:
   il JSON di contenuto si chiama come lo slug interrogato (= nome pagina
   Folio). Correzione: `/it/tickets/create` usa `tickets.create.json`

@@ -22,7 +22,7 @@ inside the theme because tokens, component states, typography, spacing and page
 patterns are implementation decisions of Sixteen, not global FixCity domain
 rules and not reusable infrastructure for other themes.
 
-`MASTER.md` contains the shared visual contract. Page-specific exceptions belong
+`master.md` contains the shared visual contract. Page-specific exceptions belong
 in `pages/` and must link back to the relevant BMAD story and accessibility
 evidence. The planning and traceability artifacts live in the theme's `docs/bmad`,
 `docs/investigation`, `docs/stories`, `docs/decision-log` and `docs/wiki` areas.

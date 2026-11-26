@@ -202,7 +202,7 @@ status: draft
 ## 🔗 Link Bidirezionali
 
 - ← [Indice Blocchi](./00-index.md)
-- ← [INDEX.md](./INDEX.md)
+- ← [INDEX.md](./index.md)
 - → [05-governance-calendar.md](./05-governance-calendar.md) — dettaglio struttura
 - → [Blade Component](../../../../resources/views/components/blocks/governance/cards.blade.php)
 

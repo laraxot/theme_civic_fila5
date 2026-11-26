@@ -727,7 +727,7 @@ Per ogni blocco universale:
 - [Design Comuni GitHub](https://github.com/italia/design-comuni-pagine-statiche)
 - [Design Comuni Demo](https://italia.github.io/design-comuni-pagine-statiche/)
 - [Replikate.txt](./prompts/replikate.txt)
-- [Quick Start Guide](./QUICK_START.md)
+- [Quick Start Guide](./quick-start.md)
 
 ### Indici
 
