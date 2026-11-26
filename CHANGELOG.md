@@ -9,6 +9,44 @@ issues: []
 discussions: []
 ---
 
+## Unreleased — migrazione Sixteen → Civic (in corso)
+
+Sezione di lavoro della roadmap CIV-M1…M4 (issue [#35](https://github.com/laraxot/theme_civic_fila5/issues/35)).
+Stato reale al 2026-11-26: la migrazione è **parziale**; gli item marcati
+«in corso» non vanno considerati completati.
+
+### Features
+
+* Fork del tema Sixteen come base di partenza per Civic (tema pubblico
+  riutilizzabile, Italia + Malta come obiettivo di prodotto).
+* `composer.json` del tema rinominato `laraxot/theme_civic_fila5` con
+  namespace `Themes\Civic` (issue #1) — **in corso**: riferimenti `Sixteen`
+  residui in `config/sixteen.php`, `config/theme.php` e provider.
+* `theme.json`/`package.json`/`vite.config.js` con nome Civic e
+  `base: '/themes/Civic/'` (issue #2) — **in corso**: il blocco
+  `compatibility` di `theme.json` è ancora quello Sixteen
+  (laravel >=10, filament >=3, php >=8.1) e va riallineato a ^13/^5/^8.4.
+* Roadmap i18n Italia + Malta: `lang/` con `it`, `en`, `de`, `es`;
+  localizzazione maltese (`mt`) pianificata in #8 — **non ancora disponibile**.
+* Consolidamento build: `npm run build` = `prepare:static-assets` +
+  `vite build` + `prune:assets`, lockfile `package-lock.json` versionato (#21).
+* Documentazione di rilascio: `docs/release/` con versione/compatibilità,
+  deploy/rollback, smoke checklist e go/no-go (#35).
+
+### Bug Fixes
+
+* Privacy block senza ente hardcoded: usa `config(ente.name)` + lang (#20).
+* CI: lockfile e configurazione PostCSS/Vite allineati (#22, #23, #24).
+
+### Operativo
+
+* **Nessuna attivazione in produzione** finché restano aperte le issue
+  bloccanti #1–#4 (migrazione/integrazione host, gate C1 di #3) e le
+  dipendenze M2/M3 (#6–#9, #28, #32, #33). Vedi
+  `docs/release/go-no-go.md`.
+
+---
+
 ## [1.0.0-dev.3](https://github.com/laraxot/theme_sixteen_fila5/compare/theme-sixteen-v1.0.0-dev.2...theme-sixteen-v1.0.0-dev.3) (2026-08-27)
 ---
 title: "CHANGELOG"
